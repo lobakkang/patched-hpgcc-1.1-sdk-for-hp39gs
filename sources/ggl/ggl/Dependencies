@@ -1,0 +1,168 @@
+ggl_aline.o: ggl_aline.c ../../hplib/hpgcc49.h ../../hplib/hpconio.h \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hplib/hpmath.h \
+  ../../hplib/hpscreen.h ../../hplib/hpstdio.h ../../hplib/hpstring.h \
+  ../../hplib/hptime.h ../../hplib/syscall.h ../../hplib/saturn.h gglpr.h
+ggl_bitblt.o: ggl_bitblt.c ../../hplib/hpgcc49.h ../../hplib/hpconio.h \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hplib/hpmath.h \
+  ../../hplib/hpscreen.h ../../hplib/hpstdio.h ../../hplib/hpstring.h \
+  ../../hplib/hptime.h ../../hplib/syscall.h ../../hplib/saturn.h gglpr.h
+ggl_bitbltoper.o: ggl_bitbltoper.c ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpstdlib.h ../../hplib/hpsys.h \
+  ../../hplib/kos.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h gglpr.h
+ggl_filter.o: ggl_filter.c ../../hplib/hpgcc49.h ../../hplib/hpconio.h \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hplib/hpmath.h \
+  ../../hplib/hpscreen.h ../../hplib/hpstdio.h ../../hplib/hpstring.h \
+  ../../hplib/hptime.h ../../hplib/syscall.h ../../hplib/saturn.h gglpr.h
+ggl_fltdarken.o: ggl_fltdarken.c ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpstdlib.h ../../hplib/hpsys.h \
+  ../../hplib/kos.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h gglpr.h
+ggl_fltlighten.o: ggl_fltlighten.c ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpstdlib.h ../../hplib/hpsys.h \
+  ../../hplib/kos.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h gglpr.h
+ggl_gethpgscreen.o: ggl_gethpgscreen.c ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpstdlib.h ../../hplib/hpsys.h \
+  ../../hplib/kos.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h gglpr.h \
+  ../../hpg/common/hpgpriv.h
+ggl_getnib.o: ggl_getnib.c ../../hplib/hpgcc49.h ../../hplib/hpconio.h \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hplib/hpmath.h \
+  ../../hplib/hpscreen.h ../../hplib/hpstdio.h ../../hplib/hpstring.h \
+  ../../hplib/hptime.h ../../hplib/syscall.h ../../hplib/saturn.h gglpr.h
+ggl_hblt.o: ggl_hblt.c ../../hplib/hpgcc49.h ../../hplib/hpconio.h \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hplib/hpmath.h \
+  ../../hplib/hpscreen.h ../../hplib/hpstdio.h ../../hplib/hpstring.h \
+  ../../hplib/hptime.h ../../hplib/syscall.h ../../hplib/saturn.h gglpr.h
+ggl_hbltfilter.o: ggl_hbltfilter.c ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpstdlib.h ../../hplib/hpsys.h \
+  ../../hplib/kos.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h gglpr.h
+ggl_hbltoper.o: ggl_hbltoper.c ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpstdlib.h ../../hplib/hpsys.h \
+  ../../hplib/kos.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h gglpr.h
+ggl_hline.o: ggl_hline.c ../../hplib/hpgcc49.h ../../hplib/hpconio.h \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hplib/hpmath.h \
+  ../../hplib/hpscreen.h ../../hplib/hpstdio.h ../../hplib/hpstring.h \
+  ../../hplib/hptime.h ../../hplib/syscall.h ../../hplib/saturn.h gglpr.h
+ggl_initscr.o: ggl_initscr.c ../../hplib/hpgcc49.h ../../hplib/hpconio.h \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hplib/hpmath.h \
+  ../../hplib/hpscreen.h ../../hplib/hpstdio.h ../../hplib/hpstring.h \
+  ../../hplib/hptime.h ../../hplib/syscall.h ../../hplib/saturn.h gglpr.h
+ggl_mkcolor.o: ggl_mkcolor.c ../../hplib/hpgcc49.h ../../hplib/hpconio.h \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hplib/hpmath.h \
+  ../../hplib/hpscreen.h ../../hplib/hpstdio.h ../../hplib/hpstring.h \
+  ../../hplib/hptime.h ../../hplib/syscall.h ../../hplib/saturn.h gglpr.h
+ggl_mkcolor32.o: ggl_mkcolor32.c ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpstdlib.h ../../hplib/hpsys.h \
+  ../../hplib/kos.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h gglpr.h
+ggl_opmask.o: ggl_opmask.c ../../hplib/hpgcc49.h ../../hplib/hpconio.h \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hplib/hpmath.h \
+  ../../hplib/hpscreen.h ../../hplib/hpstdio.h ../../hplib/hpstring.h \
+  ../../hplib/hptime.h ../../hplib/syscall.h ../../hplib/saturn.h gglpr.h
+ggl_optransp.o: ggl_optransp.c ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpstdlib.h ../../hplib/hpsys.h \
+  ../../hplib/kos.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h gglpr.h
+ggl_ovlblt.o: ggl_ovlblt.c ../../hplib/hpgcc49.h ../../hplib/hpconio.h \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hplib/hpmath.h \
+  ../../hplib/hpscreen.h ../../hplib/hpstdio.h ../../hplib/hpstring.h \
+  ../../hplib/hptime.h ../../hplib/syscall.h ../../hplib/saturn.h gglpr.h
+ggl_pltnib.o: ggl_pltnib.c ../../hplib/hpgcc49.h ../../hplib/hpconio.h \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hplib/hpmath.h \
+  ../../hplib/hpscreen.h ../../hplib/hpstdio.h ../../hplib/hpstring.h \
+  ../../hplib/hptime.h ../../hplib/syscall.h ../../hplib/saturn.h gglpr.h
+ggl_rect.o: ggl_rect.c ../../hplib/hpgcc49.h ../../hplib/hpconio.h \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hplib/hpmath.h \
+  ../../hplib/hpscreen.h ../../hplib/hpstdio.h ../../hplib/hpstring.h \
+  ../../hplib/hptime.h ../../hplib/syscall.h ../../hplib/saturn.h gglpr.h
+ggl_rectp.o: ggl_rectp.c ../../hplib/hpgcc49.h ../../hplib/hpconio.h \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hplib/hpmath.h \
+  ../../hplib/hpscreen.h ../../hplib/hpstdio.h ../../hplib/hpstring.h \
+  ../../hplib/hptime.h ../../hplib/syscall.h ../../hplib/saturn.h gglpr.h
+ggl_restore.o: ggl_restore.c ../../hplib/hpgcc49.h ../../hplib/hpconio.h \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hplib/hpmath.h \
+  ../../hplib/hpscreen.h ../../hplib/hpstdio.h ../../hplib/hpstring.h \
+  ../../hplib/hptime.h ../../hplib/syscall.h ../../hplib/saturn.h gglpr.h
+ggl_revblt.o: ggl_revblt.c ../../hplib/hpgcc49.h ../../hplib/hpconio.h \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hplib/hpmath.h \
+  ../../hplib/hpscreen.h ../../hplib/hpstdio.h ../../hplib/hpstring.h \
+  ../../hplib/hptime.h ../../hplib/syscall.h ../../hplib/saturn.h gglpr.h
+ggl_save.o: ggl_save.c ../../hplib/hpgcc49.h ../../hplib/hpconio.h \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hplib/hpmath.h \
+  ../../hplib/hpscreen.h ../../hplib/hpstdio.h ../../hplib/hpstring.h \
+  ../../hplib/hptime.h ../../hplib/syscall.h ../../hplib/saturn.h gglpr.h
+ggl_scrolldn.o: ggl_scrolldn.c ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpstdlib.h ../../hplib/hpsys.h \
+  ../../hplib/kos.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h gglpr.h
+ggl_scrolllf.o: ggl_scrolllf.c ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpstdlib.h ../../hplib/hpsys.h \
+  ../../hplib/kos.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h gglpr.h
+ggl_scrollrt.o: ggl_scrollrt.c ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpstdlib.h ../../hplib/hpsys.h \
+  ../../hplib/kos.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h gglpr.h
+ggl_scrollup.o: ggl_scrollup.c ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpstdlib.h ../../hplib/hpsys.h \
+  ../../hplib/kos.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h gglpr.h
+ggl_setmode.o: ggl_setmode.c ../../hplib/hpgcc49.h ../../hplib/hpconio.h \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hplib/hpmath.h \
+  ../../hplib/hpscreen.h ../../hplib/hpstdio.h ../../hplib/hpstring.h \
+  ../../hplib/hptime.h ../../hplib/syscall.h ../../hplib/saturn.h gglpr.h
+ggl_show.o: ggl_show.c ../../hplib/hpgcc49.h ../../hplib/hpconio.h \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hplib/hpmath.h \
+  ../../hplib/hpscreen.h ../../hplib/hpstdio.h ../../hplib/hpstring.h \
+  ../../hplib/hptime.h ../../hplib/syscall.h ../../hplib/saturn.h gglpr.h
+ggl_vline.o: ggl_vline.c ../../hplib/hpgcc49.h ../../hplib/hpconio.h \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hplib/hpmath.h \
+  ../../hplib/hpscreen.h ../../hplib/hpstdio.h ../../hplib/hpstring.h \
+  ../../hplib/hptime.h ../../hplib/syscall.h ../../hplib/saturn.h gglpr.h

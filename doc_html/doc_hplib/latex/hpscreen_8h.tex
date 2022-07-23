@@ -1,0 +1,104 @@
+\section{hpscreen.h File Reference}
+\label{hpscreen_8h}\index{hpscreen.h@{hpscreen.h}}
+Header file for system screen functions. 
+
+
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void {\bf print} (char $\ast$string, int x, int y)
+\item 
+volatile char $\ast$ {\bf get\-LCDPointer} (int x, int y)
+\item 
+void {\bf draw\-Block\-OR} (unsigned char $\ast$sprite, int length, int x, int y)
+\item 
+void {\bf draw\-Block\-XOR} (unsigned char $\ast$sprite, int length, int x, int y)
+\item 
+int {\bf draw\-Block\-XOR4bit\-C} (unsigned char $\ast$sprite, int height, int x, int y)
+\item 
+int {\bf test\-Block4bit\-C} (unsigned char $\ast$sprite, int height, int x, int y)
+\item 
+void {\bf fill\-Tiles} (unsigned char $\ast$sprite, int length, int x, int y, int right, int down)
+\item 
+void {\bf clear\-Screen} ()
+\item 
+char {\bf get\-MFData} (int z)
+\item 
+void {\bf write\-Let\-MF} (char ascii\-Val, int x, int y)
+\item 
+void {\bf write\-String\-MF} (char $\ast$text, int x, int y)
+\item 
+char $\ast$ {\bf get\-MF} (int z)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Header file for system screen functions.
+
+
+
+
+
+Definition in file {\bf hpscreen.h}.
+
+\subsection{Function Documentation}
+\index{hpscreen.h@{hpscreen.h}!clearScreen@{clearScreen}}
+\index{clearScreen@{clearScreen}!hpscreen.h@{hpscreen.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void clear\-Screen ()}\label{hpscreen_8h_a7}
+
+
+\index{hpscreen.h@{hpscreen.h}!drawBlockOR@{drawBlockOR}}
+\index{drawBlockOR@{drawBlockOR}!hpscreen.h@{hpscreen.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void draw\-Block\-OR (unsigned char $\ast$ {\em sprite}, int {\em length}, int {\em x}, int {\em y})}\label{hpscreen_8h_a2}
+
+
+\index{hpscreen.h@{hpscreen.h}!drawBlockXOR@{drawBlockXOR}}
+\index{drawBlockXOR@{drawBlockXOR}!hpscreen.h@{hpscreen.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void draw\-Block\-XOR (unsigned char $\ast$ {\em sprite}, int {\em length}, int {\em x}, int {\em y})}\label{hpscreen_8h_a3}
+
+
+\index{hpscreen.h@{hpscreen.h}!drawBlockXOR4bitC@{drawBlockXOR4bitC}}
+\index{drawBlockXOR4bitC@{drawBlockXOR4bitC}!hpscreen.h@{hpscreen.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int draw\-Block\-XOR4bit\-C (unsigned char $\ast$ {\em sprite}, int {\em height}, int {\em x}, int {\em y})}\label{hpscreen_8h_a4}
+
+
+\index{hpscreen.h@{hpscreen.h}!fillTiles@{fillTiles}}
+\index{fillTiles@{fillTiles}!hpscreen.h@{hpscreen.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void fill\-Tiles (unsigned char $\ast$ {\em sprite}, int {\em length}, int {\em x}, int {\em y}, int {\em right}, int {\em down})}\label{hpscreen_8h_a6}
+
+
+\index{hpscreen.h@{hpscreen.h}!getLCDPointer@{getLCDPointer}}
+\index{getLCDPointer@{getLCDPointer}!hpscreen.h@{hpscreen.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}volatile char$\ast$ get\-LCDPointer (int {\em x}, int {\em y})}\label{hpscreen_8h_a1}
+
+
+\index{hpscreen.h@{hpscreen.h}!getMF@{getMF}}
+\index{getMF@{getMF}!hpscreen.h@{hpscreen.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ get\-MF (int {\em z})}\label{hpscreen_8h_a11}
+
+
+\index{hpscreen.h@{hpscreen.h}!getMFData@{getMFData}}
+\index{getMFData@{getMFData}!hpscreen.h@{hpscreen.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char get\-MFData (int {\em z})}\label{hpscreen_8h_a8}
+
+
+\index{hpscreen.h@{hpscreen.h}!print@{print}}
+\index{print@{print}!hpscreen.h@{hpscreen.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void print (char $\ast$ {\em string}, int {\em x}, int {\em y})}\label{hpscreen_8h_a0}
+
+
+\index{hpscreen.h@{hpscreen.h}!testBlock4bitC@{testBlock4bitC}}
+\index{testBlock4bitC@{testBlock4bitC}!hpscreen.h@{hpscreen.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int test\-Block4bit\-C (unsigned char $\ast$ {\em sprite}, int {\em height}, int {\em x}, int {\em y})}\label{hpscreen_8h_a5}
+
+
+\index{hpscreen.h@{hpscreen.h}!writeLetMF@{writeLetMF}}
+\index{writeLetMF@{writeLetMF}!hpscreen.h@{hpscreen.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void write\-Let\-MF (char {\em ascii\-Val}, int {\em x}, int {\em y})}\label{hpscreen_8h_a9}
+
+
+\index{hpscreen.h@{hpscreen.h}!writeStringMF@{writeStringMF}}
+\index{writeStringMF@{writeStringMF}!hpscreen.h@{hpscreen.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void write\-String\-MF (char $\ast$ {\em text}, int {\em x}, int {\em y})}\label{hpscreen_8h_a10}
+
+

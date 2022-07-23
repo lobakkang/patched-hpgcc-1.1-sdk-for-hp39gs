@@ -1,0 +1,178 @@
+\section{hpkeyb49.h File Reference}
+\label{hpkeyb49_8h}\index{hpkeyb49.h@{hpkeyb49.h}}
+The Keyboard Management routines of the HP49. 
+
+
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+int {\bf keyb\_\-is\-Key\-Pressed} (unsigned char col, unsigned char row)
+\begin{CompactList}\small\item\em Test for a (col,row) Key pressed.\item\end{CompactList}\item 
+int {\bf keyb\_\-is\-Any\-Key\-Pressed} (void)
+\begin{CompactList}\small\item\em Test for any Key pressed.\item\end{CompactList}\item 
+void {\bf keyb\_\-wait\-Key\-Pressed} (void)
+\begin{CompactList}\small\item\em Wait for a Key to be pressed.\item\end{CompactList}\item 
+int {\bf keyb\_\-is\-Left} (void)
+\begin{CompactList}\small\item\em Test for Left arrow key.\item\end{CompactList}\item 
+int {\bf keyb\_\-is\-Right} (void)
+\begin{CompactList}\small\item\em Test for Right arrow key.\item\end{CompactList}\item 
+int {\bf keyb\_\-is\-Up} (void)
+\begin{CompactList}\small\item\em Test for Up arrow key.\item\end{CompactList}\item 
+int {\bf keyb\_\-is\-Down} (void)
+\begin{CompactList}\small\item\em Test for Down arrow key.\item\end{CompactList}\item 
+int {\bf keyb\_\-is\-Alpha} (void)
+\begin{CompactList}\small\item\em Test for Alpha Key pressed.\item\end{CompactList}\item 
+int {\bf keyb\_\-is\-LS} (void)
+\begin{CompactList}\small\item\em Test for Left Shift key.\item\end{CompactList}\item 
+int {\bf keyb\_\-is\-RS} (void)
+\begin{CompactList}\small\item\em Test for Right Shift key.\item\end{CompactList}\item 
+int {\bf keyb\_\-is\-ON} (void)
+\begin{CompactList}\small\item\em Test for ON key.\item\end{CompactList}\item 
+char {\bf keyb\_\-getkey} (int wait)
+\begin{CompactList}\small\item\em Scan the keyboard, return the COL$\ast$0xf + ROW key position.\item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+The Keyboard Management routines of the HP49.
+
+
+
+
+
+Definition in file {\bf hpkeyb49.h}.
+
+\subsection{Function Documentation}
+\index{hpkeyb49.h@{hpkeyb49.h}!keyb_getkey@{keyb\_\-getkey}}
+\index{keyb_getkey@{keyb\_\-getkey}!hpkeyb49.h@{hpkeyb49.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char keyb\_\-getkey (int {\em wait})}\label{hpkeyb49_8h_a11}
+
+
+Scan the keyboard, return the COL$\ast$0xf + ROW key position.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+wait}][in] in wait == 1 then wait for a key press/release \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns: ]\par
+0 if no key \par
+ Col $\ast$ 0xf + Row else \end{Desc}
+\index{hpkeyb49.h@{hpkeyb49.h}!keyb_isAlpha@{keyb\_\-isAlpha}}
+\index{keyb_isAlpha@{keyb\_\-isAlpha}!hpkeyb49.h@{hpkeyb49.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int keyb\_\-is\-Alpha (void)}\label{hpkeyb49_8h_a7}
+
+
+Test for Alpha Key pressed.
+
+\begin{Desc}
+\item[Returns: ]\par
+1 if key is pressed \par
+ 0 else\end{Desc}
+Uses the GPFDAT register. \index{hpkeyb49.h@{hpkeyb49.h}!keyb_isAnyKeyPressed@{keyb\_\-isAnyKeyPressed}}
+\index{keyb_isAnyKeyPressed@{keyb\_\-isAnyKeyPressed}!hpkeyb49.h@{hpkeyb49.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int keyb\_\-is\-Any\-Key\-Pressed (void)}\label{hpkeyb49_8h_a1}
+
+
+Test for any Key pressed.
+
+\begin{Desc}
+\item[Returns: ]\par
+1 if a key is pressed \par
+ 0 else \end{Desc}
+\index{hpkeyb49.h@{hpkeyb49.h}!keyb_isDown@{keyb\_\-isDown}}
+\index{keyb_isDown@{keyb\_\-isDown}!hpkeyb49.h@{hpkeyb49.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int keyb\_\-is\-Down (void)}\label{hpkeyb49_8h_a6}
+
+
+Test for Down arrow key.
+
+\begin{Desc}
+\item[Returns: ]\par
+1 if key is pressed \par
+ 0 else \end{Desc}
+\index{hpkeyb49.h@{hpkeyb49.h}!keyb_isKeyPressed@{keyb\_\-isKeyPressed}}
+\index{keyb_isKeyPressed@{keyb\_\-isKeyPressed}!hpkeyb49.h@{hpkeyb49.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int keyb\_\-is\-Key\-Pressed (unsigned char {\em col}, unsigned char {\em row})}\label{hpkeyb49_8h_a0}
+
+
+Test for a (col,row) Key pressed.
+
+\begin{Desc}
+\item[Returns: ]\par
+1 if key is pressed \par
+ 0 else\end{Desc}
+Uses the GPFDAT, and GPGCON registers. \index{hpkeyb49.h@{hpkeyb49.h}!keyb_isLeft@{keyb\_\-isLeft}}
+\index{keyb_isLeft@{keyb\_\-isLeft}!hpkeyb49.h@{hpkeyb49.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int keyb\_\-is\-Left (void)}\label{hpkeyb49_8h_a3}
+
+
+Test for Left arrow key.
+
+\begin{Desc}
+\item[Returns: ]\par
+1 if key is pressed \par
+ 0 else \end{Desc}
+\index{hpkeyb49.h@{hpkeyb49.h}!keyb_isLS@{keyb\_\-isLS}}
+\index{keyb_isLS@{keyb\_\-isLS}!hpkeyb49.h@{hpkeyb49.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int keyb\_\-is\-LS (void)}\label{hpkeyb49_8h_a8}
+
+
+Test for Left Shift key.
+
+\begin{Desc}
+\item[Returns: ]\par
+1 if key is pressed \par
+ 0 else \end{Desc}
+\index{hpkeyb49.h@{hpkeyb49.h}!keyb_isON@{keyb\_\-isON}}
+\index{keyb_isON@{keyb\_\-isON}!hpkeyb49.h@{hpkeyb49.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int keyb\_\-is\-ON (void)}\label{hpkeyb49_8h_a10}
+
+
+Test for ON key.
+
+\begin{Desc}
+\item[Returns: ]\par
+1 if key is pressed \par
+ 0 else \end{Desc}
+\index{hpkeyb49.h@{hpkeyb49.h}!keyb_isRight@{keyb\_\-isRight}}
+\index{keyb_isRight@{keyb\_\-isRight}!hpkeyb49.h@{hpkeyb49.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int keyb\_\-is\-Right (void)}\label{hpkeyb49_8h_a4}
+
+
+Test for Right arrow key.
+
+\begin{Desc}
+\item[Returns: ]\par
+1 if key is pressed \par
+ 0 else \end{Desc}
+\index{hpkeyb49.h@{hpkeyb49.h}!keyb_isRS@{keyb\_\-isRS}}
+\index{keyb_isRS@{keyb\_\-isRS}!hpkeyb49.h@{hpkeyb49.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int keyb\_\-is\-RS (void)}\label{hpkeyb49_8h_a9}
+
+
+Test for Right Shift key.
+
+\begin{Desc}
+\item[Returns: ]\par
+1 if key is pressed \par
+ 0 else \end{Desc}
+\index{hpkeyb49.h@{hpkeyb49.h}!keyb_isUp@{keyb\_\-isUp}}
+\index{keyb_isUp@{keyb\_\-isUp}!hpkeyb49.h@{hpkeyb49.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int keyb\_\-is\-Up (void)}\label{hpkeyb49_8h_a5}
+
+
+Test for Up arrow key.
+
+\begin{Desc}
+\item[Returns: ]\par
+1 if key is pressed \par
+ 0 else \end{Desc}
+\index{hpkeyb49.h@{hpkeyb49.h}!keyb_waitKeyPressed@{keyb\_\-waitKeyPressed}}
+\index{keyb_waitKeyPressed@{keyb\_\-waitKeyPressed}!hpkeyb49.h@{hpkeyb49.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void keyb\_\-wait\-Key\-Pressed (void)}\label{hpkeyb49_8h_a2}
+
+
+Wait for a Key to be pressed.
+

@@ -1,0 +1,132 @@
+\section{winkeys.h File Reference}
+\label{winkeys_8h}\index{winkeys.h@{winkeys.h}}
+Window system keyboard events. 
+
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf WIN\_\-KEY\_\-PRESSED}~1
+\begin{CompactList}\small\item\em Event number for key pressed events. \item\end{CompactList}\item 
+\#define {\bf WIN\_\-KEY\_\-RELEASED}~2
+\begin{CompactList}\small\item\em Event number for key released events. \item\end{CompactList}\item 
+\#define {\bf WIN\_\-KEY\_\-TYPED}~3
+\begin{CompactList}\small\item\em Event number for key typed events. \item\end{CompactList}\item 
+\#define {\bf WIN\_\-ALPHA\_\-CHANGED}~4
+\begin{CompactList}\small\item\em Event number for changes in the alpha key's state. \item\end{CompactList}\item 
+\#define {\bf WIN\_\-LSHIFT\_\-CHANGED}~5
+\begin{CompactList}\small\item\em Event number for changes in the left shift key's state. \item\end{CompactList}\item 
+\#define {\bf WIN\_\-RSHIFT\_\-CHANGED}~6
+\begin{CompactList}\small\item\em Event number for changes in the right shift key's state. \item\end{CompactList}\item 
+\#define {\bf WIN\_\-KEYSTATE\_\-OFF}~0\label{winkeys_8h_a6}
+
+\begin{CompactList}\small\item\em Constant for a shift key that is not active. \item\end{CompactList}\item 
+\#define {\bf WIN\_\-KEYSTATE\_\-ON}~1
+\begin{CompactList}\small\item\em Constant for a shift key that is active. \item\end{CompactList}\item 
+\#define {\bf WIN\_\-KEYSTATE\_\-LOCK}~2\label{winkeys_8h_a8}
+
+\begin{CompactList}\small\item\em Constant for a shift key that is locked. \item\end{CompactList}\item 
+\#define {\bf WIN\_\-KEYSTATE\_\-PRESSED}~3\label{winkeys_8h_a9}
+
+\begin{CompactList}\small\item\em Constant for a shift key that is being held down. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Window system keyboard events. 
+
+These functions provide the basis of the HPGCC window system's keyboard support. 
+
+Definition in file {\bf winkeys.h}.
+
+\subsection{Define Documentation}
+\index{winkeys.h@{winkeys.h}!WIN_ALPHA_CHANGED@{WIN\_\-ALPHA\_\-CHANGED}}
+\index{WIN_ALPHA_CHANGED@{WIN\_\-ALPHA\_\-CHANGED}!winkeys.h@{winkeys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define WIN\_\-ALPHA\_\-CHANGED~4}\label{winkeys_8h_a3}
+
+
+Event number for changes in the alpha key's state. 
+
+An alpha changed event occurs whenever the state of the alpha key is changed. This is a high-level event involving the interpretation of keys. It only operates for key events that were not consumed by handlers for {\bf WIN\_\-KEY\_\-PRESSED}{\rm (p.\,\pageref{winkeys_8h_a0})} and {\bf WIN\_\-KEY\_\-RELEASED}{\rm (p.\,\pageref{winkeys_8h_a1})}.
+
+The event data field for this event type is one of the key state constants, {\bf WIN\_\-KEYSTATE\_\-OFF}{\rm (p.\,\pageref{winkeys_8h_a6})}, {\bf WIN\_\-KEYSTATE\_\-ON}{\rm (p.\,\pageref{winkeys_8h_a7})}, {\bf WIN\_\-KEYSTATE\_\-LOCK}{\rm (p.\,\pageref{winkeys_8h_a8})}, or {\bf WIN\_\-KEYSTATE\_\-PRESSED}{\rm (p.\,\pageref{winkeys_8h_a9})}. 
+
+Definition at line 116 of file winkeys.h.\index{winkeys.h@{winkeys.h}!WIN_KEY_PRESSED@{WIN\_\-KEY\_\-PRESSED}}
+\index{WIN_KEY_PRESSED@{WIN\_\-KEY\_\-PRESSED}!winkeys.h@{winkeys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define WIN\_\-KEY\_\-PRESSED~1}\label{winkeys_8h_a0}
+
+
+Event number for key pressed events. 
+
+A key pressed event occurs whenever the user presses any key on the keyboard.
+
+The event data field for this event type is an {\tt int} containing the key code for the key that was pressed. The key code is a constant defined in {\tt hpkeyb49.h} and beginning with the {\tt KB\_\-} prefix.
+
+\begin{Desc}
+\item[Warning:]Consuming events of this type can interfere with the operation of the shift keys. \end{Desc}
+
+
+Definition at line 65 of file winkeys.h.\index{winkeys.h@{winkeys.h}!WIN_KEY_RELEASED@{WIN\_\-KEY\_\-RELEASED}}
+\index{WIN_KEY_RELEASED@{WIN\_\-KEY\_\-RELEASED}!winkeys.h@{winkeys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define WIN\_\-KEY\_\-RELEASED~2}\label{winkeys_8h_a1}
+
+
+Event number for key released events. 
+
+A key released event occurs whenever the user releases any key on the keyboard.
+
+The event data field for this event type is an {\tt int} containing the key code for the key that was pressed. The key code is a constant defined in {\tt hpkeyb49.h} and beginning with the {\tt KB\_\-} prefix.
+
+\begin{Desc}
+\item[Warning:]Consuming events of this type can interfere with the operation of the shift keys. \end{Desc}
+
+
+Definition at line 80 of file winkeys.h.\index{winkeys.h@{winkeys.h}!WIN_KEY_TYPED@{WIN\_\-KEY\_\-TYPED}}
+\index{WIN_KEY_TYPED@{WIN\_\-KEY\_\-TYPED}!winkeys.h@{winkeys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define WIN\_\-KEY\_\-TYPED~3}\label{winkeys_8h_a2}
+
+
+Event number for key typed events. 
+
+A key typed event occurs whenever a keypress should be handled at the application level. This is a higher-level event than key pressed, and more suitable for application tasks. Key typed events are generated for key presses that were not consumed by a {\bf WIN\_\-KEY\_\-PRESSED}{\rm (p.\,\pageref{winkeys_8h_a0})} handler, and which are not shift keys. Unlike {\bf WIN\_\-KEY\_\-PRESSED}{\rm (p.\,\pageref{winkeys_8h_a0})}, the event field for this event contains semantic information like the logical shift key state and equivalent ASCII character.
+
+This event is not generated for shift keys (left shift, right shift, and alpha). To detect actions on these keys, see the {\bf WIN\_\-ALPHA\_\-CHANGED}{\rm (p.\,\pageref{winkeys_8h_a3})}, {\bf WIN\_\-LSHIFT\_\-CHANGED}{\rm (p.\,\pageref{winkeys_8h_a4})}, and {\bf WIN\_\-RSHIFT\_\-CHANGED}{\rm (p.\,\pageref{winkeys_8h_a5})} events.
+
+The event data field for this event type is a pointer to {\bf win\_\-keytyped\_\-t}{\rm (p.\,\pageref{structwin__keytyped__t})}, which contains a variety of information about the event.
+
+\begin{Desc}
+\item[See also:]{\bf win\_\-keytyped\_\-t}{\rm (p.\,\pageref{structwin__keytyped__t})} \end{Desc}
+
+
+Definition at line 102 of file winkeys.h.\index{winkeys.h@{winkeys.h}!WIN_KEYSTATE_ON@{WIN\_\-KEYSTATE\_\-ON}}
+\index{WIN_KEYSTATE_ON@{WIN\_\-KEYSTATE\_\-ON}!winkeys.h@{winkeys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define WIN\_\-KEYSTATE\_\-ON~1}\label{winkeys_8h_a7}
+
+
+Constant for a shift key that is active. 
+
+\begin{Desc}
+\item[Note:]In most cases, applications should test for {\tt shift} {\tt $>$} {\tt 0} rather that comparing the shift state against this constant. Other non-zero values, such as locked, are generally equivalent. \end{Desc}
+
+
+Definition at line 158 of file winkeys.h.\index{winkeys.h@{winkeys.h}!WIN_LSHIFT_CHANGED@{WIN\_\-LSHIFT\_\-CHANGED}}
+\index{WIN_LSHIFT_CHANGED@{WIN\_\-LSHIFT\_\-CHANGED}!winkeys.h@{winkeys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define WIN\_\-LSHIFT\_\-CHANGED~5}\label{winkeys_8h_a4}
+
+
+Event number for changes in the left shift key's state. 
+
+A left shift changed event occurs whenever the state of the left shift key is changed. This is a high-level event involving the interpretation of keys. It only operates for key events that were not consumed by handlers for {\bf WIN\_\-KEY\_\-PRESSED}{\rm (p.\,\pageref{winkeys_8h_a0})} and {\bf WIN\_\-KEY\_\-RELEASED}{\rm (p.\,\pageref{winkeys_8h_a1})}.
+
+The event data field for this event type is one of the key state constants, {\bf WIN\_\-KEYSTATE\_\-OFF}{\rm (p.\,\pageref{winkeys_8h_a6})}, {\bf WIN\_\-KEYSTATE\_\-ON}{\rm (p.\,\pageref{winkeys_8h_a7})}, or {\bf WIN\_\-KEYSTATE\_\-PRESSED}{\rm (p.\,\pageref{winkeys_8h_a9})}. (The semantics for left shift dictate that it can never be locked.) 
+
+Definition at line 130 of file winkeys.h.\index{winkeys.h@{winkeys.h}!WIN_RSHIFT_CHANGED@{WIN\_\-RSHIFT\_\-CHANGED}}
+\index{WIN_RSHIFT_CHANGED@{WIN\_\-RSHIFT\_\-CHANGED}!winkeys.h@{winkeys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define WIN\_\-RSHIFT\_\-CHANGED~6}\label{winkeys_8h_a5}
+
+
+Event number for changes in the right shift key's state. 
+
+A right shift changed event occurs whenever the state of the right shift key is changed. This is a high-level event involving the interpretation of keys. It only operates for key events that were not consumed by handlers for {\bf WIN\_\-KEY\_\-PRESSED}{\rm (p.\,\pageref{winkeys_8h_a0})} and {\bf WIN\_\-KEY\_\-RELEASED}{\rm (p.\,\pageref{winkeys_8h_a1})}.
+
+The event data field for this event type is one of the key state constants, {\bf WIN\_\-KEYSTATE\_\-OFF}{\rm (p.\,\pageref{winkeys_8h_a6})}, {\bf WIN\_\-KEYSTATE\_\-ON}{\rm (p.\,\pageref{winkeys_8h_a7})}, or {\bf WIN\_\-KEYSTATE\_\-PRESSED}{\rm (p.\,\pageref{winkeys_8h_a9})}. (The semantics for right shift dictate that it can never be locked.) 
+
+Definition at line 144 of file winkeys.h.

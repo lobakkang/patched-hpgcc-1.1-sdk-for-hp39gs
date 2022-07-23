@@ -1,0 +1,18 @@
+LCDOff.o: LCDOff.c
+LCDOn.o: LCDOn.c
+clearScreen.o: clearScreen.c ../hpgcc49.h ../hpconio.h ../hpstdlib.h \
+  ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h ../hpmath.h \
+  ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h ../syscall.h \
+  ../saturn.h
+drawBlockOR.o: drawBlockOR.c ../hpscreen.h
+drawBlockOR4bit.o: drawBlockOR4bit.c ../hpscreen.h
+drawBlockXOR.o: drawBlockXOR.c
+drawBlockXOR4bitC.o: drawBlockXOR4bitC.c ../hpscreen.h
+fillTiles.o: fillTiles.c ../hpscreen.h
+getBlock4bit.o: getBlock4bit.c ../hpscreen.h
+getLCDPointer.o: getLCDPointer.c
+getMF.o: getMF.c
+invertScreen.o: invertScreen.c
+print.o: print.c ../hpscreen.h
+setDisplayPlane.o: setDisplayPlane.c ../hpsys.h ../kos.h
+testBlock4bitC.o: testBlock4bitC.c ../hpscreen.h

@@ -1,0 +1,69 @@
+\section{gglsurface Struct Reference}
+\label{structgglsurface}\index{gglsurface@{gglsurface}}
+A surface (bitmap) that can be drawn upon using GGL.  
+
+
+{\tt \#include $<$ggl.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+int $\ast$ {\bf addr}
+\item 
+int {\bf width}
+\begin{CompactList}\small\item\em Word-aligned address of the surface buffer. \item\end{CompactList}\item 
+int {\bf x}
+\begin{CompactList}\small\item\em Width (in pixels) of the buffer. \item\end{CompactList}\item 
+int {\bf y}
+\begin{CompactList}\small\item\em Width (in pixels) of the buffer. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+A surface (bitmap) that can be drawn upon using GGL. 
+
+All GGL operations are performed on surfaces. Each surface is an instance of this data structure. The LCD screen is a surface as well. Surfaces can be copied, scrolled, etc. To create a surface, the user should allocate a memory block of enough size to accomodate the desired bitmap. The size in bytes is (width$\ast$height)/2. 
+
+
+
+Definition at line 112 of file ggl.h.
+
+\subsection{Field Documentation}
+\index{gglsurface@{gglsurface}!addr@{addr}}
+\index{addr@{addr}!gglsurface@{gglsurface}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ {\bf gglsurface::addr}}\label{structgglsurface_o0}
+
+
+
+
+Definition at line 113 of file ggl.h.\index{gglsurface@{gglsurface}!width@{width}}
+\index{width@{width}!gglsurface@{gglsurface}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf gglsurface::width}}\label{structgglsurface_o1}
+
+
+Word-aligned address of the surface buffer. 
+
+
+
+Definition at line 114 of file ggl.h.\index{gglsurface@{gglsurface}!x@{x}}
+\index{x@{x}!gglsurface@{gglsurface}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf gglsurface::x}}\label{structgglsurface_o2}
+
+
+Width (in pixels) of the buffer. 
+
+
+
+Definition at line 115 of file ggl.h.\index{gglsurface@{gglsurface}!y@{y}}
+\index{y@{y}!gglsurface@{gglsurface}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf gglsurface::y}}\label{structgglsurface_o3}
+
+
+Width (in pixels) of the buffer. 
+
+
+
+Definition at line 115 of file ggl.h.
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf ggl.h}\end{CompactItemize}

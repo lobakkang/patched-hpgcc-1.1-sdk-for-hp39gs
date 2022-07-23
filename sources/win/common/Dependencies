@@ -1,0 +1,369 @@
+_win_default_key_handler.o: _win_default_key_handler.c \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h \
+  ../../hplib/hpkeyb49.h ../../hpg/hpgraphics.h winpriv.h \
+  ../../hplib/hpgcc49.h ../../hplib/hpconio.h ../../hplib/hpctype.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../win.h ../winevent.h ../winwidget.h ../winkeys.h \
+  ../wintimer.h ../winsoftmenu.h ../wintext.h ../winprogress.h \
+  ../wincheckbox.h ../winbox.h ../winchoose.h ../winimg.h
+_win_indicator_paint.o: _win_indicator_paint.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hplib/hpkeyb49.h \
+  ../../hpg/hpgraphics.h winpriv.h ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpctype.h ../../hplib/hpmath.h \
+  ../../hplib/hpscreen.h ../../hplib/hpstdio.h ../../hplib/hpstring.h \
+  ../../hplib/hptime.h ../../hplib/syscall.h ../../hplib/saturn.h \
+  ../win.h ../winevent.h ../winwidget.h ../winkeys.h ../wintimer.h \
+  ../winsoftmenu.h ../wintext.h ../winprogress.h ../wincheckbox.h \
+  ../winbox.h ../winchoose.h ../winimg.h
+_win_key_generator.o: _win_key_generator.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hplib/hpkeyb49.h winpriv.h \
+  ../../hplib/hpgcc49.h ../../hplib/hpconio.h ../../hplib/hpctype.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+_win_push_timer.o: _win_push_timer.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+_win_repaint_generator.o: _win_repaint_generator.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hpg/hpgraphics.h winpriv.h \
+  ../../hplib/hpgcc49.h ../../hplib/hpconio.h ../../hplib/hpctype.h \
+  ../../hplib/hpkeyb49.h ../../hplib/hpmath.h ../../hplib/hpscreen.h \
+  ../../hplib/hpstdio.h ../../hplib/hpstring.h ../../hplib/hptime.h \
+  ../../hplib/syscall.h ../../hplib/saturn.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+_win_sysqueue.o: _win_sysqueue.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+_win_timer_event.o: _win_timer_event.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hplib/hpkeyb49.h winpriv.h \
+  ../../hplib/hpgcc49.h ../../hplib/hpconio.h ../../hplib/hpctype.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+_win_timer_generator.o: _win_timer_generator.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+win_add_event_handler.o: win_add_event_handler.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+win_add_timer.o: win_add_timer.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+win_add_timer_event.o: win_add_timer_event.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+win_add_widget.o: win_add_widget.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+win_event_loop.o: win_event_loop.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+win_event_quit.o: win_event_quit.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+win_focus_next.o: win_focus_next.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+win_focus_prev.o: win_focus_prev.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+win_init.o: win_init.c ../../hplib/hpstdlib.h ../../hplib/hpsys.h \
+  ../../hplib/kos.h ../../hplib/hpstdio.h winpriv.h ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstring.h \
+  ../../hplib/hptime.h ../../hplib/syscall.h ../../hplib/saturn.h \
+  ../../hpg/hpgraphics.h ../win.h ../winevent.h ../winwidget.h \
+  ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+win_post_event.o: win_post_event.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+win_register_event.o: win_register_event.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+win_remove_event_handler.o: win_remove_event_handler.c \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h \
+  ../../hplib/hpgcc49.h ../../hplib/hpconio.h ../../hplib/hpctype.h \
+  ../../hplib/hpkeyb49.h ../../hplib/hpmath.h ../../hplib/hpscreen.h \
+  ../../hplib/hpstdio.h ../../hplib/hpstring.h ../../hplib/hptime.h \
+  ../../hplib/syscall.h ../../hplib/saturn.h ../../hpg/hpgraphics.h \
+  ../win.h ../winevent.h ../winwidget.h ../winkeys.h ../wintimer.h \
+  ../winsoftmenu.h ../wintext.h ../winprogress.h ../wincheckbox.h \
+  ../winbox.h ../winchoose.h ../winimg.h
+win_remove_timer.o: win_remove_timer.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+win_remove_timer_event.o: win_remove_timer_event.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+win_remove_widget.o: win_remove_widget.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+win_repaint.o: win_repaint.c ../../hplib/hpstdlib.h ../../hplib/hpsys.h \
+  ../../hplib/kos.h winpriv.h ../../hplib/hpgcc49.h ../../hplib/hpconio.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hplib/hpmath.h \
+  ../../hplib/hpscreen.h ../../hplib/hpstdio.h ../../hplib/hpstring.h \
+  ../../hplib/hptime.h ../../hplib/syscall.h ../../hplib/saturn.h \
+  ../../hpg/hpgraphics.h ../win.h ../winevent.h ../winwidget.h \
+  ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+win_wcore_alloc.o: win_wcore_alloc.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+win_wcore_get_data.o: win_wcore_get_data.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+win_wcore_notify_focus.o: win_wcore_notify_focus.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+win_wcore_paint_base.o: win_wcore_paint_base.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+win_wcore_pref_size.o: win_wcore_pref_size.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+win_widget_destroy.o: win_widget_destroy.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+win_widget_get_colors.o: win_widget_get_colors.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+win_widget_get_font.o: win_widget_get_font.c ../../hpg/hpgraphics.h \
+  winpriv.h ../../hplib/hpgcc49.h ../../hplib/hpconio.h \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hplib/hpmath.h \
+  ../../hplib/hpscreen.h ../../hplib/hpstdio.h ../../hplib/hpstring.h \
+  ../../hplib/hptime.h ../../hplib/syscall.h ../../hplib/saturn.h \
+  ../win.h ../winevent.h ../winwidget.h ../winkeys.h ../wintimer.h \
+  ../winsoftmenu.h ../wintext.h ../winprogress.h ../wincheckbox.h \
+  ../winbox.h ../winchoose.h ../winimg.h
+win_widget_get_location.o: win_widget_get_location.c \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h \
+  ../../hplib/hpgcc49.h ../../hplib/hpconio.h ../../hplib/hpctype.h \
+  ../../hplib/hpkeyb49.h ../../hplib/hpmath.h ../../hplib/hpscreen.h \
+  ../../hplib/hpstdio.h ../../hplib/hpstring.h ../../hplib/hptime.h \
+  ../../hplib/syscall.h ../../hplib/saturn.h ../../hpg/hpgraphics.h \
+  ../win.h ../winevent.h ../winwidget.h ../winkeys.h ../wintimer.h \
+  ../winsoftmenu.h ../wintext.h ../winprogress.h ../wincheckbox.h \
+  ../winbox.h ../winchoose.h ../winimg.h
+win_widget_get_size.o: win_widget_get_size.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+win_widget_has_focus.o: win_widget_has_focus.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+win_widget_pack.o: win_widget_pack.c winpriv.h ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpstdlib.h ../../hplib/hpsys.h \
+  ../../hplib/kos.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+win_widget_set_colors.o: win_widget_set_colors.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+win_widget_set_font.o: win_widget_set_font.c ../../hpg/hpgraphics.h \
+  winpriv.h ../../hplib/hpgcc49.h ../../hplib/hpconio.h \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hplib/hpmath.h \
+  ../../hplib/hpscreen.h ../../hplib/hpstdio.h ../../hplib/hpstring.h \
+  ../../hplib/hptime.h ../../hplib/syscall.h ../../hplib/saturn.h \
+  ../win.h ../winevent.h ../winwidget.h ../winkeys.h ../wintimer.h \
+  ../winsoftmenu.h ../wintext.h ../winprogress.h ../wincheckbox.h \
+  ../winbox.h ../winchoose.h ../winimg.h
+win_widget_set_location.o: win_widget_set_location.c \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h \
+  ../../hplib/hpgcc49.h ../../hplib/hpconio.h ../../hplib/hpctype.h \
+  ../../hplib/hpkeyb49.h ../../hplib/hpmath.h ../../hplib/hpscreen.h \
+  ../../hplib/hpstdio.h ../../hplib/hpstring.h ../../hplib/hptime.h \
+  ../../hplib/syscall.h ../../hplib/saturn.h ../../hpg/hpgraphics.h \
+  ../win.h ../winevent.h ../winwidget.h ../winkeys.h ../wintimer.h \
+  ../winsoftmenu.h ../wintext.h ../winprogress.h ../wincheckbox.h \
+  ../winbox.h ../winchoose.h ../winimg.h
+win_widget_set_size.o: win_widget_set_size.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h ../../hplib/hpgcc49.h \
+  ../../hplib/hpconio.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hplib/hpmath.h ../../hplib/hpscreen.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hptime.h ../../hplib/syscall.h \
+  ../../hplib/saturn.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h
+win_widget_set_transparent.o: win_widget_set_transparent.c \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h winpriv.h \
+  ../../hplib/hpgcc49.h ../../hplib/hpconio.h ../../hplib/hpctype.h \
+  ../../hplib/hpkeyb49.h ../../hplib/hpmath.h ../../hplib/hpscreen.h \
+  ../../hplib/hpstdio.h ../../hplib/hpstring.h ../../hplib/hptime.h \
+  ../../hplib/syscall.h ../../hplib/saturn.h ../../hpg/hpgraphics.h \
+  ../win.h ../winevent.h ../winwidget.h ../winkeys.h ../wintimer.h \
+  ../winsoftmenu.h ../wintext.h ../winprogress.h ../wincheckbox.h \
+  ../winbox.h ../winchoose.h ../winimg.h

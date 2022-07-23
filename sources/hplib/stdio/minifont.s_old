@@ -1,0 +1,1079 @@
+
+@@& ****************************************************************************
+@@& Based on code by Ingo Blank, et al.
+@@& Copyright (C) 2004 The HP-GCC Development Team
+@@&
+@@& ****************************************************************************
+@@&
+@@&
+@@& This file is part of HP-GCC.
+@@&
+@@& HP-GCC is free software; you can redistribute it and/or modify
+@@& it under the terms of the GNU General Public License as published by
+@@& the Free Software Foundation; either version 2, or (at your option)
+@@& any later version.
+@@& 
+@@& HP-GCC is distributed in the hope that it will be useful,
+@@& but WITHOUT ANY WARRANTY; without even the implied warranty of
+@@& MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+@@& GNU General Public License for more details.
+@@& 
+@@& You should have received a copy of the GNU General Public License
+@@& along with HP-GCC; see the file COPYING. 
+@@&
+@@& As a special exception, you may use this file as part of a free software
+@@& library without restriction.  Specifically, if other files instantiate
+@@& templates or use macros or inline functions from this file, or you compile
+@@& this file and link it with other files to produce an executable, this
+@@& file does not by itself cause the resulting executable to be covered by
+@@& the GNU General Public License.  This exception does not however
+@@& invalidate any other reasons why the executable file might be covered by
+@@& the GNU General Public License.
+@@&
+@@& ****************************************************************************
+
+
+@ This file is just the Minifont, in a seperate filer for better size.
+@ changed by Al, 11/10/04
+
+	.global	_get_minifont
+
+
+
+_get_minifont:
+	adr	r0,minifont
+	mov	pc,lr
+
+	.global minifont
+	
+minifont:
+	@ ASCII # 0
+	.byte	0x70
+	.byte	0x77
+	.byte	0x00
+	@ ASCII # 1
+	.byte	0x70
+	.byte	0x77
+	.byte	0x00
+	@ ASCII # 2
+	.byte	0x70
+	.byte	0x77
+	.byte	0x00
+	@ ASCII # 3
+	.byte	0x70
+	.byte	0x77
+	.byte	0x00
+	@ ASCII # 4
+	.byte	0x70
+	.byte	0x77
+	.byte	0x00
+	@ ASCII # 5
+	.byte	0x70
+	.byte	0x77
+	.byte	0x00
+	@ ASCII # 6
+	.byte	0x70
+	.byte	0x77
+	.byte	0x00
+	@ ASCII # 7
+	.byte	0x70
+	.byte	0x77
+	.byte	0x00
+	@ ASCII # 8
+	.byte	0x70
+	.byte	0x77
+	.byte	0x00
+	@ ASCII # 9
+	.byte	0x70
+	.byte	0x77
+	.byte	0x00
+	@ ASCII # 10
+	.byte	0x70
+	.byte	0x77
+	.byte	0x00
+	@ ASCII # 11
+	.byte	0x70
+	.byte	0x77
+	.byte	0x00
+	@ ASCII # 12
+	.byte	0x70
+	.byte	0x77
+	.byte	0x00
+	@ ASCII # 13
+	.byte	0x70
+	.byte	0x77
+	.byte	0x00
+	@ ASCII # 14
+	.byte	0x70
+	.byte	0x77
+	.byte	0x00
+	@ ASCII # 15
+	.byte	0x70
+	.byte	0x77
+	.byte	0x00
+	@ ASCII # 16
+	.byte	0x70
+	.byte	0x77
+	.byte	0x00
+	@ ASCII # 17
+	.byte	0x70
+	.byte	0x77
+	.byte	0x00
+	@ ASCII # 18
+	.byte	0x70
+	.byte	0x77
+	.byte	0x00
+	@ ASCII # 19
+	.byte	0x70
+	.byte	0x77
+	.byte	0x00
+	@ ASCII # 20
+	.byte	0x70
+	.byte	0x77
+	.byte	0x00
+	@ ASCII # 21
+	.byte	0x70
+	.byte	0x77
+	.byte	0x00
+	@ ASCII # 22
+	.byte	0x70
+	.byte	0x77
+	.byte	0x00
+	@ ASCII # 23
+	.byte	0x70
+	.byte	0x77
+	.byte	0x00
+	@ ASCII # 24
+	.byte	0x70
+	.byte	0x77
+	.byte	0x00
+	@ ASCII # 25
+	.byte	0x70
+	.byte	0x77
+	.byte	0x00
+	@ ASCII # 26
+	.byte	0x70
+	.byte	0x77
+	.byte	0x00
+	@ ASCII # 27
+	.byte	0x70
+	.byte	0x77
+	.byte	0x00
+	@ ASCII # 28
+	.byte	0x64
+	.byte	0x67
+	.byte	0x04
+	@ ASCII # 29
+	.byte	0x77
+	.byte	0x77
+	.byte	0x07
+	@ ASCII # 30
+	.byte	0x00
+	.byte	0x00
+	.byte	0x05
+	@ ASCII # 31
+	.byte	0x00
+	.byte	0x00
+	.byte	0x05
+	@ ASCII # 32
+	.byte	0x00
+	.byte	0x00
+	.byte	0x00
+	@ ASCII # 33 -> '!'
+	.byte	0x22
+	.byte	0x02
+	.byte	0x02
+	@ ASCII # 34 -> '"'
+	.byte	0x55
+	.byte	0x00
+	.byte	0x00
+	@ ASCII # 35 -> '#'
+	.byte	0x72
+	.byte	0x72
+	.byte	0x02
+	@ ASCII # 36 -> '$'
+	.byte	0x36
+	.byte	0x62
+	.byte	0x03
+	@ ASCII # 37 -> '%'
+	.byte	0x45
+	.byte	0x12
+	.byte	0x05
+	@ ASCII # 38 -> '&'
+	.byte	0x52
+	.byte	0x5A
+	.byte	0x0B
+	@ ASCII # 39 -> '''
+	.byte	0x22
+	.byte	0x00
+	.byte	0x00
+	@ ASCII # 40 -> '('
+	.byte	0x24
+	.byte	0x22
+	.byte	0x04
+	@ ASCII # 41 -> ')'
+	.byte	0x21
+	.byte	0x22
+	.byte	0x01
+	@ ASCII # 42 -> '*'
+	.byte	0x50
+	.byte	0x52
+	.byte	0x00
+	@ ASCII # 43 -> '+'
+	.byte	0x20
+	.byte	0x27
+	.byte	0x00
+	@ ASCII # 44 -> ','
+	.byte	0x00
+	.byte	0x20
+	.byte	0x12
+	@ ASCII # 45 -> '-'
+	.byte	0x00
+	.byte	0x07
+	.byte	0x00
+	@ ASCII # 46 -> '.'
+	.byte	0x00
+	.byte	0x00
+	.byte	0x02
+	@ ASCII # 47 -> '/'
+	.byte	0x40
+	.byte	0x12
+	.byte	0x00
+	@ ASCII # 48 -> '0'
+	.byte	0x56
+	.byte	0x55
+	.byte	0x03
+	@ ASCII # 49 -> '1'
+	.byte	0x32
+	.byte	0x22
+	.byte	0x07
+	@ ASCII # 50 -> '2'
+	.byte	0x47
+	.byte	0x16
+	.byte	0x07
+	@ ASCII # 51 -> '3'
+	.byte	0x47
+	.byte	0x42
+	.byte	0x03
+	@ ASCII # 52 -> '4'
+	.byte	0x55
+	.byte	0x47
+	.byte	0x04
+	@ ASCII # 53 -> '5'
+	.byte	0x17
+	.byte	0x47
+	.byte	0x03
+	@ ASCII # 54 -> '6'
+	.byte	0x16
+	.byte	0x53
+	.byte	0x06
+	@ ASCII # 55 -> '7'
+	.byte	0x47
+	.byte	0x12
+	.byte	0x01
+	@ ASCII # 56 -> '8'
+	.byte	0x56
+	.byte	0x52
+	.byte	0x03
+	@ ASCII # 57 -> '9'
+	.byte	0x53
+	.byte	0x46
+	.byte	0x03
+	@ ASCII # 58 -> ':'
+	.byte	0x20
+	.byte	0x20
+	.byte	0x00
+	@ ASCII # 59 -> ';'
+	.byte	0x20
+	.byte	0x20
+	.byte	0x12
+	@ ASCII # 60 -> '<'
+	.byte	0x24
+	.byte	0x21
+	.byte	0x04
+	@ ASCII # 61 -> '='
+	.byte	0x70
+	.byte	0x70
+	.byte	0x00
+	@ ASCII # 62 -> '>'
+	.byte	0x21
+	.byte	0x24
+	.byte	0x01
+	@ ASCII # 63 -> '?'
+	.byte	0x43
+	.byte	0x02
+	.byte	0x02
+	@ ASCII # 64 -> '@'
+	.byte	0x72
+	.byte	0x13
+	.byte	0x06
+	@ ASCII # 65 -> 'A'
+	.byte	0x52
+	.byte	0x57
+	.byte	0x05
+	@ ASCII # 66 -> 'B'
+	.byte	0x53
+	.byte	0x53
+	.byte	0x03
+	@ ASCII # 67 -> 'C'
+	.byte	0x16
+	.byte	0x11
+	.byte	0x06
+	@ ASCII # 68 -> 'D'
+	.byte	0x53
+	.byte	0x55
+	.byte	0x03
+	@ ASCII # 69 -> 'E'
+	.byte	0x17
+	.byte	0x13
+	.byte	0x07
+	@ ASCII # 70 -> 'F'
+	.byte	0x17
+	.byte	0x13
+	.byte	0x01
+	@ ASCII # 71 -> 'G'
+	.byte	0x16
+	.byte	0x55
+	.byte	0x06
+	@ ASCII # 72 -> 'H'
+	.byte	0x55
+	.byte	0x57
+	.byte	0x05
+	@ ASCII # 73 -> 'I'
+	.byte	0x27
+	.byte	0x22
+	.byte	0x07
+	@ ASCII # 74 -> 'J'
+	.byte	0x44
+	.byte	0x54
+	.byte	0x06
+	@ ASCII # 75 -> 'K'
+	.byte	0x55
+	.byte	0x53
+	.byte	0x05
+	@ ASCII # 76 -> 'L'
+	.byte	0x11
+	.byte	0x11
+	.byte	0x07
+	@ ASCII # 77 -> 'M'
+	.byte	0x75
+	.byte	0x57
+	.byte	0x05
+	@ ASCII # 78 -> 'N'
+	.byte	0x53
+	.byte	0x55
+	.byte	0x05
+	@ ASCII # 79 -> 'O'
+	.byte	0x52
+	.byte	0x55
+	.byte	0x02
+	@ ASCII # 80 -> 'P'
+	.byte	0x53
+	.byte	0x13
+	.byte	0x01
+	@ ASCII # 81 -> 'Q'
+	.byte	0x52
+	.byte	0x35
+	.byte	0x06
+	@ ASCII # 82 -> 'R'
+	.byte	0x53
+	.byte	0x53
+	.byte	0x05
+	@ ASCII # 83 -> 'S'
+	.byte	0x16
+	.byte	0x42
+	.byte	0x03
+	@ ASCII # 84 -> 'T'
+	.byte	0x27
+	.byte	0x22
+	.byte	0x02
+	@ ASCII # 85 -> 'U'
+	.byte	0x55
+	.byte	0x55
+	.byte	0x07
+	@ ASCII # 86 -> 'V'
+	.byte	0x55
+	.byte	0x25
+	.byte	0x02
+	@ ASCII # 87 -> 'W'
+	.byte	0x55
+	.byte	0x77
+	.byte	0x05
+	@ ASCII # 88 -> 'X'
+	.byte	0x55
+	.byte	0x52
+	.byte	0x05
+	@ ASCII # 89 -> 'Y'
+	.byte	0x55
+	.byte	0x22
+	.byte	0x02
+	@ ASCII # 90 -> 'Z'
+	.byte	0x47
+	.byte	0x12
+	.byte	0x07
+	@ ASCII # 91 -> '['
+	.byte	0x26
+	.byte	0x22
+	.byte	0x06
+	@ ASCII # 92 -> '\'
+	.byte	0x10
+	.byte	0x42
+	.byte	0x00
+	@ ASCII # 93 -> ']'
+	.byte	0x23
+	.byte	0x22
+	.byte	0x03
+	@ ASCII # 94 -> '^'
+	.byte	0x52
+	.byte	0x00
+	.byte	0x00
+	@ ASCII # 95 -> '_'
+	.byte	0x00
+	.byte	0x00
+	.byte	0x07
+	@ ASCII # 96 -> '`'
+	.byte	0x42
+	.byte	0x00
+	.byte	0x00
+	@ ASCII # 97 -> 'a'
+	.byte	0x60
+	.byte	0x55
+	.byte	0x06
+	@ ASCII # 98 -> 'b'
+	.byte	0x31
+	.byte	0x55
+	.byte	0x03
+	@ ASCII # 99 -> 'c'
+	.byte	0x60
+	.byte	0x11
+	.byte	0x06
+	@ ASCII # 100 -> 'd'
+	.byte	0x64
+	.byte	0x55
+	.byte	0x06
+	@ ASCII # 101 -> 'e'
+	.byte	0x60
+	.byte	0x35
+	.byte	0x06
+	@ ASCII # 102 -> 'f'
+	.byte	0x16
+	.byte	0x13
+	.byte	0x01
+	@ ASCII # 103 -> 'g'
+	.byte	0x60
+	.byte	0x65
+	.byte	0x34
+	@ ASCII # 104 -> 'h'
+	.byte	0x31
+	.byte	0x55
+	.byte	0x05
+	@ ASCII # 105 -> 'i'
+	.byte	0x02
+	.byte	0x23
+	.byte	0x07
+	@ ASCII # 106 -> 'j'
+	.byte	0x04
+	.byte	0x44
+	.byte	0x25
+	@ ASCII # 107 -> 'k'
+	.byte	0x51
+	.byte	0x53
+	.byte	0x05
+	@ ASCII # 108 -> 'l'
+	.byte	0x22
+	.byte	0x22
+	.byte	0x04
+	@ ASCII # 109 -> 'm'
+	.byte	0x50
+	.byte	0x57
+	.byte	0x05
+	@ ASCII # 110 -> 'n'
+	.byte	0x30
+	.byte	0x55
+	.byte	0x05
+	@ ASCII # 111 -> 'o'
+	.byte	0x20
+	.byte	0x55
+	.byte	0x02
+	@ ASCII # 112 -> 'p'
+	.byte	0x30
+	.byte	0x55
+	.byte	0x13
+	@ ASCII # 113 -> 'q'
+	.byte	0x60
+	.byte	0x55
+	.byte	0x46
+	@ ASCII # 114 -> 'r'
+	.byte	0x60
+	.byte	0x11
+	.byte	0x01
+	@ ASCII # 115 -> 's'
+	.byte	0x60
+	.byte	0x43
+	.byte	0x03
+	@ ASCII # 116 -> 't'
+	.byte	0x72
+	.byte	0x22
+	.byte	0x04
+	@ ASCII # 117 -> 'u'
+	.byte	0x50
+	.byte	0x55
+	.byte	0x06
+	@ ASCII # 118 -> 'v'
+	.byte	0x50
+	.byte	0x55
+	.byte	0x02
+	@ ASCII # 119 -> 'w'
+	.byte	0x50
+	.byte	0x75
+	.byte	0x05
+	@ ASCII # 120 -> 'x'
+	.byte	0x50
+	.byte	0x22
+	.byte	0x05
+	@ ASCII # 121 -> 'y'
+	.byte	0x50
+	.byte	0x65
+	.byte	0x34
+	@ ASCII # 122 -> 'z'
+	.byte	0x70
+	.byte	0x24
+	.byte	0x07
+	@ ASCII # 123 -> '{'
+	.byte	0x26
+	.byte	0x21
+	.byte	0x06
+	@ ASCII # 124 -> '|'
+	.byte	0x22
+	.byte	0x22
+	.byte	0x02
+	@ ASCII # 125 -> '}'
+	.byte	0x23
+	.byte	0x24
+	.byte	0x03
+	@ ASCII # 126 -> '~'
+	.byte	0x00
+	.byte	0x5A
+	.byte	0x00
+	@ ASCII # 127 -> ''
+	.byte	0xA5
+	.byte	0xA5
+	.byte	0x05
+	@ ASCII # 128
+	.byte	0x40
+	.byte	0x52
+	.byte	0x07
+	@ ASCII # 129
+	.byte	0x07
+	.byte	0x25
+	.byte	0x05
+	@ ASCII # 130
+	.byte	0x70
+	.byte	0x25
+	.byte	0x00
+	@ ASCII # 131
+	.byte	0x26
+	.byte	0x32
+	.byte	0x02
+	@ ASCII # 132
+	.byte	0x24
+	.byte	0x22
+	.byte	0x01
+	@ ASCII # 133
+	.byte	0x17
+	.byte	0x12
+	.byte	0x07
+	@ ASCII # 134
+	.byte	0x31
+	.byte	0x37
+	.byte	0x01
+	@ ASCII # 135
+	.byte	0x70
+	.byte	0x54
+	.byte	0x05
+	@ ASCII # 136
+	.byte	0x42
+	.byte	0x56
+	.byte	0x02
+	@ ASCII # 137
+	.byte	0x24
+	.byte	0x07
+	.byte	0x07
+	@ ASCII # 138
+	.byte	0x21
+	.byte	0x07
+	.byte	0x07
+	@ ASCII # 139
+	.byte	0x74
+	.byte	0x72
+	.byte	0x01
+	@ ASCII # 140
+	.byte	0xA0
+	.byte	0x55
+	.byte	0x0A
+	@ ASCII # 141
+	.byte	0x40
+	.byte	0x4F
+	.byte	0x00
+	@ ASCII # 142
+	.byte	0x20
+	.byte	0x2F
+	.byte	0x00
+	@ ASCII # 143
+	.byte	0x20
+	.byte	0x72
+	.byte	0x02
+	@ ASCII # 144
+	.byte	0x72
+	.byte	0x22
+	.byte	0x00
+	@ ASCII # 145
+	.byte	0x40
+	.byte	0x65
+	.byte	0x22
+	@ ASCII # 146
+	.byte	0x12
+	.byte	0x52
+	.byte	0x02
+	@ ASCII # 147
+	.byte	0x16
+	.byte	0x17
+	.byte	0x06
+	@ ASCII # 148
+	.byte	0x50
+	.byte	0xAA
+	.byte	0x88
+	@ ASCII # 149
+	.byte	0x52
+	.byte	0x57
+	.byte	0x02
+	@ ASCII # 150
+	.byte	0x10
+	.byte	0x52
+	.byte	0x05
+	@ ASCII # 151
+	.byte	0x52
+	.byte	0x35
+	.byte	0x01
+	@ ASCII # 152
+	.byte	0xE0
+	.byte	0x55
+	.byte	0x02
+	@ ASCII # 153
+	.byte	0x70
+	.byte	0x22
+	.byte	0x04
+	@ ASCII # 154
+	.byte	0x90
+	.byte	0xFB
+	.byte	0x06
+	@ ASCII # 155
+	.byte	0x20
+	.byte	0x75
+	.byte	0x00
+	@ ASCII # 156
+	.byte	0x4F
+	.byte	0x55
+	.byte	0x05
+	@ ASCII # 157
+	.byte	0x52
+	.byte	0x25
+	.byte	0x05
+	@ ASCII # 158
+	.byte	0x70
+	.byte	0x77
+	.byte	0x00
+	@ ASCII # 159
+	.byte	0x50
+	.byte	0xA9
+	.byte	0x00
+	@ ASCII # 160
+	.byte	0x16
+	.byte	0x13
+	.byte	0x06
+	@ ASCII # 161
+	.byte	0x02
+	.byte	0x22
+	.byte	0x02
+	@ ASCII # 162
+	.byte	0x72
+	.byte	0x71
+	.byte	0x02
+	@ ASCII # 163
+	.byte	0x26
+	.byte	0x27
+	.byte	0x07
+	@ ASCII # 164
+	.byte	0x90
+	.byte	0x66
+	.byte	0x09
+	@ ASCII # 165
+	.byte	0x55
+	.byte	0x72
+	.byte	0x02
+	@ ASCII # 166
+	.byte	0x22
+	.byte	0x20
+	.byte	0x02
+	@ ASCII # 167
+	.byte	0x16
+	.byte	0x67
+	.byte	0x03
+	@ ASCII # 168
+	.byte	0x05
+	.byte	0x00
+	.byte	0x00
+	@ ASCII # 169
+	.byte	0x60
+	.byte	0x62
+	.byte	0x00
+	@ ASCII # 170
+	.byte	0x56
+	.byte	0xF6
+	.byte	0x00
+	@ ASCII # 171
+	.byte	0xA0
+	.byte	0xA5
+	.byte	0x00
+	@ ASCII # 172
+	.byte	0x00
+	.byte	0x47
+	.byte	0x00
+	@ ASCII # 173
+	.byte	0x00
+	.byte	0x07
+	.byte	0x00
+	@ ASCII # 174
+	.byte	0x53
+	.byte	0x53
+	.byte	0x00
+	@ ASCII # 175
+	.byte	0x07
+	.byte	0x00
+	.byte	0x00
+	@ ASCII # 176
+	.byte	0x57
+	.byte	0x07
+	.byte	0x00
+	@ ASCII # 177
+	.byte	0x20
+	.byte	0x27
+	.byte	0x07
+	@ ASCII # 178
+	.byte	0x21
+	.byte	0x31
+	.byte	0x00
+	@ ASCII # 179
+	.byte	0x23
+	.byte	0x23
+	.byte	0x03
+	@ ASCII # 180
+	.byte	0x12
+	.byte	0x00
+	.byte	0x00
+	@ ASCII # 181
+	.byte	0x50
+	.byte	0x75
+	.byte	0x09
+	@ ASCII # 182
+	.byte	0xC7
+	.byte	0x5D
+	.byte	0x05
+	@ ASCII # 183
+	.byte	0x00
+	.byte	0x02
+	.byte	0x00
+	@ ASCII # 184
+	.byte	0x00
+	.byte	0x20
+	.byte	0x34
+	@ ASCII # 185
+	.byte	0x23
+	.byte	0x07
+	.byte	0x00
+	@ ASCII # 186
+	.byte	0x52
+	.byte	0x02
+	.byte	0x00
+	@ ASCII # 187
+	.byte	0x50
+	.byte	0x5A
+	.byte	0x00
+	@ ASCII # 188
+	.byte	0x91
+	.byte	0xED
+	.byte	0x08
+	@ ASCII # 189
+	.byte	0x51
+	.byte	0x49
+	.byte	0x0E
+	@ ASCII # 190
+	.byte	0xA3
+	.byte	0xED
+	.byte	0x0B
+	@ ASCII # 191
+	.byte	0x02
+	.byte	0x12
+	.byte	0x06
+	@ ASCII # 192
+	.byte	0x21
+	.byte	0x75
+	.byte	0x05
+	@ ASCII # 193
+	.byte	0x24
+	.byte	0x75
+	.byte	0x05
+	@ ASCII # 194
+	.byte	0x72
+	.byte	0x75
+	.byte	0x05
+	@ ASCII # 195
+	.byte	0x7A
+	.byte	0x75
+	.byte	0x05
+	@ ASCII # 196
+	.byte	0x25
+	.byte	0x75
+	.byte	0x05
+	@ ASCII # 197
+	.byte	0x22
+	.byte	0x75
+	.byte	0x05
+	@ ASCII # 198
+	.byte	0x5E
+	.byte	0x5F
+	.byte	0x0D
+	@ ASCII # 199
+	.byte	0x16
+	.byte	0x11
+	.byte	0x36
+	@ ASCII # 200
+	.byte	0x71
+	.byte	0x13
+	.byte	0x07
+	@ ASCII # 201
+	.byte	0x74
+	.byte	0x13
+	.byte	0x07
+	@ ASCII # 202
+	.byte	0x72
+	.byte	0x13
+	.byte	0x07
+	@ ASCII # 203
+	.byte	0x75
+	.byte	0x13
+	.byte	0x07
+	@ ASCII # 204
+	.byte	0x71
+	.byte	0x22
+	.byte	0x07
+	@ ASCII # 205
+	.byte	0x74
+	.byte	0x22
+	.byte	0x07
+	@ ASCII # 206
+	.byte	0x72
+	.byte	0x22
+	.byte	0x07
+	@ ASCII # 207
+	.byte	0x75
+	.byte	0x22
+	.byte	0x07
+	@ ASCII # 208
+	.byte	0xA6
+	.byte	0xAB
+	.byte	0x06
+	@ ASCII # 209
+	.byte	0x36
+	.byte	0x55
+	.byte	0x05
+	@ ASCII # 210
+	.byte	0x21
+	.byte	0x55
+	.byte	0x02
+	@ ASCII # 211
+	.byte	0x24
+	.byte	0x55
+	.byte	0x02
+	@ ASCII # 212
+	.byte	0x72
+	.byte	0x55
+	.byte	0x02
+	@ ASCII # 213
+	.byte	0x7A
+	.byte	0x55
+	.byte	0x02
+	@ ASCII # 214
+	.byte	0x25
+	.byte	0x55
+	.byte	0x02
+	@ ASCII # 215
+	.byte	0x50
+	.byte	0x52
+	.byte	0x00
+	@ ASCII # 216
+	.byte	0x74
+	.byte	0x75
+	.byte	0x01
+	@ ASCII # 217
+	.byte	0x21
+	.byte	0x55
+	.byte	0x07
+	@ ASCII # 218
+	.byte	0x24
+	.byte	0x55
+	.byte	0x07
+	@ ASCII # 219
+	.byte	0x52
+	.byte	0x50
+	.byte	0x07
+	@ ASCII # 220
+	.byte	0x05
+	.byte	0x55
+	.byte	0x07
+	@ ASCII # 221
+	.byte	0x24
+	.byte	0x75
+	.byte	0x02
+	@ ASCII # 222
+	.byte	0x31
+	.byte	0x35
+	.byte	0x01
+	@ ASCII # 223
+	.byte	0x52
+	.byte	0x53
+	.byte	0x13
+	@ ASCII # 224
+	.byte	0x21
+	.byte	0x56
+	.byte	0x06
+	@ ASCII # 225
+	.byte	0x12
+	.byte	0x56
+	.byte	0x06
+	@ ASCII # 226
+	.byte	0x52
+	.byte	0x56
+	.byte	0x06
+	@ ASCII # 227
+	.byte	0x5A
+	.byte	0x56
+	.byte	0x06
+	@ ASCII # 228
+	.byte	0x05
+	.byte	0x56
+	.byte	0x06
+	@ ASCII # 229
+	.byte	0x02
+	.byte	0x56
+	.byte	0x06
+	@ ASCII # 230
+	.byte	0xE0
+	.byte	0x5D
+	.byte	0x0E
+	@ ASCII # 231
+	.byte	0x60
+	.byte	0x11
+	.byte	0x36
+	@ ASCII # 232
+	.byte	0x61
+	.byte	0x35
+	.byte	0x06
+	@ ASCII # 233
+	.byte	0x64
+	.byte	0x35
+	.byte	0x06
+	@ ASCII # 234
+	.byte	0x72
+	.byte	0x35
+	.byte	0x06
+	@ ASCII # 235
+	.byte	0x65
+	.byte	0x35
+	.byte	0x06
+	@ ASCII # 236
+	.byte	0x42
+	.byte	0x23
+	.byte	0x07
+	@ ASCII # 237
+	.byte	0x24
+	.byte	0x23
+	.byte	0x07
+	@ ASCII # 238
+	.byte	0x52
+	.byte	0x23
+	.byte	0x07
+	@ ASCII # 239
+	.byte	0x05
+	.byte	0x23
+	.byte	0x07
+	@ ASCII # 240
+	.byte	0x21
+	.byte	0x52
+	.byte	0x02
+	@ ASCII # 241
+	.byte	0x5A
+	.byte	0x53
+	.byte	0x05
+	@ ASCII # 242
+	.byte	0x42
+	.byte	0x52
+	.byte	0x02
+	@ ASCII # 243
+	.byte	0x12
+	.byte	0x52
+	.byte	0x02
+	@ ASCII # 244
+	.byte	0x52
+	.byte	0x52
+	.byte	0x02
+	@ ASCII # 245
+	.byte	0x5A
+	.byte	0x52
+	.byte	0x02
+	@ ASCII # 246
+	.byte	0x05
+	.byte	0x52
+	.byte	0x02
+	@ ASCII # 247
+	.byte	0x02
+	.byte	0x07
+	.byte	0x02
+	@ ASCII # 248
+	.byte	0x68
+	.byte	0x75
+	.byte	0x01
+	@ ASCII # 249
+	.byte	0x21
+	.byte	0x50
+	.byte	0x06
+	@ ASCII # 250
+	.byte	0x24
+	.byte	0x50
+	.byte	0x06
+	@ ASCII # 251
+	.byte	0x52
+	.byte	0x50
+	.byte	0x06
+	@ ASCII # 252
+	.byte	0x05
+	.byte	0x55
+	.byte	0x06
+	@ ASCII # 253
+	.byte	0x24
+	.byte	0x65
+	.byte	0x34
+	@ ASCII # 254
+	.byte	0x71
+	.byte	0x75
+	.byte	0x01
+	@ ASCII # 255
+	.byte	0x00
+	.byte	0x00
+	.byte	0x00
+
+	
+	
+		
+
+

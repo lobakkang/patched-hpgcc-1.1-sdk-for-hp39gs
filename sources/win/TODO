@@ -1,0 +1,39 @@
+General:
+- audit all calls to malloc() to see if they check for NULL return
+- audit include files, and eliminate internal includes of win.h
+
+Widget Framework:
+- standard widget borders
+- widget scrolling framework
+- read gui layout from resource file ??? gui editor ???
+
+Key Handling:
+- cancel alpha-lock upon focus change event
+- key debouncing
+- focused widget gets to control anunciator behavior???
+- auto-repeat for WIN_KEY_TYPED events ???
+
+Box Widget:
+- cell spacing for box widget
+- colspan and rowspan for box widget
+
+Choose Widget:
+- popup box tied in to soft menu item
+
+Text Widget:
+- horizontal scrolling for text widgets
+- multiline capability for text widget (with scrolling)
+
+Soft Menu Widget:
+- outline-style soft menu items (separate outline color from bg_color)
+- optionally allow different soft menus (or labels?) per shift plane
+- automatic soft menu submenus
+- double-click actions for menus ???
+
+Checkbox Widget:
+- radio button groups for checkbox widget
+- Make check-mark appear in soft menu tie-in
+
+New Widgets and Features:
+- stdout redirection widget ???
+- background tasks with longjmp/setjmp ??? (perhaps not with event queue?)

@@ -1,0 +1,48 @@
+win_softmenu_add_item.o: win_softmenu_add_item.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hplib/hpstring.h \
+  ../../hplib/hpctype.h ../win.h ../winevent.h ../winwidget.h \
+  ../../hpg/hpgraphics.h ../winkeys.h ../wintimer.h ../winsoftmenu.h \
+  ../wintext.h ../winprogress.h ../wincheckbox.h ../winbox.h \
+  ../winchoose.h ../winimg.h ../wincore.h softmenupriv.h
+win_softmenu_delete_item.o: win_softmenu_delete_item.c \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h \
+  ../../hplib/hpstring.h ../../hplib/hpctype.h ../win.h ../winevent.h \
+  ../winwidget.h ../../hpg/hpgraphics.h ../winkeys.h ../wintimer.h \
+  ../winsoftmenu.h ../wintext.h ../winprogress.h ../wincheckbox.h \
+  ../winbox.h ../winchoose.h ../winimg.h ../wincore.h softmenupriv.h
+win_softmenu_insert_item.o: win_softmenu_insert_item.c \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h \
+  ../../hplib/hpstring.h ../../hplib/hpctype.h ../win.h ../winevent.h \
+  ../winwidget.h ../../hpg/hpgraphics.h ../winkeys.h ../wintimer.h \
+  ../winsoftmenu.h ../wintext.h ../winprogress.h ../wincheckbox.h \
+  ../winbox.h ../winchoose.h ../winimg.h ../wincore.h softmenupriv.h
+win_softmenu_new.o: win_softmenu_new.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hplib/hpstring.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hpg/hpgraphics.h \
+  ../win.h ../winevent.h ../winwidget.h ../winkeys.h ../wintimer.h \
+  ../winsoftmenu.h ../wintext.h ../winprogress.h ../wincheckbox.h \
+  ../winbox.h ../winchoose.h ../winimg.h ../wincore.h softmenupriv.h
+win_softmenu_set_colors.o: win_softmenu_set_colors.c \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h ../win.h \
+  ../winevent.h ../winwidget.h ../../hpg/hpgraphics.h ../winkeys.h \
+  ../wintimer.h ../winsoftmenu.h ../wintext.h ../winprogress.h \
+  ../wincheckbox.h ../winbox.h ../winchoose.h ../winimg.h ../wincore.h \
+  softmenupriv.h
+win_softmenu_set_disable_colors.o: win_softmenu_set_disable_colors.c \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h ../win.h \
+  ../winevent.h ../winwidget.h ../../hpg/hpgraphics.h ../winkeys.h \
+  ../wintimer.h ../winsoftmenu.h ../wintext.h ../winprogress.h \
+  ../wincheckbox.h ../winbox.h ../winchoose.h ../winimg.h ../wincore.h \
+  softmenupriv.h
+win_softmenu_set_enabled.o: win_softmenu_set_enabled.c \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h ../win.h \
+  ../winevent.h ../winwidget.h ../../hpg/hpgraphics.h ../winkeys.h \
+  ../wintimer.h ../winsoftmenu.h ../wintext.h ../winprogress.h \
+  ../wincheckbox.h ../winbox.h ../winchoose.h ../winimg.h ../wincore.h \
+  softmenupriv.h
+win_softmenu_set_item.o: win_softmenu_set_item.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hplib/hpstring.h \
+  ../../hplib/hpctype.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h ../wincore.h softmenupriv.h

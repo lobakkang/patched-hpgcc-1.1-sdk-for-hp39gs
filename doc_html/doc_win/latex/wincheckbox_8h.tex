@@ -1,0 +1,124 @@
+\section{wincheckbox.h File Reference}
+\label{wincheckbox_8h}\index{wincheckbox.h@{wincheckbox.h}}
+Fuctions to display a checkbox in the window system. 
+
+{\tt \#include $<$winprogress.h$>$}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+{\bf win\_\-widget\_\-t} $\ast$ {\bf win\_\-checkbox\_\-new} (char $\ast$label)
+\begin{CompactList}\small\item\em Creates a new checkbox. \item\end{CompactList}\item 
+void {\bf win\_\-checkbox\_\-set\_\-label} ({\bf win\_\-widget\_\-t} $\ast$widget, char $\ast$label)
+\begin{CompactList}\small\item\em Sets the label of a checkbox widget. \item\end{CompactList}\item 
+char $\ast$ {\bf win\_\-text\_\-get\_\-text} ({\bf win\_\-widget\_\-t} $\ast$widget)
+\begin{CompactList}\small\item\em Retrieves the label of a checkbox widget. \item\end{CompactList}\item 
+void {\bf win\_\-checkbox\_\-set\_\-selected} ({\bf win\_\-widget\_\-t} $\ast$widget, int sel)
+\begin{CompactList}\small\item\em Sets the selection state of a checkbox widget. \item\end{CompactList}\item 
+int {\bf win\_\-text\_\-is\_\-selected} ({\bf win\_\-widget\_\-t} $\ast$widget)
+\begin{CompactList}\small\item\em Retrieves the selection state of a checkbox widget. \item\end{CompactList}\item 
+void {\bf win\_\-checkbox\_\-set\_\-menu} ({\bf win\_\-widget\_\-t} $\ast$widget, {\bf win\_\-widget\_\-t} $\ast$menu, int idx)
+\begin{CompactList}\small\item\em Sets the menu tie-in for a checkbox. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Fuctions to display a checkbox in the window system. 
+
+Check boxes are on/off selectable widgets which can be used to represent or edit boolean values. 
+
+Definition in file {\bf wincheckbox.h}.
+
+\subsection{Function Documentation}
+\index{wincheckbox.h@{wincheckbox.h}!win_checkbox_new@{win\_\-checkbox\_\-new}}
+\index{win_checkbox_new@{win\_\-checkbox\_\-new}!wincheckbox.h@{wincheckbox.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf win\_\-widget\_\-t}$\ast$ win\_\-checkbox\_\-new (char $\ast$ {\em label})}\label{wincheckbox_8h_a0}
+
+
+Creates a new checkbox. 
+
+Allocates and returns a new checkbox widget, with its initial label set to the given value.
+
+The widget is initially set to black text on a white background, opaque, with the minifont.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em label}]The label of the check box. The label is used in-place, so this parameter should not point to a temporary buffer.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A pointer to the newly allocated checkbox widget. \end{Desc}
+\index{wincheckbox.h@{wincheckbox.h}!win_checkbox_set_label@{win\_\-checkbox\_\-set\_\-label}}
+\index{win_checkbox_set_label@{win\_\-checkbox\_\-set\_\-label}!wincheckbox.h@{wincheckbox.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void win\_\-checkbox\_\-set\_\-label ({\bf win\_\-widget\_\-t} $\ast$ {\em widget}, char $\ast$ {\em label})}\label{wincheckbox_8h_a1}
+
+
+Sets the label of a checkbox widget. 
+
+After this call, the widget will be assigned the new label. The size is not changed to match the new text. You may need to modify the width or height of the widget by calling {\bf win\_\-widget\_\-pack}{\rm (p.\,\pageref{winwidget_8h_a12})} or {\bf win\_\-widget\_\-set\_\-size}{\rm (p.\,\pageref{winwidget_8h_a10})} to avoid cutting off the label.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em widget}]A pointer to the new checkbox widget. \item[{\em label}]The new label, as a null-terminated C string. \end{description}
+\end{Desc}
+\index{wincheckbox.h@{wincheckbox.h}!win_checkbox_set_menu@{win\_\-checkbox\_\-set\_\-menu}}
+\index{win_checkbox_set_menu@{win\_\-checkbox\_\-set\_\-menu}!wincheckbox.h@{wincheckbox.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void win\_\-checkbox\_\-set\_\-menu ({\bf win\_\-widget\_\-t} $\ast$ {\em widget}, {\bf win\_\-widget\_\-t} $\ast$ {\em menu}, int {\em idx})}\label{wincheckbox_8h_a5}
+
+
+Sets the menu tie-in for a checkbox. 
+
+Although a checkbox widget can always be toggled with the +/- key, it is common to also designate a soft menu tie-in. This will cause a soft menu item to become visible to toggle the checkbox widget when it has focus. Typically, the same menu item would be used for all checkbox widgets and all other widgets that support soft menu tie-in.
+
+This should be set before the checkbox is added to the window system. Otherwise, the menu changes may not happen until the next time focus changes for the check box.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em widget}]A pointer to the checkbox widget. \item[{\em menu}]The soft menu to tie in to the checkbox. \item[{\em idx}]The menu item index used to tie in to the checkbox. \end{description}
+\end{Desc}
+\index{wincheckbox.h@{wincheckbox.h}!win_checkbox_set_selected@{win\_\-checkbox\_\-set\_\-selected}}
+\index{win_checkbox_set_selected@{win\_\-checkbox\_\-set\_\-selected}!wincheckbox.h@{wincheckbox.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void win\_\-checkbox\_\-set\_\-selected ({\bf win\_\-widget\_\-t} $\ast$ {\em widget}, int {\em sel})}\label{wincheckbox_8h_a3}
+
+
+Sets the selection state of a checkbox widget. 
+
+After this call, the widget will be assigned the new selection state.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em widget}]A pointer to the new checkbox widget. \item[{\em sel}]The new selection state, either zero or non-zero. \end{description}
+\end{Desc}
+\index{wincheckbox.h@{wincheckbox.h}!win_text_get_text@{win\_\-text\_\-get\_\-text}}
+\index{win_text_get_text@{win\_\-text\_\-get\_\-text}!wincheckbox.h@{wincheckbox.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ win\_\-text\_\-get\_\-text ({\bf win\_\-widget\_\-t} $\ast$ {\em widget})}\label{wincheckbox_8h_a2}
+
+
+Retrieves the label of a checkbox widget. 
+
+The result of this method is the label assigned to a checkbox widget.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em widget}]A pointer to the checkbox widget. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The label, as a null-terminated C string. \end{Desc}
+\index{wincheckbox.h@{wincheckbox.h}!win_text_is_selected@{win\_\-text\_\-is\_\-selected}}
+\index{win_text_is_selected@{win\_\-text\_\-is\_\-selected}!wincheckbox.h@{wincheckbox.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int win\_\-text\_\-is\_\-selected ({\bf win\_\-widget\_\-t} $\ast$ {\em widget})}\label{wincheckbox_8h_a4}
+
+
+Retrieves the selection state of a checkbox widget. 
+
+The result of this method is non-zero if the checkbox widget is selected (checked), or zero if it is not selected.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em widget}]A pointer to the checkbox widget. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The selection state, either zero or non-zero. \end{Desc}

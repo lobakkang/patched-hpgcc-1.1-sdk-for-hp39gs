@@ -1,0 +1,358 @@
+\section{hpsys.h File Reference}
+\label{hpsys_8h}\index{hpsys.h@{hpsys.h}}
+Header file for system functions. 
+
+
+{\tt \#include $<$kos.h$>$}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct {\bf lldiv\_\-t}
+\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf EXTERN}\ extern
+\item 
+\#define {\bf NULL}\ 0
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+int {\bf sys\_\-bcd2str} (int BCD)
+\begin{CompactList}\small\item\em Convert a BCD format number to an hexa value.\item\end{CompactList}\item 
+unsigned int {\bf sys\_\-bcd2bin} (unsigned int BCD)
+\begin{CompactList}\small\item\em Convert a BCD format number to int value.\item\end{CompactList}\item 
+{\bf lldiv\_\-t} {\bf lldiv} (long long, long long)
+\item 
+unsigned {\bf divlu2} (unsigned num\_\-h, unsigned num\_\-l, unsigned den, unsigned $\ast$rem)
+\begin{CompactList}\small\item\em Unsigned 64/32 bit division.\item\end{CompactList}\item 
+unsigned long long {\bf udiv64} (unsigned long long nom, unsigned den, unsigned $\ast$rem)
+\begin{CompactList}\small\item\em Unsigned 64/32 bit division with 64 bit quotient.\item\end{CompactList}\item 
+long long {\bf sdiv64} (long long nom, int den, int $\ast$rem)
+\begin{CompactList}\small\item\em Signed 64/32 bit division with 64 bit quotient.\item\end{CompactList}\item 
+void {\bf sys\_\-int\-Off} ()
+\item 
+void {\bf sys\_\-int\-On} ()
+\item 
+void {\bf sys\_\-slow\-On} ()
+\item 
+void {\bf sys\_\-slow\-Off} ()
+\item 
+void {\bf sys\_\-short\-Wait} ()
+\begin{CompactList}\small\item\em returns every 1/8th of a second by default, uses RTC\item\end{CompactList}\item 
+void {\bf sys\_\-long\-Wait} (int wait)
+\begin{CompactList}\small\item\em returns every 1/8th of a second by default, uses RTC\item\end{CompactList}\item 
+void {\bf sys\_\-wait\-Ticks} (unsigned int time)
+\begin{CompactList}\small\item\em numers of ticks at 750k\-Hz to wait for\item\end{CompactList}\item 
+void {\bf sys\_\-setup\-Timers} ()
+\item 
+void {\bf sys\_\-restore\-Timers} ()
+\item 
+unsigned short int {\bf sys\_\-get\-PWMCounter0} ()
+\begin{CompactList}\small\item\em Get PWM counter 0.\item\end{CompactList}\item 
+unsigned long int {\bf sys\_\-RTC\_\-seconds} ()
+\begin{CompactList}\small\item\em Get date in seconds from RTC.\item\end{CompactList}\item 
+void {\bf sys\_\-LCDSynch} ()
+\begin{CompactList}\small\item\em Wait for LCD synchro.\item\end{CompactList}\item 
+EXTERN int {\bf sys\_\-map\_\-v2p} (unsigned int vaddr)
+\begin{CompactList}\small\item\em Convert a virtual address to its physical bus address.\item\end{CompactList}\item 
+EXTERN int {\bf sys\_\-map\_\-p2v} (unsigned int paddr)
+\begin{CompactList}\small\item\em Convert a physical bus address to its virtual address.\item\end{CompactList}\item 
+EXTERN void {\bf sys\_\-play\-Tone} (unsigned int tone, unsigned int duration)
+\item 
+EXTERN void {\bf set\-Display\-Plane} (unsigned char $\ast$plane)
+\item 
+int {\bf sys\_\-is\-RTCTick} ()
+\item 
+void {\bf sys\_\-set\-RTCTick\-Period} (unsigned char n)
+\item 
+void {\bf sys\_\-wait\-RTCTicks} (int count)
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+EXTERN unsigned int {\bf \_\-saturn\_\-cpu}
+\begin{CompactList}\small\item\em Value of r1 register at the begining of execution.\item\end{CompactList}\item 
+EXTERN unsigned int {\bf \_\-ram\_\-base\_\-addr}
+\item 
+EXTERN unsigned int {\bf \_\-mmu\_\-table\_\-addr}
+\item 
+EXTERN unsigned int {\bf ram\_\-size}
+\item 
+EXTERN unsigned int {\bf \_\-heap\_\-base\_\-addr}
+\item 
+EXTERN unsigned int {\bf \_\-code\_\-base\_\-addr}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Header file for system functions.
+
+
+
+
+
+Definition in file {\bf hpsys.h}.
+
+\subsection{Define Documentation}
+\index{hpsys.h@{hpsys.h}!EXTERN@{EXTERN}}
+\index{EXTERN@{EXTERN}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define EXTERN\ extern}\label{hpsys_8h_a0}
+
+
+
+
+Definition at line 48 of file hpsys.h.\index{hpsys.h@{hpsys.h}!NULL@{NULL}}
+\index{NULL@{NULL}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define NULL\ 0}\label{hpsys_8h_a1}
+
+
+
+
+Definition at line 52 of file hpsys.h.
+
+\subsection{Function Documentation}
+\index{hpsys.h@{hpsys.h}!divlu2@{divlu2}}
+\index{divlu2@{divlu2}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned divlu2 (unsigned {\em num\_\-h}, unsigned {\em num\_\-l}, unsigned {\em den}, unsigned $\ast$ {\em rem})}\label{hpsys_8h_a11}
+
+
+Unsigned 64/32 bit division.
+
+\index{hpsys.h@{hpsys.h}!lldiv@{lldiv}}
+\index{lldiv@{lldiv}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf lldiv\_\-t} lldiv (long {\em long}, long {\em long})}\label{hpsys_8h_a10}
+
+
+\index{hpsys.h@{hpsys.h}!sdiv64@{sdiv64}}
+\index{sdiv64@{sdiv64}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}long long sdiv64 (long long {\em nom}, int {\em den}, int $\ast$ {\em rem})}\label{hpsys_8h_a13}
+
+
+Signed 64/32 bit division with 64 bit quotient.
+
+\index{hpsys.h@{hpsys.h}!setDisplayPlane@{setDisplayPlane}}
+\index{setDisplayPlane@{setDisplayPlane}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXTERN void set\-Display\-Plane (unsigned char $\ast$ {\em plane})}\label{hpsys_8h_a29}
+
+
+\index{hpsys.h@{hpsys.h}!sys_bcd2bin@{sys\_\-bcd2bin}}
+\index{sys_bcd2bin@{sys\_\-bcd2bin}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned int sys\_\-bcd2bin (unsigned int {\em BCD})}\label{hpsys_8h_a9}
+
+
+Convert a BCD format number to int value.
+
+\index{hpsys.h@{hpsys.h}!sys_bcd2str@{sys\_\-bcd2str}}
+\index{sys_bcd2str@{sys\_\-bcd2str}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int sys\_\-bcd2str (int {\em BCD})}\label{hpsys_8h_a8}
+
+
+Convert a BCD format number to an hexa value.
+
+\index{hpsys.h@{hpsys.h}!sys_getPWMCounter0@{sys\_\-getPWMCounter0}}
+\index{sys_getPWMCounter0@{sys\_\-getPWMCounter0}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned short int sys\_\-get\-PWMCounter0 ()}\label{hpsys_8h_a23}
+
+
+Get PWM counter 0.
+
+\begin{Desc}
+\item[Returns: ]\par
+The current value\end{Desc}
+The counter goes from 0 to 65536. \index{hpsys.h@{hpsys.h}!sys_intOff@{sys\_\-intOff}}
+\index{sys_intOff@{sys\_\-intOff}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void sys\_\-int\-Off ()}\label{hpsys_8h_a14}
+
+
+\index{hpsys.h@{hpsys.h}!sys_intOn@{sys\_\-intOn}}
+\index{sys_intOn@{sys\_\-intOn}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void sys\_\-int\-On ()}\label{hpsys_8h_a15}
+
+
+\index{hpsys.h@{hpsys.h}!sys_isRTCTick@{sys\_\-isRTCTick}}
+\index{sys_isRTCTick@{sys\_\-isRTCTick}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int sys\_\-is\-RTCTick ()}\label{hpsys_8h_a30}
+
+
+\index{hpsys.h@{hpsys.h}!sys_LCDSynch@{sys\_\-LCDSynch}}
+\index{sys_LCDSynch@{sys\_\-LCDSynch}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void sys\_\-LCDSynch ()}\label{hpsys_8h_a25}
+
+
+Wait for LCD synchro.
+
+\index{hpsys.h@{hpsys.h}!sys_longWait@{sys\_\-longWait}}
+\index{sys_longWait@{sys\_\-longWait}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void sys\_\-long\-Wait (int {\em wait})}\label{hpsys_8h_a19}
+
+
+returns every 1/8th of a second by default, uses RTC
+
+\index{hpsys.h@{hpsys.h}!sys_map_p2v@{sys\_\-map\_\-p2v}}
+\index{sys_map_p2v@{sys\_\-map\_\-p2v}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXTERN int sys\_\-map\_\-p2v (unsigned int {\em paddr})}\label{hpsys_8h_a27}
+
+
+Convert a physical bus address to its virtual address.
+
+\index{hpsys.h@{hpsys.h}!sys_map_v2p@{sys\_\-map\_\-v2p}}
+\index{sys_map_v2p@{sys\_\-map\_\-v2p}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXTERN int sys\_\-map\_\-v2p (unsigned int {\em vaddr})}\label{hpsys_8h_a26}
+
+
+Convert a virtual address to its physical bus address.
+
+\index{hpsys.h@{hpsys.h}!sys_playTone@{sys\_\-playTone}}
+\index{sys_playTone@{sys\_\-playTone}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXTERN void sys\_\-play\-Tone (unsigned int {\em tone}, unsigned int {\em duration})}\label{hpsys_8h_a28}
+
+
+\index{hpsys.h@{hpsys.h}!sys_restoreTimers@{sys\_\-restoreTimers}}
+\index{sys_restoreTimers@{sys\_\-restoreTimers}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void sys\_\-restore\-Timers ()}\label{hpsys_8h_a22}
+
+
+\index{hpsys.h@{hpsys.h}!sys_RTC_seconds@{sys\_\-RTC\_\-seconds}}
+\index{sys_RTC_seconds@{sys\_\-RTC\_\-seconds}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned long int sys\_\-RTC\_\-seconds ()}\label{hpsys_8h_a24}
+
+
+Get date in seconds from RTC.
+
+\begin{Desc}
+\item[Returns: ]\par
+The current time in seconds\end{Desc}
+The total number of seconds 3600$\ast$H+60$\ast$M+S. \index{hpsys.h@{hpsys.h}!sys_setRTCTickPeriod@{sys\_\-setRTCTickPeriod}}
+\index{sys_setRTCTickPeriod@{sys\_\-setRTCTickPeriod}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void sys\_\-set\-RTCTick\-Period (unsigned char {\em n})}\label{hpsys_8h_a31}
+
+
+\index{hpsys.h@{hpsys.h}!sys_setupTimers@{sys\_\-setupTimers}}
+\index{sys_setupTimers@{sys\_\-setupTimers}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void sys\_\-setup\-Timers ()}\label{hpsys_8h_a21}
+
+
+\index{hpsys.h@{hpsys.h}!sys_shortWait@{sys\_\-shortWait}}
+\index{sys_shortWait@{sys\_\-shortWait}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void sys\_\-short\-Wait ()}\label{hpsys_8h_a18}
+
+
+returns every 1/8th of a second by default, uses RTC
+
+\index{hpsys.h@{hpsys.h}!sys_slowOff@{sys\_\-slowOff}}
+\index{sys_slowOff@{sys\_\-slowOff}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void sys\_\-slow\-Off ()}\label{hpsys_8h_a17}
+
+
+\index{hpsys.h@{hpsys.h}!sys_slowOn@{sys\_\-slowOn}}
+\index{sys_slowOn@{sys\_\-slowOn}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void sys\_\-slow\-On ()}\label{hpsys_8h_a16}
+
+
+\index{hpsys.h@{hpsys.h}!sys_waitRTCTicks@{sys\_\-waitRTCTicks}}
+\index{sys_waitRTCTicks@{sys\_\-waitRTCTicks}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void sys\_\-wait\-RTCTicks (int {\em count})}\label{hpsys_8h_a32}
+
+
+\index{hpsys.h@{hpsys.h}!sys_waitTicks@{sys\_\-waitTicks}}
+\index{sys_waitTicks@{sys\_\-waitTicks}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXTERN void sys\_\-wait\-Ticks (unsigned int {\em time})}\label{hpsys_8h_a20}
+
+
+numers of ticks at 750k\-Hz to wait for
+
+\index{hpsys.h@{hpsys.h}!udiv64@{udiv64}}
+\index{udiv64@{udiv64}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned long long udiv64 (unsigned long long {\em nom}, unsigned {\em den}, unsigned $\ast$ {\em rem})}\label{hpsys_8h_a12}
+
+
+Unsigned 64/32 bit division with 64 bit quotient.
+
+
+
+\subsection{Variable Documentation}
+\index{hpsys.h@{hpsys.h}!_code_base_addr@{\_\-code\_\-base\_\-addr}}
+\index{_code_base_addr@{\_\-code\_\-base\_\-addr}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXTERN unsigned int \_\-code\_\-base\_\-addr}\label{hpsys_8h_a7}
+
+
+
+
+Definition at line 158 of file hpsys.h.\index{hpsys.h@{hpsys.h}!_heap_base_addr@{\_\-heap\_\-base\_\-addr}}
+\index{_heap_base_addr@{\_\-heap\_\-base\_\-addr}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXTERN unsigned int \_\-heap\_\-base\_\-addr}\label{hpsys_8h_a6}
+
+
+
+
+Definition at line 157 of file hpsys.h.\index{hpsys.h@{hpsys.h}!_mmu_table_addr@{\_\-mmu\_\-table\_\-addr}}
+\index{_mmu_table_addr@{\_\-mmu\_\-table\_\-addr}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXTERN unsigned int \_\-mmu\_\-table\_\-addr}\label{hpsys_8h_a4}
+
+
+
+
+Definition at line 155 of file hpsys.h.\index{hpsys.h@{hpsys.h}!_ram_base_addr@{\_\-ram\_\-base\_\-addr}}
+\index{_ram_base_addr@{\_\-ram\_\-base\_\-addr}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXTERN unsigned int \_\-ram\_\-base\_\-addr}\label{hpsys_8h_a3}
+
+
+
+
+Definition at line 154 of file hpsys.h.\index{hpsys.h@{hpsys.h}!_saturn_cpu@{\_\-saturn\_\-cpu}}
+\index{_saturn_cpu@{\_\-saturn\_\-cpu}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXTERN unsigned int \_\-saturn\_\-cpu}\label{hpsys_8h_a2}
+
+
+Value of r1 register at the begining of execution.
+
+See post of Robert Hildinger: \char`\"{}The R1 register contains the base address for all the ARM globals, which can be used to access all of the Saturn registers. Altering this register will not affect the calling code. The LR register contains the return address to get back into Saturn emulation.\char`\"{}
+
+API INFORMATION\par
+ ---------------
+
+So far there is no real API information available, although experimentally I've been able to determine the following offsets from the global base register for accessing the emulated Saturn CPU registers:\par
+
+
+Base (R1) offset Description\par
+ ---------------------------------------
+
+0x90C Saturn register A (low order 8 nibbles)\par
+ 0x910 Saturn register A (high order 8 nibbles)\par
+  0x914 Saturn register B (low order 8 nibbles)\par
+  0x918 Saturn register B (high order 8 nibbles)\par
+  0x91C Saturn register C (low order 8 nibbles)\par
+  0x920 Saturn register C (high order 8 nibbles)\par
+  0x924 Saturn register D (low order 8 nibbles)\par
+  0x928 Saturn register D (high order 8 nibbles)\par
+  \par
+ 0x92C Saturn register R0 (low order 8 nibbles)\par
+  0x930 Saturn register R0 (high order 8 nibbles)\par
+  0x934 Saturn register R1 (low order 8 nibbles)\par
+  0x938 Saturn register R1 (high order 8 nibbles)\par
+  0x93C Saturn register R2 (low order 8 nibbles)\par
+  0x940 Saturn register R2 (high order 8 nibbles)\par
+  0x944 Saturn register R3 (low order 8 nibbles)\par
+  0x948 Saturn register R3 (high order 8 nibbles)\par
+  0x94C Saturn register R4 (low order 8 nibbles)\par
+  0x950 Saturn register R4 (high order 8 nibbles)\par
+  \par
+ 0x954 Saturn register d0\par
+ 0x958 Saturn register d1\par
+ 0x95C Saturn register P\par
+ 0x968 Saturn register ST\par
+ 0x96C Saturn register HST\par
+ 0x970 Saturn CARRY flag\par
+ 0x974 Saturn DECIMAL\_\-MODE flag\par
+ 
+
+Definition at line 153 of file hpsys.h.\index{hpsys.h@{hpsys.h}!ram_size@{ram\_\-size}}
+\index{ram_size@{ram\_\-size}!hpsys.h@{hpsys.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXTERN unsigned int ram\_\-size}\label{hpsys_8h_a5}
+
+
+
+
+Definition at line 156 of file hpsys.h.

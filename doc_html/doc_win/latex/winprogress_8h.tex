@@ -1,0 +1,200 @@
+\section{winprogress.h File Reference}
+\label{winprogress_8h}\index{winprogress.h@{winprogress.h}}
+Fuctions to display a progress widget. 
+
+{\tt \#include $<$winwidget.h$>$}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf WIN\_\-PROGRESS\_\-HORIZ}~0
+\begin{CompactList}\small\item\em Horizontal left-to-right orientation for a progress widget. \item\end{CompactList}\item 
+\#define {\bf WIN\_\-PROGRESS\_\-VERT}~1
+\begin{CompactList}\small\item\em Vertical bottom-to-top orientation for a progress widget. \item\end{CompactList}\item 
+\#define {\bf WIN\_\-PROGRESS\_\-HORIZ\_\-RIGHT}~2
+\begin{CompactList}\small\item\em Horizontal right-to-left orientation for a progress widget. \item\end{CompactList}\item 
+\#define {\bf WIN\_\-PROGRESS\_\-VERT\_\-TOP}~3
+\begin{CompactList}\small\item\em Vertical top-to-bottom orientation for a progress widget. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+{\bf win\_\-widget\_\-t} $\ast$ {\bf win\_\-progress\_\-new} (int slider)
+\begin{CompactList}\small\item\em Creates a new progress widget. \item\end{CompactList}\item 
+void {\bf win\_\-progress\_\-set\_\-value} ({\bf win\_\-widget\_\-t} $\ast$bar, double value)
+\begin{CompactList}\small\item\em Sets the progress bar at the given value. \item\end{CompactList}\item 
+double {\bf win\_\-progress\_\-get\_\-value} ({\bf win\_\-widget\_\-t} $\ast$bar)
+\begin{CompactList}\small\item\em Gets the progress bar current value. \item\end{CompactList}\item 
+void {\bf win\_\-progress\_\-set\_\-inc} ({\bf win\_\-widget\_\-t} $\ast$bar, double inc)
+\begin{CompactList}\small\item\em Sets the increment value of the progress widget. \item\end{CompactList}\item 
+void {\bf win\_\-progress\_\-set\_\-orient} ({\bf win\_\-widget\_\-t} $\ast$bar, int orient)
+\begin{CompactList}\small\item\em Sets orientation of the progress bar. \item\end{CompactList}\item 
+void {\bf win\_\-progress\_\-set\_\-range} ({\bf win\_\-widget\_\-t} $\ast$bar, double min, double max)
+\begin{CompactList}\small\item\em Sets the progress bar range. \item\end{CompactList}\item 
+void {\bf win\_\-progress\_\-set\_\-delay} ({\bf win\_\-widget\_\-t} $\ast$widget, int first, int next)
+\begin{CompactList}\small\item\em Sets the slider auto-repeat parameters. \item\end{CompactList}\item 
+void {\bf win\_\-progress\_\-set\_\-event} ({\bf win\_\-widget\_\-t} $\ast$widget, int event)
+\begin{CompactList}\small\item\em Sets the slider event. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Fuctions to display a progress widget. 
+
+The progress widget is used to visually display a value between two bounds. It can be made focusable (in which case it acts like a slider control for user adjustment), or it can be made non-focusable to function as a progress bar. 
+
+Definition in file {\bf winprogress.h}.
+
+\subsection{Define Documentation}
+\index{winprogress.h@{winprogress.h}!WIN_PROGRESS_HORIZ@{WIN\_\-PROGRESS\_\-HORIZ}}
+\index{WIN_PROGRESS_HORIZ@{WIN\_\-PROGRESS\_\-HORIZ}!winprogress.h@{winprogress.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define WIN\_\-PROGRESS\_\-HORIZ~0}\label{winprogress_8h_a0}
+
+
+Horizontal left-to-right orientation for a progress widget. 
+
+This orientation causes a progress widget to draw itself horizontally and fill from left to right. 
+
+Definition at line 54 of file winprogress.h.\index{winprogress.h@{winprogress.h}!WIN_PROGRESS_HORIZ_RIGHT@{WIN\_\-PROGRESS\_\-HORIZ\_\-RIGHT}}
+\index{WIN_PROGRESS_HORIZ_RIGHT@{WIN\_\-PROGRESS\_\-HORIZ\_\-RIGHT}!winprogress.h@{winprogress.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define WIN\_\-PROGRESS\_\-HORIZ\_\-RIGHT~2}\label{winprogress_8h_a2}
+
+
+Horizontal right-to-left orientation for a progress widget. 
+
+This orientation causes a progress widget to draw itself horizontally and fill from right to left. 
+
+Definition at line 70 of file winprogress.h.\index{winprogress.h@{winprogress.h}!WIN_PROGRESS_VERT@{WIN\_\-PROGRESS\_\-VERT}}
+\index{WIN_PROGRESS_VERT@{WIN\_\-PROGRESS\_\-VERT}!winprogress.h@{winprogress.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define WIN\_\-PROGRESS\_\-VERT~1}\label{winprogress_8h_a1}
+
+
+Vertical bottom-to-top orientation for a progress widget. 
+
+This orientation causes a progress widget to draw itself vertically and fill from bottom to top. 
+
+Definition at line 62 of file winprogress.h.\index{winprogress.h@{winprogress.h}!WIN_PROGRESS_VERT_TOP@{WIN\_\-PROGRESS\_\-VERT\_\-TOP}}
+\index{WIN_PROGRESS_VERT_TOP@{WIN\_\-PROGRESS\_\-VERT\_\-TOP}!winprogress.h@{winprogress.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define WIN\_\-PROGRESS\_\-VERT\_\-TOP~3}\label{winprogress_8h_a3}
+
+
+Vertical top-to-bottom orientation for a progress widget. 
+
+This orientation causes a progress widget to draw itself vertically and fill from top to bottom. 
+
+Definition at line 78 of file winprogress.h.
+
+\subsection{Function Documentation}
+\index{winprogress.h@{winprogress.h}!win_progress_get_value@{win\_\-progress\_\-get\_\-value}}
+\index{win_progress_get_value@{win\_\-progress\_\-get\_\-value}!winprogress.h@{winprogress.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double win\_\-progress\_\-get\_\-value ({\bf win\_\-widget\_\-t} $\ast$ {\em bar})}\label{winprogress_8h_a6}
+
+
+Gets the progress bar current value. 
+
+This function is used to get the progress bar value. It is useful when the progress bar is configured as a slider.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em bar}]The progress widget to query. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The progress value. \end{Desc}
+\index{winprogress.h@{winprogress.h}!win_progress_new@{win\_\-progress\_\-new}}
+\index{win_progress_new@{win\_\-progress\_\-new}!winprogress.h@{winprogress.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf win\_\-widget\_\-t}$\ast$ win\_\-progress\_\-new (int {\em slider})}\label{winprogress_8h_a4}
+
+
+Creates a new progress widget. 
+
+Allocates and returns a new progress widget.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em slider}]Indicates if the widget can be used as a slider (1) or just as a progress bar (0)\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A pointer to the newly allocated progress bar component. \end{Desc}
+\index{winprogress.h@{winprogress.h}!win_progress_set_delay@{win\_\-progress\_\-set\_\-delay}}
+\index{win_progress_set_delay@{win\_\-progress\_\-set\_\-delay}!winprogress.h@{winprogress.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void win\_\-progress\_\-set\_\-delay ({\bf win\_\-widget\_\-t} $\ast$ {\em widget}, int {\em first}, int {\em next})}\label{winprogress_8h_a10}
+
+
+Sets the slider auto-repeat parameters. 
+
+This functions sets up the auto-repeat times for the component. Auto-repeat provides both a delay before the first auto-repeat, and a delay for each subsequent auto-repeat click.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em bar}]The progress bar \item[{\em first}]Delay before auto-repeat, in milliseconds. \item[{\em next}]Delay between repetitions, in milliseconds. \end{description}
+\end{Desc}
+\index{winprogress.h@{winprogress.h}!win_progress_set_event@{win\_\-progress\_\-set\_\-event}}
+\index{win_progress_set_event@{win\_\-progress\_\-set\_\-event}!winprogress.h@{winprogress.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void win\_\-progress\_\-set\_\-event ({\bf win\_\-widget\_\-t} $\ast$ {\em widget}, int {\em event})}\label{winprogress_8h_a11}
+
+
+Sets the slider event. 
+
+This function is used to set the event sent by the slider when it is changed.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em bar}]The progress bar. \item[{\em event}]Event number to send for value changes. \end{description}
+\end{Desc}
+\index{winprogress.h@{winprogress.h}!win_progress_set_inc@{win\_\-progress\_\-set\_\-inc}}
+\index{win_progress_set_inc@{win\_\-progress\_\-set\_\-inc}!winprogress.h@{winprogress.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void win\_\-progress\_\-set\_\-inc ({\bf win\_\-widget\_\-t} $\ast$ {\em bar}, double {\em inc})}\label{winprogress_8h_a7}
+
+
+Sets the increment value of the progress widget. 
+
+This function is used to set the progress bar increment value, when it is used as a slider with the arrow keys.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em bar}]The progress bar. \item[{\em inc}]The increment value. \end{description}
+\end{Desc}
+\index{winprogress.h@{winprogress.h}!win_progress_set_orient@{win\_\-progress\_\-set\_\-orient}}
+\index{win_progress_set_orient@{win\_\-progress\_\-set\_\-orient}!winprogress.h@{winprogress.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void win\_\-progress\_\-set\_\-orient ({\bf win\_\-widget\_\-t} $\ast$ {\em bar}, int {\em orient})}\label{winprogress_8h_a8}
+
+
+Sets orientation of the progress bar. 
+
+This function is used to set the progress bar orientation. The four values for orientation are {\bf WIN\_\-PROGRESS\_\-HORIZ}{\rm (p.\,\pageref{winprogress_8h_a0})}, {\bf WIN\_\-PROGRESS\_\-VERT}{\rm (p.\,\pageref{winprogress_8h_a1})}, {\bf WIN\_\-PROGRESS\_\-HORIZ\_\-RIGHT}{\rm (p.\,\pageref{winprogress_8h_a2})}, and {\bf WIN\_\-PROGRESS\_\-VERT\_\-TOP}{\rm (p.\,\pageref{winprogress_8h_a3})}.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em bar}]The progress bar. \item[{\em orient}]The progress bar orientation. \end{description}
+\end{Desc}
+\index{winprogress.h@{winprogress.h}!win_progress_set_range@{win\_\-progress\_\-set\_\-range}}
+\index{win_progress_set_range@{win\_\-progress\_\-set\_\-range}!winprogress.h@{winprogress.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void win\_\-progress\_\-set\_\-range ({\bf win\_\-widget\_\-t} $\ast$ {\em bar}, double {\em min}, double {\em max})}\label{winprogress_8h_a9}
+
+
+Sets the progress bar range. 
+
+This function is used to set minimal and maximal value corresponding respectively to 0\% and 100\% of the progress bar. If the current value is out of range in either direction, it will be set to the minimum or maximum value, respectively.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em bar}]The progress bar \item[{\em min}]Minimum value \item[{\em max}]Maximum value \end{description}
+\end{Desc}
+\index{winprogress.h@{winprogress.h}!win_progress_set_value@{win\_\-progress\_\-set\_\-value}}
+\index{win_progress_set_value@{win\_\-progress\_\-set\_\-value}!winprogress.h@{winprogress.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void win\_\-progress\_\-set\_\-value ({\bf win\_\-widget\_\-t} $\ast$ {\em bar}, double {\em value})}\label{winprogress_8h_a5}
+
+
+Sets the progress bar at the given value. 
+
+This function is used to set the progress bar value.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em bar}]The progress bar. \item[{\em value}]The progress value. If it is out of the range [min, max], it is set to the min / max value. \end{description}
+\end{Desc}

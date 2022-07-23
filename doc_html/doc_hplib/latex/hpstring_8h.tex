@@ -1,0 +1,298 @@
+\section{hpstring.h File Reference}
+\label{hpstring_8h}\index{hpstring.h@{hpstring.h}}
+Standard String functions. 
+
+
+{\tt \#include $<$hpctype.h$>$}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf dtoa}\ mydtoa
+\item 
+\#define {\bf atof}\ my\_\-atof
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+int {\bf strlen} (char $\ast$s)
+\begin{CompactList}\small\item\em Length of s.\item\end{CompactList}\item 
+char $\ast$ {\bf strcpy} (char $\ast$dest, char $\ast$src)
+\begin{CompactList}\small\item\em Copy source to destination.\item\end{CompactList}\item 
+char $\ast$ {\bf strncpy} (char $\ast$dest, char $\ast$src, int n)
+\begin{CompactList}\small\item\em Copy n chars of src in dest.\item\end{CompactList}\item 
+char $\ast$ {\bf strcat} (char $\ast$dest, const char $\ast$src)
+\begin{CompactList}\small\item\em Append source after enf of destination. $\ast$/.\item\end{CompactList}\item 
+int {\bf strcmp} (register const char $\ast$s1, register const char $\ast$s2)
+\begin{CompactList}\small\item\em Compare s1 and s2 ($<$0 ==0 or $>$0).\item\end{CompactList}\item 
+int {\bf strncmp} (const char $\ast$s1, const char $\ast$s2, int num)
+\begin{CompactList}\small\item\em Compare n chars of s1 and s2 ($<$0 ==0 or $>$0).\item\end{CompactList}\item 
+char $\ast$ {\bf itoa} (int z, char $\ast$buff, int base)
+\begin{CompactList}\small\item\em Convert int to a string with specific base.\item\end{CompactList}\item 
+char $\ast$ {\bf utoa} (unsigned z, char $\ast$buff, int base)
+\begin{CompactList}\small\item\em $\backslash$fn char $\ast${\bf utoa(unsigned z, char $\ast$ buff, int base)} {\rm (p.\,\pageref{hpstring_8h_a9})}\item\end{CompactList}\item 
+char $\ast$ {\bf lltoa} (long long, char $\ast$, int base)
+\begin{CompactList}\small\item\em $\backslash$fn char $\ast${\bf lltoa(long long, char $\ast$,int base)} {\rm (p.\,\pageref{hpstring_8h_a10})}\item\end{CompactList}\item 
+char $\ast$ {\bf ulltoa} (unsigned long long, char $\ast$, int base)
+\begin{CompactList}\small\item\em $\backslash$fn char $\ast${\bf ulltoa(unsigned long long, char $\ast$, int base)} {\rm (p.\,\pageref{hpstring_8h_a11})}\item\end{CompactList}\item 
+char $\ast$ {\bf upper} (char $\ast$t, char $\ast$s)
+\begin{CompactList}\small\item\em Convert string to uppercase.\item\end{CompactList}\item 
+char $\ast$ {\bf lower} (char $\ast$t, char $\ast$s)
+\begin{CompactList}\small\item\em Convert string to uppercase.\item\end{CompactList}\item 
+char $\ast$ {\bf mydtoa} (double x, char $\ast$buf)
+\item 
+char $\ast$ {\bf xpad} (char $\ast$t, char $\ast$s, int n, int left, char c)
+\item 
+int {\bf atoi\_\-base} (char $\ast$, int base)
+\item 
+unsigned {\bf atoui\_\-base} (char $\ast$, int base)
+\item 
+long long {\bf atoll\_\-base} (char $\ast$, int base)
+\item 
+unsigned long long {\bf atoull\_\-base} (char $\ast$, int base)
+\item 
+int {\bf atoi} (char $\ast$)
+\item 
+unsigned {\bf atoui} (char $\ast$)
+\item 
+long long {\bf atoll} (char $\ast$)
+\item 
+char $\ast$ {\bf ints} (int z, int base)
+\item 
+char $\ast$ {\bf uints} (unsigned z, int base)
+\item 
+unsigned long long {\bf atoull} (char $\ast$)
+\item 
+double {\bf my\_\-atof} (char $\ast$)
+\item 
+void $\ast$ {\bf memcpy} (void $\ast$out, const void $\ast$in, int n)
+\item 
+void {\bf memcpyw} (void $\ast$dest, const void $\ast$source, int nwords)
+\item 
+void $\ast$ {\bf memset} (char $\ast$dest, int C, int LENGTH)
+\item 
+void {\bf memsetw} (void $\ast$dest, int value, int nwords)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Standard String functions.
+
+
+
+
+
+Definition in file {\bf hpstring.h}.
+
+\subsection{Define Documentation}
+\index{hpstring.h@{hpstring.h}!atof@{atof}}
+\index{atof@{atof}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define atof\ my\_\-atof}\label{hpstring_8h_a1}
+
+
+
+
+Definition at line 122 of file hpstring.h.\index{hpstring.h@{hpstring.h}!dtoa@{dtoa}}
+\index{dtoa@{dtoa}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define dtoa\ mydtoa}\label{hpstring_8h_a0}
+
+
+
+
+Definition at line 96 of file hpstring.h.
+
+\subsection{Function Documentation}
+\index{hpstring.h@{hpstring.h}!atoi@{atoi}}
+\index{atoi@{atoi}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atoi (char $\ast$)}\label{hpstring_8h_a20}
+
+
+\index{hpstring.h@{hpstring.h}!atoi_base@{atoi\_\-base}}
+\index{atoi_base@{atoi\_\-base}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int atoi\_\-base (char $\ast$, int {\em base})}\label{hpstring_8h_a16}
+
+
+\index{hpstring.h@{hpstring.h}!atoll@{atoll}}
+\index{atoll@{atoll}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}long long atoll (char $\ast$)}\label{hpstring_8h_a22}
+
+
+\index{hpstring.h@{hpstring.h}!atoll_base@{atoll\_\-base}}
+\index{atoll_base@{atoll\_\-base}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}long long atoll\_\-base (char $\ast$, int {\em base})}\label{hpstring_8h_a18}
+
+
+\index{hpstring.h@{hpstring.h}!atoui@{atoui}}
+\index{atoui@{atoui}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned atoui (char $\ast$)}\label{hpstring_8h_a21}
+
+
+\index{hpstring.h@{hpstring.h}!atoui_base@{atoui\_\-base}}
+\index{atoui_base@{atoui\_\-base}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned atoui\_\-base (char $\ast$, int {\em base})}\label{hpstring_8h_a17}
+
+
+\index{hpstring.h@{hpstring.h}!atoull@{atoull}}
+\index{atoull@{atoull}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned long long atoull (char $\ast$)}\label{hpstring_8h_a25}
+
+
+\index{hpstring.h@{hpstring.h}!atoull_base@{atoull\_\-base}}
+\index{atoull_base@{atoull\_\-base}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned long long atoull\_\-base (char $\ast$, int {\em base})}\label{hpstring_8h_a19}
+
+
+\index{hpstring.h@{hpstring.h}!ints@{ints}}
+\index{ints@{ints}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ ints (int {\em z}, int {\em base})}\label{hpstring_8h_a23}
+
+
+\index{hpstring.h@{hpstring.h}!itoa@{itoa}}
+\index{itoa@{itoa}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ itoa (int {\em z}, char $\ast$ {\em buff}, int {\em base})}\label{hpstring_8h_a8}
+
+
+Convert int to a string with specific base.
+
+\index{hpstring.h@{hpstring.h}!lltoa@{lltoa}}
+\index{lltoa@{lltoa}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ lltoa (long {\em long}, char $\ast$, int {\em base})}\label{hpstring_8h_a10}
+
+
+$\backslash$fn char $\ast${\bf lltoa(long long, char $\ast$,int base)} {\rm (p.\,\pageref{hpstring_8h_a10})}
+
+\index{hpstring.h@{hpstring.h}!lower@{lower}}
+\index{lower@{lower}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ lower (char $\ast$ {\em t}, char $\ast$ {\em s})}\label{hpstring_8h_a13}
+
+
+Convert string to uppercase.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+t}]pointer to target \item[{\em 
+s}]pointer to source \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Return values: ]\par
+\begin{description}
+\item[{\em 
+pointer}]to target \end{description}
+\end{Desc}
+\index{hpstring.h@{hpstring.h}!memcpy@{memcpy}}
+\index{memcpy@{memcpy}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ memcpy (void $\ast$ {\em out}, const void $\ast$ {\em in}, int {\em n})}\label{hpstring_8h_a27}
+
+
+\index{hpstring.h@{hpstring.h}!memcpyw@{memcpyw}}
+\index{memcpyw@{memcpyw}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void memcpyw (void $\ast$ {\em dest}, const void $\ast$ {\em source}, int {\em nwords})}\label{hpstring_8h_a28}
+
+
+\index{hpstring.h@{hpstring.h}!memset@{memset}}
+\index{memset@{memset}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ memset (char $\ast$ {\em dest}, int {\em C}, int {\em LENGTH})}\label{hpstring_8h_a29}
+
+
+\index{hpstring.h@{hpstring.h}!memsetw@{memsetw}}
+\index{memsetw@{memsetw}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void memsetw (void $\ast$ {\em dest}, int {\em value}, int {\em nwords})}\label{hpstring_8h_a30}
+
+
+\index{hpstring.h@{hpstring.h}!my_atof@{my\_\-atof}}
+\index{my_atof@{my\_\-atof}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double my\_\-atof (char $\ast$)}\label{hpstring_8h_a26}
+
+
+\index{hpstring.h@{hpstring.h}!mydtoa@{mydtoa}}
+\index{mydtoa@{mydtoa}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ mydtoa (double {\em x}, char $\ast$ {\em buf})}\label{hpstring_8h_a14}
+
+
+\index{hpstring.h@{hpstring.h}!strcat@{strcat}}
+\index{strcat@{strcat}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ strcat (char $\ast$ {\em dest}, const char $\ast$ {\em src})}\label{hpstring_8h_a5}
+
+
+Append source after enf of destination. $\ast$/.
+
+\index{hpstring.h@{hpstring.h}!strcmp@{strcmp}}
+\index{strcmp@{strcmp}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int strcmp (register const char $\ast$ {\em s1}, register const char $\ast$ {\em s2})}\label{hpstring_8h_a6}
+
+
+Compare s1 and s2 ($<$0 ==0 or $>$0).
+
+\index{hpstring.h@{hpstring.h}!strcpy@{strcpy}}
+\index{strcpy@{strcpy}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ strcpy (char $\ast$ {\em dest}, char $\ast$ {\em src})}\label{hpstring_8h_a3}
+
+
+Copy source to destination.
+
+\index{hpstring.h@{hpstring.h}!strlen@{strlen}}
+\index{strlen@{strlen}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int strlen (char $\ast$ {\em s})}\label{hpstring_8h_a2}
+
+
+Length of s.
+
+\index{hpstring.h@{hpstring.h}!strncmp@{strncmp}}
+\index{strncmp@{strncmp}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int strncmp (const char $\ast$ {\em s1}, const char $\ast$ {\em s2}, int {\em num})}\label{hpstring_8h_a7}
+
+
+Compare n chars of s1 and s2 ($<$0 ==0 or $>$0).
+
+\index{hpstring.h@{hpstring.h}!strncpy@{strncpy}}
+\index{strncpy@{strncpy}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ strncpy (char $\ast$ {\em dest}, char $\ast$ {\em src}, int {\em n})}\label{hpstring_8h_a4}
+
+
+Copy n chars of src in dest.
+
+\index{hpstring.h@{hpstring.h}!uints@{uints}}
+\index{uints@{uints}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ uints (unsigned {\em z}, int {\em base})}\label{hpstring_8h_a24}
+
+
+\index{hpstring.h@{hpstring.h}!ulltoa@{ulltoa}}
+\index{ulltoa@{ulltoa}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ ulltoa (unsigned long {\em long}, char $\ast$, int {\em base})}\label{hpstring_8h_a11}
+
+
+$\backslash$fn char $\ast${\bf ulltoa(unsigned long long, char $\ast$, int base)} {\rm (p.\,\pageref{hpstring_8h_a11})}
+
+\index{hpstring.h@{hpstring.h}!upper@{upper}}
+\index{upper@{upper}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ upper (char $\ast$ {\em t}, char $\ast$ {\em s})}\label{hpstring_8h_a12}
+
+
+Convert string to uppercase.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+t}]pointer to target \item[{\em 
+s}]pointer to source \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Return values: ]\par
+\begin{description}
+\item[{\em 
+pointer}]to target \end{description}
+\end{Desc}
+\index{hpstring.h@{hpstring.h}!utoa@{utoa}}
+\index{utoa@{utoa}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ utoa (unsigned {\em z}, char $\ast$ {\em buff}, int {\em base})}\label{hpstring_8h_a9}
+
+
+$\backslash$fn char $\ast${\bf utoa(unsigned z, char $\ast$ buff, int base)} {\rm (p.\,\pageref{hpstring_8h_a9})}
+
+\index{hpstring.h@{hpstring.h}!xpad@{xpad}}
+\index{xpad@{xpad}!hpstring.h@{hpstring.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ xpad (char $\ast$ {\em t}, char $\ast$ {\em s}, int {\em n}, int {\em left}, char {\em c})}\label{hpstring_8h_a15}
+
+

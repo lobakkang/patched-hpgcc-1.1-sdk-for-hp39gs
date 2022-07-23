@@ -1,0 +1,215 @@
+A mini-howto for connecting the HP 49G+ USB port with linux.
+
+***** Linux configuration *****
+
+** Configure kernel USB support
+Most stock kernels (e.g. SuSE, RedHat, ...) should have this already set
+up properly.
+
+To compile your own (2.6.9) kernel,
+- enable the USB options for your computer as normal
+- set USB_SERIAL as a module
+- set USB_SERIAL_GENERIC as yes
+- compile and install the kernel and modules (see the kernel howto for
+more detail)
+
+Note: safe_serial (USB_SERIAL_SAFE) is not necessary nor even used to
+connect to the 49G+.
+
+** Load the kernel modules
+- as root, type "modprobe usbserial vendor=0x03f0 product=0x0121"
+   This loads the module and registers it with the USB hotplug system to
+control the 49G+.
+   You may wish to add the appropriate instructions to your system's
+boot scripts.
+
+** Connect the calculator
+- Turn it on and plug in the USB cable (order may be reversed without harm)
+
+- as any user, type "dmesg | tail"
+   The last line should show something like "usb 3-1: Generic converter
+now attached to ttyUSB0".
+   ttyUSB0 refers to the device at /dev/ttyUSB0; substitue the port
+number as necessary.
+   ttyUSB1 or 2 may be used if you restart the calculator after a hung
+connection.
+   You should be able to free a hung port by killing the zombie process.
+
+- (optional) type "more /proc/bus/usb/devices"
+   One of the entries should be for the calculator.  It shows the USB
+vendor and product
+   numbers which were used above.  One line should read
+   "I:  If#= 0 Alt= 0 #EPs= 2 Cls=ff(vend.) Sub=00 Prot=00
+Driver=usbserial_generic".
+   If Driver=(none), then your usbserial module wasn't installed/started
+properly.
+   You might "rmmod usbserial" and try loading it again; the product or
+vendor
+   may have been wrong.
+
+- type "ls -l /dev/ttyUSB0"; make sure that it is readable AND writable
+by your normal user
+
+***** XModem *****
+
+Some distributions package the XModem software along with minicom.
+To me, XModem seems faster/more reliable than Kermit for large file
+transfers.
+
+** Send a file to the calculator
+- put a destination variable name on the stack (e.g. 'test')
+- on the computer, type "sx FILENAME < /dev/ttyUSB0 > /dev/ttyUSB0"
+   (use lsx instead of sx as appropriate)
+- on the calculator, type XRECV
+- wait a while; the computer should show the upload progress after a few
+seconds
+- the "-k" option seems to improve transmission speed.  "lsx -k FILENAME
+</dev/ttyUSB0 >/dev/ttyUSB0"
+
+** Receive a file from the calculator
+- put the source variable name on the stack (e.g. 'PPAR')
+- on the calculator, type XSEND
+- on the computer, type "rx FILENAME < /dev/ttyUSB0 > /dev/ttyUSB0"
+- wait
+Note: this file will come in the calculator's binary format
+
+***** Kermit *****
+
+(easier and more powerful than XModem)
+
+** Connecting
+- on the calculator, simultaneously press red-shift and right-arrow
+   The calculator should now say "Awaiting Server Cmd."
+- on the computer, type "kermit" or "ckermit"
+- in kermit, type "set port /dev/ttyUSB0"
+- (optional) in kermit, type "robust"
+   Kermit has three default operating modes -- fast, cautious, and robust.
+   I haven't noticed any differences between them.  The default is "fast".
+
+** (Optional) Speed boost attempts
+- on the calculator, APPS key, 2.I/O functions.., 5.Transfer.., Chk: 1
+   Reducing the checksum complexity means the calculator doesn't have to
+calculate
+   so much before sending data.
+
+- in kermit, type "set streaming on"
+- "set prefixing none"
+- (optional) "set block-check 1"
+   I dunno, my transfer speeds range from 9cps to over 390 cps.
+   Why won't it consistently hit higher speeds?
+
+- to learn more about kermit, type "help" or visit their website
+- to check on connection speed, type "show streaming"
+
+** List the HP's variables:
+- "rdir"
+
+** Executing commands on the calculator:
+- "rhost COMMANDNAME"
+   Whatever you type after the rhost will be evaluated on the
+calculator's command line.
+   The calculator will return the current stack view.  Commands are
+case-sensitive.
+
+Sample rhost usage:
+- "rhost 10"
+- "rhost !"
+- "rhost 2"
+- "rhost +"
+- "rhost SIN"
+or, more simply
+- "rhost 10 ! 2 + SIN"
+
+** Changing directory:
+- "rhost UPDIR"
+- "rhost { HOME DIR1 SUBDIR }" or whatever
+
+** Get a file from the calculator
+- "get VARNAME FILENAME"
+   where VARNAME is a variable in the current path
+   FILENAME is the destination file on the computer
+   By default, this transfer is in ASCII mode.
+
+** Send a file to the calculator
+- "send FILENAME VARNAME"
+
+** Closing
+- in kermit, type "finish", then "exit" and "ok"
+
+Note: If you restart the calculator while running kermit, linux will
+"hang" ttyUSB0
+and reconnect the calculator as ttyUSB1.  To avoid this, close kermit
+before turning
+the calculator back on.
+
+***** General *****
+
+** If the calculator freezes
+- Try hitting cancel
+- If that doesn't work, unplug the USB cable and then hit cancel
+- I always turn it off and on again just to be sure
+
+** TODO
+- figure out how to consistently speed up kermit communications
+
+- figure out how to toggle whether the calculator returns the stack
+after each "rhost"
+
+- figure out how to stop the calculator from parsing text files as they
+are sent by kermit
+
+- figure out how to receive a screen capture (APPS key, 2.I/O
+functions.., 3.Print display)
+
+- adopt a standard notation
+   Maybe something like
+    root# - root prompt
+    user> - user prompt
+    HP: - calculator stack/command
+    ...
+
+- add sections on SD cards and updating the ROM (if I only had one...
+<cough> <hint> ;)
+
+- convert to HTML, sprinkle in a few pictures
+
+- publish nice scripts or even a GUI to simplify the whole process
+
+- mod EMU48 or the like to actually run commands on the connected calculator
+
+- add a web interface to this remote-control system
+
+- mod the calculator to
+  - increase the IR range (restore the TV remote)
+  - make the speaker louder and add a volume dial
+  - add a low-pass filter to the speaker to improve its sound quality
+    (and allow fancier modulation)
+  - add an audio-out jack (couldn't this thing decode MP3's from an SD
+card?)
+
+- set up an interface so the calculator can be used as a super-spiffy
+numeric keypad for my desktop (assumes better HP keys)
+
+
+** Links
+- Official site:  http://www.hp.com/calculators/graphing/49gplus/
+- Usenet group: comp.sys.hp48
+- XModem software:  http://www.ohse.de/uwe/software/lrzsz.html
+- Kermit software:  http://www.columbia.edu/kermit/
+- Old HPTalx program:  http://hptalx.sourceforge.net/
+- GUI for OSX:  http://hpconnect.sourceforge.net/
+- GCC compiler:  http://hpgcc.sourceforge.net/
+- Master repository:  http://www.hpcalc.org/
+- 49G with Linux:  http://lcdx00.wm.lc.ehu.es/~svet/hp49g.html
+
+** Written by
+Daniel Herring, dherring at uiuc du-ot edu
+Doesn't that read like the spam subject lines?
+If you can't beat 'em, join 'em!
+
+** Licensing
+Please feel free to update, edit, and distribute this document.
+I only ask that you re-release your changes freely, and give credit
+where it is due.
+
+Please contact me with updates, or to get the latest version. 

@@ -1,0 +1,55 @@
+win_choose_add.o: win_choose_add.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hplib/hpstring.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hpg/hpgraphics.h \
+  ../win.h ../winevent.h ../winwidget.h ../winkeys.h ../wintimer.h \
+  ../winsoftmenu.h ../wintext.h ../winprogress.h ../wincheckbox.h \
+  ../winbox.h ../winchoose.h ../winimg.h ../wincore.h choosepriv.h
+win_choose_add_with_label.o: win_choose_add_with_label.c \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h \
+  ../../hplib/hpstring.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hpg/hpgraphics.h ../win.h ../winevent.h ../winwidget.h \
+  ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h ../wincore.h choosepriv.h
+win_choose_get_choice.o: win_choose_get_choice.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hplib/hpstring.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hpg/hpgraphics.h \
+  ../win.h ../winevent.h ../winwidget.h ../winkeys.h ../wintimer.h \
+  ../winsoftmenu.h ../wintext.h ../winprogress.h ../wincheckbox.h \
+  ../winbox.h ../winchoose.h ../winimg.h ../wincore.h choosepriv.h
+win_choose_get_index.o: win_choose_get_index.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hplib/hpstring.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hpg/hpgraphics.h \
+  ../win.h ../winevent.h ../winwidget.h ../winkeys.h ../wintimer.h \
+  ../winsoftmenu.h ../wintext.h ../winprogress.h ../wincheckbox.h \
+  ../winbox.h ../winchoose.h ../winimg.h ../wincore.h choosepriv.h
+win_choose_new.o: win_choose_new.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hplib/hpstring.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hpg/hpgraphics.h \
+  ../win.h ../winevent.h ../winwidget.h ../winkeys.h ../wintimer.h \
+  ../winsoftmenu.h ../wintext.h ../winprogress.h ../wincheckbox.h \
+  ../winbox.h ../winchoose.h ../winimg.h ../wincore.h choosepriv.h
+win_choose_remove.o: win_choose_remove.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hplib/hpstring.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hpg/hpgraphics.h \
+  ../win.h ../winevent.h ../winwidget.h ../winkeys.h ../wintimer.h \
+  ../winsoftmenu.h ../wintext.h ../winprogress.h ../wincheckbox.h \
+  ../winbox.h ../winchoose.h ../winimg.h ../wincore.h choosepriv.h
+win_choose_set_choice.o: win_choose_set_choice.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hplib/hpstring.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hpg/hpgraphics.h \
+  ../win.h ../winevent.h ../winwidget.h ../winkeys.h ../wintimer.h \
+  ../winsoftmenu.h ../wintext.h ../winprogress.h ../wincheckbox.h \
+  ../winbox.h ../winchoose.h ../winimg.h ../wincore.h choosepriv.h
+win_choose_set_index.o: win_choose_set_index.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hplib/hpstring.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hpg/hpgraphics.h \
+  ../win.h ../winevent.h ../winwidget.h ../winkeys.h ../wintimer.h \
+  ../winsoftmenu.h ../wintext.h ../winprogress.h ../wincheckbox.h \
+  ../winbox.h ../winchoose.h ../winimg.h ../wincore.h choosepriv.h
+win_choose_set_menu.o: win_choose_set_menu.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hplib/hpstring.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hpg/hpgraphics.h \
+  ../win.h ../winevent.h ../winwidget.h ../winkeys.h ../wintimer.h \
+  ../winsoftmenu.h ../wintext.h ../winprogress.h ../wincheckbox.h \
+  ../winbox.h ../winchoose.h ../winimg.h ../wincore.h choosepriv.h

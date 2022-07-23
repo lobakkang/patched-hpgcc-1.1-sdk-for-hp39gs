@@ -1,0 +1,680 @@
+\section{ggl.h File Reference}
+\label{ggl_8h}\index{ggl.h@{ggl.h}}
+Extended grayscale graphics routines for HP calculators. 
+
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf STATEBUFSIZE}~((11+6)$\ast$4)
+\begin{CompactList}\small\item\em The minimum number of bytes for a state buffer. \item\end{CompactList}\item 
+\#define {\bf LCD\_\-H}~80
+\begin{CompactList}\small\item\em Height of the screen, in pixels. \item\end{CompactList}\item 
+\#define {\bf LCD\_\-W}~160
+\begin{CompactList}\small\item\em Width of the screen, in pixels. \item\end{CompactList}\item 
+\#define {\bf SCREENBUFSIZE}~((LCD\_\-W$>$$>$2)$\ast$(LCD\_\-H)$\ast$2)
+\begin{CompactList}\small\item\em Number of bytes in the screen buffer. \item\end{CompactList}\item 
+\#define {\bf ggl\_\-setmode}(framebuf)~sys\_\-lcdsetmode(MODE\_\-16GRAY,framebuf);
+\begin{CompactList}\small\item\em Sets a 16-color display mode. \item\end{CompactList}\item 
+\#define {\bf ggl\_\-save}(buf)~sys\_\-lcdsave(buf)
+\begin{CompactList}\small\item\em Saves the state of the LCD controller. \item\end{CompactList}\item 
+\#define {\bf ggl\_\-bitbltmask}(dest, src, width, height, tcol)~ggl\_\-bitbltoper(dest,src,width,height,tcol,\&ggl\_\-opmask)
+\begin{CompactList}\small\item\em Copies a rectangular surface with mask. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef unsigned int($\ast$ {\bf gglfilter} )(unsigned int pixels, int param)
+\begin{CompactList}\small\item\em A filter for pixels being drawn to a surface. \item\end{CompactList}\item 
+typedef unsigned int($\ast$ {\bf ggloperator} )(unsigned int dest, unsigned int source, int param)
+\begin{CompactList}\small\item\em An operator for pixels being drawn to a surface. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void {\bf ggl\_\-initscr} ({\bf gglsurface} $\ast$srf)
+\begin{CompactList}\small\item\em Prepares to draw on the LCD screen with GGL. \item\end{CompactList}\item 
+void {\bf ggl\_\-gethpgscreen} ({\bf gglsurface} $\ast$srf)
+\begin{CompactList}\small\item\em Prepares to draw on the LCD screen with GGL and HPG. \item\end{CompactList}\item 
+void {\bf ggl\_\-restore} (int $\ast$buf)
+\begin{CompactList}\small\item\em Restores the state of the LCD controller. \item\end{CompactList}\item 
+void {\bf ggl\_\-show} (int $\ast$buffer)
+\item 
+void {\bf ggl\_\-pltnib} (int $\ast$buff, int off, int color)
+\begin{CompactList}\small\item\em Pokes a color into a specific pixel of a surface. \item\end{CompactList}\item 
+int {\bf ggl\_\-getnib} (int $\ast$buff, int off)
+\begin{CompactList}\small\item\em Peeks a color from a specific pixel of a surface. \item\end{CompactList}\item 
+void {\bf ggl\_\-hline} ({\bf gglsurface} $\ast$srf, int y, int xl, int xr, int color)
+\begin{CompactList}\small\item\em Draws a horizontal line on a surface. \item\end{CompactList}\item 
+void {\bf ggl\_\-vline} ({\bf gglsurface} $\ast$srf, int x, int yt, int yb, int color)
+\begin{CompactList}\small\item\em Draws a vertical line on a surface. \item\end{CompactList}\item 
+void {\bf ggl\_\-rect} ({\bf gglsurface} $\ast$srf, int x1, int y1, int x2, int y2, int color)
+\begin{CompactList}\small\item\em Draws a rectangle on a surface. \item\end{CompactList}\item 
+void {\bf ggl\_\-rectp} ({\bf gglsurface} $\ast$srf, int x1, int y1, int x2, int y2, int $\ast$color)
+\begin{CompactList}\small\item\em Draws a rectangle on a surface with a 2D pattern. \item\end{CompactList}\item 
+void {\bf ggl\_\-bitblt} ({\bf gglsurface} $\ast$dest, {\bf gglsurface} $\ast$src, int width, int height)
+\begin{CompactList}\small\item\em Copies a rectangular surface. Forward direction. \item\end{CompactList}\item 
+void {\bf ggl\_\-revblt} ({\bf gglsurface} $\ast$dest, {\bf gglsurface} $\ast$src, int width, int height)
+\begin{CompactList}\small\item\em Copies a rectangular surface. Reverse direction. \item\end{CompactList}\item 
+void {\bf ggl\_\-ovlblt} ({\bf gglsurface} $\ast$dest, {\bf gglsurface} $\ast$src, int width, int height)
+\begin{CompactList}\small\item\em Copies a rectangular surface. Safe to use when areas overlap. \item\end{CompactList}\item 
+void {\bf ggl\_\-scrollup} ({\bf gglsurface} $\ast$dest, int width, int height, int npixels)
+\begin{CompactList}\small\item\em Scroll a surface up. \item\end{CompactList}\item 
+void {\bf ggl\_\-scrolldn} ({\bf gglsurface} $\ast$dest, int width, int height, int npixels)
+\begin{CompactList}\small\item\em Scroll a surface down. \item\end{CompactList}\item 
+void {\bf ggl\_\-scrolllf} ({\bf gglsurface} $\ast$dest, int width, int height, int npixels)
+\begin{CompactList}\small\item\em Scroll a surface left. \item\end{CompactList}\item 
+void {\bf ggl\_\-scrollrt} ({\bf gglsurface} $\ast$dest, int width, int height, int npixels)
+\begin{CompactList}\small\item\em Scroll a surface right. \item\end{CompactList}\item 
+void {\bf ggl\_\-filter} ({\bf gglsurface} $\ast$dest, int width, int height, int param, {\bf gglfilter} filterfunc)
+\begin{CompactList}\small\item\em Applies a filter to a surface. \item\end{CompactList}\item 
+void {\bf ggl\_\-bitbltoper} ({\bf gglsurface} $\ast$dest, {\bf gglsurface} $\ast$src, int width, int height, int param, {\bf ggloperator} fop)
+\begin{CompactList}\small\item\em Applies a binary operator to a surface. \item\end{CompactList}\item 
+unsigned {\bf ggl\_\-fltlighten} (unsigned word, int param)
+\begin{CompactList}\small\item\em Lightens an image. \item\end{CompactList}\item 
+unsigned {\bf ggl\_\-fltdarken} (unsigned word, int param)
+\begin{CompactList}\small\item\em Darkens an image. \item\end{CompactList}\item 
+unsigned {\bf ggl\_\-opmask} (unsigned dest, unsigned src, int tcolor)
+\begin{CompactList}\small\item\em Mask operator. \item\end{CompactList}\item 
+unsigned {\bf ggl\_\-optransp} (unsigned dest, unsigned src, int weight)
+\begin{CompactList}\small\item\em Transparency blend operator. \item\end{CompactList}\item 
+int {\bf ggl\_\-mkcolor} (int color)
+\begin{CompactList}\small\item\em Solid color word generator. \item\end{CompactList}\item 
+void {\bf ggl\_\-mkcolor32} (int col32, int $\ast$pattern)
+\begin{CompactList}\small\item\em 30-colors dither pattern generator. \item\end{CompactList}\item 
+void {\bf ggl\_\-initaline} ()
+\begin{CompactList}\small\item\em Antialiased lines initialization. \item\end{CompactList}\item 
+void {\bf ggl\_\-aline} ({\bf gglsurface} $\ast$srf, int x1, int y1, int x2, int y2)
+\begin{CompactList}\small\item\em Draw antialiased line. \item\end{CompactList}\item 
+void {\bf ggl\_\-endaline} ()
+\begin{CompactList}\small\item\em Antialiased lines cleanup. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Extended grayscale graphics routines for HP calculators. 
+
+
+
+Definition in file {\bf ggl.h}.
+
+\subsection{Define Documentation}
+\index{ggl.h@{ggl.h}!ggl_bitbltmask@{ggl\_\-bitbltmask}}
+\index{ggl_bitbltmask@{ggl\_\-bitbltmask}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ggl\_\-bitbltmask(dest, src, width, height, tcol)~ggl\_\-bitbltoper(dest,src,width,height,tcol,\&ggl\_\-opmask)}\label{ggl_8h_a6}
+
+
+Copies a rectangular surface with mask. 
+
+Performs a bitblit copy operation where the given color is considered transparent, thus not affecting the background color. The direction of the memory movement is from top to bottom. Note: This is a macro that calls ggl\_\-bitbltoper with the proper operator.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dest}]The surface to draw onto. The area will be copied at the coordinates x and y given in the proper fields of the {\bf gglsurface}{\rm (p.\,\pageref{structgglsurface})} structure. \item[{\em src}]The source surface. The region to copy will start at the coordinates x and y given in the proper fields of the {\bf gglsurface}{\rm (p.\,\pageref{structgglsurface})} structure. \item[{\em width}]The width in pixels of the rectangular region to copy. \item[{\em height}]The height in pixels of the rectangular region to copy. \item[{\em tcol}]Transparent color. Color in the source surface to be considered as transparent (between 0 and 15).\end{description}
+\end{Desc}
+\begin{Desc}
+\item[See also:]{\bf ggl\_\-bitblt}{\rm (p.\,\pageref{ggl_8h_a19})} 
+
+{\bf ggl\_\-bitbltoper}{\rm (p.\,\pageref{ggl_8h_a27})} \end{Desc}
+
+
+Definition at line 494 of file ggl.h.\index{ggl.h@{ggl.h}!ggl_save@{ggl\_\-save}}
+\index{ggl_save@{ggl\_\-save}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ggl\_\-save(buf)~sys\_\-lcdsave(buf)}\label{ggl_8h_a5}
+
+
+Saves the state of the LCD controller. 
+
+$\ast$$\ast$OBSOLETE$\ast$$\ast$: This function is now a macro that calls sys\_\-lcdsave().
+
+Calling this function results in the current state of the LCD controller being stored in the given buffer. The saved state can be restored by passing the same buffer to {\bf ggl\_\-restore}{\rm (p.\,\pageref{ggl_8h_a11})}. This function can be used when it is important to restore the LCD controller to the exact previous state. For example, if a program sets the LCD in a non-standard (or unknown state, like when using hardware scrolling, and a routine needs to use the LCD, it can save the state and restore it later using ggl\_\-save and ggl\_\-restore.
+
+If HPG is in use, the application should use hpg\_\-cleanup when finished to restore the LCD controller to a known state. It is dangerous to make changes to the LCD controller state while HPG is operating. However, it is safe to use ggl\_\-save before initializing HPG and use ggl\_\-restore after hpg\_\-cleanup has returned.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em buf}]A flat buffer, with a size of at least {\bf STATEBUFSIZE}{\rm (p.\,\pageref{ggl_8h_a0})} bytes. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[See also:]{\bf ggl\_\-restore}{\rm (p.\,\pageref{ggl_8h_a11})} \end{Desc}
+
+
+Definition at line 230 of file ggl.h.\index{ggl.h@{ggl.h}!ggl_setmode@{ggl\_\-setmode}}
+\index{ggl_setmode@{ggl\_\-setmode}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ggl\_\-setmode(framebuf)~sys\_\-lcdsetmode(MODE\_\-16GRAY,framebuf);}\label{ggl_8h_a4}
+
+
+Sets a 16-color display mode. 
+
+This macro calls sys\_\-lcdsetmode(), which actually switches the calculator LCD controller into 16-color grayscale mode with the given address for a frame buffer. This should be done for stand-alone GGL applications. (HPG applications using GGL should instead use HPG's {\tt hpg\_\-set\_\-mode\_\-gray16} to perform the same task.)
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em framebuf}]A pointer to the new LCD screen's frame buffer. This is generally found in the {\bf gglsurface::addr}{\rm (p.\,\pageref{structgglsurface_o0})} field of the surface passed to ggl\_\-initscr or ggl\_\-gethpgscreen. IMPORTANT: framebuf MUST be a physical memory pointer. Use sys\_\-map\_\-v2p() to convert. \end{description}
+\end{Desc}
+
+
+Definition at line 205 of file ggl.h.\index{ggl.h@{ggl.h}!LCD_H@{LCD\_\-H}}
+\index{LCD_H@{LCD\_\-H}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define LCD\_\-H~80}\label{ggl_8h_a1}
+
+
+Height of the screen, in pixels. 
+
+
+
+Definition at line 72 of file ggl.h.\index{ggl.h@{ggl.h}!LCD_W@{LCD\_\-W}}
+\index{LCD_W@{LCD\_\-W}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define LCD\_\-W~160}\label{ggl_8h_a2}
+
+
+Width of the screen, in pixels. 
+
+
+
+Definition at line 77 of file ggl.h.\index{ggl.h@{ggl.h}!SCREENBUFSIZE@{SCREENBUFSIZE}}
+\index{SCREENBUFSIZE@{SCREENBUFSIZE}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SCREENBUFSIZE~((LCD\_\-W$>$$>$2)$\ast$(LCD\_\-H)$\ast$2)}\label{ggl_8h_a3}
+
+
+Number of bytes in the screen buffer. 
+
+This constant provides the size in bytes of the screen buffer, allowing the use of standard routines like memset to clear the screen, memcpy to copy it elsewhere, and so forth. 
+
+Definition at line 87 of file ggl.h.\index{ggl.h@{ggl.h}!STATEBUFSIZE@{STATEBUFSIZE}}
+\index{STATEBUFSIZE@{STATEBUFSIZE}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define STATEBUFSIZE~((11+6)$\ast$4)}\label{ggl_8h_a0}
+
+
+The minimum number of bytes for a state buffer. 
+
+Save buffers, which are allocated and supplied to GGL by the application for use by {\bf ggl\_\-save}{\rm (p.\,\pageref{ggl_8h_a5})} and {\bf ggl\_\-restore}{\rm (p.\,\pageref{ggl_8h_a11})}, need to be at least this size to prevent undefined (but probably bad) behavior from occurring.
+
+\begin{Desc}
+\item[See also:]{\bf ggl\_\-save}{\rm (p.\,\pageref{ggl_8h_a5})} 
+
+{\bf ggl\_\-restore}{\rm (p.\,\pageref{ggl_8h_a11})} \end{Desc}
+
+
+Definition at line 67 of file ggl.h.
+
+\subsection{Typedef Documentation}
+\index{ggl.h@{ggl.h}!gglfilter@{gglfilter}}
+\index{gglfilter@{gglfilter}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned int($\ast$ {\bf gglfilter})(unsigned int pixels, int param)}\label{ggl_8h_a7}
+
+
+A filter for pixels being drawn to a surface. 
+
+A filter is a unary operation (uses one argument) that is applied to colors being drawn to a screen. Filters are very flexible and can be used for a wide variety of drawing purposes, including color modification and texturing. However, they lack the ability to combine colors with those already on the surface. The function takes as arguments a word containing 8 pixels and a parameter defined by the user. A custom filter should process the 8 pixels, using the parameter if needed, and return a word containing the modified 8 pixels. Packs of 8 pixels are processed at the same time for efficiency reasons. Examples of simple filter operations are to 'darken' or 'lighten' an image. A more complex filter can be written for 'color replace' for example.
+
+\begin{Desc}
+\item[See also:]{\bf ggl\_\-fltdarken}{\rm (p.\,\pageref{ggl_8h_a29})} 
+
+{\bf ggl\_\-fltlighten}{\rm (p.\,\pageref{ggl_8h_a28})} 
+
+{\bf ggloperator}{\rm (p.\,\pageref{ggl_8h_a8})} \end{Desc}
+
+
+Definition at line 138 of file ggl.h.\index{ggl.h@{ggl.h}!ggloperator@{ggloperator}}
+\index{ggloperator@{ggloperator}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned int($\ast$ {\bf ggloperator})(unsigned int dest, unsigned int source, int param)}\label{ggl_8h_a8}
+
+
+An operator for pixels being drawn to a surface. 
+
+An operator is a binary operation (using two values) that is applied to colors being drawn to a screen. Operators can be used to implement a great variety of features, including either partial or complete transparency. Operators are more powerful than filters, but at a slightly higher performance cost. The function takes a word containing 8 pixels from the source surface, a word conatining the corresponding 8 pixels from the destination surface, and an arbitrary parameter. Packs of 8 pixels are processed at the same time for efficiency reasons. The function should return a word containing the 8 pixels resulting from the operation performed.
+
+\begin{Desc}
+\item[See also:]{\bf ggl\_\-opmask}{\rm (p.\,\pageref{ggl_8h_a30})} 
+
+{\bf ggl\_\-optransp}{\rm (p.\,\pageref{ggl_8h_a31})} 
+
+{\bf gglfilter}{\rm (p.\,\pageref{ggl_8h_a7})} \end{Desc}
+
+
+Definition at line 159 of file ggl.h.
+
+\subsection{Function Documentation}
+\index{ggl.h@{ggl.h}!ggl_aline@{ggl\_\-aline}}
+\index{ggl_aline@{ggl\_\-aline}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ggl\_\-aline ({\bf gglsurface} $\ast$ {\em srf}, int {\em x1}, int {\em y1}, int {\em x2}, int {\em y2})}\label{ggl_8h_a35}
+
+
+Draw antialiased line. 
+
+Draws a 3-pixel wide line with soft borders. Line is black on white. Call ggl\_\-initaline before using this function.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em srf}]Surface to draw onto. \item[{\em x1}]X coordinate, origin of the line \item[{\em y1}]Y coordinate, origin of the line \item[{\em x2}]X coordinate, end of the line \item[{\em y2}]Y coordinate, end of the line\end{description}
+\end{Desc}
+\begin{Desc}
+\item[See also:]{\bf ggl\_\-initaline}{\rm (p.\,\pageref{ggl_8h_a34})} 
+
+{\bf ggl\_\-endaline}{\rm (p.\,\pageref{ggl_8h_a36})} \end{Desc}
+\index{ggl.h@{ggl.h}!ggl_bitblt@{ggl\_\-bitblt}}
+\index{ggl_bitblt@{ggl\_\-bitblt}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ggl\_\-bitblt ({\bf gglsurface} $\ast$ {\em dest}, {\bf gglsurface} $\ast$ {\em src}, int {\em width}, int {\em height})}\label{ggl_8h_a19}
+
+
+Copies a rectangular surface. Forward direction. 
+
+Copies a rectangular area from one surface to another. The direction of memory movement is from top to bottom, so care should be taken if the areas overlap.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dest}]The surface to draw onto. The area will be copied at the coordinates x and y given in the proper fields of the {\bf gglsurface}{\rm (p.\,\pageref{structgglsurface})} structure. \item[{\em src}]The source surface. The region to copy will start at the coordinates x and y given in the proper fields of the {\bf gglsurface}{\rm (p.\,\pageref{structgglsurface})} structure. \item[{\em width}]The width in pixels of the rectangular region to copy. \item[{\em height}]The height in pixels of the rectangular region to copy.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[See also:]{\bf ggl\_\-revblt}{\rm (p.\,\pageref{ggl_8h_a20})} 
+
+{\bf ggl\_\-ovlblt}{\rm (p.\,\pageref{ggl_8h_a21})} \end{Desc}
+\index{ggl.h@{ggl.h}!ggl_bitbltoper@{ggl\_\-bitbltoper}}
+\index{ggl_bitbltoper@{ggl\_\-bitbltoper}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ggl\_\-bitbltoper ({\bf gglsurface} $\ast$ {\em dest}, {\bf gglsurface} $\ast$ {\em src}, int {\em width}, int {\em height}, int {\em param}, {\bf ggloperator} {\em fop})}\label{ggl_8h_a27}
+
+
+Applies a binary operator to a surface. 
+
+Applies a user-defined operator on a specified region of a surface, using a second surface as an argument.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dest}]The surface to operate on. The area starts at coordinates x and y given in the proper fields of the {\bf gglsurface}{\rm (p.\,\pageref{structgglsurface})} structure. \item[{\em src}]The source surface. The area starts at coordinates x and y given in the proper fields of the {\bf gglsurface}{\rm (p.\,\pageref{structgglsurface})} structure. \item[{\em width}]The width in pixels of the rectangular region. \item[{\em height}]The height in pixels of the rectangular region. \item[{\em param}]A parameter to be passed to the operator. This parameter is defined by each operator function. \item[{\em filterfunc}]The operator function to apply.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[See also:]{\bf ggloperator}{\rm (p.\,\pageref{ggl_8h_a8})} 
+
+{\bf ggl\_\-filter}{\rm (p.\,\pageref{ggl_8h_a26})} \end{Desc}
+\index{ggl.h@{ggl.h}!ggl_endaline@{ggl\_\-endaline}}
+\index{ggl_endaline@{ggl\_\-endaline}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ggl\_\-endaline ()}\label{ggl_8h_a36}
+
+
+Antialiased lines cleanup. 
+
+Call this function after using antialiased lines. Call ggl\_\-initaline for initialization.
+
+\begin{Desc}
+\item[See also:]{\bf ggl\_\-initaline}{\rm (p.\,\pageref{ggl_8h_a34})} 
+
+{\bf ggl\_\-aline}{\rm (p.\,\pageref{ggl_8h_a35})} \end{Desc}
+\index{ggl.h@{ggl.h}!ggl_filter@{ggl\_\-filter}}
+\index{ggl_filter@{ggl\_\-filter}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ggl\_\-filter ({\bf gglsurface} $\ast$ {\em dest}, int {\em width}, int {\em height}, int {\em param}, {\bf gglfilter} {\em filterfunc})}\label{ggl_8h_a26}
+
+
+Applies a filter to a surface. 
+
+Applies a user-defined filter (unary operator) on a specified region of a surface.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dest}]The surface to filter. The area to filter starts at coordinates x and y given in the proper fields of the {\bf gglsurface}{\rm (p.\,\pageref{structgglsurface})} structure. \item[{\em width}]The width in pixels of the rectangular region to filter. \item[{\em height}]The height in pixels of the rectangular region to filter. \item[{\em param}]A parameter to be passed to the filter. This parameter is defined by each filter function. \item[{\em filterfunc}]The filter function to apply.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[See also:]{\bf gglfilter}{\rm (p.\,\pageref{ggl_8h_a7})} 
+
+{\bf ggl\_\-bitbltoper}{\rm (p.\,\pageref{ggl_8h_a27})} \end{Desc}
+\index{ggl.h@{ggl.h}!ggl_fltdarken@{ggl\_\-fltdarken}}
+\index{ggl_fltdarken@{ggl\_\-fltdarken}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned ggl\_\-fltdarken (unsigned {\em word}, int {\em param})}\label{ggl_8h_a29}
+
+
+Darkens an image. 
+
+This filter darkens an image by adding the parameter to all the pixels. Do NOT call this function. This is a filter function to be passed as argument to ggl\_\-filter.
+
+\begin{Desc}
+\item[See also:]{\bf ggl\_\-filter}{\rm (p.\,\pageref{ggl_8h_a26})} 
+
+{\bf gglfilter}{\rm (p.\,\pageref{ggl_8h_a7})} 
+
+{\bf ggl\_\-fltlighten}{\rm (p.\,\pageref{ggl_8h_a28})} \end{Desc}
+\index{ggl.h@{ggl.h}!ggl_fltlighten@{ggl\_\-fltlighten}}
+\index{ggl_fltlighten@{ggl\_\-fltlighten}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned ggl\_\-fltlighten (unsigned {\em word}, int {\em param})}\label{ggl_8h_a28}
+
+
+Lightens an image. 
+
+This filter lightens an image by subtracting the parameter from all the pixels. Do NOT call this function. This is a filter function to be passed as argument to ggl\_\-filter.
+
+\begin{Desc}
+\item[See also:]{\bf ggl\_\-filter}{\rm (p.\,\pageref{ggl_8h_a26})} 
+
+{\bf gglfilter}{\rm (p.\,\pageref{ggl_8h_a7})} 
+
+{\bf ggl\_\-fltdarken}{\rm (p.\,\pageref{ggl_8h_a29})} \end{Desc}
+\index{ggl.h@{ggl.h}!ggl_gethpgscreen@{ggl\_\-gethpgscreen}}
+\index{ggl_gethpgscreen@{ggl\_\-gethpgscreen}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ggl\_\-gethpgscreen ({\bf gglsurface} $\ast$ {\em srf})}\label{ggl_8h_a10}
+
+
+Prepares to draw on the LCD screen with GGL and HPG. 
+
+This routine prepares for GGL drawing onto an HPG surface. It fills in the {\bf gglsurface}{\rm (p.\,\pageref{structgglsurface})} structure with appropriate values to draw to HPG's standard screen. This function should be called by HPG applications that wish to make use of GGL. Stand-alone GGL applications should use {\bf ggl\_\-initscr}{\rm (p.\,\pageref{ggl_8h_a9})} instead.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em srf}]An instance of {\bf gglsurface}{\rm (p.\,\pageref{structgglsurface})} to fill in with HPG's screen. \end{description}
+\end{Desc}
+\index{ggl.h@{ggl.h}!ggl_getnib@{ggl\_\-getnib}}
+\index{ggl_getnib@{ggl\_\-getnib}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int ggl\_\-getnib (int $\ast$ {\em buff}, int {\em off})}\label{ggl_8h_a14}
+
+
+Peeks a color from a specific pixel of a surface. 
+
+Retrieves the color of the given pixel. The pixel is identified by an offset from the beginning of the frame buffer, which is defined as {\tt x} {\tt +} {\tt y} {\tt $\ast$} {\tt width} for a given x and y coordinate, where {\tt width} is the width of the surface to plot to. The calling procedure is responsible for correctly calculating the offset. This reduces the overhead when pixels are painted in a specific sequence.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em buff}]The address of a surface bitmap ({\bf gglsurface::addr}{\rm (p.\,\pageref{structgglsurface_o0})} field). \item[{\em off}]The offset ({\tt x} {\tt +} {\tt width} {\tt $\ast$} {\tt y}).\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The color, between 0 and 15. \end{Desc}
+\index{ggl.h@{ggl.h}!ggl_hline@{ggl\_\-hline}}
+\index{ggl_hline@{ggl\_\-hline}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ggl\_\-hline ({\bf gglsurface} $\ast$ {\em srf}, int {\em y}, int {\em xl}, int {\em xr}, int {\em color})}\label{ggl_8h_a15}
+
+
+Draws a horizontal line on a surface. 
+
+Draws a horizontal line onto the given surface, in the given color or color pattern.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em srf}]The surface to draw onto. \item[{\em y}]The Y coordinate of the line. \item[{\em xl}]The left-most x coordinate of the line. \item[{\em xr}]The right-most x coordinate of the line. \item[{\em color}]The color pattern. This is a 32-bit value, containing 8 consecutive pixels worth of color. For solid colors, set the color to contain the same pattern on every nibble (for color 8, use 0x88888888), or call {\bf ggl\_\-mkcolor}{\rm (p.\,\pageref{ggl_8h_a32})} for that purpose. The colors in this pattern will be used consecutively in the horizontal direction. Patterns are always 8-pixel aligned, so painting a sequence of lines produces the right pattern. \end{description}
+\end{Desc}
+\index{ggl.h@{ggl.h}!ggl_initaline@{ggl\_\-initaline}}
+\index{ggl_initaline@{ggl\_\-initaline}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ggl\_\-initaline ()}\label{ggl_8h_a34}
+
+
+Antialiased lines initialization. 
+
+Call this function before using antialiased lines. Call ggl\_\-endaline for cleanup procedures when done.
+
+\begin{Desc}
+\item[See also:]{\bf ggl\_\-aline}{\rm (p.\,\pageref{ggl_8h_a35})} 
+
+{\bf ggl\_\-endaline}{\rm (p.\,\pageref{ggl_8h_a36})} \end{Desc}
+\index{ggl.h@{ggl.h}!ggl_initscr@{ggl\_\-initscr}}
+\index{ggl_initscr@{ggl\_\-initscr}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ggl\_\-initscr ({\bf gglsurface} $\ast$ {\em srf})}\label{ggl_8h_a9}
+
+
+Prepares to draw on the LCD screen with GGL. 
+
+This routine prepares for GGL drawing onto the LCD screen, by allocating memory for the screen buffer and filling the {\bf gglsurface}{\rm (p.\,\pageref{structgglsurface})} structure with the proper width and other parameters. It is used by stand-alone GGL applications; HPG applications that make use of GGL should use {\bf ggl\_\-gethpgscreen}{\rm (p.\,\pageref{ggl_8h_a10})} instead.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em srf}]An instance of {\bf gglsurface}{\rm (p.\,\pageref{structgglsurface})} to fill in with the new surface. \end{description}
+\end{Desc}
+\index{ggl.h@{ggl.h}!ggl_mkcolor@{ggl\_\-mkcolor}}
+\index{ggl_mkcolor@{ggl\_\-mkcolor}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int ggl\_\-mkcolor (int {\em color})}\label{ggl_8h_a32}
+
+
+Solid color word generator. 
+
+Generates a word containing the specified color in every nibble, to be used with the line and rectangle functions.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em color}]Color between 0 and 15. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[See also:]{\bf ggl\_\-mkcolor32}{\rm (p.\,\pageref{ggl_8h_a33})} \end{Desc}
+\index{ggl.h@{ggl.h}!ggl_mkcolor32@{ggl\_\-mkcolor32}}
+\index{ggl_mkcolor32@{ggl\_\-mkcolor32}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ggl\_\-mkcolor32 (int {\em col32}, int $\ast$ {\em pattern})}\label{ggl_8h_a33}
+
+
+30-colors dither pattern generator. 
+
+Generates an 8x8 pattern containing the specified color. The color is specified in a 30-colors scale. This function will return the appropriate dither pattern to approximate the color.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em col32}]Color between 0 and 30, 0 being white and 30 being black. \item[{\em pattern}]Pointer to and array of 8 words to be filled with the generated pattern.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[See also:]{\bf ggl\_\-mkcolor}{\rm (p.\,\pageref{ggl_8h_a32})} \end{Desc}
+\index{ggl.h@{ggl.h}!ggl_opmask@{ggl\_\-opmask}}
+\index{ggl_opmask@{ggl\_\-opmask}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned ggl\_\-opmask (unsigned {\em dest}, unsigned {\em src}, int {\em tcolor})}\label{ggl_8h_a30}
+
+
+Mask operator. 
+
+This operator copies the source image on the destination. All pixels in the source surface matching the color passed as param are not copied. Do NOT call this function. This is an operator function to be passed as argument to ggl\_\-bitbltoper. The macro ggl\_\-bitbltmask uses this operator.
+
+\begin{Desc}
+\item[See also:]{\bf ggl\_\-bitbltoper}{\rm (p.\,\pageref{ggl_8h_a27})} 
+
+{\bf ggloperator}{\rm (p.\,\pageref{ggl_8h_a8})} 
+
+{\bf ggl\_\-bitbltmask}{\rm (p.\,\pageref{ggl_8h_a6})} \end{Desc}
+\index{ggl.h@{ggl.h}!ggl_optransp@{ggl\_\-optransp}}
+\index{ggl_optransp@{ggl\_\-optransp}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned ggl\_\-optransp (unsigned {\em dest}, unsigned {\em src}, int {\em weight})}\label{ggl_8h_a31}
+
+
+Transparency blend operator. 
+
+This operator copies the source image on the destination with a uniform transparency, specified by the parameter. When parameter is 0, the source surface is opaque. When param is 16 the source surface is fully transparent. Intermediate values provide different opacities. Do NOT call this function. This is an operator function to be passed as argument to ggl\_\-bitbltoper.
+
+\begin{Desc}
+\item[See also:]{\bf ggl\_\-bitbltoper}{\rm (p.\,\pageref{ggl_8h_a27})} 
+
+{\bf ggloperator}{\rm (p.\,\pageref{ggl_8h_a8})} \end{Desc}
+\index{ggl.h@{ggl.h}!ggl_ovlblt@{ggl\_\-ovlblt}}
+\index{ggl_ovlblt@{ggl\_\-ovlblt}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ggl\_\-ovlblt ({\bf gglsurface} $\ast$ {\em dest}, {\bf gglsurface} $\ast$ {\em src}, int {\em width}, int {\em height})}\label{ggl_8h_a21}
+
+
+Copies a rectangular surface. Safe to use when areas overlap. 
+
+Copies a rectangular area from one surface to another. If the areas overlap, it chooses the appropriate direction and calls ggl\_\-bitblt or ggl\_\-revblt as needed.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dest}]The surface to draw onto. The area will be copied at the coordinates x and y given in the proper fields of the {\bf gglsurface}{\rm (p.\,\pageref{structgglsurface})} structure. \item[{\em src}]The source surface. The region to copy will start at the coordinates x and y given in the proper fields of the {\bf gglsurface}{\rm (p.\,\pageref{structgglsurface})} structure. \item[{\em width}]The width in pixels of the rectangular region to copy. \item[{\em height}]The height in pixels of the rectangular region to copy.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[See also:]{\bf ggl\_\-bitblt}{\rm (p.\,\pageref{ggl_8h_a19})} 
+
+{\bf ggl\_\-revblt}{\rm (p.\,\pageref{ggl_8h_a20})} \end{Desc}
+\index{ggl.h@{ggl.h}!ggl_pltnib@{ggl\_\-pltnib}}
+\index{ggl_pltnib@{ggl\_\-pltnib}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ggl\_\-pltnib (int $\ast$ {\em buff}, int {\em off}, int {\em color})}\label{ggl_8h_a13}
+
+
+Pokes a color into a specific pixel of a surface. 
+
+Colors the given pixel by the given color. The pixel is identified by an offset from the beginning of the frame buffer, which is defined as {\tt x} {\tt +} {\tt y} {\tt $\ast$} {\tt width} for a given x and y coordinate, where {\tt width} is the width of the surface to plot to. The calling procedure is responsible for correctly calculating the offset. This reduces the overhead when pixels are painted in a specific sequence.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em buff}]The address of a surface bitmap ({\bf gglsurface::addr}{\rm (p.\,\pageref{structgglsurface_o0})} field). \item[{\em off}]The offset ({\tt x} {\tt +} {\tt width} {\tt $\ast$} {\tt y}). \item[{\em color}]The color, between 0 and 15. 15=black. \end{description}
+\end{Desc}
+\index{ggl.h@{ggl.h}!ggl_rect@{ggl\_\-rect}}
+\index{ggl_rect@{ggl\_\-rect}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ggl\_\-rect ({\bf gglsurface} $\ast$ {\em srf}, int {\em x1}, int {\em y1}, int {\em x2}, int {\em y2}, int {\em color})}\label{ggl_8h_a17}
+
+
+Draws a rectangle on a surface. 
+
+Fills in a rectangle onto the given surface, with the given color or color pattern. The color pattern is oriented horizontally, so that the color remains the same in any given column of pixels.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em srf}]The surface to draw onto. \item[{\em x1}]The X coordinate of the top-left coordinate of the rectangle. \item[{\em y1}]The Y coordinate of the top-left coordinate of the rectangle. \item[{\em x2}]The X coordinate of the bottom-right coordinate of the rectangle. \item[{\em y2}]The Y coordinate of the bottom-right coordinate of the rectangle. \item[{\em color}]The color pattern. This is a 32-bit value, containing 8 consecutive pixels worth of color. For solid colors, set the color to contain the same pattern on every nibble (for color 8, use 0x88888888), or call {\bf ggl\_\-mkcolor}{\rm (p.\,\pageref{ggl_8h_a32})} for that purpose. The colors in this pattern will be used consecutively in the horizontal direction. \end{description}
+\end{Desc}
+\index{ggl.h@{ggl.h}!ggl_rectp@{ggl\_\-rectp}}
+\index{ggl_rectp@{ggl\_\-rectp}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ggl\_\-rectp ({\bf gglsurface} $\ast$ {\em srf}, int {\em x1}, int {\em y1}, int {\em x2}, int {\em y2}, int $\ast$ {\em color})}\label{ggl_8h_a18}
+
+
+Draws a rectangle on a surface with a 2D pattern. 
+
+Fills in a rectangle onto the given surface, with the given color or color pattern. The color pattern is 8x8 pixels in size, and is repeated both horizontally and vertically.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em srf}]The surface to draw onto. \item[{\em x1}]The X coordinate of the top-left coordinate of the rectangle. \item[{\em y1}]The Y coordinate of the top-left coordinate of the rectangle. \item[{\em x2}]The X coordinate of the bottom-right coordinate of the rectangle. \item[{\em y2}]The Y coordinate of the bottom-right coordinate of the rectangle. \item[{\em color}]The color pattern. This is an array of 8 32-bit values, each containing 8 consecutive pixels worth of color for a single line. The result is an 8x8 color pattern that is used to draw to the screen. \end{description}
+\end{Desc}
+\index{ggl.h@{ggl.h}!ggl_restore@{ggl\_\-restore}}
+\index{ggl_restore@{ggl\_\-restore}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ggl\_\-restore (int $\ast$ {\em buf})}\label{ggl_8h_a11}
+
+
+Restores the state of the LCD controller. 
+
+$\ast$$\ast$OBSOLETE$\ast$$\ast$: This function is now a macro that calls sys\_\-lcdrestore().
+
+Calling this function results in the current state of the LCD controller being restored from the given buffer. The buffer should have been filled in earlier by a call to {\bf ggl\_\-save}{\rm (p.\,\pageref{ggl_8h_a5})}. Warning: A buffer with invalid or corrupted data might cause unexpected results, including possible damage to the LCD.
+
+If HPG is in use, the application should use hpg\_\-cleanup when finished to restore the LCD controller to a known state. It is dangerous to make changes to the LCD controller state while HPG is operating. However, it is safe to use ggl\_\-save before initializing HPG and use ggl\_\-restore after hpg\_\-cleanup has returned.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em buf}]A flat buffer, containing data stored by ggl\_\-save. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[See also:]{\bf ggl\_\-save}{\rm (p.\,\pageref{ggl_8h_a5})} \end{Desc}
+\index{ggl.h@{ggl.h}!ggl_revblt@{ggl\_\-revblt}}
+\index{ggl_revblt@{ggl\_\-revblt}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ggl\_\-revblt ({\bf gglsurface} $\ast$ {\em dest}, {\bf gglsurface} $\ast$ {\em src}, int {\em width}, int {\em height})}\label{ggl_8h_a20}
+
+
+Copies a rectangular surface. Reverse direction. 
+
+Copies a rectangular area from one surface to another. The direction of memory movement is from bottom to top, so care should be taken if the areas overlap.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dest}]The surface to draw onto. The area will be copied at the coordinates x and y given in the proper fields of the {\bf gglsurface}{\rm (p.\,\pageref{structgglsurface})} structure. \item[{\em src}]The source surface. The region to copy will start at the coordinates x and y given in the proper fields of the {\bf gglsurface}{\rm (p.\,\pageref{structgglsurface})} structure. \item[{\em width}]The width in pixels of the rectangular region to copy. \item[{\em height}]The height in pixels of the rectangular region to copy.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[See also:]{\bf ggl\_\-bitblt}{\rm (p.\,\pageref{ggl_8h_a19})} 
+
+{\bf ggl\_\-ovlblt}{\rm (p.\,\pageref{ggl_8h_a21})} \end{Desc}
+\index{ggl.h@{ggl.h}!ggl_scrolldn@{ggl\_\-scrolldn}}
+\index{ggl_scrolldn@{ggl\_\-scrolldn}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ggl\_\-scrolldn ({\bf gglsurface} $\ast$ {\em dest}, int {\em width}, int {\em height}, int {\em npixels})}\label{ggl_8h_a23}
+
+
+Scroll a surface down. 
+
+Scrolls down a surface by the specified number of pixels. The unveiled area is not cleared.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dest}]The surface to draw onto. The area will be scrolled at coordinates x and y given in the proper fields of the {\bf gglsurface}{\rm (p.\,\pageref{structgglsurface})} structure. \item[{\em width}]The width in pixels of the rectangular region to scroll. \item[{\em height}]The height in pixels of the rectangular region to scroll. \item[{\em npixels}]Number of pixels to scroll.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[See also:]{\bf ggl\_\-scrollup}{\rm (p.\,\pageref{ggl_8h_a22})} 
+
+{\bf ggl\_\-scrolllf}{\rm (p.\,\pageref{ggl_8h_a24})} 
+
+{\bf ggl\_\-scrollrt}{\rm (p.\,\pageref{ggl_8h_a25})} \end{Desc}
+\index{ggl.h@{ggl.h}!ggl_scrolllf@{ggl\_\-scrolllf}}
+\index{ggl_scrolllf@{ggl\_\-scrolllf}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ggl\_\-scrolllf ({\bf gglsurface} $\ast$ {\em dest}, int {\em width}, int {\em height}, int {\em npixels})}\label{ggl_8h_a24}
+
+
+Scroll a surface left. 
+
+Scrolls left a surface by the specified number of pixels. The unveiled area is not cleared.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dest}]The surface to draw onto. The area will be scrolled at coordinates x and y given in the proper fields of the {\bf gglsurface}{\rm (p.\,\pageref{structgglsurface})} structure. \item[{\em width}]The width in pixels of the rectangular region to scroll. \item[{\em height}]The height in pixels of the rectangular region to scroll. \item[{\em npixels}]Number of pixels to scroll.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[See also:]{\bf ggl\_\-scrollup}{\rm (p.\,\pageref{ggl_8h_a22})} 
+
+{\bf ggl\_\-scrolldn}{\rm (p.\,\pageref{ggl_8h_a23})} 
+
+{\bf ggl\_\-scrollrt}{\rm (p.\,\pageref{ggl_8h_a25})} \end{Desc}
+\index{ggl.h@{ggl.h}!ggl_scrollrt@{ggl\_\-scrollrt}}
+\index{ggl_scrollrt@{ggl\_\-scrollrt}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ggl\_\-scrollrt ({\bf gglsurface} $\ast$ {\em dest}, int {\em width}, int {\em height}, int {\em npixels})}\label{ggl_8h_a25}
+
+
+Scroll a surface right. 
+
+Scrolls right a surface by the specified number of pixels. The unveiled area is not cleared.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dest}]The surface to draw onto. The area will be scrolled at coordinates x and y given in the proper fields of the {\bf gglsurface}{\rm (p.\,\pageref{structgglsurface})} structure. \item[{\em width}]The width in pixels of the rectangular region to scroll. \item[{\em height}]The height in pixels of the rectangular region to scroll. \item[{\em npixels}]Number of pixels to scroll.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[See also:]{\bf ggl\_\-scrollup}{\rm (p.\,\pageref{ggl_8h_a22})} 
+
+{\bf ggl\_\-scrolldn}{\rm (p.\,\pageref{ggl_8h_a23})} 
+
+{\bf ggl\_\-scrolllf}{\rm (p.\,\pageref{ggl_8h_a24})} \end{Desc}
+\index{ggl.h@{ggl.h}!ggl_scrollup@{ggl\_\-scrollup}}
+\index{ggl_scrollup@{ggl\_\-scrollup}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ggl\_\-scrollup ({\bf gglsurface} $\ast$ {\em dest}, int {\em width}, int {\em height}, int {\em npixels})}\label{ggl_8h_a22}
+
+
+Scroll a surface up. 
+
+Scrolls up a surface by the specified number of pixels. The unveiled area is not cleared.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dest}]The surface to draw onto. The area will be scrolled at coordinates x and y given in the proper fields of the {\bf gglsurface}{\rm (p.\,\pageref{structgglsurface})} structure. \item[{\em width}]The width in pixels of the rectangular region to scroll. \item[{\em height}]The height in pixels of the rectangular region to scroll. \item[{\em npixels}]Number of pixels to scroll.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[See also:]{\bf ggl\_\-scrolldn}{\rm (p.\,\pageref{ggl_8h_a23})} 
+
+{\bf ggl\_\-scrolllf}{\rm (p.\,\pageref{ggl_8h_a24})} 
+
+{\bf ggl\_\-scrollrt}{\rm (p.\,\pageref{ggl_8h_a25})} \end{Desc}
+\index{ggl.h@{ggl.h}!ggl_show@{ggl\_\-show}}
+\index{ggl_show@{ggl\_\-show}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ggl\_\-show (int $\ast$ {\em buffer})}\label{ggl_8h_a12}
+
+
+\index{ggl.h@{ggl.h}!ggl_vline@{ggl\_\-vline}}
+\index{ggl_vline@{ggl\_\-vline}!ggl.h@{ggl.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void ggl\_\-vline ({\bf gglsurface} $\ast$ {\em srf}, int {\em x}, int {\em yt}, int {\em yb}, int {\em color})}\label{ggl_8h_a16}
+
+
+Draws a vertical line on a surface. 
+
+Draws a vertical line onto the given surface, in the given color or color pattern.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em srf}]The surface to draw onto. \item[{\em x}]The x coordinate of the line. \item[{\em yt}]The top-most y coordinate of the line. \item[{\em yb}]The bottom-most y coordinate of the line. \item[{\em color}]The color pattern. This is a 32-bit value, containing 8 consecutive pixels worth of color. For solid colors, set the color to contain the same pattern on every nibble (for color 8, use 0x88888888), or call {\bf ggl\_\-mkcolor}{\rm (p.\,\pageref{ggl_8h_a32})} for that purpose. The colors in this pattern will be used consecutively in the vertical direction, making this different from the use of the color parameter in other GGL functions. Pattern is always 8-pixel aligned. \end{description}
+\end{Desc}

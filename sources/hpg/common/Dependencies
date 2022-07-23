@@ -1,0 +1,97 @@
+_hpg_draw.o: _hpg_draw.c ../hpgraphics.h hpgpriv.h
+_hpg_gray16_draw.o: _hpg_gray16_draw.c ../hpgraphics.h hpgpriv.h
+_hpg_gray16_get.o: _hpg_gray16_get.c ../hpgraphics.h hpgpriv.h
+_hpg_gray4_draw.o: _hpg_gray4_draw.c ../hpgraphics.h hpgpriv.h
+_hpg_gray4_get.o: _hpg_gray4_get.c ../hpgraphics.h hpgpriv.h
+_hpg_load_xpm.o: _hpg_load_xpm.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hplib/hpstring.h \
+  ../../hplib/hpctype.h ../hpgraphics.h hpgpriv.h
+_hpg_mono_draw.o: _hpg_mono_draw.c ../hpgraphics.h hpgpriv.h
+_hpg_mono_get.o: _hpg_mono_get.c ../hpgraphics.h hpgpriv.h
+_hpg_poly.o: _hpg_poly.c ../../hplib/hpstdlib.h ../../hplib/hpsys.h \
+  ../../hplib/kos.h ../hpgraphics.h hpgpriv.h
+_hpg_set_mode.o: _hpg_set_mode.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../hpgraphics.h hpgpriv.h
+hpg_alloc_font.o: hpg_alloc_font.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../hpgraphics.h hpgpriv.h
+hpg_alloc_gray16_image.o: hpg_alloc_gray16_image.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../hpgraphics.h hpgpriv.h
+hpg_alloc_gray4_image.o: hpg_alloc_gray4_image.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../hpgraphics.h hpgpriv.h
+hpg_alloc_mono_image.o: hpg_alloc_mono_image.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../hpgraphics.h hpgpriv.h
+hpg_alloc_pattern.o: hpg_alloc_pattern.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../hpgraphics.h hpgpriv.h
+hpg_blit.o: hpg_blit.c ../hpgraphics.h hpgpriv.h
+hpg_clear.o: hpg_clear.c ../hpgraphics.h hpgpriv.h
+hpg_clear_on.o: hpg_clear_on.c ../hpgraphics.h hpgpriv.h
+hpg_clip.o: hpg_clip.c ../hpgraphics.h hpgpriv.h
+hpg_clip_reset.o: hpg_clip_reset.c ../hpgraphics.h hpgpriv.h
+hpg_clip_set.o: hpg_clip_set.c ../hpgraphics.h hpgpriv.h
+hpg_draw_circle.o: hpg_draw_circle.c ../hpgraphics.h hpgpriv.h
+hpg_draw_circle_on.o: hpg_draw_circle_on.c ../hpgraphics.h hpgpriv.h
+hpg_draw_letter.o: hpg_draw_letter.c ../hpgraphics.h hpgpriv.h
+hpg_draw_letter_on.o: hpg_draw_letter_on.c ../hpgraphics.h hpgpriv.h
+hpg_draw_line.o: hpg_draw_line.c ../hpgraphics.h hpgpriv.h
+hpg_draw_line_on.o: hpg_draw_line_on.c ../hpgraphics.h hpgpriv.h
+hpg_draw_pixel.o: hpg_draw_pixel.c ../hpgraphics.h hpgpriv.h
+hpg_draw_pixel_on.o: hpg_draw_pixel_on.c ../hpgraphics.h hpgpriv.h
+hpg_draw_polygon.o: hpg_draw_polygon.c ../hpgraphics.h hpgpriv.h
+hpg_draw_polygon_on.o: hpg_draw_polygon_on.c ../hpgraphics.h hpgpriv.h
+hpg_draw_rect.o: hpg_draw_rect.c ../hpgraphics.h hpgpriv.h
+hpg_draw_rect_on.o: hpg_draw_rect_on.c ../hpgraphics.h hpgpriv.h
+hpg_draw_text.o: hpg_draw_text.c ../hpgraphics.h hpgpriv.h
+hpg_draw_text_on.o: hpg_draw_text_on.c ../hpgraphics.h hpgpriv.h
+hpg_fill_circle.o: hpg_fill_circle.c ../hpgraphics.h hpgpriv.h
+hpg_fill_circle_on.o: hpg_fill_circle_on.c ../hpgraphics.h hpgpriv.h
+hpg_fill_polygon.o: hpg_fill_polygon.c ../hpgraphics.h hpgpriv.h
+hpg_fill_polygon_on.o: hpg_fill_polygon_on.c ../hpgraphics.h hpgpriv.h
+hpg_fill_rect.o: hpg_fill_rect.c ../hpgraphics.h hpgpriv.h
+hpg_fill_rect_on.o: hpg_fill_rect_on.c ../hpgraphics.h hpgpriv.h
+hpg_flip.o: hpg_flip.c ../../hplib/hpgcc49.h ../../hplib/hpconio.h \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hplib/hpmath.h \
+  ../../hplib/hpscreen.h ../../hplib/hpstdio.h ../../hplib/hpstring.h \
+  ../../hplib/hptime.h ../../hplib/syscall.h ../../hplib/saturn.h \
+  ../hpgraphics.h hpgpriv.h
+hpg_font_get_advance.o: hpg_font_get_advance.c ../hpgraphics.h hpgpriv.h
+hpg_font_get_height.o: hpg_font_get_height.c ../hpgraphics.h hpgpriv.h
+hpg_free_font.o: hpg_free_font.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../hpgraphics.h hpgpriv.h
+hpg_free_image.o: hpg_free_image.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../hpgraphics.h hpgpriv.h
+hpg_free_pattern.o: hpg_free_pattern.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../hpgraphics.h hpgpriv.h
+hpg_get_bigfont.o: hpg_get_bigfont.c ../hpgraphics.h hpgpriv.h
+hpg_get_color.o: hpg_get_color.c ../hpgraphics.h hpgpriv.h
+hpg_get_font.o: hpg_get_font.c ../../hplib/hpstdlib.h ../../hplib/hpsys.h \
+  ../../hplib/kos.h ../hpgraphics.h hpgpriv.h
+hpg_get_height.o: hpg_get_height.c ../hpgraphics.h hpgpriv.h
+hpg_get_minifont.o: hpg_get_minifont.c ../hpgraphics.h hpgpriv.h
+hpg_get_mode.o: hpg_get_mode.c ../hpgraphics.h hpgpriv.h
+hpg_get_pattern.o: hpg_get_pattern.c ../hpgraphics.h hpgpriv.h
+hpg_get_pixel.o: hpg_get_pixel.c ../hpgraphics.h hpgpriv.h
+hpg_get_width.o: hpg_get_width.c ../hpgraphics.h hpgpriv.h
+hpg_init.o: hpg_init.c ../../hplib/hpstdlib.h ../../hplib/hpsys.h \
+  ../../hplib/kos.h ../hpgraphics.h hpgpriv.h
+hpg_load_xpm_gray16.o: hpg_load_xpm_gray16.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hplib/hpstring.h \
+  ../../hplib/hpctype.h ../hpgraphics.h hpgpriv.h
+hpg_load_xpm_gray4.o: hpg_load_xpm_gray4.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hplib/hpstring.h \
+  ../../hplib/hpctype.h ../hpgraphics.h hpgpriv.h
+hpg_load_xpm_mono.o: hpg_load_xpm_mono.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hplib/hpstring.h \
+  ../../hplib/hpctype.h ../hpgraphics.h hpgpriv.h
+hpg_set_color.o: hpg_set_color.c ../hpgraphics.h hpgpriv.h
+hpg_set_font.o: hpg_set_font.c ../hpgraphics.h hpgpriv.h
+hpg_set_indicator.o: hpg_set_indicator.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../hpgraphics.h hpgpriv.h
+hpg_set_mode.o: hpg_set_mode.c ../hpgraphics.h hpgpriv.h
+hpg_set_mode_gray16.o: hpg_set_mode_gray16.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../hpgraphics.h hpgpriv.h
+hpg_set_mode_gray4.o: hpg_set_mode_gray4.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../hpgraphics.h hpgpriv.h
+hpg_set_mode_mono.o: hpg_set_mode_mono.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../hpgraphics.h hpgpriv.h
+hpg_set_pattern.o: hpg_set_pattern.c ../hpgraphics.h hpgpriv.h

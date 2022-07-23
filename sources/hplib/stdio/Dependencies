@@ -1,0 +1,51 @@
+_gets.o: _gets.c ../hpstdio.h ../hpsys.h ../kos.h ../hpkeyb49.h
+clreol.o: clreol.c ../hpconio.h ../hpstdlib.h ../hpsys.h ../kos.h
+fprintf.o: fprintf.c ../hpstdlib.h ../hpsys.h ../kos.h ../hpstdio.h \
+  ../hpstring.h ../hpctype.h
+get_bigfont.o: get_bigfont.c ../hpgcc49.h ../hpconio.h ../hpstdlib.h \
+  ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h ../hpmath.h \
+  ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h ../syscall.h \
+  ../saturn.h
+get_bigfontheight.o: get_bigfontheight.c
+get_minifont.o: get_minifont.c ../hpgcc49.h ../hpconio.h ../hpstdlib.h \
+  ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h ../hpmath.h \
+  ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h ../syscall.h \
+  ../saturn.h
+getchar.o: getchar.c ../hpkeyb49.h
+getx.o: getx.c ../hpconio.h ../hpstdlib.h ../hpsys.h ../kos.h
+gety.o: gety.c ../hpconio.h ../hpstdlib.h ../hpsys.h ../kos.h
+gotoxy.o: gotoxy.c ../hpconio.h ../hpstdlib.h ../hpsys.h ../kos.h
+home.o: home.c ../hpconio.h ../hpstdlib.h ../hpsys.h ../kos.h
+ifprintf.o: ifprintf.c ../hpstdlib.h ../hpsys.h ../kos.h ../hpstdio.h \
+  ../hpstring.h ../hpctype.h
+iprintf.o: iprintf.c ../hpstdio.h ../hpsys.h ../kos.h ../hpstring.h \
+  ../hpctype.h ../hpstdlib.h
+isprintf.o: isprintf.c ../hpstdio.h ../hpsys.h ../kos.h ../hpstring.h \
+  ../hpctype.h
+ivsprintf.o: ivsprintf.c ../hpstdio.h ../hpsys.h ../kos.h ../hpstring.h \
+  ../hpctype.h
+printf.o: printf.c ../hpstdio.h ../hpsys.h ../kos.h ../hpstring.h \
+  ../hpctype.h ../hpstdlib.h
+putcon.o: putcon.c ../hpkeyb49.h ../hpstdio.h ../hpsys.h ../kos.h \
+  ../hpconio.h ../hpstdlib.h ../hpstring.h ../hpctype.h
+puts.o: puts.c ../hpstdio.h ../hpsys.h ../kos.h ../hpstring.h \
+  ../hpctype.h
+readdouble.o: readdouble.c ../hpstring.h ../hpctype.h ../kos.h \
+  ../hpstdio.h ../hpsys.h
+readint.o: readint.c ../hpstring.h ../hpctype.h ../kos.h ../hpstdio.h \
+  ../hpsys.h
+readlonglong.o: readlonglong.c ../hpstring.h ../hpctype.h ../kos.h \
+  ../hpstdio.h ../hpsys.h
+readuint.o: readuint.c ../hpstring.h ../hpctype.h ../kos.h ../hpstdio.h \
+  ../hpsys.h
+readulonglong.o: readulonglong.c ../hpstring.h ../hpctype.h ../kos.h \
+  ../hpstdio.h ../hpsys.h
+screen_height.o: screen_height.c ../hpconio.h ../hpstdlib.h ../hpsys.h \
+  ../kos.h
+screen_width.o: screen_width.c ../hpconio.h ../hpstdlib.h ../hpsys.h \
+  ../kos.h
+sprintf.o: sprintf.c ../hpstdio.h ../hpsys.h ../kos.h ../hpstring.h \
+  ../hpctype.h
+vsprintf.o: vsprintf.c ../hpstdio.h ../hpsys.h ../kos.h ../hpstring.h \
+  ../hpctype.h ../hpmath.h
+write.o: write.c ../hpstdio.h ../hpsys.h ../kos.h

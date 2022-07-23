@@ -1,0 +1,867 @@
+@@& ****************************************************************************
+@@&
+@@& Written by Ingo Blank, August 2004
+@@& Donated to the HP-GCC Development Team
+@@& Copyright (C) 2004 The HP-GCC Development Team
+@@&
+@@& ****************************************************************************
+@@&
+@@&
+@@& This file is part of HP-GCC.
+@@&
+@@& HP-GCC is free software; you can redistribute it and/or modify
+@@& it under the terms of the GNU General Public License as published by
+@@& the Free Software Foundation; either version 2, or (at your option)
+@@& any later version.
+@@& 
+@@& HP-GCC is distributed in the hope that it will be useful,
+@@& but WITHOUT ANY WARRANTY; without even the implied warranty of
+@@& MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+@@& GNU General Public License for more details.
+@@& 
+@@& You should have received a copy of the GNU General Public License
+@@& along with HP-GCC; see the file COPYING. 
+@@&
+@@& As a special exception, you may use this file as part of a free software
+@@& library without restriction.  Specifically, if other files instantiate
+@@& templates or use macros or inline functions from this file, or you compile
+@@& this file and link it with other files to produce an executable, this
+@@& file does not by itself cause the resulting executable to be covered by
+@@& the GNU General Public License.  This exception does not however
+@@& invalidate any other reasons why the executable file might be covered by
+@@& the GNU General Public License.
+@@&
+@@& ****************************************************************************
+
+
+
+	.global	putchar
+	.global	puts
+	.global putint
+	.global	putintb
+	.global puthex
+	.global	newline
+	.global ints
+	.global uints
+	.global memset
+	.global beep
+	.global strcmp
+	.global clreol
+	.global _clear_screen
+	
+	.global home
+	.global getx
+	.global gety
+	.global gotoxy
+	.global screen_width
+	.global screen_height
+	.global get_tabsize
+	.global set_tabsize
+	
+	.global get_decimal_separator
+	.global set_decimal_separator
+	.global get_decimal_digits
+	.global set_decimal_digits
+	
+
+	
+				
+
+
+	
+pos_x:	.word 0
+pos_y:	.word 0
+scr_w:	.word 33
+scr_h:	.word 13
+ch_w:	.word 4
+ch_h:	.word 6
+
+win_top:	.word	0
+win_bot:	.word	13
+win_left:	.word	0
+win_right:	.word	33
+
+decimal_separator:
+	.ascii ".\000\000\000"
+
+decimal_digits:
+	.word	6
+	
+putcon_slave:
+	.word 1
+	
+get_decimal_digits:
+	ldr	r0,decimal_digits
+	mov	pc,lr
+	
+set_decimal_digits:
+	str	r0,decimal_digits
+	mov	pc,lr
+
+get_decimal_separator:
+	adr	r0,decimal_separator
+	mov	pc,lr
+	
+set_decimal_separator:
+	STMFD SP!, {R1-R2,LR}
+	@	r0 = pointer to string
+	
+	ldrb	r1,[r0]
+	adr	r2,decimal_separator
+	strb	r1,[r2]
+	LDMFD SP!, {R1-R2,PC}
+	
+beep:
+	STMFD SP!, {R0-R1,LR}
+@	mov	r0,#500  -- MODIFIED BY AL, 11/10/04 - removed, because it requires a ton of code to be linked in
+@	mov	r1,#100  -- such as timers, division routines, and all sorts of stuff
+@	bl	playTone(PLT) --just for a beeping noise. If you really miss this feature let me know.
+	LDMFD SP!, {R0-R1,PC}
+	
+memmovw:
+	STMFD SP!, {R0-R3,LR}
+	@ move r2 words (4 bytes)
+	
+	@ r0 = target
+	@ r1 = source
+	@ r2 = count
+	
+mmw_1:	ldr	r3,[r1],#4
+	str	r3,[r0],#4
+	subs	r2,r2,#1
+	bne	mmw_1
+	LDMFD SP!, {R0-R3,PC}
+	
+memsetw:
+	STMFD SP!, {R0-R2,LR}
+	
+	@ initialize r2 words (4 bytes)	
+
+	
+	@ r0 = target
+	@ r1 = value
+	@ r2 = count
+	
+msw_1:	str	r1,[r0],#4
+	subs	r2,r2,#1
+	bne	msw_1
+	
+	LDMFD SP!, {R0-R2,PC}
+	
+memset:
+	STMFD SP!, {R1-R3,LR}
+	
+	@ initialize r2 bytes
+
+	
+	@ r0 = target
+	@ r1 = value
+	@ r2 = count
+	
+	mov	r3,r0
+ms_1:	
+	strb	r1,[r0],#1
+	subs	r2,r2,#1
+	bne	ms_1
+	
+	mov	r0,r3
+	LDMFD SP!, {R1-R3,PC}
+	
+
+_clear_screen:
+
+	STMFD SP!, {R1-R3,LR} 
+	
+	mov	r1,#0x7F00000
+	add	r1,r1,#0x260
+	mov	r2,#400
+	mov	r3,#0
+cl1:
+	str	r3,[r1],#4
+	subs	r2,r2,#1
+	bne	cl1
+	
+	LDMFD SP!, {R1-R3,PC}
+	
+	
+	
+tab_size:	.word 4
+under_f:	.word 0
+stand_f:	.word 0
+
+attributes_f:	.word 0
+
+clreol:
+
+	STMFD SP!, {R0-R3,LR}
+	
+	bl	gety
+	mov	r1,r0
+	bl	getx
+	mov	r2,r0
+	ldr	r3,scr_w
+	sub	r3,r3,r2
+	teq	r3,#0
+	beq	clreol_q
+	mov	r0,#255
+clreol_1:
+	bl	putchar	
+	subs	r3,r3,#1
+	bne	clreol_1
+	mov	r0,r2
+	bl	gotoxy
+	
+clreol_q:
+
+	LDMFD SP!, {R0-R3,PC}
+
+putchar:
+	STMFD SP!, {R0-R3,LR}
+	
+	@ main entry point to terminal emulator
+	
+	@	r0 = output char
+	
+	cmp	r0,#5
+	blo	putc
+	cmp	r0,#17
+	bhs	putc
+	sub	r2,r0,#5
+	adr	r1,put_jmps
+	add	r1,r1,r2,lsl #2
+	mov	pc,r1
+	
+put_jmps:
+	
+	b	clreol_j
+	b	clreos
+	b	bell
+	b	backsp
+	b	tab
+	b	linefeed
+	b	putc
+	b	cls
+	b	cr
+	b	siso
+	b	ul
+	b	smooth
+
+clreol_j:
+
+	bl	clreol
+	b	putc_q
+	
+clreos:
+	b	putc_q
+bell:
+	bl	beep
+	b	putc_q
+
+backsp:
+	bl	getx
+	cmp	r0,#1
+	blo	bsp_1
+	sub	r0,r0,#1
+	bl	setx
+	mov	r0,#255
+	bl	putchar
+	bl	getx
+	sub	r0,r0,#1
+	bl	setx
+	b	putc_q
+bsp_1:	bl	gety
+	cmp	r0,#0
+	beq	putc_q
+	sub	r0,r0,#1
+	bl	sety
+	ldr	r0,win_right
+	sub	r0,r0,#1
+	bl	setx
+	b	putc_q
+	
+tab:
+	ldr	r1,tab_size
+	mov	r2,r1
+	bl	getx
+	bl	divmodu
+	sub	r2,r2,r1
+tab_1:	mov	r0,#32
+	bl	putchar
+	subs	r2,r2,#1
+	bne	tab_1
+	b	putc_q
+	
+linefeed:
+	bl 	newline
+	b	putc_q
+
+cls:	bl	_clear_screen
+	bl	home	
+	b	putc_q
+	
+cr:
+	mov	r0,#0
+	bl	setx
+	b	putc_q
+	
+siso:
+	ldr	r0,attributes_f
+	teq	r0,#0
+	beq	putc_q
+	
+	
+	ldr	r0,stand_f
+	eor	r0,r0,#1
+	str	r0,stand_f
+	b	putc_q
+	
+ul:
+	ldr	r0,attributes_f
+	teq	r0,#0
+	beq	putc_q
+
+	ldr	r0,under_f
+	eor	r0,r0,#1
+	str	r0,under_f
+	b	putc_q
+	
+
+smooth:
+	ldr	r0,scr_smooth
+	eor	r0,r0,#1
+	str	r0,scr_smooth
+	b	putc_q
+	
+			
+	
+putc:	bl	putcon
+	bl	adv_x
+	
+putc_q:
+	
+	LDMFD SP!, {R0-R3,PC} 
+	
+puts:
+	STMFD SP!, {R1,LR} 
+	mov	r1,r0
+.pu1:	ldrb	r0,[r1],#1
+	cmp	r0,#0
+	beq	.pu2
+	bl	putchar
+	b	.pu1
+.pu2:
+	LDMFD SP!, {R1,PC} 
+	
+
+getx:
+	STMFD SP!, {R1,LR}
+	ldr	r1,win_left
+	ldr	r0,pos_x
+	sub	r0,r0,r1
+	LDMFD SP!, {R1,PC}
+
+gety:
+	STMFD SP!, {R1,LR}
+	ldr	r1,win_top
+	ldr	r0,pos_y
+	sub	r0,r0,r1
+	LDMFD SP!, {R1,PC}
+	
+
+setx:
+	STMFD SP!, {R1,LR}
+	ldr	r1,win_left
+	add	r0,r0,r1
+	str	r0,pos_x
+	LDMFD SP!, {R1,PC}
+	
+sety:
+	STMFD SP!, {R1,LR}
+	ldr	r1,win_top
+	add	r0,r0,r1
+	str	r0,pos_y
+	LDMFD SP!, {R1,PC}
+	
+	
+gotoxy:
+	STMFD SP!, {R0,LR}
+	bl	setx
+	mov	r0,r1
+	bl	sety
+	LDMFD SP!, {R0,PC} 
+	
+home:
+	STMFD SP!, {R0,R1,LR}
+	mov	r0,#0
+	mov	r1,#0
+	bl	gotoxy
+	LDMFD SP!, {R0,R1,PC}
+	
+screen_height:
+	ldr	r0,scr_h
+	mov	pc,lr
+	
+screen_width:
+	ldr	r0,scr_w
+	mov	pc,lr
+	
+get_tabsize:
+	ldr	r0,tab_size
+	mov	pc,lr
+	
+set_tabsize:
+	str	r0,tab_size
+	mov	pc,lr
+	
+
+adv_x:
+	STMFD SP!, {R0-R2,LR} 
+	bl	getx
+	mov	r2,r0
+	add	r2,r2,#1
+	ldr	r1,scr_w
+	cmp	r1,r2
+	bne	advx_q
+	bl	adv_y
+	mov	r2,#0
+advx_q:	mov	r0,r2
+	bl	setx
+	LDMFD SP!, {R0-R2,PC} 
+	
+auto_cr: .word	1
+	
+newline:
+	STMFD SP!, {R0,LR} 
+	ldr	r0,auto_cr
+	cmp	r0,#0
+	beq	newline_1
+	mov	r0,#0
+	bl	setx
+newline_1:
+	bl	adv_y
+	LDMFD SP!, {R0,PC} 
+	
+
+adv_y:
+	STMFD SP!, {R0-R2,LR} 
+	bl	gety
+	mov	r2,r0
+	add	r2,r2,#1
+	ldr	r1,scr_h
+	cmp	r1,r2
+	bne	advy_q
+	bl	scroll
+	sub	r2,r2,#1
+advy_q:	mov	r0,r2
+	bl	sety
+	LDMFD SP!, {R0-R2,PC}
+	
+
+scr_smooth:	.word 0
+
+scroll:
+
+	STMFD SP!, {R0-R6,LR}
+	
+	@ scroll the phys. screen by one logical line
+	
+
+	ldr	r6,scr_smooth
+	
+	ldr	r3,ch_h		@ outer loop counter
+sc_2:	mov	r0,#0x7f00000
+	add	r0,r0,#0x260	@ start of phys. screen
+	mov	r2,#5		@ 5 words = 20 bytes / row to move
+	mov	r4,#79		@ # rows to repeat
+sc_1:	add	r1,r0,#20
+	
+	
+	bl	memmovw
+	mov	r0,r1
+	subs	r4,r4,#1
+	bne	sc_1
+
+
+	teq	r6,#0
+	beq	sc_3
+	bl	shortWait(PLT)
+	bl	LCDSynch(PLT)
+	
+sc_3:
+	
+	mov	r1,#0		@ zero fill last scan line
+	bl 	memsetw
+	subs	r3,r3,#1
+	
+	bne	sc_2
+	
+	@mov	r0,#0
+	@bl	setx
+	
+	LDMFD SP!, {R0-R6,PC} 
+	
+
+strcmp:
+	STMFD SP!, {R1-R7,LR}
+	
+	@ string compare
+	
+	@ r0 = op1
+	@ r1 = op2
+	
+	mov	r2,r0
+	
+	bl	strlen
+	mov	r3,r0	@ r3 = len(op1)
+	mov	r0,r1
+	bl	strlen
+	mov	r4,r0	@ r4 = len(op2)
+	
+	mov	r0,r2
+	cmp	r3,r4
+	movhs	r7,r3
+	movlo	r7,r4
+	
+	
+strcmp_1:
+	ldrb	r2,[r0],#1
+	ldrb	r5,[r1],#1
+	subs	r6,r2,r5
+	bne	strcmp_q
+	subs	r7,r7,#1
+	bne	strcmp_1
+	sub	r6,r3,r4
+
+strcmp_q:
+
+	mov	r0,r6
+	
+	
+	@ r0 = 0  => op1 == op2
+	@      <0 => op1 < op2
+	@      >0 => op1 > op2
+	
+	LDMFD SP!, {R1-R7,PC}
+	
+	
+strlen:
+	STMFD SP!, {R1-R2,LR}
+	
+	@ r0 = pointer to zero delimited (C) string
+	
+	mov	r2,#0
+strl1:	ldrb	r1,[r0],#1
+	cmp	r1,#0
+	beq	strl_q
+	add	r2,r2,#1
+	b	strl1
+strl_q:	mov	r0,r2
+
+	@ r0 = length of string
+	
+	LDMFD SP!, {R1-R2,PC}
+	
+strncpy:
+	STMFD SP!, {R0-R3,LR}
+
+	@	r0 = target
+	@	r1 = source
+	@	r2 = length
+
+strncpy_1:	
+	ldrb	r3,[r1],#1
+	strb	r3,[r0],#1
+	subs	r2,r2,#1
+	bne	strncpy_1
+
+	LDMFD SP!, {R0-R3,PC}
+	
+	
+putintb:
+	STMFD SP!, {r1,LR}
+	@ write integer in r0 with radix in r1 to screen
+	
+	bl	ints
+	bl	puts
+	LDMFD SP!, {r1,PC}
+	
+putint:
+	STMFD SP!, {r1,LR}
+	@ ditto, radix = 10
+	
+	mov	r1,#10
+	bl 	putintb
+	LDMFD SP!, {r1,PC}
+	
+puthex:
+	STMFD SP!, {r1,LR}
+	@ ditto, radix=16
+	mov	r1,#16
+	bl	putintb
+	LDMFD SP!, {r1,PC}
+	
+ints_buf:
+	.word	0
+	.word	0
+	.word	0
+	.word	0
+	.word	0
+	.word	0
+	.word	0
+	.word	0
+	.word	0
+	
+	.align	2
+	
+digits:	.ascii	"0123456789abcdefghijklmnopqrstuvwxyz"
+
+	.align	2
+	
+	
+		
+ints:
+
+	STMFD SP!, {R1-R8,LR}
+	
+	@ return a pointer to a base r1 string representation of integer r0
+	
+	@ r0 = z
+	@ r1 = base
+	
+	mov	r6,r1
+	ands	r8,r0,#0x80000000	@ r8 = minus-flag
+	beq	ints_2
+	mvn	r0,r0
+	add	r0,r0,#1
+ints_2:
+	mov	r3,#31			@ index in buffer
+	adr	r2,ints_buf
+	adr	r4,digits
+	mov	r1,#0x30
+	strb	r1,[r2,r3]
+	cmp	r0,#0
+	beq	ints_q
+ints_1:
+	mov	r1,r6
+	bl	divmodu
+	ldrb	r5,[r4,r1]
+	strb	r5,[r2,r3]
+	subs	r3,r3,#1
+	cmp	r0,#0
+	bne	ints_1
+	add	r3,r3,#1
+	teq	r8,#0
+	beq	ints_q
+	mov	r0,#45
+	sub	r3,r3,#1
+	strb	r0,[r2,r3]
+	
+ints_q:
+		
+	add	r0,r2,r3
+	LDMFD SP!, {R1-R8,PC}
+	
+	
+uints:
+
+	STMFD SP!, {R1-R6,LR}
+	
+	@ return a pointer to a base r1 string representation of unsigned integer r0
+	
+	@ r0 = z
+	@ r1 = base
+	
+	mov	r6,r1
+	mov	r3,#31			@ index in buffer
+	adr	r2,ints_buf
+	adr	r4,digits
+	mov	r1,#0x30
+	strb	r1,[r2,r3]
+	cmp	r0,#0
+	beq	uints_q
+uints_1:
+	mov	r1,r6
+	bl	divmodu
+	ldrb	r5,[r4,r1]
+	strb	r5,[r2,r3]
+	subs	r3,r3,#1
+	cmp	r0,#0
+	bne	uints_1
+	add	r3,r3,#1
+	
+uints_q:
+		
+	add	r0,r2,r3
+	LDMFD SP!, {R1-R6,PC}
+	
+	
+divmods:
+	STMFD SP!, {R2,LR}
+	
+	@ signed 32 bit division with modulus
+	
+	@	r0 = num
+	@	r1 = den
+	
+	mov	r2,#0	@ sign
+	tst	r0,#0x80000000
+	beq	divmods_1
+	eor	r2,r2,#1
+	mvn	r0,r0
+	add	r0,r0,#1
+divmods_1:
+	tst	r1,#0x80000000
+	beq	divmods_2
+	eor	r2,r2,#1
+	mvn	r1,r1
+	add	r1,r1,#1
+divmods_2:
+	bl	divmodu
+	cmp	r2,#0
+	beq	divmods_3
+	mvn	r0,r0
+	add	r0,r0,#1
+divmods_3:
+
+	@ r0 = num / den
+	@ r1 = num mod den
+
+	LDMFD SP!, {R2,PC} 
+	
+
+	
+divmodu:
+
+	STMFD SP!, {R2-R4,LR}
+	
+	@ unsigned 32 bit division
+	
+	@	r0 = num
+	@	r1 = den
+	
+	
+	mov	r2,#1
+	mov	r3,#0
+	mov	r4,r2,ror #1
+	
+l2:	cmp	r1,r0
+	bcs	l1
+	cmp	r2,#0
+	beq	l1
+	tst	r1,r4
+	bne	l1
+	mov	r1,r1,lsl #1
+	mov	r2,r2,lsl #1
+	b	l2
+l1:	cmp	r2,#0
+	beq	l3
+	cmp	r0,r1
+	bcc	l4
+	sub	r0,r0,r1
+	orr	r3,r3,r2
+l4:	mov	r2,r2,lsr #1
+	mov	r1,r1,lsr #1
+	b	l1
+l3:	
+	mov	r1,r0
+	mov	r0,r3
+	
+	@ r0 = num / den
+	@ r1 = num mod den
+	
+	LDMFD SP!, {R2-R4,PC} 
+	
+
+	
+
+putcon:
+
+	STMFD SP!, {R0-R9,LR}
+	
+	@ put character in r0 to phys screen.
+	@ main entry to screen rendering
+	
+	@ r0 = output char
+	
+	mov	r9,r0			@ is Hard Space ?
+
+	STMFD SP!, {R0}	
+	bl	_get_minifont		@	***MODIFIED BY AL 11/10/04***
+	mov	r6,r0			@ Put pointer to Minifont into R6
+	LDMFD SP!, {R0}
+
+	mov	r2,#3
+	mul	r3,r0,r2
+	add	r6,r6,r3		@ r6 = pointer to charbits := base + 3 * asc(r0)
+	
+
+	ldr	r0,pos_x
+	and	r7,r0,#1		@ r7 == odd(x_pos)
+	mov	r0,r0,lsl #2		@ r0 = x = ch_w * pos_x
+					
+	
+	ldr	r3,pos_y
+	ldr	r5,ch_h
+	mul	r1,r3,r5		@ r1 = y = ch_h * pos_y
+	
+	mov	r5,#0x7f00000
+	add	r5,r5,#0x260
+	add	r5,r5,r0,lsr #3		@ r5 = base + x/8
+	mov	r8,#20
+	mul	r3,r1,r8		@ r1 = 20 * y
+	mov	r1,r3
+	add	r5,r5,r1		@ r5 = base + x/8 + 20*y
+	
+	ldr	r2,stand_f		@ flags
+	ldr	r8,under_f
+	
+	mov	r3,#0			@ r3 = loop counter & index into charbits-array
+.l1:	ldrb	r0,[r6,r3]
+
+	teq	r2,#0
+	mvnne	r0,r0			@ inverse
+	
+	and	r0,r0,#0x0F
+	cmp	r7,#1
+	moveq	r0,r0,lsl #4
+	
+	ldrb	r1,[r5]
+	cmp	r9,#255
+	orrne	r1,r1,r0
+	andeq	r1,r1,r0
+	
+	strb	r1,[r5]
+	add	r5,r5,#20
+	ldrb	r0,[r6,r3]
+	
+	teq	r2,#0			@ inverse
+	mvnne	r0,r0
+	
+	mov	r0,r0,lsr #4
+	
+	teq	r8,#0
+	beq	.l3
+	teq	r3,#2
+	moveq	r0,#0xFF		@ underline
+
+.l3:
+	cmp	r7,#1
+	moveq	r0,r0,lsl #4
+	ldrb	r1,[r5]
+	cmp	r9,#255
+	orrne	r1,r1,r0
+	andeq	r1,r1,r0
+	strb	r1,[r5]
+	add	r5,r5,#20
+	add	r3,r3,#1
+	cmp	r3,#3
+	bne	.l1
+	
+	
+	ldr	r0,putcon_slave
+	cmp	r0,#0
+	bleq	adv_x
+	
+.l2:	
+	LDMFD SP!, {R0-R9,PC} 
+		

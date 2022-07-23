@@ -1,0 +1,416 @@
+\section{hpconio.h File Reference}
+\label{hpconio_8h}\index{hpconio.h@{hpconio.h}}
+Header file for HP49 console I/O. 
+
+
+{\tt \#include $<$stddef.h$>$}\par
+{\tt \#include $<$hpstdlib.h$>$}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf clear\_\-screen}\ \_\-clear\_\-screen
+\begin{CompactList}\small\item\em A synonym for \_\-clear\_\-screen.\item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+EXTERN int {\bf puts} (const char $\ast$)
+\begin{CompactList}\small\item\em Writes a string pointed to by {\em buf} to the screen and returns the number of characters written.\item\end{CompactList}\item 
+EXTERN char $\ast$ {\bf ints} (int, int)
+\begin{CompactList}\small\item\em Returns a pointer to a base {\em base} string representation of {\em num}.\item\end{CompactList}\item 
+EXTERN char $\ast$ {\bf uints} (unsigned, int)
+\begin{CompactList}\small\item\em Returns a pointer to a base {\em base} string representation of {\em num}.\item\end{CompactList}\item 
+EXTERN int {\bf putchar} (int)
+\begin{CompactList}\small\item\em Writes a single character {\em c} to the screen and returns it's argument.\item\end{CompactList}\item 
+EXTERN void {\bf putint} (int)
+\begin{CompactList}\small\item\em Writes an integer {\em num} to the screen.\item\end{CompactList}\item 
+EXTERN void {\bf putintb} (int, int)
+\begin{CompactList}\small\item\em Writes a base {\em base} representation of {\em num} to the screen.\item\end{CompactList}\item 
+EXTERN unsigned {\bf randx} ()
+\begin{CompactList}\small\item\em Returns a 32 bit pseudo random number.\item\end{CompactList}\item 
+EXTERN int {\bf delta\_\-seconds} (int, int)
+\item 
+EXTERN void {\bf beep} ()
+\begin{CompactList}\small\item\em Beeps the speaker.\item\end{CompactList}\item 
+EXTERN void {\bf home} ()
+\begin{CompactList}\small\item\em Positions the virtual write mark at screen position (0,0), i.e. 'home'.\item\end{CompactList}\item 
+EXTERN int {\bf getx} ()
+\begin{CompactList}\small\item\em Returns the current write mark's x-component.\item\end{CompactList}\item 
+EXTERN int {\bf gety} ()
+\begin{CompactList}\small\item\em Returns the current write mark's y-component.\item\end{CompactList}\item 
+EXTERN void {\bf clreol} ()
+\begin{CompactList}\small\item\em Clear to End-Of-Line from current write mark position.\item\end{CompactList}\item 
+EXTERN void {\bf \_\-clear\_\-screen} ()
+\begin{CompactList}\small\item\em Clears the entire screen.\item\end{CompactList}\item 
+EXTERN void {\bf gotoxy} (int, int)
+\begin{CompactList}\small\item\em Position write mark.\item\end{CompactList}\item 
+EXTERN int {\bf screen\_\-width} ()
+\begin{CompactList}\small\item\em Returns screen width in character units.\item\end{CompactList}\item 
+EXTERN int {\bf screen\_\-height} ()
+\begin{CompactList}\small\item\em Returns screen height in character units.\item\end{CompactList}\item 
+EXTERN int {\bf get\_\-tabsize} ()
+\begin{CompactList}\small\item\em Returns current tab width in character units.\item\end{CompactList}\item 
+EXTERN void {\bf set\_\-tabsize} (int)
+\begin{CompactList}\small\item\em Sets current tab width in character units.\item\end{CompactList}\item 
+EXTERN int {\bf getchar} ()
+\begin{CompactList}\small\item\em Reads a character from keyboard.\item\end{CompactList}\item 
+EXTERN int {\bf getkey} (int wait)
+\begin{CompactList}\small\item\em Reads a keystroke and returns immediately if no key is pressed and {\em wait} is zero.\item\end{CompactList}\item 
+EXTERN char $\ast$ {\bf gets} (char $\ast$buf)
+\begin{CompactList}\small\item\em Reads a string from the keyboard.\item\end{CompactList}\item 
+int {\bf get\_\-decimal\_\-digits} ()
+\item 
+void {\bf set\_\-decimal\_\-digits} (int v)
+\item 
+char {\bf get\_\-decimal\_\-separator} ()
+\item 
+void {\bf set\_\-decimal\_\-separator} (char a)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Header file for HP49 console I/O.
+
+
+
+
+
+Definition in file {\bf hpconio.h}.
+
+\subsection{Define Documentation}
+\index{hpconio.h@{hpconio.h}!clear_screen@{clear\_\-screen}}
+\index{clear_screen@{clear\_\-screen}!hpconio.h@{hpconio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define clear\_\-screen\ \_\-clear\_\-screen}\label{hpconio_8h_a0}
+
+
+A synonym for \_\-clear\_\-screen.
+
+\_\-clear\_\-screen 
+
+Definition at line 193 of file hpconio.h.
+
+\subsection{Function Documentation}
+\index{hpconio.h@{hpconio.h}!_clear_screen@{\_\-clear\_\-screen}}
+\index{_clear_screen@{\_\-clear\_\-screen}!hpconio.h@{hpconio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void \_\-clear\_\-screen ()}\label{hpconio_8h_a14}
+
+
+Clears the entire screen.
+
+\index{hpconio.h@{hpconio.h}!beep@{beep}}
+\index{beep@{beep}!hpconio.h@{hpconio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void beep ()}\label{hpconio_8h_a9}
+
+
+Beeps the speaker.
+
+\index{hpconio.h@{hpconio.h}!clreol@{clreol}}
+\index{clreol@{clreol}!hpconio.h@{hpconio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void clreol ()}\label{hpconio_8h_a13}
+
+
+Clear to End-Of-Line from current write mark position.
+
+\index{hpconio.h@{hpconio.h}!delta_seconds@{delta\_\-seconds}}
+\index{delta_seconds@{delta\_\-seconds}!hpconio.h@{hpconio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXTERN int delta\_\-seconds (int, int)}\label{hpconio_8h_a8}
+
+
+\index{hpconio.h@{hpconio.h}!get_decimal_digits@{get\_\-decimal\_\-digits}}
+\index{get_decimal_digits@{get\_\-decimal\_\-digits}!hpconio.h@{hpconio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int get\_\-decimal\_\-digits ()}\label{hpconio_8h_a23}
+
+
+\index{hpconio.h@{hpconio.h}!get_decimal_separator@{get\_\-decimal\_\-separator}}
+\index{get_decimal_separator@{get\_\-decimal\_\-separator}!hpconio.h@{hpconio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char get\_\-decimal\_\-separator ()}\label{hpconio_8h_a25}
+
+
+\index{hpconio.h@{hpconio.h}!get_tabsize@{get\_\-tabsize}}
+\index{get_tabsize@{get\_\-tabsize}!hpconio.h@{hpconio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int get\_\-tabsize ()}\label{hpconio_8h_a18}
+
+
+Returns current tab width in character units.
+
+\begin{Desc}
+\item[Return values: ]\par
+\begin{description}
+\item[{\em 
+Tab}]width \end{description}
+\end{Desc}
+\index{hpconio.h@{hpconio.h}!getchar@{getchar}}
+\index{getchar@{getchar}!hpconio.h@{hpconio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int getchar ()}\label{hpconio_8h_a20}
+
+
+Reads a character from keyboard.
+
+\begin{Desc}
+\item[Return values: ]\par
+\begin{description}
+\item[{\em 
+ASCII}]code of entered character \end{description}
+\end{Desc}
+\index{hpconio.h@{hpconio.h}!getkey@{getkey}}
+\index{getkey@{getkey}!hpconio.h@{hpconio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int getkey (int {\em wait})}\label{hpconio_8h_a21}
+
+
+Reads a keystroke and returns immediately if no key is pressed and {\em wait} is zero.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+wait}]Wait for keystroke (0/1) \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Return values: ]\par
+\begin{description}
+\item[{\em 
+Zero}]if no key pressed, the key's ASCII code otherwise. \end{description}
+\end{Desc}
+\index{hpconio.h@{hpconio.h}!gets@{gets}}
+\index{gets@{gets}!hpconio.h@{hpconio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ gets (char $\ast$ {\em buf})}\label{hpconio_8h_a22}
+
+
+Reads a string from the keyboard.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+buf}]Pointer to buffer, large enough to hold the string. \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Return values: ]\par
+\begin{description}
+\item[{\em 
+The}]argument pointer \end{description}
+\end{Desc}
+\index{hpconio.h@{hpconio.h}!getx@{getx}}
+\index{getx@{getx}!hpconio.h@{hpconio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int getx ()}\label{hpconio_8h_a11}
+
+
+Returns the current write mark's x-component.
+
+\begin{Desc}
+\item[Return values: ]\par
+\begin{description}
+\item[{\em 
+Current}]screen position x \end{description}
+\end{Desc}
+\index{hpconio.h@{hpconio.h}!gety@{gety}}
+\index{gety@{gety}!hpconio.h@{hpconio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int gety ()}\label{hpconio_8h_a12}
+
+
+Returns the current write mark's y-component.
+
+\begin{Desc}
+\item[Return values: ]\par
+\begin{description}
+\item[{\em 
+Current}]screen position y \end{description}
+\end{Desc}
+\index{hpconio.h@{hpconio.h}!gotoxy@{gotoxy}}
+\index{gotoxy@{gotoxy}!hpconio.h@{hpconio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void gotoxy (int {\em x}, int {\em y})}\label{hpconio_8h_a15}
+
+
+Position write mark.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+x}]x-position to go to \item[{\em 
+y}]y-position to go to \end{description}
+\end{Desc}
+\index{hpconio.h@{hpconio.h}!home@{home}}
+\index{home@{home}!hpconio.h@{hpconio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void home ()}\label{hpconio_8h_a10}
+
+
+Positions the virtual write mark at screen position (0,0), i.e. 'home'.
+
+\index{hpconio.h@{hpconio.h}!ints@{ints}}
+\index{ints@{ints}!hpconio.h@{hpconio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ ints (int {\em num}, int {\em base})}\label{hpconio_8h_a2}
+
+
+Returns a pointer to a base {\em base} string representation of {\em num}.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+num}]Number to be written \item[{\em 
+base}]The base, where 2 $<$= base $<$= 36 \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Return values: ]\par
+\begin{description}
+\item[{\em 
+Pointer}]to a zero delimited string\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Warning: ]\par
+The string pointed to is static and must therefore instantly be copied, if intended for later usage. \end{Desc}
+\index{hpconio.h@{hpconio.h}!putchar@{putchar}}
+\index{putchar@{putchar}!hpconio.h@{hpconio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int putchar (int {\em c})}\label{hpconio_8h_a4}
+
+
+Writes a single character {\em c} to the screen and returns it's argument.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+c}]Character to be written \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Return values: ]\par
+\begin{description}
+\item[{\em 
+Unchanged}]argument or -1 if error \end{description}
+\end{Desc}
+\index{hpconio.h@{hpconio.h}!putint@{putint}}
+\index{putint@{putint}!hpconio.h@{hpconio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void putint (int {\em num})}\label{hpconio_8h_a5}
+
+
+Writes an integer {\em num} to the screen.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+num}]Number to be written \end{description}
+\end{Desc}
+\index{hpconio.h@{hpconio.h}!putintb@{putintb}}
+\index{putintb@{putintb}!hpconio.h@{hpconio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void putintb (int {\em num}, int {\em base})}\label{hpconio_8h_a6}
+
+
+Writes a base {\em base} representation of {\em num} to the screen.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+num}]Number to be written \item[{\em 
+base}]The base, where 2 $<$= base $<$= 36 \end{description}
+\end{Desc}
+\index{hpconio.h@{hpconio.h}!puts@{puts}}
+\index{puts@{puts}!hpconio.h@{hpconio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int puts (const char $\ast$ {\em buf})}\label{hpconio_8h_a1}
+
+
+Writes a string pointed to by {\em buf} to the screen and returns the number of characters written.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+buf}]Pointer to zero delimited string \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Return values: ]\par
+\begin{description}
+\item[{\em 
+Number}]of characters written \end{description}
+\end{Desc}
+\index{hpconio.h@{hpconio.h}!randx@{randx}}
+\index{randx@{randx}!hpconio.h@{hpconio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned randx ()}\label{hpconio_8h_a7}
+
+
+Returns a 32 bit pseudo random number.
+
+\begin{Desc}
+\item[Return values: ]\par
+\begin{description}
+\item[{\em 
+32}]bit pseudo random number (PRN)\end{description}
+\end{Desc}
+This routine uses a simple feedback-shift-register algorithm. The sequence will repeat after 2$^\wedge$33-1 numbers. It is seeded by the current time and mainly used to seed higher level PRNGs like {\bf mwc()} {\rm (p.\,\pageref{hpmath_8h_a47})} or rc4().
+
+\begin{Desc}
+\item[Warning: ]\par
+Insecure PRNG, don't use for cryptography! \end{Desc}
+\index{hpconio.h@{hpconio.h}!screen_height@{screen\_\-height}}
+\index{screen_height@{screen\_\-height}!hpconio.h@{hpconio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int screen\_\-height ()}\label{hpconio_8h_a17}
+
+
+Returns screen height in character units.
+
+\begin{Desc}
+\item[Return values: ]\par
+\begin{description}
+\item[{\em 
+Screen}]height \end{description}
+\end{Desc}
+\index{hpconio.h@{hpconio.h}!screen_width@{screen\_\-width}}
+\index{screen_width@{screen\_\-width}!hpconio.h@{hpconio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int screen\_\-width ()}\label{hpconio_8h_a16}
+
+
+Returns screen width in character units.
+
+\begin{Desc}
+\item[Return values: ]\par
+\begin{description}
+\item[{\em 
+Screen}]width \end{description}
+\end{Desc}
+\index{hpconio.h@{hpconio.h}!set_decimal_digits@{set\_\-decimal\_\-digits}}
+\index{set_decimal_digits@{set\_\-decimal\_\-digits}!hpconio.h@{hpconio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void set\_\-decimal\_\-digits (int {\em v})}\label{hpconio_8h_a24}
+
+
+\index{hpconio.h@{hpconio.h}!set_decimal_separator@{set\_\-decimal\_\-separator}}
+\index{set_decimal_separator@{set\_\-decimal\_\-separator}!hpconio.h@{hpconio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void set\_\-decimal\_\-separator (char {\em a})}\label{hpconio_8h_a26}
+
+
+\index{hpconio.h@{hpconio.h}!set_tabsize@{set\_\-tabsize}}
+\index{set_tabsize@{set\_\-tabsize}!hpconio.h@{hpconio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void set\_\-tabsize (int {\em width})}\label{hpconio_8h_a19}
+
+
+Sets current tab width in character units.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+width}]New tab width \end{description}
+\end{Desc}
+\index{hpconio.h@{hpconio.h}!uints@{uints}}
+\index{uints@{uints}!hpconio.h@{hpconio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ uints (unsigned {\em num}, int {\em base})}\label{hpconio_8h_a3}
+
+
+Returns a pointer to a base {\em base} string representation of {\em num}.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+num}]Number to be written \item[{\em 
+base}]The base, where 2 $<$= base $<$= 36 \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Return values: ]\par
+\begin{description}
+\item[{\em 
+Pointer}]to a zero delimited string \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Warning: ]\par
+The string pointed to is static and must therefore instantly be copied, if intended for later usage. \end{Desc}

@@ -1,0 +1,81 @@
+\section{wintext.h File Reference}
+\label{wintext_8h}\index{wintext.h@{wintext.h}}
+Fuctions to display a text widget in the window system. 
+
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+{\bf win\_\-widget\_\-t} $\ast$ {\bf win\_\-text\_\-new\_\-label} (char $\ast$text)
+\begin{CompactList}\small\item\em Creates a new text widget as a label. \item\end{CompactList}\item 
+{\bf win\_\-widget\_\-t} $\ast$ {\bf win\_\-text\_\-new\_\-entry} (int len)
+\begin{CompactList}\small\item\em Creates a new text widget as an entry field. \item\end{CompactList}\item 
+void {\bf win\_\-text\_\-set\_\-text} ({\bf win\_\-widget\_\-t} $\ast$widget, char $\ast$text)
+\begin{CompactList}\small\item\em Sets the contents of a text widget. \item\end{CompactList}\item 
+char $\ast$ {\bf win\_\-text\_\-get\_\-text} ({\bf win\_\-widget\_\-t} $\ast$widget)
+\begin{CompactList}\small\item\em Retrieves the contents of a text widget. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Fuctions to display a text widget in the window system. 
+
+Text widgets are used for two purposes: to display text, and to allow the user to edit text. The two tasks are selected by settings of the {\tt focusable} flag of the component. 
+
+Definition in file {\bf wintext.h}.
+
+\subsection{Function Documentation}
+\index{wintext.h@{wintext.h}!win_text_get_text@{win\_\-text\_\-get\_\-text}}
+\index{win_text_get_text@{win\_\-text\_\-get\_\-text}!wintext.h@{wintext.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ win\_\-text\_\-get\_\-text ({\bf win\_\-widget\_\-t} $\ast$ {\em widget})}\label{wintext_8h_a3}
+
+
+Retrieves the contents of a text widget. 
+
+The result of this method is a pointer to an internal text buffer. It may safely be used only until the next call to a windowing system method. If it will be stored for later use, then the contents should be copied to an alternate location.
+
+Modifications made to the returned text array are live, and require only a call to {\bf win\_\-repaint}{\rm (p.\,\pageref{winwidget_8h_a18})} to display on the screen. However, the amount of memory reserved for text is indeterminate. If the text will extended for longer than the current string length, the application should call {\bf win\_\-text\_\-set\_\-text}{\rm (p.\,\pageref{wintext_8h_a2})} with a different text buffer instead. This behavior may change in a future release of the library, depending on user feedback.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em text}]The new text, as a null-terminated C string. \end{description}
+\end{Desc}
+\index{wintext.h@{wintext.h}!win_text_new_entry@{win\_\-text\_\-new\_\-entry}}
+\index{win_text_new_entry@{win\_\-text\_\-new\_\-entry}!wintext.h@{wintext.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf win\_\-widget\_\-t}$\ast$ win\_\-text\_\-new\_\-entry (int {\em len})}\label{wintext_8h_a1}
+
+
+Creates a new text widget as an entry field. 
+
+Allocates and returns a new text widget, with no initial text, and a given amount of memory set for the user to type. The widget is focusable, and is intended to be used as a field for input.
+
+The text is initially set to black text on a white background, opaque, with the minifont.
+
+\begin{Desc}
+\item[Returns:]A pointer to the newly allocated text widget. \end{Desc}
+\index{wintext.h@{wintext.h}!win_text_new_label@{win\_\-text\_\-new\_\-label}}
+\index{win_text_new_label@{win\_\-text\_\-new\_\-label}!wintext.h@{wintext.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf win\_\-widget\_\-t}$\ast$ win\_\-text\_\-new\_\-label (char $\ast$ {\em text})}\label{wintext_8h_a0}
+
+
+Creates a new text widget as a label. 
+
+Allocates and returns a new text widget, with its initial text set to the given value. The widget is not focusable, and has no extra memory reserved for future changes to the text.
+
+The text is initially set to black text on a white background, opaque, with the minifont.
+
+\begin{Desc}
+\item[Returns:]A pointer to the newly allocated text widget. \end{Desc}
+\index{wintext.h@{wintext.h}!win_text_set_text@{win\_\-text\_\-set\_\-text}}
+\index{win_text_set_text@{win\_\-text\_\-set\_\-text}!wintext.h@{wintext.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void win\_\-text\_\-set\_\-text ({\bf win\_\-widget\_\-t} $\ast$ {\em widget}, char $\ast$ {\em text})}\label{wintext_8h_a2}
+
+
+Sets the contents of a text widget. 
+
+After this call, the widget will contain the new text. The text size is not changed to match the new text. You may need to modify the width or height of the label by calling {\bf win\_\-widget\_\-pack}{\rm (p.\,\pageref{winwidget_8h_a12})} or {\bf win\_\-widget\_\-set\_\-size}{\rm (p.\,\pageref{winwidget_8h_a10})} to avoid cutting off the text.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em text}]The new text, as a null-terminated C string. \end{description}
+\end{Desc}

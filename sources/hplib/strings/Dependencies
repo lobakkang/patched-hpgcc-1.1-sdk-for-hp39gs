@@ -1,0 +1,37 @@
+atof.o: atof.c ../hpstring.h ../hpctype.h ../kos.h ../hpmath.h
+atoi.o: atoi.c ../hpstring.h ../hpctype.h ../kos.h
+atoll.o: atoll.c ../hpstring.h ../hpctype.h ../kos.h
+atoui.o: atoui.c ../hpstring.h ../hpctype.h ../kos.h
+atoull.o: atoull.c ../hpstring.h ../hpctype.h ../kos.h
+ctype.o: ctype.c ../hpctype.h
+dtoa.o: dtoa.c ../hpstdlib.h ../hpsys.h ../kos.h ../hpstring.h \
+  ../hpctype.h ../hpstdio.h ../hpmath.h
+ints.o: ints.c ../hpstring.h ../hpctype.h ../kos.h
+itoa.o: itoa.c ../hpstring.h ../hpctype.h ../kos.h
+lltoa.o: lltoa.c ../hpstring.h ../hpctype.h ../kos.h ../hpsys.h
+lower.o: lower.c ../hpstring.h ../hpctype.h ../kos.h
+str_unquote.o: str_unquote.c ../hpstdlib.h ../hpsys.h ../kos.h \
+  ../hpstring.h ../hpctype.h
+strbprk.o: strbprk.c ../kos.h ../hpstring.h ../hpctype.h
+strcat.o: strcat.c
+strchr.o: strchr.c ../kos.h ../hpstring.h ../hpctype.h
+strcmp.o: strcmp.c
+strcpy.o: strcpy.c
+strcspn.o: strcspn.c ../kos.h ../hpstring.h ../hpctype.h
+strdup.o: strdup.c ../hpstdlib.h ../hpsys.h ../kos.h ../hpstring.h \
+  ../hpctype.h
+strlen.o: strlen.c
+strncat.o: strncat.c ../kos.h ../hpstring.h ../hpctype.h
+strncmp.o: strncmp.c
+strncpy.o: strncpy.c
+strok.o: strok.c ../kos.h ../hpstring.h ../hpctype.h
+strrchr.o: strrchr.c ../kos.h ../hpstring.h ../hpctype.h
+strrev.o: strrev.c
+strspn.o: strspn.c ../kos.h ../hpstring.h ../hpctype.h
+strstr.o: strstr.c ../kos.h ../hpstring.h ../hpctype.h ../hpstdlib.h \
+  ../hpsys.h
+tens.o: tens.c ../hpmath.h
+uints.o: uints.c ../hpstring.h ../hpctype.h ../kos.h
+upper.o: upper.c ../hpstring.h ../hpctype.h ../kos.h
+utoa.o: utoa.c ../hpstring.h ../hpctype.h ../kos.h
+xpad.o: xpad.c ../hpstring.h ../hpctype.h ../kos.h

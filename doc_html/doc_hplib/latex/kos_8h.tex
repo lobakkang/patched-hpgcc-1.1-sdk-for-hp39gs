@@ -1,0 +1,656 @@
+\section{kos.h File Reference}
+\label{kos_8h}\index{kos.h@{kos.h}}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf size\_\-t}\ unsigned int
+\item 
+\#define {\bf SIZE\_\-T}\ size\_\-t
+\item 
+\#define {\bf FALSE}\ 0
+\item 
+\#define {\bf TRUE}\ (! FALSE)
+\item 
+\#define {\bf KOS\_\-MEM\_\-FREE}\ 0x0000
+\item 
+\#define {\bf KOS\_\-MEM\_\-GLOBAL}\ 0x1000
+\item 
+\#define {\bf KOS\_\-MEM\_\-LOCAL}\ 0x2000
+\item 
+\#define {\bf KOS\_\-MEM\_\-HEAP0}\ 0x0100
+\item 
+\#define {\bf KOS\_\-MODULE\_\-FILESYSTEM}\ 1
+\item 
+\#define {\bf KOS\_\-FUNC\_\-FOPEN}\ 0
+\item 
+\#define {\bf KOS\_\-FUNC\_\-FREAD}\ 1
+\item 
+\#define {\bf KOS\_\-FUNC\_\-FWRITE}\ 2
+\item 
+\#define {\bf KOS\_\-FUNC\_\-FCLOSE}\ 3
+\item 
+\#define {\bf KOS\_\-READMODE}\ 1
+\item 
+\#define {\bf KOS\_\-WRITEMODE}\ 2
+\item 
+\#define {\bf FAT32\_\-SUPPORT}\ 1
+\item 
+\#define {\bf NEW\_\-FILE\_\-NAME}
+\item 
+\#define {\bf FILE\_\-READONLY}\ 0x00000001
+\item 
+\#define {\bf FILE\_\-READWRITE}\ 0x00000002
+\item 
+\#define {\bf FILE\_\-APPEND}\ 0x00000003
+\item 
+\#define {\bf FS\_\-SEEK\_\-SET}\ 0
+\item 
+\#define {\bf FS\_\-SEEK\_\-CUR}\ 1
+\item 
+\#define {\bf FS\_\-SEEK\_\-END}\ 2
+\item 
+\#define {\bf ERR\_\-FS\_\-INVALID\_\-NAME}\ -1
+\item 
+\#define {\bf ERR\_\-FS\_\-FILE\_\-OPENED}\ -2
+\item 
+\#define {\bf ERR\_\-FS\_\-INVALID\_\-HANDLE}\ -3
+\item 
+\#define {\bf ERR\_\-FS\_\-INVALID\_\-INDEX}\ -4
+\item 
+\#define {\bf ERR\_\-FS\_\-INVALID\_\-MODE}\ -5
+\item 
+\#define {\bf ERR\_\-FS\_\-DISK\_\-FULL}\ -6
+\item 
+\#define {\bf ERR\_\-FS\_\-DISK\_\-ERROR}\ -7
+\item 
+\#define {\bf ERR\_\-FS\_\-DISK\_\-CHANGE}\ -8
+\item 
+\#define {\bf ERR\_\-FS\_\-NO\_\-SDCARD}\ -9
+\item 
+\#define {\bf ERR\_\-FS\_\-NO\_\-MEMORY}\ -10
+\item 
+\#define {\bf ERR\_\-FS\_\-NOT\_\-SUPPORT}\ -11
+\item 
+\#define {\bf ERR\_\-FS\_\-PROTECT}\ -13
+\item 
+\#define {\bf ERR\_\-FS\_\-NOTFIND}\ -14
+\item 
+\#define {\bf ERR\_\-FS\_\-DISK\_\-REMOVE}\ -15
+\item 
+\#define {\bf ERR\_\-FS\_\-FILE\_\-NOTEXIST}\ -16
+\item 
+\#define {\bf ERR\_\-FS\_\-UNKNOWN}\ -100
+\item 
+\#define {\bf SUCCESS}\ 0
+\item 
+\#define {\bf EOF}\ -1
+\item 
+\#define {\bf KOS\_\-ERR\_\-INVALIDPTR}\ -200
+\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef unsigned int {\bf U32}
+\item 
+typedef int {\bf S32}
+\item 
+typedef unsigned short {\bf U16}
+\item 
+typedef short {\bf S16}
+\item 
+typedef unsigned char {\bf U8}
+\item 
+typedef unsigned char $\ast$ {\bf P\_\-U8}
+\item 
+typedef char {\bf S8}
+\item 
+typedef char {\bf BYTE}
+\item 
+typedef char $\ast$ {\bf P\_\-BYTE}
+\item 
+typedef int {\bf BOOL}
+\item 
+typedef void $\ast$ {\bf P\_\-VOID}
+\item 
+typedef {\bf U32}($\ast$ {\bf FUNC\_\-PTR} )()
+\item 
+typedef {\bf U32}($\ast$ {\bf FUNC0PTR} )()
+\item 
+typedef {\bf U32}($\ast$ {\bf FUNC1PTR} )({\bf U32})
+\item 
+typedef {\bf U32}($\ast$ {\bf FUNC2PTR} )({\bf U32}, {\bf U32})
+\item 
+typedef {\bf U32}($\ast$ {\bf FUNC3PTR} )({\bf U32}, {\bf U32}, {\bf U32})
+\item 
+typedef {\bf S32} {\bf H\_\-FILE}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+{\bf FUNC\_\-PTR} {\bf kos\_\-Get\-Func\-Entry} ({\bf U32} module, {\bf U32} index)
+\item 
+{\bf H\_\-FILE} {\bf kos\_\-fopen} ({\bf P\_\-BYTE} fname, {\bf U8} mode)
+\item 
+SIZE\_\-T {\bf kos\_\-fread} ({\bf H\_\-FILE} fd, {\bf P\_\-BYTE} buf, {\bf U32} length)
+\item 
+SIZE\_\-T {\bf kos\_\-fwrite} ({\bf H\_\-FILE} fd, {\bf P\_\-BYTE} buf, {\bf U32} length)
+\item 
+{\bf S32} {\bf kos\_\-fclose} ({\bf H\_\-FILE} fd)
+\item 
+void $\ast$ {\bf kos\_\-malloc} (SIZE\_\-T size)
+\item 
+{\bf S32} {\bf kos\_\-free} (void $\ast$p\-Memory)
+\item 
+void {\bf kos\_\-Clear\-Lcd} (void)
+\item 
+{\bf U32} {\bf kos\_\-Put\-String} ({\bf U32} dx, {\bf U32} dy, {\bf P\_\-VOID} ptr)
+\item 
+void {\bf kos\_\-Put\-Hex\-Number} ({\bf U32} dx, {\bf U32} dy, {\bf U32} value)
+\item 
+void {\bf kos\_\-Put\-Dec\-Number} ({\bf U32} dx, {\bf U32} dy, {\bf U32} value, {\bf U32} bit)
+\item 
+{\bf U32} {\bf kos\_\-LCDGet\-Contrast} (void)
+\item 
+void {\bf kos\_\-LCDSet\-Contrast} ({\bf U32} contrast)
+\item 
+{\bf P\_\-BYTE} {\bf kos\_\-get\-Serial\-Number} (void)
+\item 
+void {\bf kos\_\-Reset} (void)
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\index{kos.h@{kos.h}!EOF@{EOF}}
+\index{EOF@{EOF}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define EOF\ -1}\label{kos_8h_a40}
+
+
+
+
+Definition at line 151 of file kos.h.\index{kos.h@{kos.h}!ERR_FS_DISK_CHANGE@{ERR\_\-FS\_\-DISK\_\-CHANGE}}
+\index{ERR_FS_DISK_CHANGE@{ERR\_\-FS\_\-DISK\_\-CHANGE}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ERR\_\-FS\_\-DISK\_\-CHANGE\ -8}\label{kos_8h_a30}
+
+
+
+
+Definition at line 136 of file kos.h.\index{kos.h@{kos.h}!ERR_FS_DISK_ERROR@{ERR\_\-FS\_\-DISK\_\-ERROR}}
+\index{ERR_FS_DISK_ERROR@{ERR\_\-FS\_\-DISK\_\-ERROR}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ERR\_\-FS\_\-DISK\_\-ERROR\ -7}\label{kos_8h_a29}
+
+
+
+
+Definition at line 135 of file kos.h.\index{kos.h@{kos.h}!ERR_FS_DISK_FULL@{ERR\_\-FS\_\-DISK\_\-FULL}}
+\index{ERR_FS_DISK_FULL@{ERR\_\-FS\_\-DISK\_\-FULL}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ERR\_\-FS\_\-DISK\_\-FULL\ -6}\label{kos_8h_a28}
+
+
+
+
+Definition at line 134 of file kos.h.\index{kos.h@{kos.h}!ERR_FS_DISK_REMOVE@{ERR\_\-FS\_\-DISK\_\-REMOVE}}
+\index{ERR_FS_DISK_REMOVE@{ERR\_\-FS\_\-DISK\_\-REMOVE}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ERR\_\-FS\_\-DISK\_\-REMOVE\ -15}\label{kos_8h_a36}
+
+
+
+
+Definition at line 142 of file kos.h.\index{kos.h@{kos.h}!ERR_FS_FILE_NOTEXIST@{ERR\_\-FS\_\-FILE\_\-NOTEXIST}}
+\index{ERR_FS_FILE_NOTEXIST@{ERR\_\-FS\_\-FILE\_\-NOTEXIST}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ERR\_\-FS\_\-FILE\_\-NOTEXIST\ -16}\label{kos_8h_a37}
+
+
+
+
+Definition at line 143 of file kos.h.\index{kos.h@{kos.h}!ERR_FS_FILE_OPENED@{ERR\_\-FS\_\-FILE\_\-OPENED}}
+\index{ERR_FS_FILE_OPENED@{ERR\_\-FS\_\-FILE\_\-OPENED}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ERR\_\-FS\_\-FILE\_\-OPENED\ -2}\label{kos_8h_a24}
+
+
+
+
+Definition at line 130 of file kos.h.\index{kos.h@{kos.h}!ERR_FS_INVALID_HANDLE@{ERR\_\-FS\_\-INVALID\_\-HANDLE}}
+\index{ERR_FS_INVALID_HANDLE@{ERR\_\-FS\_\-INVALID\_\-HANDLE}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ERR\_\-FS\_\-INVALID\_\-HANDLE\ -3}\label{kos_8h_a25}
+
+
+
+
+Definition at line 131 of file kos.h.\index{kos.h@{kos.h}!ERR_FS_INVALID_INDEX@{ERR\_\-FS\_\-INVALID\_\-INDEX}}
+\index{ERR_FS_INVALID_INDEX@{ERR\_\-FS\_\-INVALID\_\-INDEX}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ERR\_\-FS\_\-INVALID\_\-INDEX\ -4}\label{kos_8h_a26}
+
+
+
+
+Definition at line 132 of file kos.h.\index{kos.h@{kos.h}!ERR_FS_INVALID_MODE@{ERR\_\-FS\_\-INVALID\_\-MODE}}
+\index{ERR_FS_INVALID_MODE@{ERR\_\-FS\_\-INVALID\_\-MODE}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ERR\_\-FS\_\-INVALID\_\-MODE\ -5}\label{kos_8h_a27}
+
+
+
+
+Definition at line 133 of file kos.h.\index{kos.h@{kos.h}!ERR_FS_INVALID_NAME@{ERR\_\-FS\_\-INVALID\_\-NAME}}
+\index{ERR_FS_INVALID_NAME@{ERR\_\-FS\_\-INVALID\_\-NAME}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ERR\_\-FS\_\-INVALID\_\-NAME\ -1}\label{kos_8h_a23}
+
+
+
+
+Definition at line 129 of file kos.h.\index{kos.h@{kos.h}!ERR_FS_NO_MEMORY@{ERR\_\-FS\_\-NO\_\-MEMORY}}
+\index{ERR_FS_NO_MEMORY@{ERR\_\-FS\_\-NO\_\-MEMORY}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ERR\_\-FS\_\-NO\_\-MEMORY\ -10}\label{kos_8h_a32}
+
+
+
+
+Definition at line 138 of file kos.h.\index{kos.h@{kos.h}!ERR_FS_NO_SDCARD@{ERR\_\-FS\_\-NO\_\-SDCARD}}
+\index{ERR_FS_NO_SDCARD@{ERR\_\-FS\_\-NO\_\-SDCARD}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ERR\_\-FS\_\-NO\_\-SDCARD\ -9}\label{kos_8h_a31}
+
+
+
+
+Definition at line 137 of file kos.h.\index{kos.h@{kos.h}!ERR_FS_NOT_SUPPORT@{ERR\_\-FS\_\-NOT\_\-SUPPORT}}
+\index{ERR_FS_NOT_SUPPORT@{ERR\_\-FS\_\-NOT\_\-SUPPORT}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ERR\_\-FS\_\-NOT\_\-SUPPORT\ -11}\label{kos_8h_a33}
+
+
+
+
+Definition at line 139 of file kos.h.\index{kos.h@{kos.h}!ERR_FS_NOTFIND@{ERR\_\-FS\_\-NOTFIND}}
+\index{ERR_FS_NOTFIND@{ERR\_\-FS\_\-NOTFIND}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ERR\_\-FS\_\-NOTFIND\ -14}\label{kos_8h_a35}
+
+
+
+
+Definition at line 141 of file kos.h.\index{kos.h@{kos.h}!ERR_FS_PROTECT@{ERR\_\-FS\_\-PROTECT}}
+\index{ERR_FS_PROTECT@{ERR\_\-FS\_\-PROTECT}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ERR\_\-FS\_\-PROTECT\ -13}\label{kos_8h_a34}
+
+
+
+
+Definition at line 140 of file kos.h.\index{kos.h@{kos.h}!ERR_FS_UNKNOWN@{ERR\_\-FS\_\-UNKNOWN}}
+\index{ERR_FS_UNKNOWN@{ERR\_\-FS\_\-UNKNOWN}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define ERR\_\-FS\_\-UNKNOWN\ -100}\label{kos_8h_a38}
+
+
+
+
+Definition at line 144 of file kos.h.\index{kos.h@{kos.h}!FALSE@{FALSE}}
+\index{FALSE@{FALSE}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FALSE\ 0}\label{kos_8h_a2}
+
+
+
+
+Definition at line 64 of file kos.h.\index{kos.h@{kos.h}!FAT32_SUPPORT@{FAT32\_\-SUPPORT}}
+\index{FAT32_SUPPORT@{FAT32\_\-SUPPORT}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FAT32\_\-SUPPORT\ 1}\label{kos_8h_a15}
+
+
+
+
+Definition at line 93 of file kos.h.\index{kos.h@{kos.h}!FILE_APPEND@{FILE\_\-APPEND}}
+\index{FILE_APPEND@{FILE\_\-APPEND}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FILE\_\-APPEND\ 0x00000003}\label{kos_8h_a19}
+
+
+
+
+Definition at line 123 of file kos.h.\index{kos.h@{kos.h}!FILE_READONLY@{FILE\_\-READONLY}}
+\index{FILE_READONLY@{FILE\_\-READONLY}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FILE\_\-READONLY\ 0x00000001}\label{kos_8h_a17}
+
+
+
+
+Definition at line 121 of file kos.h.\index{kos.h@{kos.h}!FILE_READWRITE@{FILE\_\-READWRITE}}
+\index{FILE_READWRITE@{FILE\_\-READWRITE}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FILE\_\-READWRITE\ 0x00000002}\label{kos_8h_a18}
+
+
+
+
+Definition at line 122 of file kos.h.\index{kos.h@{kos.h}!FS_SEEK_CUR@{FS\_\-SEEK\_\-CUR}}
+\index{FS_SEEK_CUR@{FS\_\-SEEK\_\-CUR}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FS\_\-SEEK\_\-CUR\ 1}\label{kos_8h_a21}
+
+
+
+
+Definition at line 126 of file kos.h.\index{kos.h@{kos.h}!FS_SEEK_END@{FS\_\-SEEK\_\-END}}
+\index{FS_SEEK_END@{FS\_\-SEEK\_\-END}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FS\_\-SEEK\_\-END\ 2}\label{kos_8h_a22}
+
+
+
+
+Definition at line 127 of file kos.h.\index{kos.h@{kos.h}!FS_SEEK_SET@{FS\_\-SEEK\_\-SET}}
+\index{FS_SEEK_SET@{FS\_\-SEEK\_\-SET}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define FS\_\-SEEK\_\-SET\ 0}\label{kos_8h_a20}
+
+
+
+
+Definition at line 125 of file kos.h.\index{kos.h@{kos.h}!KOS_ERR_INVALIDPTR@{KOS\_\-ERR\_\-INVALIDPTR}}
+\index{KOS_ERR_INVALIDPTR@{KOS\_\-ERR\_\-INVALIDPTR}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define KOS\_\-ERR\_\-INVALIDPTR\ -200}\label{kos_8h_a41}
+
+
+
+
+Definition at line 152 of file kos.h.\index{kos.h@{kos.h}!KOS_FUNC_FCLOSE@{KOS\_\-FUNC\_\-FCLOSE}}
+\index{KOS_FUNC_FCLOSE@{KOS\_\-FUNC\_\-FCLOSE}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define KOS\_\-FUNC\_\-FCLOSE\ 3}\label{kos_8h_a12}
+
+
+
+
+Definition at line 83 of file kos.h.\index{kos.h@{kos.h}!KOS_FUNC_FOPEN@{KOS\_\-FUNC\_\-FOPEN}}
+\index{KOS_FUNC_FOPEN@{KOS\_\-FUNC\_\-FOPEN}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define KOS\_\-FUNC\_\-FOPEN\ 0}\label{kos_8h_a9}
+
+
+
+
+Definition at line 80 of file kos.h.\index{kos.h@{kos.h}!KOS_FUNC_FREAD@{KOS\_\-FUNC\_\-FREAD}}
+\index{KOS_FUNC_FREAD@{KOS\_\-FUNC\_\-FREAD}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define KOS\_\-FUNC\_\-FREAD\ 1}\label{kos_8h_a10}
+
+
+
+
+Definition at line 81 of file kos.h.\index{kos.h@{kos.h}!KOS_FUNC_FWRITE@{KOS\_\-FUNC\_\-FWRITE}}
+\index{KOS_FUNC_FWRITE@{KOS\_\-FUNC\_\-FWRITE}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define KOS\_\-FUNC\_\-FWRITE\ 2}\label{kos_8h_a11}
+
+
+
+
+Definition at line 82 of file kos.h.\index{kos.h@{kos.h}!KOS_MEM_FREE@{KOS\_\-MEM\_\-FREE}}
+\index{KOS_MEM_FREE@{KOS\_\-MEM\_\-FREE}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define KOS\_\-MEM\_\-FREE\ 0x0000}\label{kos_8h_a4}
+
+
+
+
+Definition at line 69 of file kos.h.\index{kos.h@{kos.h}!KOS_MEM_GLOBAL@{KOS\_\-MEM\_\-GLOBAL}}
+\index{KOS_MEM_GLOBAL@{KOS\_\-MEM\_\-GLOBAL}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define KOS\_\-MEM\_\-GLOBAL\ 0x1000}\label{kos_8h_a5}
+
+
+
+
+Definition at line 71 of file kos.h.\index{kos.h@{kos.h}!KOS_MEM_HEAP0@{KOS\_\-MEM\_\-HEAP0}}
+\index{KOS_MEM_HEAP0@{KOS\_\-MEM\_\-HEAP0}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define KOS\_\-MEM\_\-HEAP0\ 0x0100}\label{kos_8h_a7}
+
+
+
+
+Definition at line 75 of file kos.h.\index{kos.h@{kos.h}!KOS_MEM_LOCAL@{KOS\_\-MEM\_\-LOCAL}}
+\index{KOS_MEM_LOCAL@{KOS\_\-MEM\_\-LOCAL}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define KOS\_\-MEM\_\-LOCAL\ 0x2000}\label{kos_8h_a6}
+
+
+
+
+Definition at line 73 of file kos.h.\index{kos.h@{kos.h}!KOS_MODULE_FILESYSTEM@{KOS\_\-MODULE\_\-FILESYSTEM}}
+\index{KOS_MODULE_FILESYSTEM@{KOS\_\-MODULE\_\-FILESYSTEM}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define KOS\_\-MODULE\_\-FILESYSTEM\ 1}\label{kos_8h_a8}
+
+
+
+
+Definition at line 78 of file kos.h.\index{kos.h@{kos.h}!KOS_READMODE@{KOS\_\-READMODE}}
+\index{KOS_READMODE@{KOS\_\-READMODE}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define KOS\_\-READMODE\ 1}\label{kos_8h_a13}
+
+
+
+
+Definition at line 85 of file kos.h.\index{kos.h@{kos.h}!KOS_WRITEMODE@{KOS\_\-WRITEMODE}}
+\index{KOS_WRITEMODE@{KOS\_\-WRITEMODE}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define KOS\_\-WRITEMODE\ 2}\label{kos_8h_a14}
+
+
+
+
+Definition at line 86 of file kos.h.\index{kos.h@{kos.h}!NEW_FILE_NAME@{NEW\_\-FILE\_\-NAME}}
+\index{NEW_FILE_NAME@{NEW\_\-FILE\_\-NAME}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define NEW\_\-FILE\_\-NAME}\label{kos_8h_a16}
+
+
+
+
+Definition at line 95 of file kos.h.\index{kos.h@{kos.h}!SIZE_T@{SIZE\_\-T}}
+\index{SIZE_T@{SIZE\_\-T}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SIZE\_\-T\ size\_\-t}\label{kos_8h_a1}
+
+
+
+
+Definition at line 51 of file kos.h.\index{kos.h@{kos.h}!size_t@{size\_\-t}}
+\index{size_t@{size\_\-t}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define size\_\-t\ unsigned int}\label{kos_8h_a0}
+
+
+
+
+Definition at line 47 of file kos.h.\index{kos.h@{kos.h}!SUCCESS@{SUCCESS}}
+\index{SUCCESS@{SUCCESS}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define SUCCESS\ 0}\label{kos_8h_a39}
+
+
+
+
+Definition at line 150 of file kos.h.\index{kos.h@{kos.h}!TRUE@{TRUE}}
+\index{TRUE@{TRUE}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define TRUE\ (! FALSE)}\label{kos_8h_a3}
+
+
+
+
+Definition at line 65 of file kos.h.
+
+\subsection{Typedef Documentation}
+\index{kos.h@{kos.h}!BOOL@{BOOL}}
+\index{BOOL@{BOOL}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef int BOOL}\label{kos_8h_a51}
+
+
+
+
+Definition at line 43 of file kos.h.\index{kos.h@{kos.h}!BYTE@{BYTE}}
+\index{BYTE@{BYTE}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef char BYTE}\label{kos_8h_a49}
+
+
+
+
+Definition at line 41 of file kos.h.\index{kos.h@{kos.h}!FUNC0PTR@{FUNC0PTR}}
+\index{FUNC0PTR@{FUNC0PTR}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf U32}($\ast$ FUNC0PTR)()}\label{kos_8h_a54}
+
+
+
+
+Definition at line 56 of file kos.h.\index{kos.h@{kos.h}!FUNC1PTR@{FUNC1PTR}}
+\index{FUNC1PTR@{FUNC1PTR}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf U32}($\ast$ FUNC1PTR)({\bf U32})}\label{kos_8h_a55}
+
+
+
+
+Definition at line 57 of file kos.h.\index{kos.h@{kos.h}!FUNC2PTR@{FUNC2PTR}}
+\index{FUNC2PTR@{FUNC2PTR}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf U32}($\ast$ FUNC2PTR)({\bf U32},{\bf U32})}\label{kos_8h_a56}
+
+
+
+
+Definition at line 58 of file kos.h.\index{kos.h@{kos.h}!FUNC3PTR@{FUNC3PTR}}
+\index{FUNC3PTR@{FUNC3PTR}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf U32}($\ast$ FUNC3PTR)({\bf U32},{\bf U32},{\bf U32})}\label{kos_8h_a57}
+
+
+
+
+Definition at line 59 of file kos.h.\index{kos.h@{kos.h}!FUNC_PTR@{FUNC\_\-PTR}}
+\index{FUNC_PTR@{FUNC\_\-PTR}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf U32}($\ast$ FUNC\_\-PTR)()}\label{kos_8h_a53}
+
+
+
+
+Definition at line 55 of file kos.h.\index{kos.h@{kos.h}!H_FILE@{H\_\-FILE}}
+\index{H_FILE@{H\_\-FILE}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf S32} H\_\-FILE}\label{kos_8h_a58}
+
+
+
+
+Definition at line 119 of file kos.h.\index{kos.h@{kos.h}!P_BYTE@{P\_\-BYTE}}
+\index{P_BYTE@{P\_\-BYTE}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef char$\ast$ P\_\-BYTE}\label{kos_8h_a50}
+
+
+
+
+Definition at line 42 of file kos.h.\index{kos.h@{kos.h}!P_U8@{P\_\-U8}}
+\index{P_U8@{P\_\-U8}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned char $\ast$ P\_\-U8}\label{kos_8h_a47}
+
+
+
+
+Definition at line 39 of file kos.h.\index{kos.h@{kos.h}!P_VOID@{P\_\-VOID}}
+\index{P_VOID@{P\_\-VOID}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef void$\ast$ P\_\-VOID}\label{kos_8h_a52}
+
+
+
+
+Definition at line 44 of file kos.h.\index{kos.h@{kos.h}!S16@{S16}}
+\index{S16@{S16}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef short S16}\label{kos_8h_a45}
+
+
+
+
+Definition at line 38 of file kos.h.\index{kos.h@{kos.h}!S32@{S32}}
+\index{S32@{S32}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef int S32}\label{kos_8h_a43}
+
+
+
+
+Definition at line 36 of file kos.h.\index{kos.h@{kos.h}!S8@{S8}}
+\index{S8@{S8}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef char S8}\label{kos_8h_a48}
+
+
+
+
+Definition at line 40 of file kos.h.\index{kos.h@{kos.h}!U16@{U16}}
+\index{U16@{U16}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned short U16}\label{kos_8h_a44}
+
+
+
+
+Definition at line 37 of file kos.h.\index{kos.h@{kos.h}!U32@{U32}}
+\index{U32@{U32}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned int U32}\label{kos_8h_a42}
+
+
+
+
+Definition at line 35 of file kos.h.\index{kos.h@{kos.h}!U8@{U8}}
+\index{U8@{U8}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef unsigned char U8}\label{kos_8h_a46}
+
+
+
+
+Definition at line 39 of file kos.h.
+
+\subsection{Function Documentation}
+\index{kos.h@{kos.h}!kos_ClearLcd@{kos\_\-ClearLcd}}
+\index{kos_ClearLcd@{kos\_\-ClearLcd}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void kos\_\-Clear\-Lcd (void)}\label{kos_8h_a66}
+
+
+\index{kos.h@{kos.h}!kos_fclose@{kos\_\-fclose}}
+\index{kos_fclose@{kos\_\-fclose}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf S32} kos\_\-fclose ({\bf H\_\-FILE} {\em fd})}\label{kos_8h_a63}
+
+
+\index{kos.h@{kos.h}!kos_fopen@{kos\_\-fopen}}
+\index{kos_fopen@{kos\_\-fopen}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf H\_\-FILE} kos\_\-fopen ({\bf P\_\-BYTE} {\em fname}, {\bf U8} {\em mode})}\label{kos_8h_a60}
+
+
+\index{kos.h@{kos.h}!kos_fread@{kos\_\-fread}}
+\index{kos_fread@{kos\_\-fread}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SIZE\_\-T kos\_\-fread ({\bf H\_\-FILE} {\em fd}, {\bf P\_\-BYTE} {\em buf}, {\bf U32} {\em length})}\label{kos_8h_a61}
+
+
+\index{kos.h@{kos.h}!kos_free@{kos\_\-free}}
+\index{kos_free@{kos\_\-free}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf S32} kos\_\-free (void $\ast$ {\em p\-Memory})}\label{kos_8h_a65}
+
+
+\index{kos.h@{kos.h}!kos_fwrite@{kos\_\-fwrite}}
+\index{kos_fwrite@{kos\_\-fwrite}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SIZE\_\-T kos\_\-fwrite ({\bf H\_\-FILE} {\em fd}, {\bf P\_\-BYTE} {\em buf}, {\bf U32} {\em length})}\label{kos_8h_a62}
+
+
+\index{kos.h@{kos.h}!kos_GetFuncEntry@{kos\_\-GetFuncEntry}}
+\index{kos_GetFuncEntry@{kos\_\-GetFuncEntry}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf FUNC\_\-PTR} kos\_\-Get\-Func\-Entry ({\bf U32} {\em module}, {\bf U32} {\em index})}\label{kos_8h_a59}
+
+
+\index{kos.h@{kos.h}!kos_getSerialNumber@{kos\_\-getSerialNumber}}
+\index{kos_getSerialNumber@{kos\_\-getSerialNumber}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf P\_\-BYTE} kos\_\-get\-Serial\-Number (void)}\label{kos_8h_a72}
+
+
+\index{kos.h@{kos.h}!kos_LCDGetContrast@{kos\_\-LCDGetContrast}}
+\index{kos_LCDGetContrast@{kos\_\-LCDGetContrast}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf U32} kos\_\-LCDGet\-Contrast (void)}\label{kos_8h_a70}
+
+
+\index{kos.h@{kos.h}!kos_LCDSetContrast@{kos\_\-LCDSetContrast}}
+\index{kos_LCDSetContrast@{kos\_\-LCDSetContrast}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void kos\_\-LCDSet\-Contrast ({\bf U32} {\em contrast})}\label{kos_8h_a71}
+
+
+\index{kos.h@{kos.h}!kos_malloc@{kos\_\-malloc}}
+\index{kos_malloc@{kos\_\-malloc}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ kos\_\-malloc (SIZE\_\-T {\em size})}\label{kos_8h_a64}
+
+
+\index{kos.h@{kos.h}!kos_PutDecNumber@{kos\_\-PutDecNumber}}
+\index{kos_PutDecNumber@{kos\_\-PutDecNumber}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void kos\_\-Put\-Dec\-Number ({\bf U32} {\em dx}, {\bf U32} {\em dy}, {\bf U32} {\em value}, {\bf U32} {\em bit})}\label{kos_8h_a69}
+
+
+\index{kos.h@{kos.h}!kos_PutHexNumber@{kos\_\-PutHexNumber}}
+\index{kos_PutHexNumber@{kos\_\-PutHexNumber}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void kos\_\-Put\-Hex\-Number ({\bf U32} {\em dx}, {\bf U32} {\em dy}, {\bf U32} {\em value})}\label{kos_8h_a68}
+
+
+\index{kos.h@{kos.h}!kos_PutString@{kos\_\-PutString}}
+\index{kos_PutString@{kos\_\-PutString}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf U32} kos\_\-Put\-String ({\bf U32} {\em dx}, {\bf U32} {\em dy}, {\bf P\_\-VOID} {\em ptr})}\label{kos_8h_a67}
+
+
+\index{kos.h@{kos.h}!kos_Reset@{kos\_\-Reset}}
+\index{kos_Reset@{kos\_\-Reset}!kos.h@{kos.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void kos\_\-Reset (void)}\label{kos_8h_a73}
+
+

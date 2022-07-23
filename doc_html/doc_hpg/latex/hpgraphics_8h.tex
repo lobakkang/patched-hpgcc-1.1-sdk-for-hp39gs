@@ -1,0 +1,1283 @@
+\section{hpgraphics.h File Reference}
+\label{hpgraphics_8h}\index{hpgraphics.h@{hpgraphics.h}}
+Graphics routines for the HP49G+ calculator. 
+
+
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf HPG\_\-MODE\_\-PAINT}\ 0
+\begin{CompactList}\small\item\em A drawing mode for painting on the screen.\item\end{CompactList}\item 
+\#define {\bf HPG\_\-MODE\_\-XOR}\ 1
+\begin{CompactList}\small\item\em A drawing mode to XOR bits reversibly onto the screen.\item\end{CompactList}\item 
+\#define {\bf HPG\_\-COLOR\_\-WHITE}\ 0x00
+\begin{CompactList}\small\item\em The color white.\item\end{CompactList}\item 
+\#define {\bf HPG\_\-COLOR\_\-GRAY\_\-1}\ 0x11
+\begin{CompactList}\small\item\em The 1st shade of gray.\item\end{CompactList}\item 
+\#define {\bf HPG\_\-COLOR\_\-GRAY\_\-2}\ 0x22
+\begin{CompactList}\small\item\em The 2nd shade of gray.\item\end{CompactList}\item 
+\#define {\bf HPG\_\-COLOR\_\-GRAY\_\-3}\ 0x33
+\begin{CompactList}\small\item\em The 3rd shade of gray.\item\end{CompactList}\item 
+\#define {\bf HPG\_\-COLOR\_\-GRAY\_\-4}\ 0x44
+\begin{CompactList}\small\item\em The 4th shade of gray.\item\end{CompactList}\item 
+\#define {\bf HPG\_\-COLOR\_\-GRAY\_\-5}\ 0x55
+\begin{CompactList}\small\item\em The 5th shade of gray.\item\end{CompactList}\item 
+\#define {\bf HPG\_\-COLOR\_\-GRAY\_\-6}\ 0x66
+\begin{CompactList}\small\item\em The 6th shade of gray.\item\end{CompactList}\item 
+\#define {\bf HPG\_\-COLOR\_\-GRAY\_\-7}\ 0x77
+\begin{CompactList}\small\item\em The 7th shade of gray.\item\end{CompactList}\item 
+\#define {\bf HPG\_\-COLOR\_\-GRAY\_\-8}\ 0x88
+\begin{CompactList}\small\item\em The 8th shade of gray.\item\end{CompactList}\item 
+\#define {\bf HPG\_\-COLOR\_\-GRAY\_\-9}\ 0x99
+\begin{CompactList}\small\item\em The 9th shade of gray.\item\end{CompactList}\item 
+\#define {\bf HPG\_\-COLOR\_\-GRAY\_\-10}\ 0x\-AA
+\begin{CompactList}\small\item\em The 10th shade of gray.\item\end{CompactList}\item 
+\#define {\bf HPG\_\-COLOR\_\-GRAY\_\-11}\ 0x\-BB
+\begin{CompactList}\small\item\em The 11th shade of gray.\item\end{CompactList}\item 
+\#define {\bf HPG\_\-COLOR\_\-GRAY\_\-12}\ 0x\-CC
+\begin{CompactList}\small\item\em The 12th shade of gray.\item\end{CompactList}\item 
+\#define {\bf HPG\_\-COLOR\_\-GRAY\_\-13}\ 0x\-DD
+\begin{CompactList}\small\item\em The 13th shade of gray.\item\end{CompactList}\item 
+\#define {\bf HPG\_\-COLOR\_\-GRAY\_\-14}\ 0x\-EE
+\begin{CompactList}\small\item\em The 14th shade of gray.\item\end{CompactList}\item 
+\#define {\bf HPG\_\-COLOR\_\-BLACK}\ 0x\-FF
+\begin{CompactList}\small\item\em The color black.\item\end{CompactList}\item 
+\index{HPG_INDICATOR_REMOTE@{HPG\_\-INDICATOR\_\-REMOTE}!hpgraphics.h@{hpgraphics.h}}\index{hpgraphics.h@{hpgraphics.h}!HPG_INDICATOR_REMOTE@{HPG\_\-INDICATOR\_\-REMOTE}}
+\#define {\bf HPG\_\-INDICATOR\_\-REMOTE}\ 0\label{hpgraphics_8h_a18}
+
+\begin{CompactList}\small\item\em The remote indicator at the right side of the screen.\item\end{CompactList}\item 
+\index{HPG_INDICATOR_LSHIFT@{HPG\_\-INDICATOR\_\-LSHIFT}!hpgraphics.h@{hpgraphics.h}}\index{hpgraphics.h@{hpgraphics.h}!HPG_INDICATOR_LSHIFT@{HPG\_\-INDICATOR\_\-LSHIFT}}
+\#define {\bf HPG\_\-INDICATOR\_\-LSHIFT}\ 1\label{hpgraphics_8h_a19}
+
+\begin{CompactList}\small\item\em The left shift indicator.\item\end{CompactList}\item 
+\index{HPG_INDICATOR_RSHIFT@{HPG\_\-INDICATOR\_\-RSHIFT}!hpgraphics.h@{hpgraphics.h}}\index{hpgraphics.h@{hpgraphics.h}!HPG_INDICATOR_RSHIFT@{HPG\_\-INDICATOR\_\-RSHIFT}}
+\#define {\bf HPG\_\-INDICATOR\_\-RSHIFT}\ 2\label{hpgraphics_8h_a20}
+
+\begin{CompactList}\small\item\em The right shift indicator.\item\end{CompactList}\item 
+\index{HPG_INDICATOR_ALPHA@{HPG\_\-INDICATOR\_\-ALPHA}!hpgraphics.h@{hpgraphics.h}}\index{hpgraphics.h@{hpgraphics.h}!HPG_INDICATOR_ALPHA@{HPG\_\-INDICATOR\_\-ALPHA}}
+\#define {\bf HPG\_\-INDICATOR\_\-ALPHA}\ 3\label{hpgraphics_8h_a21}
+
+\begin{CompactList}\small\item\em The alpha indicator.\item\end{CompactList}\item 
+\index{HPG_INDICATOR_BATTERY@{HPG\_\-INDICATOR\_\-BATTERY}!hpgraphics.h@{hpgraphics.h}}\index{hpgraphics.h@{hpgraphics.h}!HPG_INDICATOR_BATTERY@{HPG\_\-INDICATOR\_\-BATTERY}}
+\#define {\bf HPG\_\-INDICATOR\_\-BATTERY}\ 4\label{hpgraphics_8h_a22}
+
+\begin{CompactList}\small\item\em The low battery indicator.\item\end{CompactList}\item 
+\index{HPG_INDICATOR_WAIT@{HPG\_\-INDICATOR\_\-WAIT}!hpgraphics.h@{hpgraphics.h}}\index{hpgraphics.h@{hpgraphics.h}!HPG_INDICATOR_WAIT@{HPG\_\-INDICATOR\_\-WAIT}}
+\#define {\bf HPG\_\-INDICATOR\_\-WAIT}\ 5\label{hpgraphics_8h_a23}
+
+\begin{CompactList}\small\item\em The wait/hourglass indicator.\item\end{CompactList}\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef hpg\_\-graphics {\bf hpg\_\-t}
+\begin{CompactList}\small\item\em A graphics context for a surface that can be used for drawing.\item\end{CompactList}\item 
+typedef hpg\_\-font {\bf hpg\_\-font\_\-t}
+\begin{CompactList}\small\item\em A font for drawing text.\item\end{CompactList}\item 
+typedef hpg\_\-pattern {\bf hpg\_\-pattern\_\-t}
+\begin{CompactList}\small\item\em A pattern for filling shapes.\item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void {\bf hpg\_\-init} (void)
+\begin{CompactList}\small\item\em Initializes the hpg module.\item\end{CompactList}\item 
+void {\bf hpg\_\-cleanup} (void)
+\begin{CompactList}\small\item\em Restores the graphics hardware to the default state.\item\end{CompactList}\item 
+void {\bf hpg\_\-set\_\-mode\_\-mono} (int dbuf)
+\begin{CompactList}\small\item\em Sets the screen to monochrome mode.\item\end{CompactList}\item 
+void {\bf hpg\_\-set\_\-mode\_\-gray4} (int dbuf)
+\begin{CompactList}\small\item\em Sets the screen to 4-color grayscale mode.\item\end{CompactList}\item 
+void {\bf hpg\_\-set\_\-mode\_\-gray16} (int dbuf)
+\begin{CompactList}\small\item\em Sets the screen to 16-color grayscale mode.\item\end{CompactList}\item 
+void {\bf hpg\_\-set\_\-indicator} (unsigned char indicator, unsigned char color)
+\begin{CompactList}\small\item\em Sets the state of an LCD indicator.\item\end{CompactList}\item 
+void {\bf hpg\_\-flip} (void)
+\begin{CompactList}\small\item\em Swaps buffers on a double-buffered screen.\item\end{CompactList}\item 
+void {\bf hpg\_\-clip\_\-reset} ({\bf hpg\_\-t} $\ast$g)
+\begin{CompactList}\small\item\em Resets the clipping region to the entire screen.\item\end{CompactList}\item 
+void {\bf hpg\_\-clip\_\-set} ({\bf hpg\_\-t} $\ast$g, int x1, int y1, int x2, int y2)
+\begin{CompactList}\small\item\em Sets the clipping region to an absolute value.\item\end{CompactList}\item 
+void {\bf hpg\_\-clip} ({\bf hpg\_\-t} $\ast$g, int x1, int y1, int x2, int y2)
+\begin{CompactList}\small\item\em Clips the display to a specified region.\item\end{CompactList}\item 
+void {\bf hpg\_\-clear\_\-on} ({\bf hpg\_\-t} $\ast$g)
+\begin{CompactList}\small\item\em Clears the given buffer.\item\end{CompactList}\item 
+void {\bf hpg\_\-clear} (void)
+\begin{CompactList}\small\item\em Clears the screen.\item\end{CompactList}\item 
+void {\bf hpg\_\-draw\_\-pixel\_\-on} ({\bf hpg\_\-t} $\ast$g, int x, int y)
+\begin{CompactList}\small\item\em Draws a pixel onto a buffer.\item\end{CompactList}\item 
+void {\bf hpg\_\-draw\_\-pixel} (int x, int y)
+\begin{CompactList}\small\item\em Draws a pixel onto the screen.\item\end{CompactList}\item 
+void {\bf hpg\_\-draw\_\-line\_\-on} ({\bf hpg\_\-t} $\ast$g, int x1, int y1, int x2, int y2)
+\begin{CompactList}\small\item\em Draws a line onto a buffer.\item\end{CompactList}\item 
+void {\bf hpg\_\-draw\_\-line} (int x1, int y1, int x2, int y2)
+\begin{CompactList}\small\item\em Draws a line onto the screen.\item\end{CompactList}\item 
+void {\bf hpg\_\-draw\_\-rect\_\-on} ({\bf hpg\_\-t} $\ast$g, int x1, int y1, int x2, int y2)
+\begin{CompactList}\small\item\em Draws a rectangle onto a buffer.\item\end{CompactList}\item 
+void {\bf hpg\_\-draw\_\-rect} (int x1, int y1, int x2, int y2)
+\begin{CompactList}\small\item\em Draws a rectangle onto the screen.\item\end{CompactList}\item 
+void {\bf hpg\_\-fill\_\-rect\_\-on} ({\bf hpg\_\-t} $\ast$g, int x1, int y1, int x2, int y2)
+\begin{CompactList}\small\item\em Fills a rectangle on a buffer.\item\end{CompactList}\item 
+void {\bf hpg\_\-fill\_\-rect} (int x1, int y1, int x2, int y2)
+\begin{CompactList}\small\item\em Fills a rectangle on the screen.\item\end{CompactList}\item 
+void {\bf hpg\_\-draw\_\-circle\_\-on} ({\bf hpg\_\-t} $\ast$g, int cx, int cy, int r)
+\begin{CompactList}\small\item\em Draws a circle onto a buffer.\item\end{CompactList}\item 
+void {\bf hpg\_\-draw\_\-circle} (int cx, int cy, int r)
+\begin{CompactList}\small\item\em Draws a circle onto the screen.\item\end{CompactList}\item 
+void {\bf hpg\_\-fill\_\-circle\_\-on} ({\bf hpg\_\-t} $\ast$g, int cx, int cy, int r)
+\begin{CompactList}\small\item\em Fills a circle on a buffer.\item\end{CompactList}\item 
+void {\bf hpg\_\-fill\_\-circle} (int cx, int cy, int r)
+\begin{CompactList}\small\item\em Fills a circle on the screen.\item\end{CompactList}\item 
+void {\bf hpg\_\-draw\_\-polygon\_\-on} ({\bf hpg\_\-t} $\ast$g, int vx[$\,$], int vy[$\,$], int len)
+\begin{CompactList}\small\item\em Draws a polygon onto a buffer.\item\end{CompactList}\item 
+void {\bf hpg\_\-draw\_\-polygon} (int vx[$\,$], int vy[$\,$], int len)
+\begin{CompactList}\small\item\em Draws a polygon onto the screen.\item\end{CompactList}\item 
+void {\bf hpg\_\-fill\_\-polygon\_\-on} ({\bf hpg\_\-t} $\ast$g, int vx[$\,$], int vy[$\,$], int len)
+\begin{CompactList}\small\item\em Fills a polygon on a buffer.\item\end{CompactList}\item 
+void {\bf hpg\_\-fill\_\-polygon} (int vx[$\,$], int vy[$\,$], int len)
+\begin{CompactList}\small\item\em Fills a polygon on the screen.\item\end{CompactList}\item 
+{\bf hpg\_\-font\_\-t} $\ast$ {\bf hpg\_\-get\_\-minifont} (void)
+\begin{CompactList}\small\item\em Retrieves the minifont.\item\end{CompactList}\item 
+{\bf hpg\_\-font\_\-t} $\ast$ {\bf hpg\_\-get\_\-bigfont} (void)
+\begin{CompactList}\small\item\em Retrieves the bigfont.\item\end{CompactList}\item 
+void {\bf hpg\_\-draw\_\-letter\_\-on} ({\bf hpg\_\-t} $\ast$g, char a, int x, int y)
+\begin{CompactList}\small\item\em Draws a character onto a buffer.\item\end{CompactList}\item 
+void {\bf hpg\_\-draw\_\-letter} (char a, int x, int y)
+\begin{CompactList}\small\item\em Draws a character onto the screen.\item\end{CompactList}\item 
+void {\bf hpg\_\-draw\_\-text\_\-on} ({\bf hpg\_\-t} $\ast$g, char $\ast$s, int x, int y)
+\begin{CompactList}\small\item\em Draws a text string onto a buffer.\item\end{CompactList}\item 
+void {\bf hpg\_\-draw\_\-text} (char $\ast$s, int x, int y)
+\begin{CompactList}\small\item\em Draws a text string onto the screen.\item\end{CompactList}\item 
+unsigned char {\bf hpg\_\-get\_\-color} ({\bf hpg\_\-t} $\ast$g)
+\begin{CompactList}\small\item\em Retrieves the current color.\item\end{CompactList}\item 
+void {\bf hpg\_\-set\_\-color} ({\bf hpg\_\-t} $\ast$g, unsigned char color)
+\begin{CompactList}\small\item\em Sets the current color.\item\end{CompactList}\item 
+unsigned char {\bf hpg\_\-get\_\-mode} ({\bf hpg\_\-t} $\ast$g)
+\begin{CompactList}\small\item\em Retrieves the current drawing mode.\item\end{CompactList}\item 
+void {\bf hpg\_\-set\_\-mode} ({\bf hpg\_\-t} $\ast$g, unsigned char mode)
+\begin{CompactList}\small\item\em Sets the current drawing mode.\item\end{CompactList}\item 
+{\bf hpg\_\-pattern\_\-t} $\ast$ {\bf hpg\_\-get\_\-pattern} ({\bf hpg\_\-t} $\ast$g)
+\begin{CompactList}\small\item\em Retrieves the current fill pattern.\item\end{CompactList}\item 
+void {\bf hpg\_\-set\_\-pattern} ({\bf hpg\_\-t} $\ast$g, {\bf hpg\_\-pattern\_\-t} $\ast$pattern)
+\begin{CompactList}\small\item\em Sets the current fill pattern.\item\end{CompactList}\item 
+{\bf hpg\_\-font\_\-t} $\ast$ {\bf hpg\_\-get\_\-font} ({\bf hpg\_\-t} $\ast$g)
+\begin{CompactList}\small\item\em Retrieves the current font.\item\end{CompactList}\item 
+void {\bf hpg\_\-set\_\-font} ({\bf hpg\_\-t} $\ast$g, {\bf hpg\_\-font\_\-t} $\ast$font)
+\begin{CompactList}\small\item\em Sets the current font.\item\end{CompactList}\item 
+{\bf hpg\_\-pattern\_\-t} $\ast$ {\bf hpg\_\-alloc\_\-pattern} (char $\ast$buffer, int height, int fixed)
+\begin{CompactList}\small\item\em Allocates a new fill pattern.\item\end{CompactList}\item 
+void {\bf hpg\_\-free\_\-pattern} ({\bf hpg\_\-pattern\_\-t} $\ast$pattern)
+\begin{CompactList}\small\item\em Releases memory used by a fill pattern after it is no longer in use.\item\end{CompactList}\item 
+{\bf hpg\_\-font\_\-t} $\ast$ {\bf hpg\_\-alloc\_\-font} (char $\ast$buffer, int count, int height, int advance)
+\begin{CompactList}\small\item\em Allocates a new font.\item\end{CompactList}\item 
+void {\bf hpg\_\-free\_\-font} ({\bf hpg\_\-font\_\-t} $\ast$font)
+\begin{CompactList}\small\item\em Releases memory used by a font after it is no longer in use.\item\end{CompactList}\item 
+unsigned char {\bf hpg\_\-get\_\-pixel} ({\bf hpg\_\-t} $\ast$g, int x, int y)
+\begin{CompactList}\small\item\em Retrieves the color of a pixel.\item\end{CompactList}\item 
+{\bf hpg\_\-t} $\ast$ {\bf hpg\_\-alloc\_\-mono\_\-image} (int width, int height)
+\begin{CompactList}\small\item\em Allocates a off-screen image for drawing in monochrome.\item\end{CompactList}\item 
+{\bf hpg\_\-t} $\ast$ {\bf hpg\_\-alloc\_\-gray4\_\-image} (int width, int height)
+\begin{CompactList}\small\item\em Allocates a off-screen image for drawing in 4-color gray.\item\end{CompactList}\item 
+{\bf hpg\_\-t} $\ast$ {\bf hpg\_\-alloc\_\-gray16\_\-image} (int width, int height)
+\begin{CompactList}\small\item\em Allocates a off-screen image for drawing in 16-color gray.\item\end{CompactList}\item 
+void {\bf hpg\_\-free\_\-image} ({\bf hpg\_\-t} $\ast$img)
+\begin{CompactList}\small\item\em Frees the memory used by an off-screen image.\item\end{CompactList}\item 
+void {\bf hpg\_\-blit} ({\bf hpg\_\-t} $\ast$src, int sx, int sy, int w, int h, {\bf hpg\_\-t} $\ast$dst, int dx, int dy)
+\begin{CompactList}\small\item\em Copy a region of one buffer to another.\item\end{CompactList}\item 
+{\bf hpg\_\-t} $\ast$ {\bf hpg\_\-load\_\-xpm\_\-mono} (char $\ast$xpm[$\,$])
+\begin{CompactList}\small\item\em Loads a Xpm file to a monochrome image.\item\end{CompactList}\item 
+{\bf hpg\_\-t} $\ast$ {\bf hpg\_\-load\_\-xpm\_\-gray4} (char $\ast$xpm[$\,$])
+\begin{CompactList}\small\item\em Loads a Xpm file to a 4-color grayscale image.\item\end{CompactList}\item 
+{\bf hpg\_\-t} $\ast$ {\bf hpg\_\-load\_\-xpm\_\-gray16} (char $\ast$xpm[$\,$])
+\begin{CompactList}\small\item\em Loads a Xpm file to a 16-color grayscale image.\item\end{CompactList}\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+{\bf hpg\_\-t} $\ast$ {\bf hpg\_\-stdscreen}
+\begin{CompactList}\small\item\em A graphics context representing the physical screen.\item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Graphics routines for the HP49G+ calculator.
+
+
+
+
+
+\subsection{Define Documentation}
+\index{hpgraphics.h@{hpgraphics.h}!HPG_COLOR_BLACK@{HPG\_\-COLOR\_\-BLACK}}
+\index{HPG_COLOR_BLACK@{HPG\_\-COLOR\_\-BLACK}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define HPG\_\-COLOR\_\-BLACK\ 0x\-FF}\label{hpgraphics_8h_a17}
+
+
+The color black.
+
+\begin{Desc}
+\item[Note: ]\par
+Colors are nominally 8-bit values, with white as 0 and black as 255. Only the most significant bits of these colors will be used for drawing operations, depending on the current LCD mode. \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!HPG_COLOR_GRAY_1@{HPG\_\-COLOR\_\-GRAY\_\-1}}
+\index{HPG_COLOR_GRAY_1@{HPG\_\-COLOR\_\-GRAY\_\-1}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define HPG\_\-COLOR\_\-GRAY\_\-1\ 0x11}\label{hpgraphics_8h_a3}
+
+
+The 1st shade of gray.
+
+\begin{Desc}
+\item[Note: ]\par
+Colors are nominally 8-bit values, with white as 0 and black as 255. Only the most significant bits of these colors will be used for drawing operations, depending on the current LCD mode. \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!HPG_COLOR_GRAY_10@{HPG\_\-COLOR\_\-GRAY\_\-10}}
+\index{HPG_COLOR_GRAY_10@{HPG\_\-COLOR\_\-GRAY\_\-10}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define HPG\_\-COLOR\_\-GRAY\_\-10\ 0x\-AA}\label{hpgraphics_8h_a12}
+
+
+The 10th shade of gray.
+
+\begin{Desc}
+\item[Note: ]\par
+Colors are nominally 8-bit values, with white as 0 and black as 255. Only the most significant bits of these colors will be used for drawing operations, depending on the current LCD mode. \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!HPG_COLOR_GRAY_11@{HPG\_\-COLOR\_\-GRAY\_\-11}}
+\index{HPG_COLOR_GRAY_11@{HPG\_\-COLOR\_\-GRAY\_\-11}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define HPG\_\-COLOR\_\-GRAY\_\-11\ 0x\-BB}\label{hpgraphics_8h_a13}
+
+
+The 11th shade of gray.
+
+\begin{Desc}
+\item[Note: ]\par
+Colors are nominally 8-bit values, with white as 0 and black as 255. Only the most significant bits of these colors will be used for drawing operations, depending on the current LCD mode. \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!HPG_COLOR_GRAY_12@{HPG\_\-COLOR\_\-GRAY\_\-12}}
+\index{HPG_COLOR_GRAY_12@{HPG\_\-COLOR\_\-GRAY\_\-12}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define HPG\_\-COLOR\_\-GRAY\_\-12\ 0x\-CC}\label{hpgraphics_8h_a14}
+
+
+The 12th shade of gray.
+
+\begin{Desc}
+\item[Note: ]\par
+Colors are nominally 8-bit values, with white as 0 and black as 255. Only the most significant bits of these colors will be used for drawing operations, depending on the current LCD mode. \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!HPG_COLOR_GRAY_13@{HPG\_\-COLOR\_\-GRAY\_\-13}}
+\index{HPG_COLOR_GRAY_13@{HPG\_\-COLOR\_\-GRAY\_\-13}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define HPG\_\-COLOR\_\-GRAY\_\-13\ 0x\-DD}\label{hpgraphics_8h_a15}
+
+
+The 13th shade of gray.
+
+\begin{Desc}
+\item[Note: ]\par
+Colors are nominally 8-bit values, with white as 0 and black as 255. Only the most significant bits of these colors will be used for drawing operations, depending on the current LCD mode. \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!HPG_COLOR_GRAY_14@{HPG\_\-COLOR\_\-GRAY\_\-14}}
+\index{HPG_COLOR_GRAY_14@{HPG\_\-COLOR\_\-GRAY\_\-14}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define HPG\_\-COLOR\_\-GRAY\_\-14\ 0x\-EE}\label{hpgraphics_8h_a16}
+
+
+The 14th shade of gray.
+
+\begin{Desc}
+\item[Note: ]\par
+Colors are nominally 8-bit values, with white as 0 and black as 255. Only the most significant bits of these colors will be used for drawing operations, depending on the current LCD mode. \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!HPG_COLOR_GRAY_2@{HPG\_\-COLOR\_\-GRAY\_\-2}}
+\index{HPG_COLOR_GRAY_2@{HPG\_\-COLOR\_\-GRAY\_\-2}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define HPG\_\-COLOR\_\-GRAY\_\-2\ 0x22}\label{hpgraphics_8h_a4}
+
+
+The 2nd shade of gray.
+
+\begin{Desc}
+\item[Note: ]\par
+Colors are nominally 8-bit values, with white as 0 and black as 255. Only the most significant bits of these colors will be used for drawing operations, depending on the current LCD mode. \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!HPG_COLOR_GRAY_3@{HPG\_\-COLOR\_\-GRAY\_\-3}}
+\index{HPG_COLOR_GRAY_3@{HPG\_\-COLOR\_\-GRAY\_\-3}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define HPG\_\-COLOR\_\-GRAY\_\-3\ 0x33}\label{hpgraphics_8h_a5}
+
+
+The 3rd shade of gray.
+
+\begin{Desc}
+\item[Note: ]\par
+Colors are nominally 8-bit values, with white as 0 and black as 255. Only the most significant bits of these colors will be used for drawing operations, depending on the current LCD mode. \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!HPG_COLOR_GRAY_4@{HPG\_\-COLOR\_\-GRAY\_\-4}}
+\index{HPG_COLOR_GRAY_4@{HPG\_\-COLOR\_\-GRAY\_\-4}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define HPG\_\-COLOR\_\-GRAY\_\-4\ 0x44}\label{hpgraphics_8h_a6}
+
+
+The 4th shade of gray.
+
+\begin{Desc}
+\item[Note: ]\par
+Colors are nominally 8-bit values, with white as 0 and black as 255. Only the most significant bits of these colors will be used for drawing operations, depending on the current LCD mode. \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!HPG_COLOR_GRAY_5@{HPG\_\-COLOR\_\-GRAY\_\-5}}
+\index{HPG_COLOR_GRAY_5@{HPG\_\-COLOR\_\-GRAY\_\-5}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define HPG\_\-COLOR\_\-GRAY\_\-5\ 0x55}\label{hpgraphics_8h_a7}
+
+
+The 5th shade of gray.
+
+\begin{Desc}
+\item[Note: ]\par
+Colors are nominally 8-bit values, with white as 0 and black as 255. Only the most significant bits of these colors will be used for drawing operations, depending on the current LCD mode. \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!HPG_COLOR_GRAY_6@{HPG\_\-COLOR\_\-GRAY\_\-6}}
+\index{HPG_COLOR_GRAY_6@{HPG\_\-COLOR\_\-GRAY\_\-6}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define HPG\_\-COLOR\_\-GRAY\_\-6\ 0x66}\label{hpgraphics_8h_a8}
+
+
+The 6th shade of gray.
+
+\begin{Desc}
+\item[Note: ]\par
+Colors are nominally 8-bit values, with white as 0 and black as 255. Only the most significant bits of these colors will be used for drawing operations, depending on the current LCD mode.\end{Desc}
+\begin{Desc}
+\item[Warning: ]\par
+Use of this color in 16-color grayscale modes may result in visible flickering of the screen. Choice of other colors is recommended. \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!HPG_COLOR_GRAY_7@{HPG\_\-COLOR\_\-GRAY\_\-7}}
+\index{HPG_COLOR_GRAY_7@{HPG\_\-COLOR\_\-GRAY\_\-7}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define HPG\_\-COLOR\_\-GRAY\_\-7\ 0x77}\label{hpgraphics_8h_a9}
+
+
+The 7th shade of gray.
+
+\begin{Desc}
+\item[Note: ]\par
+Colors are nominally 8-bit values, with white as 0 and black as 255. Only the most significant bits of these colors will be used for drawing operations, depending on the current LCD mode. \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!HPG_COLOR_GRAY_8@{HPG\_\-COLOR\_\-GRAY\_\-8}}
+\index{HPG_COLOR_GRAY_8@{HPG\_\-COLOR\_\-GRAY\_\-8}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define HPG\_\-COLOR\_\-GRAY\_\-8\ 0x88}\label{hpgraphics_8h_a10}
+
+
+The 8th shade of gray.
+
+\begin{Desc}
+\item[Note: ]\par
+Colors are nominally 8-bit values, with white as 0 and black as 255. Only the most significant bits of these colors will be used for drawing operations, depending on the current LCD mode.\end{Desc}
+\begin{Desc}
+\item[Warning: ]\par
+Use of this color in 16-color grayscale modes may result in visible flickering of the screen. Choice of other colors is recommended. \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!HPG_COLOR_GRAY_9@{HPG\_\-COLOR\_\-GRAY\_\-9}}
+\index{HPG_COLOR_GRAY_9@{HPG\_\-COLOR\_\-GRAY\_\-9}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define HPG\_\-COLOR\_\-GRAY\_\-9\ 0x99}\label{hpgraphics_8h_a11}
+
+
+The 9th shade of gray.
+
+\begin{Desc}
+\item[Note: ]\par
+Colors are nominally 8-bit values, with white as 0 and black as 255. Only the most significant bits of these colors will be used for drawing operations, depending on the current LCD mode. \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!HPG_COLOR_WHITE@{HPG\_\-COLOR\_\-WHITE}}
+\index{HPG_COLOR_WHITE@{HPG\_\-COLOR\_\-WHITE}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define HPG\_\-COLOR\_\-WHITE\ 0x00}\label{hpgraphics_8h_a2}
+
+
+The color white.
+
+\begin{Desc}
+\item[Note: ]\par
+Colors are nominally 8-bit values, with white as 0 and black as 255. Only the most significant bits of these colors will be used for drawing operations, depending on the current LCD mode. \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!HPG_MODE_PAINT@{HPG\_\-MODE\_\-PAINT}}
+\index{HPG_MODE_PAINT@{HPG\_\-MODE\_\-PAINT}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define HPG\_\-MODE\_\-PAINT\ 0}\label{hpgraphics_8h_a0}
+
+
+A drawing mode for painting on the screen.
+
+In paint mode, any pixel drawn to the screen will replace the current pixel at that location. The value of the current pixel has no effect on the result of drawing. This is the default drawing mode. \index{hpgraphics.h@{hpgraphics.h}!HPG_MODE_XOR@{HPG\_\-MODE\_\-XOR}}
+\index{HPG_MODE_XOR@{HPG\_\-MODE\_\-XOR}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define HPG\_\-MODE\_\-XOR\ 1}\label{hpgraphics_8h_a1}
+
+
+A drawing mode to XOR bits reversibly onto the screen.
+
+In XOR drawing mode, drawing to the screen will perform a bitwise XOR between the old color of the pixel at that location and the most significant bits of the new screen color. For example, in 16-color grayscale (4 bits per pixel), the 4 most significant bits of the current color are combined with the current pixel in an XOR operation. In monochrome (1 bit per pixel) only the most significant bit is used.
+
+Drawing a second time to the same pixel with the same color will return it to its normal state. It is this property which makes XOR drawing mode particularly interesting.
+
+XOR mode acts exactly like paint mode when drawing to a white screen. Drawing in XOR mode with white as the current color has no effect at all. Generally speaking, darker colors will cause the colors on the screen to change more than lighter colors -- however, this is not always the case; the above mathematical description of the result of drawing operations should be considered authoritative. 
+
+\subsection{Typedef Documentation}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_font_t@{hpg\_\-font\_\-t}}
+\index{hpg_font_t@{hpg\_\-font\_\-t}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct hpg\_\-font hpg\_\-font\_\-t}\label{hpgraphics_8h_a25}
+
+
+A font for drawing text.
+
+The {\bf hpg\_\-font\_\-t} {\rm (p.\,\pageref{hpgraphics_8h_a25})} type represents a font for drawing text. The font defines glyphs, as well as an advance and height. Every {\bf hpg\_\-t} {\rm (p.\,\pageref{hpgraphics_8h_a24})} has a current font that it uses for all drawing operations.
+
+The functions {\bf hpg\_\-get\_\-minifont} {\rm (p.\,\pageref{hpgraphics_8h_a56})} and {\bf hpg\_\-get\_\-bigfont} {\rm (p.\,\pageref{hpgraphics_8h_a57})} retrieve pointers to the two standard fonts bundled with HPG. Custom fonts can be created with {\bf hpg\_\-alloc\_\-font} {\rm (p.\,\pageref{hpgraphics_8h_a72})}, and should be released with {\bf hpg\_\-free\_\-font} {\rm (p.\,\pageref{hpgraphics_8h_a73})} when they are no longer in use.
+
+The current font affects the behavior of {\bf hpg\_\-draw\_\-letter} {\rm (p.\,\pageref{hpgraphics_8h_a59})}, {\bf hpg\_\-draw\_\-text} {\rm (p.\,\pageref{hpgraphics_8h_a61})}, {\bf hpg\_\-draw\_\-letter\_\-on} {\rm (p.\,\pageref{hpgraphics_8h_a58})}, and {\bf hpg\_\-draw\_\-text\_\-on} {\rm (p.\,\pageref{hpgraphics_8h_a60})}. \index{hpgraphics.h@{hpgraphics.h}!hpg_pattern_t@{hpg\_\-pattern\_\-t}}
+\index{hpg_pattern_t@{hpg\_\-pattern\_\-t}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct hpg\_\-pattern hpg\_\-pattern\_\-t}\label{hpgraphics_8h_a26}
+
+
+A pattern for filling shapes.
+
+Setting a fill pattern causes shape fill operations ({\tt hpg\_\-fill\_\-$\ast$)} to become partially transparent. Patterns may also be used for drawing predefined single-color images to the screen with transparency.
+
+Patterns are currently limited to be exactly eight pixels in width. They may either be fixed (so they repeat over the entire screen beginning from the top-left corner) or relative (so they begin at a reference location, which is generally the top-left corner of a shape that's being drawn).
+
+Patterns can be created with {\bf hpg\_\-alloc\_\-pattern} {\rm (p.\,\pageref{hpgraphics_8h_a70})}. When no longer in use, they should be released using {\bf hpg\_\-free\_\-pattern} {\rm (p.\,\pageref{hpgraphics_8h_a71})}.
+
+The current fill pattern affects the behavior of {\bf hpg\_\-fill\_\-rect} {\rm (p.\,\pageref{hpgraphics_8h_a47})}, {\bf hpg\_\-fill\_\-circle} {\rm (p.\,\pageref{hpgraphics_8h_a51})}, and {\bf hpg\_\-fill\_\-polygon} {\rm (p.\,\pageref{hpgraphics_8h_a55})}. \index{hpgraphics.h@{hpgraphics.h}!hpg_t@{hpg\_\-t}}
+\index{hpg_t@{hpg\_\-t}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef struct hpg\_\-graphics hpg\_\-t}\label{hpgraphics_8h_a24}
+
+
+A graphics context for a surface that can be used for drawing.
+
+The {\bf hpg\_\-t} {\rm (p.\,\pageref{hpgraphics_8h_a24})} type represents a surface that can be drawn upon. It might represent the physical screen, or an off-screen image. An {\bf hpg\_\-t} {\rm (p.\,\pageref{hpgraphics_8h_a24})} may contain a visible frame buffer (which is shown) and an effective frame buffer (which is drawn upon), and the two may be swapped via the {\bf hpg\_\-flip} {\rm (p.\,\pageref{hpgraphics_8h_a34})} method.
+
+Each {\bf hpg\_\-t} {\rm (p.\,\pageref{hpgraphics_8h_a24})} maintains its own state, including the current color, fill pattern, font, and clipping region.
+
+Most applications will primarily use one instance of {\bf hpg\_\-t} {\rm (p.\,\pageref{hpgraphics_8h_a24})}, which is accessed through {\bf hpg\_\-stdscreen} {\rm (p.\,\pageref{hpgraphics_8h_a27})}. Additional instances of {\bf hpg\_\-t} {\rm (p.\,\pageref{hpgraphics_8h_a24})} may be created to draw to off-screen images, by using the functions {\bf hpg\_\-alloc\_\-mono\_\-image} {\rm (p.\,\pageref{hpgraphics_8h_a75})}, {\bf hpg\_\-alloc\_\-gray4\_\-image} {\rm (p.\,\pageref{hpgraphics_8h_a76})}, and {\bf hpg\_\-alloc\_\-gray16\_\-image} {\rm (p.\,\pageref{hpgraphics_8h_a77})}. Off-screen images should later be released by a call to {\bf hpg\_\-free\_\-image} {\rm (p.\,\pageref{hpgraphics_8h_a78})}. 
+
+\subsection{Function Documentation}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_alloc_font@{hpg\_\-alloc\_\-font}}
+\index{hpg_alloc_font@{hpg\_\-alloc\_\-font}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf hpg\_\-font\_\-t}$\ast$ hpg\_\-alloc\_\-font (char $\ast$ {\em buffer}, int {\em count}, int {\em height}, int {\em advance})}\label{hpgraphics_8h_a72}
+
+
+Allocates a new font.
+
+The font data is the concatenation of a fill pattern for each character of the font, and should be at least as long as (count $\ast$ height) bytes. The advance should be less than or equal to eight pixels.
+
+Fonts allocated via this method should be deallocated by calling {\bf hpg\_\-free\_\-font} {\rm (p.\,\pageref{hpgraphics_8h_a73})} when they are no longer in use.\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+buffer}]The pixel data for characters \item[{\em 
+count}]The number of characters \item[{\em 
+height}]The number of pixels of height for characters \item[{\em 
+advance}]The number of horizontal pixels between the beginning of one character in this font and the beginning of the next \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns: ]\par
+Pointer to the newly allocated font; or {\tt NULL} if there was not enough memory to allocate the font \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_alloc_gray16_image@{hpg\_\-alloc\_\-gray16\_\-image}}
+\index{hpg_alloc_gray16_image@{hpg\_\-alloc\_\-gray16\_\-image}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf hpg\_\-t}$\ast$ hpg\_\-alloc\_\-gray16\_\-image (int {\em width}, int {\em height})}\label{hpgraphics_8h_a77}
+
+
+Allocates a off-screen image for drawing in 16-color gray.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+width}]The width of the image \item[{\em 
+height}]The height of the image \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns: ]\par
+A graphics context to draw to the new image \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_alloc_gray4_image@{hpg\_\-alloc\_\-gray4\_\-image}}
+\index{hpg_alloc_gray4_image@{hpg\_\-alloc\_\-gray4\_\-image}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf hpg\_\-t}$\ast$ hpg\_\-alloc\_\-gray4\_\-image (int {\em width}, int {\em height})}\label{hpgraphics_8h_a76}
+
+
+Allocates a off-screen image for drawing in 4-color gray.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+width}]The width of the image \item[{\em 
+height}]The height of the image \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns: ]\par
+A graphics context to draw to the new image \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_alloc_mono_image@{hpg\_\-alloc\_\-mono\_\-image}}
+\index{hpg_alloc_mono_image@{hpg\_\-alloc\_\-mono\_\-image}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf hpg\_\-t}$\ast$ hpg\_\-alloc\_\-mono\_\-image (int {\em width}, int {\em height})}\label{hpgraphics_8h_a75}
+
+
+Allocates a off-screen image for drawing in monochrome.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+width}]The width of the image \item[{\em 
+height}]The height of the image \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns: ]\par
+A graphics context to draw to the new image \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_alloc_pattern@{hpg\_\-alloc\_\-pattern}}
+\index{hpg_alloc_pattern@{hpg\_\-alloc\_\-pattern}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf hpg\_\-pattern\_\-t}$\ast$ hpg\_\-alloc\_\-pattern (char $\ast$ {\em buffer}, int {\em height}, int {\em fixed})}\label{hpgraphics_8h_a70}
+
+
+Allocates a new fill pattern.
+
+The pattern data is passed as a pointer, and should point to a valid buffer at least as long as {\em height}, in bytes. Height specifies the number of rows of the pattern, and {\em fixed} is zero for a floating pattern (which is drawn relative to a reference location on the shape being drawn) or non-zero for a fixed pattern, which is drawn relative to the upper-left corner of the screen.
+
+The data in buffer is a bitmask of opaque pixels in the pattern, with one byte per line. At the current time, all patterns are eight pixels wide. The least significant bit represents the left-most pixel, and the most significant bit represents the right-most pixel. This bit order is contrary to many expectations, and should be noted.
+
+Patterns allocated via this method should be deallocated by calling {\bf hpg\_\-free\_\-pattern} {\rm (p.\,\pageref{hpgraphics_8h_a71})} when they are no longer in use.\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+buffer}]The buffer containing the pattern's pixel data \item[{\em 
+height}]The number of pixels of height for the pattern \item[{\em 
+fixed}]Non-zero if the pattern should be fixed, zero if floating \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns: ]\par
+Pointer to a newly allocated fill pattern; or {\tt NULL} if there was not enough memory to complete this operation \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_blit@{hpg\_\-blit}}
+\index{hpg_blit@{hpg\_\-blit}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-blit ({\bf hpg\_\-t} $\ast$ {\em src}, int {\em sx}, int {\em sy}, int {\em w}, int {\em h}, {\bf hpg\_\-t} $\ast$ {\em dst}, int {\em dx}, int {\em dy})}\label{hpgraphics_8h_a79}
+
+
+Copy a region of one buffer to another.
+
+This function is used to copy any arbitrary region of a buffer to any arbitrary location on the destination buffer. The image may not be resized or stretched during the blit operation. The clipping region of the target screen is effective for this operation.
+
+\begin{Desc}
+\item[Note: ]\par
+Blitting is possible between buffers of any color depths, even if they do not match. However, the operation may be much faster, and its results will be simpler to understand, for buffers of the same depth. It is recommended that you use off-screen images of the same color depth as the physical screen.\end{Desc}
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+src}]The graphics context to copy from \item[{\em 
+sx}]The left x coordinate of the area to copy on the source \item[{\em 
+sy}]The top y coordinate of the area to copy on the source \item[{\em 
+w}]The width of the area to copy, in pixels \item[{\em 
+h}]The height of the area to copy, in pixels \item[{\em 
+dst}]The graphics context to copy to \item[{\em 
+dx}]The left x coordinate of the area to copy to the destination \item[{\em 
+dy}]The top y coordinate of the area to copy to the destination \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_cleanup@{hpg\_\-cleanup}}
+\index{hpg_cleanup@{hpg\_\-cleanup}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-cleanup (void)}\label{hpgraphics_8h_a29}
+
+
+Restores the graphics hardware to the default state.
+
+This function should be called prior to returning to the emulator. It restores the screen to the way it was prior to any fiddling. \index{hpgraphics.h@{hpgraphics.h}!hpg_clear@{hpg\_\-clear}}
+\index{hpg_clear@{hpg\_\-clear}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-clear (void)}\label{hpgraphics_8h_a39}
+
+
+Clears the screen.
+
+The entire screen will be set to white following the completion of this function. Note that the current clipping region is {\bf not} respected, nor is current color and fill pattern used. To set the screen to arbitrary colors, use the current clipping region, or specify a fill pattern, you should use {\bf hpg\_\-fill\_\-rect} {\rm (p.\,\pageref{hpgraphics_8h_a47})} instead. \index{hpgraphics.h@{hpgraphics.h}!hpg_clear_on@{hpg\_\-clear\_\-on}}
+\index{hpg_clear_on@{hpg\_\-clear\_\-on}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-clear\_\-on ({\bf hpg\_\-t} $\ast$ {\em g})}\label{hpgraphics_8h_a38}
+
+
+Clears the given buffer.
+
+The entire buffer will be set to white following the completion of this function. Note that the current clipping region is {\bf not} respected, nor is current color and fill pattern used. To set the buffer to arbitrary colors, use the current clipping region, or specify a fill pattern, you should use {\bf hpg\_\-fill\_\-rect\_\-on} {\rm (p.\,\pageref{hpgraphics_8h_a46})} instead.\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+g}]The graphics context to which this function applies \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_clip@{hpg\_\-clip}}
+\index{hpg_clip@{hpg\_\-clip}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-clip ({\bf hpg\_\-t} $\ast$ {\em g}, int {\em x1}, int {\em y1}, int {\em x2}, int {\em y2})}\label{hpgraphics_8h_a37}
+
+
+Clips the display to a specified region.
+
+This function sets the clipping region to the geometric intersection of the current clipping region and the rectangle given. Therefore, any existing clipping continues to take effect. If this is not what you want, see {\bf hpg\_\-clip\_\-set} {\rm (p.\,\pageref{hpgraphics_8h_a36})} instead.\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+g}]The graphics context to which this function applies \item[{\em 
+x1}]The left-most x coordinate of the new clipping region \item[{\em 
+y1}]The top-most y coordinate of the new clipping region \item[{\em 
+x2}]The right-most x coordinate of the new clipping region \item[{\em 
+y2}]The bottom-most y coordinate of the new clipping region \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_clip_reset@{hpg\_\-clip\_\-reset}}
+\index{hpg_clip_reset@{hpg\_\-clip\_\-reset}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-clip\_\-reset ({\bf hpg\_\-t} $\ast$ {\em g})}\label{hpgraphics_8h_a35}
+
+
+Resets the clipping region to the entire screen.
+
+This function may be used to undo any clipping performed by earlier operations.\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+g}]The graphics context to which this function applies \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_clip_set@{hpg\_\-clip\_\-set}}
+\index{hpg_clip_set@{hpg\_\-clip\_\-set}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-clip\_\-set ({\bf hpg\_\-t} $\ast$ {\em g}, int {\em x1}, int {\em y1}, int {\em x2}, int {\em y2})}\label{hpgraphics_8h_a36}
+
+
+Sets the clipping region to an absolute value.
+
+Sets the clipping region for a given graphics context. Use of this function is discouraged in general-purpose graphics code, in favor of {\bf hpg\_\-clip} {\rm (p.\,\pageref{hpgraphics_8h_a37})} which preserves existing clipping regions as well. An attempt to set the clipping region larger than the size of the graphics context will cause the clipping region to shrink in order to fit on the screen.
+
+This function is equivalent to calling {\bf hpg\_\-clip\_\-reset} {\rm (p.\,\pageref{hpgraphics_8h_a35})}, followed by {\bf hpg\_\-clip} {\rm (p.\,\pageref{hpgraphics_8h_a37})}.\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+g}]The graphics context to which this function applies \item[{\em 
+x1}]The left-most x coordinate of the new clipping region \item[{\em 
+y1}]The top-most y coordinate of the new clipping region \item[{\em 
+x2}]The right-most x coordinate of the new clipping region \item[{\em 
+y2}]The bottom-most y coordinate of the new clipping region \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_draw_circle@{hpg\_\-draw\_\-circle}}
+\index{hpg_draw_circle@{hpg\_\-draw\_\-circle}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-draw\_\-circle (int {\em cx}, int {\em cy}, int {\em r})}\label{hpgraphics_8h_a49}
+
+
+Draws a circle onto the screen.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+cx}]The x coordinate of the center of the circle \item[{\em 
+cy}]The y coordinate of the center of the circle \item[{\em 
+r}]The radius of the circle \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_draw_circle_on@{hpg\_\-draw\_\-circle\_\-on}}
+\index{hpg_draw_circle_on@{hpg\_\-draw\_\-circle\_\-on}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-draw\_\-circle\_\-on ({\bf hpg\_\-t} $\ast$ {\em g}, int {\em cx}, int {\em cy}, int {\em r})}\label{hpgraphics_8h_a48}
+
+
+Draws a circle onto a buffer.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+g}]The graphics context to which this function applies \item[{\em 
+cx}]The x coordinate of the center of the circle \item[{\em 
+cy}]The y coordinate of the center of the circle \item[{\em 
+r}]The radius of the circle \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_draw_letter@{hpg\_\-draw\_\-letter}}
+\index{hpg_draw_letter@{hpg\_\-draw\_\-letter}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-draw\_\-letter (char {\em a}, int {\em x}, int {\em y})}\label{hpgraphics_8h_a59}
+
+
+Draws a character onto the screen.
+
+The top-left corner of the character is at point (x, y), and the character extends to the right and bottom of that point by the font's advance and height, respectively.\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+a}]The character to draw \item[{\em 
+x}]The x coordinate of the left side of the character block \item[{\em 
+y}]The y coordinate of the top edge of the character block \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_draw_letter_on@{hpg\_\-draw\_\-letter\_\-on}}
+\index{hpg_draw_letter_on@{hpg\_\-draw\_\-letter\_\-on}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-draw\_\-letter\_\-on ({\bf hpg\_\-t} $\ast$ {\em g}, char {\em a}, int {\em x}, int {\em y})}\label{hpgraphics_8h_a58}
+
+
+Draws a character onto a buffer.
+
+The top-left corner of the character is at point (x, y), and the character extends to the right and bottom of that point by the font's advance and height, respectively.\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+g}]The graphics context to which this function applies \item[{\em 
+a}]The character to draw \item[{\em 
+x}]The x coordinate of the left side of the character block \item[{\em 
+y}]The y coordinate of the top edge of the character block \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_draw_line@{hpg\_\-draw\_\-line}}
+\index{hpg_draw_line@{hpg\_\-draw\_\-line}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-draw\_\-line (int {\em x1}, int {\em y1}, int {\em x2}, int {\em y2})}\label{hpgraphics_8h_a43}
+
+
+Draws a line onto the screen.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+x1}]The x coordinate of the starting point of the line \item[{\em 
+y1}]The y coordinate of the starting point of the line \item[{\em 
+x2}]The x coordinate of the ending point of the line \item[{\em 
+y2}]The y coordinate of the ending point of the line \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_draw_line_on@{hpg\_\-draw\_\-line\_\-on}}
+\index{hpg_draw_line_on@{hpg\_\-draw\_\-line\_\-on}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-draw\_\-line\_\-on ({\bf hpg\_\-t} $\ast$ {\em g}, int {\em x1}, int {\em y1}, int {\em x2}, int {\em y2})}\label{hpgraphics_8h_a42}
+
+
+Draws a line onto a buffer.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+g}]The graphics context to which this function applies \item[{\em 
+x1}]The x coordinate of the starting point of the line \item[{\em 
+y1}]The y coordinate of the starting point of the line \item[{\em 
+x2}]The x coordinate of the ending point of the line \item[{\em 
+y2}]The y coordinate of the ending point of the line \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_draw_pixel@{hpg\_\-draw\_\-pixel}}
+\index{hpg_draw_pixel@{hpg\_\-draw\_\-pixel}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-draw\_\-pixel (int {\em x}, int {\em y})}\label{hpgraphics_8h_a41}
+
+
+Draws a pixel onto the screen.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+x}]The x coordinate of the pixel to draw \item[{\em 
+y}]The y coordinate of the pixel to draw \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_draw_pixel_on@{hpg\_\-draw\_\-pixel\_\-on}}
+\index{hpg_draw_pixel_on@{hpg\_\-draw\_\-pixel\_\-on}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-draw\_\-pixel\_\-on ({\bf hpg\_\-t} $\ast$ {\em g}, int {\em x}, int {\em y})}\label{hpgraphics_8h_a40}
+
+
+Draws a pixel onto a buffer.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+g}]The graphics context to which this function applies \item[{\em 
+x}]The x coordinate of the pixel to draw \item[{\em 
+y}]The y coordinate of the pixel to draw \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_draw_polygon@{hpg\_\-draw\_\-polygon}}
+\index{hpg_draw_polygon@{hpg\_\-draw\_\-polygon}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-draw\_\-polygon (int {\em vx}[$\,$], int {\em vy}[$\,$], int {\em len})}\label{hpgraphics_8h_a53}
+
+
+Draws a polygon onto the screen.
+
+Draws a closed polygon with the vertices from the given arrays. Edges are drawn between each pair of consecutive vertices, and between the first and last vertices to close the shape.\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+vx}]The x coordinates of the vertices of the polygon \item[{\em 
+vy}]The y coordinates of the vertices of the polygon \item[{\em 
+len}]The number of vertices in the polygon \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_draw_polygon_on@{hpg\_\-draw\_\-polygon\_\-on}}
+\index{hpg_draw_polygon_on@{hpg\_\-draw\_\-polygon\_\-on}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-draw\_\-polygon\_\-on ({\bf hpg\_\-t} $\ast$ {\em g}, int {\em vx}[$\,$], int {\em vy}[$\,$], int {\em len})}\label{hpgraphics_8h_a52}
+
+
+Draws a polygon onto a buffer.
+
+Draws a closed polygon with the vertices from the given arrays. Edges are drawn between each pair of consecutive vertices, and between the first and last vertices to close the shape.\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+g}]The graphics context to which this function applies \item[{\em 
+vx}]The x coordinates of the vertices of the polygon \item[{\em 
+vy}]The y coordinates of the vertices of the polygon \item[{\em 
+len}]The number of vertices in the polygon \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_draw_rect@{hpg\_\-draw\_\-rect}}
+\index{hpg_draw_rect@{hpg\_\-draw\_\-rect}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-draw\_\-rect (int {\em x1}, int {\em y1}, int {\em x2}, int {\em y2})}\label{hpgraphics_8h_a45}
+
+
+Draws a rectangle onto the screen.
+
+The result is an axis-aligned rectangle spanning between opposite corners at (x1, y1) and (x2, y2). To draw an arbitrary rectangle at angles to the coordinate axes, use {\bf hpg\_\-draw\_\-polygon} {\rm (p.\,\pageref{hpgraphics_8h_a53})} instead.\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+x1}]The x coordinate of one corner of the rectangle \item[{\em 
+y1}]The y coordinate of one corner of the rectangle \item[{\em 
+x2}]The x coordinate of the opposite corner of the rectangle \item[{\em 
+y2}]The y coordinate of the opposite corner of the rectangle \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_draw_rect_on@{hpg\_\-draw\_\-rect\_\-on}}
+\index{hpg_draw_rect_on@{hpg\_\-draw\_\-rect\_\-on}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-draw\_\-rect\_\-on ({\bf hpg\_\-t} $\ast$ {\em g}, int {\em x1}, int {\em y1}, int {\em x2}, int {\em y2})}\label{hpgraphics_8h_a44}
+
+
+Draws a rectangle onto a buffer.
+
+The result is an axis-aligned rectangle spanning between opposite corners at (x1, y1) and (x2, y2). To draw an arbitrary rectangle at angles to the coordinate axes, use {\bf hpg\_\-draw\_\-polygon\_\-on} {\rm (p.\,\pageref{hpgraphics_8h_a52})} instead.\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+g}]The graphics context to which this function applies \item[{\em 
+x1}]The x coordinate of one corner of the rectangle \item[{\em 
+y1}]The y coordinate of one corner of the rectangle \item[{\em 
+x2}]The x coordinate of the opposite corner of the rectangle \item[{\em 
+y2}]The y coordinate of the opposite corner of the rectangle \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_draw_text@{hpg\_\-draw\_\-text}}
+\index{hpg_draw_text@{hpg\_\-draw\_\-text}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-draw\_\-text (char $\ast$ {\em s}, int {\em x}, int {\em y})}\label{hpgraphics_8h_a61}
+
+
+Draws a text string onto the screen.
+
+The top-left corner of the string is at point (x, y), and the character extends to the right and bottom of that point by the number of lines and columns of the string, respectively. The string may contain newline characters, which will move the insertion point to the next line, and to the original x coordinate for the block.\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+s}]A null-terminated string, containing the text to draw \item[{\em 
+x}]The x coordinate of the left side of the text block \item[{\em 
+y}]The y coordinate of the top edge of the text block \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_draw_text_on@{hpg\_\-draw\_\-text\_\-on}}
+\index{hpg_draw_text_on@{hpg\_\-draw\_\-text\_\-on}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-draw\_\-text\_\-on ({\bf hpg\_\-t} $\ast$ {\em g}, char $\ast$ {\em s}, int {\em x}, int {\em y})}\label{hpgraphics_8h_a60}
+
+
+Draws a text string onto a buffer.
+
+The top-left corner of the string is at point (x, y), and the character extends to the right and bottom of that point by the number of lines and columns of the string, respectively. The string may contain newline characters, which will move the insertion point to the next line, and to the original x coordinate for the block.\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+g}]The graphics context to which this function applies \item[{\em 
+s}]A null-terminated string, containing the text to draw \item[{\em 
+x}]The x coordinate of the left side of the text block \item[{\em 
+y}]The y coordinate of the top edge of the text block \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_fill_circle@{hpg\_\-fill\_\-circle}}
+\index{hpg_fill_circle@{hpg\_\-fill\_\-circle}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-fill\_\-circle (int {\em cx}, int {\em cy}, int {\em r})}\label{hpgraphics_8h_a51}
+
+
+Fills a circle on the screen.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+cx}]The x coordinate of the center of the circle \item[{\em 
+cy}]The y coordinate of the center of the circle \item[{\em 
+r}]The radius of the circle \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_fill_circle_on@{hpg\_\-fill\_\-circle\_\-on}}
+\index{hpg_fill_circle_on@{hpg\_\-fill\_\-circle\_\-on}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-fill\_\-circle\_\-on ({\bf hpg\_\-t} $\ast$ {\em g}, int {\em cx}, int {\em cy}, int {\em r})}\label{hpgraphics_8h_a50}
+
+
+Fills a circle on a buffer.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+g}]The graphics context to which this function applies \item[{\em 
+cx}]The x coordinate of the center of the circle \item[{\em 
+cy}]The y coordinate of the center of the circle \item[{\em 
+r}]The radius of the circle \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_fill_polygon@{hpg\_\-fill\_\-polygon}}
+\index{hpg_fill_polygon@{hpg\_\-fill\_\-polygon}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-fill\_\-polygon (int {\em vx}[$\,$], int {\em vy}[$\,$], int {\em len})}\label{hpgraphics_8h_a55}
+
+
+Fills a polygon on the screen.
+
+Fills in a closed polygon with the vertices from the given arrays. Edges are assumed between each pair of consecutive vertices, and between the first and last vertices to close the shape.\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+vx}]The x coordinates of the vertices of the polygon \item[{\em 
+vy}]The y coordinates of the vertices of the polygon \item[{\em 
+len}]The number of vertices in the polygon \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_fill_polygon_on@{hpg\_\-fill\_\-polygon\_\-on}}
+\index{hpg_fill_polygon_on@{hpg\_\-fill\_\-polygon\_\-on}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-fill\_\-polygon\_\-on ({\bf hpg\_\-t} $\ast$ {\em g}, int {\em vx}[$\,$], int {\em vy}[$\,$], int {\em len})}\label{hpgraphics_8h_a54}
+
+
+Fills a polygon on a buffer.
+
+Fills in a closed polygon with the vertices from the given arrays. Edges are assumed between each pair of consecutive vertices, and between the first and last vertices to close the shape.\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+g}]The graphics context to which this function applies \item[{\em 
+vx}]The x coordinates of the vertices of the polygon \item[{\em 
+vy}]The y coordinates of the vertices of the polygon \item[{\em 
+len}]The number of vertices in the polygon \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_fill_rect@{hpg\_\-fill\_\-rect}}
+\index{hpg_fill_rect@{hpg\_\-fill\_\-rect}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-fill\_\-rect (int {\em x1}, int {\em y1}, int {\em x2}, int {\em y2})}\label{hpgraphics_8h_a47}
+
+
+Fills a rectangle on the screen.
+
+The result is an axis-aligned rectangle spanning between opposite corners at (x1, y1) and (x2, y2). To fill an arbitrary rectangle at angles to the coordinate axes, use {\bf hpg\_\-fill\_\-polygon} {\rm (p.\,\pageref{hpgraphics_8h_a55})} instead.\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+x1}]The x coordinate of one corner of the rectangle \item[{\em 
+y1}]The y coordinate of one corner of the rectangle \item[{\em 
+x2}]The x coordinate of the opposite corner of the rectangle \item[{\em 
+y2}]The y coordinate of the opposite corner of the rectangle \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_fill_rect_on@{hpg\_\-fill\_\-rect\_\-on}}
+\index{hpg_fill_rect_on@{hpg\_\-fill\_\-rect\_\-on}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-fill\_\-rect\_\-on ({\bf hpg\_\-t} $\ast$ {\em g}, int {\em x1}, int {\em y1}, int {\em x2}, int {\em y2})}\label{hpgraphics_8h_a46}
+
+
+Fills a rectangle on a buffer.
+
+The result is an axis-aligned rectangle spanning between opposite corners at (x1, y1) and (x2, y2). To fill an arbitrary rectangle at angles to the coordinate axes, use {\bf hpg\_\-fill\_\-polygon\_\-on} {\rm (p.\,\pageref{hpgraphics_8h_a54})} instead.\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+g}]The graphics context to which this function applies \item[{\em 
+x1}]The x coordinate of one corner of the rectangle \item[{\em 
+y1}]The y coordinate of one corner of the rectangle \item[{\em 
+x2}]The x coordinate of the opposite corner of the rectangle \item[{\em 
+y2}]The y coordinate of the opposite corner of the rectangle \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_flip@{hpg\_\-flip}}
+\index{hpg_flip@{hpg\_\-flip}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-flip (void)}\label{hpgraphics_8h_a34}
+
+
+Swaps buffers on a double-buffered screen.
+
+If hardware page flipping is not being used, this function has no effect.
+
+After this method is complete, the contents of the back buffer are undefined. The application must either clear the back buffer prior to drawing onto it (with {\bf hpg\_\-clear} {\rm (p.\,\pageref{hpgraphics_8h_a39})}, for example) or otherwise guarantee this it has overwritten every pixel of the screen in order to avoid undefined behavior. \index{hpgraphics.h@{hpgraphics.h}!hpg_free_font@{hpg\_\-free\_\-font}}
+\index{hpg_free_font@{hpg\_\-free\_\-font}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-free\_\-font ({\bf hpg\_\-font\_\-t} $\ast$ {\em font})}\label{hpgraphics_8h_a73}
+
+
+Releases memory used by a font after it is no longer in use.
+
+The font data buffer is not released, since it is owned by the client code. If it is allocated dynamically, then it should be freed separately.\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+font}]The font to be freed \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_free_image@{hpg\_\-free\_\-image}}
+\index{hpg_free_image@{hpg\_\-free\_\-image}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-free\_\-image ({\bf hpg\_\-t} $\ast$ {\em img})}\label{hpgraphics_8h_a78}
+
+
+Frees the memory used by an off-screen image.
+
+\begin{Desc}
+\item[Warning: ]\par
+Do not pass {\bf hpg\_\-stdscreen} {\rm (p.\,\pageref{hpgraphics_8h_a27})} to this function. Only graphics contexts for off-screen images need to be freed.\end{Desc}
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+img}]The image to be freed \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_free_pattern@{hpg\_\-free\_\-pattern}}
+\index{hpg_free_pattern@{hpg\_\-free\_\-pattern}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-free\_\-pattern ({\bf hpg\_\-pattern\_\-t} $\ast$ {\em pattern})}\label{hpgraphics_8h_a71}
+
+
+Releases memory used by a fill pattern after it is no longer in use.
+
+The pattern data buffer is not released, since it is owned by the client code. If the data buffer is allocated dynamically, then it should be freed separately.\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+pattern}]The pattern to be freed. \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_get_bigfont@{hpg\_\-get\_\-bigfont}}
+\index{hpg_get_bigfont@{hpg\_\-get\_\-bigfont}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf hpg\_\-font\_\-t}$\ast$ hpg\_\-get\_\-bigfont (void)}\label{hpgraphics_8h_a57}
+
+
+Retrieves the bigfont.
+
+The bigfont is a font with a height of 8 pixels and an advance of 6 pixels. It is the standard font for the HP49G+ calculator environment, and is both larger and easier to read than the minifont, but results in less text fitting on the screen.
+
+\begin{Desc}
+\item[Returns: ]\par
+The bigfont \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_get_color@{hpg\_\-get\_\-color}}
+\index{hpg_get_color@{hpg\_\-get\_\-color}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned char hpg\_\-get\_\-color ({\bf hpg\_\-t} $\ast$ {\em g})}\label{hpgraphics_8h_a62}
+
+
+Retrieves the current color.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+g}]The graphics context to which this function applies \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns: ]\par
+The current color for drawing operations to the context \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_get_font@{hpg\_\-get\_\-font}}
+\index{hpg_get_font@{hpg\_\-get\_\-font}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf hpg\_\-font\_\-t}$\ast$ hpg\_\-get\_\-font ({\bf hpg\_\-t} $\ast$ {\em g})}\label{hpgraphics_8h_a68}
+
+
+Retrieves the current font.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+g}]The graphics context to which this function applies \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns: ]\par
+The current text font for the context \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_get_minifont@{hpg\_\-get\_\-minifont}}
+\index{hpg_get_minifont@{hpg\_\-get\_\-minifont}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf hpg\_\-font\_\-t}$\ast$ hpg\_\-get\_\-minifont (void)}\label{hpgraphics_8h_a56}
+
+
+Retrieves the minifont.
+
+The minifont is a font with a height of 6 pixels and an advance of 4 pixels, and is the smallest font that is reasonably useful on the calculator display. This is the default font for the HPG library.
+
+\begin{Desc}
+\item[Returns: ]\par
+The minifont \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_get_mode@{hpg\_\-get\_\-mode}}
+\index{hpg_get_mode@{hpg\_\-get\_\-mode}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned char hpg\_\-get\_\-mode ({\bf hpg\_\-t} $\ast$ {\em g})}\label{hpgraphics_8h_a64}
+
+
+Retrieves the current drawing mode.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+g}]The graphics context to which this function applies \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns: ]\par
+The drawing mode for the context; either {\bf HPG\_\-MODE\_\-PAINT} {\rm (p.\,\pageref{hpgraphics_8h_a0})} or {\bf HPG\_\-MODE\_\-XOR} {\rm (p.\,\pageref{hpgraphics_8h_a1})} \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_get_pattern@{hpg\_\-get\_\-pattern}}
+\index{hpg_get_pattern@{hpg\_\-get\_\-pattern}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf hpg\_\-pattern\_\-t}$\ast$ hpg\_\-get\_\-pattern ({\bf hpg\_\-t} $\ast$ {\em g})}\label{hpgraphics_8h_a66}
+
+
+Retrieves the current fill pattern.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+g}]The graphics context to which this function applies \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns: ]\par
+The current fill pattern for the context; or {\tt NULL} if there is no fill pattern \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_get_pixel@{hpg\_\-get\_\-pixel}}
+\index{hpg_get_pixel@{hpg\_\-get\_\-pixel}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned char hpg\_\-get\_\-pixel ({\bf hpg\_\-t} $\ast$ {\em g}, int {\em x}, int {\em y})}\label{hpgraphics_8h_a74}
+
+
+Retrieves the color of a pixel.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+g}]The graphics context to which this function applies \item[{\em 
+x}]The x coordinate of the pixel to read \item[{\em 
+y}]The y coordinate of the pixel to read \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns: ]\par
+The color of the pixel, extended to a full color value \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_init@{hpg\_\-init}}
+\index{hpg_init@{hpg\_\-init}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-init (void)}\label{hpgraphics_8h_a28}
+
+
+Initializes the hpg module.
+
+This function must be called prior to using any other piece of the graphics library. \index{hpgraphics.h@{hpgraphics.h}!hpg_load_xpm_gray16@{hpg\_\-load\_\-xpm\_\-gray16}}
+\index{hpg_load_xpm_gray16@{hpg\_\-load\_\-xpm\_\-gray16}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf hpg\_\-t}$\ast$ hpg\_\-load\_\-xpm\_\-gray16 (char $\ast$ {\em xpm}[$\,$])}\label{hpgraphics_8h_a82}
+
+
+Loads a Xpm file to a 16-color grayscale image.
+
+The resulting image will be the same size as the original pixmap, but will be converted to 16-color gray. Grays will be stored as the nearest shade Non-gray colors are mapped to grayscale according to an approach very similar to ITU Recommendation 709, which uses a model of typical human perception of color to convert color images to grays.
+
+{\bf hpg\_\-free\_\-image} {\rm (p.\,\pageref{hpgraphics_8h_a78})} should be called when the application is no longer using the image.\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+xpm}]The result of compiling an Xpm image as C code \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns: ]\par
+Pointer to an {\bf hpg\_\-t} {\rm (p.\,\pageref{hpgraphics_8h_a24})} representing the image. \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_load_xpm_gray4@{hpg\_\-load\_\-xpm\_\-gray4}}
+\index{hpg_load_xpm_gray4@{hpg\_\-load\_\-xpm\_\-gray4}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf hpg\_\-t}$\ast$ hpg\_\-load\_\-xpm\_\-gray4 (char $\ast$ {\em xpm}[$\,$])}\label{hpgraphics_8h_a81}
+
+
+Loads a Xpm file to a 4-color grayscale image.
+
+The resulting image will be the same size as the original pixmap, but will be converted to 4-color gray. Grays will be stored as the nearest shade Non-gray colors are mapped to grayscale according to an approach very similar to ITU Recommendation 709, which uses a model of typical human perception of color to convert color images to grays.
+
+{\bf hpg\_\-free\_\-image} {\rm (p.\,\pageref{hpgraphics_8h_a78})} should be called when the application is no longer using the image.\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+xpm}]The result of compiling an Xpm image as C code \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns: ]\par
+Pointer to an {\bf hpg\_\-t} {\rm (p.\,\pageref{hpgraphics_8h_a24})} representing the image. \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_load_xpm_mono@{hpg\_\-load\_\-xpm\_\-mono}}
+\index{hpg_load_xpm_mono@{hpg\_\-load\_\-xpm\_\-mono}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf hpg\_\-t}$\ast$ hpg\_\-load\_\-xpm\_\-mono (char $\ast$ {\em xpm}[$\,$])}\label{hpgraphics_8h_a80}
+
+
+Loads a Xpm file to a monochrome image.
+
+The resulting image will be the same size as the original pixmap, but will be converted to monochrome. Colors that appear lighter than a medium gray will appear white, while colors darker than a medium gray will appear black. Non-gray colors are mapped to grayscale according to an approach very similar to ITU Recommendation 709, which uses a model of typical human perception of color to convert color images to grays.
+
+{\bf hpg\_\-free\_\-image} {\rm (p.\,\pageref{hpgraphics_8h_a78})} should be called when the application is no longer using the image.\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+xpm}]The result of compiling an Xpm image as C code \end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns: ]\par
+Pointer to an {\bf hpg\_\-t} {\rm (p.\,\pageref{hpgraphics_8h_a24})} representing the image. \end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_set_color@{hpg\_\-set\_\-color}}
+\index{hpg_set_color@{hpg\_\-set\_\-color}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-set\_\-color ({\bf hpg\_\-t} $\ast$ {\em g}, unsigned char {\em color})}\label{hpgraphics_8h_a63}
+
+
+Sets the current color.
+
+The new color will take effect until it is changed with another call to {\bf hpg\_\-set\_\-color} {\rm (p.\,\pageref{hpgraphics_8h_a63})}.\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+g}]The graphics context to which this function applies \item[{\em 
+color}]The new color to set for the context \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_set_font@{hpg\_\-set\_\-font}}
+\index{hpg_set_font@{hpg\_\-set\_\-font}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-set\_\-font ({\bf hpg\_\-t} $\ast$ {\em g}, {\bf hpg\_\-font\_\-t} $\ast$ {\em font})}\label{hpgraphics_8h_a69}
+
+
+Sets the current font.
+
+Fonts can be retrieved via the {\bf hpg\_\-get\_\-minifont} {\rm (p.\,\pageref{hpgraphics_8h_a56})} and {\bf hpg\_\-get\_\-bigfont} {\rm (p.\,\pageref{hpgraphics_8h_a57})} functions, or they can be created by the user. User fonts should be allocated with {\bf hpg\_\-alloc\_\-font} {\rm (p.\,\pageref{hpgraphics_8h_a72})}, and disposed of with {\bf hpg\_\-free\_\-font} {\rm (p.\,\pageref{hpgraphics_8h_a73})} when they are no longer in use.\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+g}]The graphics context to which this function applies \item[{\em 
+font}]The new text font to use for the context \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_set_indicator@{hpg\_\-set\_\-indicator}}
+\index{hpg_set_indicator@{hpg\_\-set\_\-indicator}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-set\_\-indicator (unsigned char {\em indicator}, unsigned char {\em color})}\label{hpgraphics_8h_a33}
+
+
+Sets the state of an LCD indicator.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+indicator}]The indicator to set. This may be any of {\bf HPG\_\-INDICATOR\_\-REMOTE} {\rm (p.\,\pageref{hpgraphics_8h_a18})}, {\bf HPG\_\-INDICATOR\_\-LSHIFT} {\rm (p.\,\pageref{hpgraphics_8h_a19})}, {\bf HPG\_\-INDICATOR\_\-RSHIFT} {\rm (p.\,\pageref{hpgraphics_8h_a20})}, {\bf HPG\_\-INDICATOR\_\-ALPHA} {\rm (p.\,\pageref{hpgraphics_8h_a21})}, {\bf HPG\_\-INDICATOR\_\-BATTERY} {\rm (p.\,\pageref{hpgraphics_8h_a22})}, or {\bf HPG\_\-INDICATOR\_\-WAIT} {\rm (p.\,\pageref{hpgraphics_8h_a23})}. \item[{\em 
+color}]The target color for the indicator. Typically, white indicates off and black indicates on. However, other colors may be used. \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_set_mode@{hpg\_\-set\_\-mode}}
+\index{hpg_set_mode@{hpg\_\-set\_\-mode}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-set\_\-mode ({\bf hpg\_\-t} $\ast$ {\em g}, unsigned char {\em mode})}\label{hpgraphics_8h_a65}
+
+
+Sets the current drawing mode.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+g}]The graphics context to which this function applies \item[{\em 
+mode}]The new drawing mode to set for the context; either {\bf HPG\_\-MODE\_\-PAINT} {\rm (p.\,\pageref{hpgraphics_8h_a0})} or {\bf HPG\_\-MODE\_\-XOR} {\rm (p.\,\pageref{hpgraphics_8h_a1})}. See the descriptions of those constants for more information about the drawing modes they describe. \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_set_mode_gray16@{hpg\_\-set\_\-mode\_\-gray16}}
+\index{hpg_set_mode_gray16@{hpg\_\-set\_\-mode\_\-gray16}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-set\_\-mode\_\-gray16 (int {\em dbuf})}\label{hpgraphics_8h_a32}
+
+
+Sets the screen to 16-color grayscale mode.
+
+\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+dbuf}]If non-zero, sets up two buffers and draws to the unseen buffer; {\bf hpg\_\-flip} {\rm (p.\,\pageref{hpgraphics_8h_a34})} can be used to switch to the other buffer at any time. \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_set_mode_gray4@{hpg\_\-set\_\-mode\_\-gray4}}
+\index{hpg_set_mode_gray4@{hpg\_\-set\_\-mode\_\-gray4}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-set\_\-mode\_\-gray4 (int {\em dbuf})}\label{hpgraphics_8h_a31}
+
+
+Sets the screen to 4-color grayscale mode.
+
+4-color grayscale is a palette mode, and a palette of reasonable colors is set by calling this function. Gray levels 0, 7, 10, and 15 are used, based on a visual comparison of the grays for the most stable values.\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+dbuf}]If non-zero, sets up two buffers and draws to the unseen buffer; {\bf hpg\_\-flip} {\rm (p.\,\pageref{hpgraphics_8h_a34})} can be used to switch to the other buffer at any time. \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_set_mode_mono@{hpg\_\-set\_\-mode\_\-mono}}
+\index{hpg_set_mode_mono@{hpg\_\-set\_\-mode\_\-mono}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-set\_\-mode\_\-mono (int {\em dbuf})}\label{hpgraphics_8h_a30}
+
+
+Sets the screen to monochrome mode.
+
+Monochrome is the default mode for the screen. Generally, this function is only used if you wish to change to a double-buffered monochrome mode.\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+dbuf}]If non-zero, sets up two buffers and draws to the unseen buffer; {\bf hpg\_\-flip} {\rm (p.\,\pageref{hpgraphics_8h_a34})} can be used to switch to the other buffer at any time. \end{description}
+\end{Desc}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_set_pattern@{hpg\_\-set\_\-pattern}}
+\index{hpg_set_pattern@{hpg\_\-set\_\-pattern}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void hpg\_\-set\_\-pattern ({\bf hpg\_\-t} $\ast$ {\em g}, {\bf hpg\_\-pattern\_\-t} $\ast$ {\em pattern})}\label{hpgraphics_8h_a67}
+
+
+Sets the current fill pattern.
+
+Patterns used with this function should be allocated with {\bf hpg\_\-alloc\_\-pattern} {\rm (p.\,\pageref{hpgraphics_8h_a70})}, and disposed of with {\bf hpg\_\-free\_\-pattern} {\rm (p.\,\pageref{hpgraphics_8h_a71})} when they are no longer in use.
+
+To remove all fill patterns from the context, pass {\tt NULL} for the fill pattern.\begin{Desc}
+\item[Parameters: ]\par
+\begin{description}
+\item[{\em 
+g}]The graphics context to which this function applies \item[{\em 
+pattern}]The new fill pattern to use for the context; or {\tt NULL} for no pattern \end{description}
+\end{Desc}
+
+
+\subsection{Variable Documentation}
+\index{hpgraphics.h@{hpgraphics.h}!hpg_stdscreen@{hpg\_\-stdscreen}}
+\index{hpg_stdscreen@{hpg\_\-stdscreen}!hpgraphics.h@{hpgraphics.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf hpg\_\-t}$\ast$ hpg\_\-stdscreen}\label{hpgraphics_8h_a27}
+
+
+A graphics context representing the physical screen.
+
+This variable points to the graphics context for the physical screen. It is initialized by a call to {\bf hpg\_\-init} {\rm (p.\,\pageref{hpgraphics_8h_a28})}, which must be called before any drawing to the screen.
+
+\begin{Desc}
+\item[Note: ]\par
+Some HPG functions have convenience versions that automatically operate on {\bf hpg\_\-stdscreen} {\rm (p.\,\pageref{hpgraphics_8h_a27})}. These include {\bf hpg\_\-clear} {\rm (p.\,\pageref{hpgraphics_8h_a39})}, {\bf hpg\_\-draw\_\-line} {\rm (p.\,\pageref{hpgraphics_8h_a43})}, and any other functions which have versions with and without the {\tt \_\-on} prefix. Other functions can {\bf only} validly operate on {\bf hpg\_\-stdscreen} {\rm (p.\,\pageref{hpgraphics_8h_a27})}, including {\bf hpg\_\-flip} {\rm (p.\,\pageref{hpgraphics_8h_a34})}, and {\bf hpg\_\-set\_\-mode\_\-mono} {\rm (p.\,\pageref{hpgraphics_8h_a30})} and its kin. These functions do not accept a parameter, but nevertheless operate on {\bf hpg\_\-stdscreen} {\rm (p.\,\pageref{hpgraphics_8h_a27})}. \end{Desc}

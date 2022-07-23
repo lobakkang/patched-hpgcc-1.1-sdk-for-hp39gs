@@ -1,0 +1,38 @@
+win_checkbox_get_label.o: win_checkbox_get_label.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hplib/hpstring.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hpg/hpgraphics.h \
+  ../win.h ../winevent.h ../winwidget.h ../winkeys.h ../wintimer.h \
+  ../winsoftmenu.h ../wintext.h ../winprogress.h ../wincheckbox.h \
+  ../winbox.h ../winchoose.h ../winimg.h ../wincore.h checkpriv.h
+win_checkbox_is_selected.o: win_checkbox_is_selected.c \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h \
+  ../../hplib/hpstring.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hpg/hpgraphics.h ../win.h ../winevent.h ../winwidget.h \
+  ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h ../wincore.h checkpriv.h
+win_checkbox_new.o: win_checkbox_new.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hplib/hpstring.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hpg/hpgraphics.h \
+  ../win.h ../winevent.h ../winwidget.h ../winkeys.h ../wintimer.h \
+  ../winsoftmenu.h ../wintext.h ../winprogress.h ../wincheckbox.h \
+  ../winbox.h ../winchoose.h ../winimg.h ../wincore.h checkpriv.h
+win_checkbox_set_label.o: win_checkbox_set_label.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hplib/hpstring.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hpg/hpgraphics.h \
+  ../win.h ../winevent.h ../winwidget.h ../winkeys.h ../wintimer.h \
+  ../winsoftmenu.h ../wintext.h ../winprogress.h ../wincheckbox.h \
+  ../winbox.h ../winchoose.h ../winimg.h ../wincore.h checkpriv.h
+win_checkbox_set_menu.o: win_checkbox_set_menu.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hplib/hpstring.h \
+  ../../hplib/hpctype.h ../../hplib/hpkeyb49.h ../../hpg/hpgraphics.h \
+  ../win.h ../winevent.h ../winwidget.h ../winkeys.h ../wintimer.h \
+  ../winsoftmenu.h ../wintext.h ../winprogress.h ../wincheckbox.h \
+  ../winbox.h ../winchoose.h ../winimg.h ../wincore.h checkpriv.h
+win_checkbox_set_selected.o: win_checkbox_set_selected.c \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h \
+  ../../hplib/hpstring.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hpg/hpgraphics.h ../win.h ../winevent.h ../winwidget.h \
+  ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h ../wincore.h checkpriv.h

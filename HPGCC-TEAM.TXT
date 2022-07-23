@@ -1,0 +1,13 @@
+The HP-GCC core development team are the following persons (in alphabetical order):
+
+Ingo Blank
+Al Borowski
+Claudio Lapilli
+Benjamin Maurin
+Chris Smith
+
+To reach them, write to <first name>@hpgcc.org
+
+
+
+	

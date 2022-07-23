@@ -1,0 +1,82 @@
+\section{win\_\-keytyped\_\-t Struct Reference}
+\label{structwin__keytyped__t}\index{win_keytyped_t@{win\_\-keytyped\_\-t}}
+Event data for {\bf WIN\_\-KEY\_\-TYPED}{\rm (p.\,\pageref{winkeys_8h_a2})} events.  
+
+
+{\tt \#include $<$winkeys.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+unsigned {\bf keycode}: 8
+\begin{CompactList}\small\item\em The keycode for the key that was typed. \item\end{CompactList}\item 
+char {\bf ascii}
+\begin{CompactList}\small\item\em The ASCII equivalent of the key that was typed. \item\end{CompactList}\item 
+unsigned {\bf lshift}: 2
+\begin{CompactList}\small\item\em State of the left shift key. \item\end{CompactList}\item 
+unsigned {\bf rshift}: 2
+\begin{CompactList}\small\item\em State of the right shift key. \item\end{CompactList}\item 
+unsigned {\bf alpha}: 2
+\begin{CompactList}\small\item\em State of the right shift key. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Event data for {\bf WIN\_\-KEY\_\-TYPED}{\rm (p.\,\pageref{winkeys_8h_a2})} events. 
+
+This data structure contains information about a key that was typed. 
+
+
+
+Definition at line 175 of file winkeys.h.
+
+\subsection{Field Documentation}
+\index{win_keytyped_t@{win\_\-keytyped\_\-t}!alpha@{alpha}}
+\index{alpha@{alpha}!win_keytyped_t@{win\_\-keytyped\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf win\_\-keytyped\_\-t::alpha}}\label{structwin__keytyped__t_o4}
+
+
+State of the right shift key. 
+
+This field represents the state of the alpha key when this key was typed. It is set to one of {\bf WIN\_\-KEYSTATE\_\-ON}{\rm (p.\,\pageref{winkeys_8h_a7})}, {\bf WIN\_\-KEYSTATE\_\-OFF}{\rm (p.\,\pageref{winkeys_8h_a6})}, {\bf WIN\_\-KEYSTATE\_\-LOCK}{\rm (p.\,\pageref{winkeys_8h_a8})}, or {\bf WIN\_\-KEYSTATE\_\-PRESSED}{\rm (p.\,\pageref{winkeys_8h_a9})}. 
+
+Definition at line 219 of file winkeys.h.\index{win_keytyped_t@{win\_\-keytyped\_\-t}!ascii@{ascii}}
+\index{ascii@{ascii}!win_keytyped_t@{win\_\-keytyped\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char {\bf win\_\-keytyped\_\-t::ascii}}\label{structwin__keytyped__t_o1}
+
+
+The ASCII equivalent of the key that was typed. 
+
+If the key maps to an ASCII character, this field provides the ASCII code of the character represented by this key. If the key does not have an equivalent ASCII character, this field is set to NUL ({\tt '} '). 
+
+Definition at line 192 of file winkeys.h.\index{win_keytyped_t@{win\_\-keytyped\_\-t}!keycode@{keycode}}
+\index{keycode@{keycode}!win_keytyped_t@{win\_\-keytyped\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf win\_\-keytyped\_\-t::keycode}}\label{structwin__keytyped__t_o0}
+
+
+The keycode for the key that was typed. 
+
+This code will match one of the key code constants defined in {\tt hpheyb49.h} of the form {\tt KB\_\-XXX}. 
+
+Definition at line 183 of file winkeys.h.\index{win_keytyped_t@{win\_\-keytyped\_\-t}!lshift@{lshift}}
+\index{lshift@{lshift}!win_keytyped_t@{win\_\-keytyped\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf win\_\-keytyped\_\-t::lshift}}\label{structwin__keytyped__t_o2}
+
+
+State of the left shift key. 
+
+This field represents the state of the left shift key when this key was typed. It is set to one of {\bf WIN\_\-KEYSTATE\_\-ON}{\rm (p.\,\pageref{winkeys_8h_a7})}, {\bf WIN\_\-KEYSTATE\_\-OFF}{\rm (p.\,\pageref{winkeys_8h_a6})}, or {\bf WIN\_\-KEYSTATE\_\-PRESSED}{\rm (p.\,\pageref{winkeys_8h_a9})}. 
+
+Definition at line 201 of file winkeys.h.\index{win_keytyped_t@{win\_\-keytyped\_\-t}!rshift@{rshift}}
+\index{rshift@{rshift}!win_keytyped_t@{win\_\-keytyped\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf win\_\-keytyped\_\-t::rshift}}\label{structwin__keytyped__t_o3}
+
+
+State of the right shift key. 
+
+This field represents the state of the right shift key when this key was typed. It is set to one of {\bf WIN\_\-KEYSTATE\_\-ON}{\rm (p.\,\pageref{winkeys_8h_a7})}, {\bf WIN\_\-KEYSTATE\_\-OFF}{\rm (p.\,\pageref{winkeys_8h_a6})}, or {\bf WIN\_\-KEYSTATE\_\-PRESSED}{\rm (p.\,\pageref{winkeys_8h_a9})}. 
+
+Definition at line 210 of file winkeys.h.
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf winkeys.h}\end{CompactItemize}

@@ -1,0 +1,134 @@
+sat_concatnib.o: sat_concatnib.c ../hpgcc49.h ../hpconio.h ../hpstdlib.h \
+  ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h ../hpmath.h \
+  ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h ../syscall.h \
+  ../saturn.h
+sat_convert_double_real.o: sat_convert_double_real.c ../hpgcc49.h \
+  ../hpconio.h ../hpstdlib.h ../hpsys.h ../kos.h ../hpctype.h \
+  ../hpkeyb49.h ../hpmath.h ../hpscreen.h ../hpstdio.h ../hpstring.h \
+  ../hptime.h ../syscall.h ../saturn.h
+sat_createtemp.o: sat_createtemp.c ../hpgcc49.h ../hpconio.h \
+  ../hpstdlib.h ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h \
+  ../hpmath.h ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h \
+  ../syscall.h ../saturn.h
+sat_decode_data.o: sat_decode_data.c ../hpgcc49.h ../hpconio.h \
+  ../hpstdlib.h ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h \
+  ../hpmath.h ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h \
+  ../syscall.h ../saturn.h
+sat_list_add_real.o: sat_list_add_real.c ../hpgcc49.h ../hpconio.h \
+  ../hpstdlib.h ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h \
+  ../hpmath.h ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h \
+  ../syscall.h ../saturn.h
+sat_list_add_zint.o: sat_list_add_zint.c ../hpgcc49.h ../hpconio.h \
+  ../hpstdlib.h ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h \
+  ../hpmath.h ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h \
+  ../syscall.h ../saturn.h
+sat_list_add_zint_array.o: sat_list_add_zint_array.c ../hpgcc49.h \
+  ../hpconio.h ../hpstdlib.h ../hpsys.h ../kos.h ../hpctype.h \
+  ../hpkeyb49.h ../hpmath.h ../hpscreen.h ../hpstdio.h ../hpstring.h \
+  ../hptime.h ../syscall.h ../saturn.h
+sat_map_s2a.o: sat_map_s2a.c ../hpgcc49.h ../hpconio.h ../hpstdlib.h \
+  ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h ../hpmath.h \
+  ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h ../syscall.h \
+  ../saturn.h
+sat_moveup.o: sat_moveup.c ../hpgcc49.h ../hpconio.h ../hpstdlib.h \
+  ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h ../hpmath.h \
+  ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h ../syscall.h \
+  ../saturn.h
+sat_peek.o: sat_peek.c ../hpgcc49.h ../hpconio.h ../hpstdlib.h ../hpsys.h \
+  ../kos.h ../hpctype.h ../hpkeyb49.h ../hpmath.h ../hpscreen.h \
+  ../hpstdio.h ../hpstring.h ../hptime.h ../syscall.h ../saturn.h
+sat_peek_sat_bytes.o: sat_peek_sat_bytes.c ../hpgcc49.h ../hpconio.h \
+  ../hpstdlib.h ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h \
+  ../hpmath.h ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h \
+  ../syscall.h ../saturn.h
+sat_poke.o: sat_poke.c ../hpgcc49.h ../hpconio.h ../hpstdlib.h ../hpsys.h \
+  ../kos.h ../hpctype.h ../hpkeyb49.h ../hpmath.h ../hpscreen.h \
+  ../hpstdio.h ../hpstring.h ../hptime.h ../syscall.h ../saturn.h
+sat_poke_nibbles.o: sat_poke_nibbles.c ../hpgcc49.h ../hpconio.h \
+  ../hpstdlib.h ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h \
+  ../hpmath.h ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h \
+  ../syscall.h ../saturn.h
+sat_pop_real.o: sat_pop_real.c ../hpgcc49.h ../hpconio.h ../hpstdlib.h \
+  ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h ../hpmath.h \
+  ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h ../syscall.h \
+  ../saturn.h
+sat_pop_zint_llong.o: sat_pop_zint_llong.c ../hpgcc49.h ../hpconio.h \
+  ../hpstdlib.h ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h \
+  ../hpmath.h ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h \
+  ../syscall.h ../saturn.h
+sat_push_bint.o: sat_push_bint.c ../hpgcc49.h ../hpconio.h ../hpstdlib.h \
+  ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h ../hpmath.h \
+  ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h ../syscall.h \
+  ../saturn.h
+sat_push_char.o: sat_push_char.c ../hpgcc49.h ../hpconio.h ../hpstdlib.h \
+  ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h ../hpmath.h \
+  ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h ../syscall.h \
+  ../saturn.h
+sat_push_comp.o: sat_push_comp.c ../hpgcc49.h ../hpconio.h ../hpstdlib.h \
+  ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h ../hpmath.h \
+  ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h ../syscall.h \
+  ../saturn.h
+sat_push_real.o: sat_push_real.c ../hpgcc49.h ../hpconio.h ../hpstdlib.h \
+  ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h ../hpmath.h \
+  ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h ../syscall.h \
+  ../saturn.h
+sat_push_realarray.o: sat_push_realarray.c ../hpgcc49.h ../hpconio.h \
+  ../hpstdlib.h ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h \
+  ../hpmath.h ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h \
+  ../syscall.h ../saturn.h
+sat_push_realvector.o: sat_push_realvector.c ../hpgcc49.h ../hpconio.h \
+  ../hpstdlib.h ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h \
+  ../hpmath.h ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h \
+  ../syscall.h ../saturn.h
+sat_push_string.o: sat_push_string.c ../hpgcc49.h ../hpconio.h \
+  ../hpstdlib.h ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h \
+  ../hpmath.h ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h \
+  ../syscall.h ../saturn.h
+sat_push_zint_array.o: sat_push_zint_array.c ../hpgcc49.h ../hpconio.h \
+  ../hpstdlib.h ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h \
+  ../hpmath.h ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h \
+  ../syscall.h ../saturn.h
+sat_push_zint_llong.o: sat_push_zint_llong.c ../hpgcc49.h ../hpconio.h \
+  ../hpstdlib.h ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h \
+  ../hpmath.h ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h \
+  ../syscall.h ../saturn.h
+sat_pushptr.o: sat_pushptr.c ../hpgcc49.h ../hpconio.h ../hpstdlib.h \
+  ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h ../hpmath.h \
+  ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h ../syscall.h \
+  ../saturn.h
+sat_stack.o: sat_stack.c ../hpgcc49.h ../hpconio.h ../hpstdlib.h \
+  ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h ../hpmath.h \
+  ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h ../syscall.h \
+  ../saturn.h
+sat_stack_drop.o: sat_stack_drop.c ../hpgcc49.h ../hpconio.h \
+  ../hpstdlib.h ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h \
+  ../hpmath.h ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h \
+  ../syscall.h ../saturn.h
+sat_stack_list.o: sat_stack_list.c ../hpgcc49.h ../hpconio.h \
+  ../hpstdlib.h ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h \
+  ../hpmath.h ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h \
+  ../syscall.h ../saturn.h
+sat_stack_nip.o: sat_stack_nip.c ../hpgcc49.h ../hpconio.h ../hpstdlib.h \
+  ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h ../hpmath.h \
+  ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h ../syscall.h \
+  ../saturn.h
+sat_stack_push_double.o: sat_stack_push_double.c ../hpgcc49.h \
+  ../hpconio.h ../hpstdlib.h ../hpsys.h ../kos.h ../hpctype.h \
+  ../hpkeyb49.h ../hpmath.h ../hpscreen.h ../hpstdio.h ../hpstring.h \
+  ../hptime.h ../syscall.h ../saturn.h
+sat_stack_push_int.o: sat_stack_push_int.c ../hpgcc49.h ../hpconio.h \
+  ../hpstdlib.h ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h \
+  ../hpmath.h ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h \
+  ../syscall.h ../saturn.h
+sat_stack_push_string.o: sat_stack_push_string.c ../hpgcc49.h \
+  ../hpconio.h ../hpstdlib.h ../hpsys.h ../kos.h ../hpctype.h \
+  ../hpkeyb49.h ../hpmath.h ../hpscreen.h ../hpstdio.h ../hpstring.h \
+  ../hptime.h ../syscall.h ../saturn.h
+sat_stack_swap.o: sat_stack_swap.c ../hpgcc49.h ../hpconio.h \
+  ../hpstdlib.h ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h \
+  ../hpmath.h ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h \
+  ../syscall.h ../saturn.h
+sat_stack_zint.o: sat_stack_zint.c ../hpgcc49.h ../hpconio.h \
+  ../hpstdlib.h ../hpsys.h ../kos.h ../hpctype.h ../hpkeyb49.h \
+  ../hpmath.h ../hpscreen.h ../hpstdio.h ../hpstring.h ../hptime.h \
+  ../syscall.h ../saturn.h

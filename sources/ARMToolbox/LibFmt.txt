@@ -1,0 +1,411 @@
+ARM Library Format Specification V1.1
+
+1) General format
+   --------------
+
+* There are no special restrictions when using it for ARM code.
+
+2) Embedded ARM Code
+   -----------------
+
+* ARM code has to be stored in separate XLIB's.
+* There's no limit in how many different blocks of ARM code can be present in
+  the same library. However, each block has to be in a separate XLIB.
+* An ARM XLIB can be named or not. No restrictions there.
+* Other (non-ARM) XLIB's can coexist in the same library without interfering with the
+  ARM code.
+
+* An example of a typical directory for CRLIB:
+
+    $ROMID    ->  whatever
+    $TITLE    ->  Library title
+    $CONFIG   ->  1
+    $VISIBLE  -> {START}
+    $HIDDEN   -> {ARMCODE}
+    START     ->  :: ' ID ARMCODE xPrgRUN ;
+    ARMCODE   -> "L³@XXXXX...."
+
+  Note that an ARM library will require the "ARM Toolbox" library installed in order
+  to run.
+
+
+3) Structure of the ARM code
+   -------------------------
+
+* ARM code can be inserted in text strings, hex strings, libdata objects or code objects
+  (text strings are the preferred method).
+* The internal structure of the code is as follows:
+
+
+  FieldSize     Initial Content    Description
+  (nibbles)
+
+Start structure (required) (size=7 bytes):
+   (5)             0B34C           Launcher V3 string marker ("L³")
+   (1)               8             Offset to ARM code (counts from next nibble)
+   (8)             "A>CP"          Scratch area for code alignment
+
+Code:
+  (8*N)         ...ARM code...     Main block of ARM code. Size must be multiple of 8.
+
+Linker structure (optional):
+  (16*X)        Offsets+RAM        Entry point table. 2 words per routine (X routines)
+   (8)               X             Number of entries in entry point table. 0=No table.
+   (8)          RAM required       RAM requirements of primary entry point (see below)
+   (8)             Offset          Offset to primary entry point
+   (8)               0             Absolute address placeholder (ALWAYS ZERO)
+   (8)           0x3176B34C        Marker "L³v1" (structure for Launcher 3 v1)
+
+
+* The first 5 nibbles are used by the launcher to recognize ARM code.
+
+* The offset is the number of padding nibbles that follows. Initially this will be set
+  to 8 nibbles. This number will be adjusted as the code is aligned.
+
+* These first 6 nibbles can be added with the program STR>L3 in the ARM Toolbox.
+
+* The Scratch area is initially 8 nibbles (one word). This MUST be included in the ARM
+  assembly code (it won't be added by STR>L3). For backwards compatibility, the string
+  "A>CP" should be used here.
+
+* The linker structure tells the launcher how to run the program. Notice that the structure
+  is reversed (marker at the end, etc.) because it will be read from the end of the code.
+
+* First (or last) there is a marker to indicate the structure is present. If there is no
+  end structure, the launcher will start the program at the first word in the ARM code
+  block, and it will assume that the program does not require RAM.
+
+* The program can be executed from multiple entry points:
+     - As a stand-alone program (only one entry point)
+     - As a collection of subroutines (multiple entry points)
+
+* The word immediately before the marker is a placeholder where the installer will write
+  the absolute address in ARM domain of the code. This is used to realign the code in 
+  case has been moved. It should originally be set to zero.
+* The next word is the offset of the primary entry point. All offsets are measured from the
+  beginning of the ARM code block
+* The following information tells the launcher how much RAM to allocate for the primary entry
+  point (in bytes). The launcher will allocate the RAM and provide the absolute address in
+  the ARM domain when calling the program. This
+  word also contains the following flags:
+
+  Bits          31          20 19                 0
+                 0000DDDDRMUS   XXXXXXXXXXXXXXXXXXX
+ 
+    xxxxxx => The first 20 bits indicate how much RAM to allocate in bytes. When
+              using the memory packer (see flag M below), it specifies the amount of
+              memory in bytes to leave free for TEMPOB growth.
+    S      => Flag to indicate if the launcher should leave the object on the stack
+              when the program returns. This is useful to return data from ARM code.
+    U      => Flag to indicate that the RAM should be provided by the user, not the
+              launcher. If this flag is set, the launcher will require a hex string,
+              a string or libdata object on the stack with enough space. The first 20
+              bits (xxxxxx) specify the minimum amount of ram that the user should provide.
+              If the user provides a smaller memory block, the launcher will error.
+              When the user provides the memory, the launcher will ALWAYS leave it on
+              the stack, disregarding of the 'S' flag above.
+    M      => Flag to indicate MMU memory packer. The launcher will generate a valid
+              MMU table and the address will be passed to the ARM program. See below
+              for details on how the address is passed.
+    R      => Set to 1 if the memory packer should allocate and use ARM OS ram. This
+              Option provides additional memory not accessible from the Saturn domain.
+    DDDD   => These four bits form a nibble that indicates the number of 16-byte blocks
+              to reserve for calculator stack growth. See below for more details.
+
+    ...00...=> Reserved for future use, for now set these bits to zero.
+
+
+  Notes about the RAM passed by the launcher:
+
+        1-The address is in ARM domain, and it's byte-aligned (not word aligned)
+        2-In Saturn domain, the memory will be:
+
+                           (5) DOCSTR   (prolog)
+                           (5) size     size in nibbles of the hex string
+                           (1) pad?     optional padding nibble to make the
+                                        address byte-aligned
+
+                           (XX) RAM     This is the pointer passed to ARM code
+
+        3-When the user leaves the memory block in the stack, it MUST be byte-aligned.
+          The program ALIGN in the ARM Tolbox can do this.
+        4-An ARM program SHOULD NOT ASSUME that the prolog will exist, since the passed
+          memory could be part of a bigger memory block when called directly from a
+          Saturn assembler program or an ARM program.
+          The ARM program must limit memory manipulation the block of memory provided.
+        5-If at run time there is not enough memory, the launcher will end with an
+          insufficient memory error and the ARM code won't be called.
+        6-Setting the amount of required memory to 0xFFFFF will tell the launcher to
+          allocate all free RAM for the ARM program.
+
+* Entry point table: The first (last) word of the table is the number of entries. It can be
+  zero if there is only a main entry point. The entry immediately before the number of entries
+  will be assigned the function number zero, and so on. Each entry consists of two words, in
+  the following order:
+
+                          (8) RAM required
+                          (8) Offset
+
+  The RAM required word is exactly as described above for the main entry point. All the
+  comments apply also for library functions.
+  The Offset is the position of the entry point of each function measured from the beginning
+  of the ARM code block (not including the padding).
+
+
+4) The MMU memory packer
+   ---------------------
+
+When the M flag is set, the launcher must provide a valid MMU table for the ARM program.
+The ARM address of the table must be in the hiword of the Saturn C register and the number
+of entries in the loword of B when the ARM code is called.
+The memory packer will collect available ram from 3 sources:
+
+  * Main RAM:  It will leave as free the space specified for TEMPOB growth (xxxxx), and the
+               space specified for calculator stack growth (DDDD * 16). The rest will be taken
+               for the ARM program.
+  * ERAM:      All the free space after the last object stored in Port1 will be taken for the
+               ARM program.
+  * OS ram:    Only when the R flag is set to 1, the launcher will allocate ram from the OS and
+               add it to the MMU table. The launcher leaves 16 kbytes free for OS use during the
+               execution of the ARM code. The address of the allocated block will be passed in the
+               hiword of B.  ** IMPORTANT **: It is responsibility of the ARM program to return
+               the allocated memory to the OS when the program exits. The launcher DOES NOT
+               free the allocated block.
+
+The ARM program receives the following information at entry:
+
+               B.hi = Address of OS ram, or 0 if no memory was allocated.
+               B.lo = Number of entries in the MMU table = (total memory/4096k)
+               C.hi = Address of the MMU table
+
+
+
+5) Sample Assembler ARM code
+   -------------------------
+
+   DCD 0x50433E41         (padding "A>CP")
+
+ARMstart
+
+   ...code for primary entry point...
+
+Func1
+
+   ...code for Func1 ...
+
+Func2
+
+   ...code for Func2 ...
+
+Entry_Pt_Table
+   DCD 0x00000100         (Func2 requires 256 bytes of RAM, allocated by the launcher and 
+                           discarded after returning)
+   DCD Func2-ARMstart     (offset to Func2)
+
+   DCD 0x00200010         (Func1 requires 16 bytes of RAM, provided by the user and
+                           kept on the stack after returning)
+   DCD Func1-ARMstart
+
+   DCD 0x00000002         (2 entry points)
+
+   DCD 0x00000000         (main entry point does not require RAM)
+   DCD ARMstart-ARMstart  (offset of main entry point - zero in this case)
+
+   DCD 0x00000000         (zero by definition - placeholder)
+   DCD 0x3176B34C         (mark that structure is present)
+
+
+6) Calling ARM code
+   ----------------
+
+* There are 2 ways of calling ARM code:
+  1) Using the launcher provided in the Toolbox.
+  2) Jumping directly from Saturn Assembler. Notice that with this option, the user will be
+     responsible for providing the requested RAM or the MMU table as indicated.
+
+* Using the launcher:
+  ------------------
+
+  PrRUN: To run a program using the primary entry point, use the command "PrRUN". This 
+         command takes one argument on the stack, which can be:
+
+       - A string, hex string, libdata, or code objects containing valid ARM code
+       - An IDent, pointing to ARM code stored in the current or parent directory
+       - A tagged IDent, pointing to ARM code stored in Port0, Port1 or Port2
+       - A rompointer (XLIB) pointing to ARM code stored within a library.
+
+  FnRUN: Runs a function in ARM code with multiple entry points. Put ARM code in level2,
+          in any of the forms mentioned for PrRUN, and a hex string or a bint on level1,
+          indicating the function number (0=first entry in the table).
+
+
+* Examples on how to run ARM code:
+
+  1- From SysRPL or UserRPL:
+
+     As a program (single entry point). Put a ROMP XLIB pointer (or any other form of ARM code)
+     on the stack and call the launcher.
+
+         :: ' xARMcode xPrRUN ;
+      or
+         << :2:'ARMcode' PrRUN >>
+
+     (assuming that ARMcode is a valid object containing ARM code in a string)
+
+     As a library function. Put the XLIB rom pointer on the stack and the function number as a BINT
+     and call the function launcher.
+
+         :: ' xARMcode #1 xFnRUN ;
+      or
+         << :2:'ARMcode' #1 FnRUN >>
+
+  2- From Saturn Assembler:
+
+     As a program (single entry point). Put a ARM code (in any form) on level 2 on the stack and 
+     the function number on level one (hex string or bint). Use #FFFFFh for the primary entry
+     point or the function number. Call PrLNK. The linker will return the absolute ARM address
+     and the RAM requirement in a hex string on the stack. Then the user can call the code as 
+     follows (note that this example does not check for RAM requirements, it is the developer
+     responsibility to provide proper memory handling:
+
+
+        :: ID ARMcode #FFFFF xPrLNK
+         CODE
+           SAVE
+           A=DAT1.A         % GET THE HXS STRING WITH ADDRESS
+           D0=A
+           D0+10            % SKIP THE PROLOG AND SIZE
+           B=0.W            % NO MEMORY WAS ALLOCATED (B.LoWord=# OF BYTES)
+           C=0.W            % CLEAR THE HIGH WORD (NO MEMORY PROVIDED)
+           C=DAT0.8         % READ THE ARM ADDRESS IN LOW WORD OF C
+           ARMSYS           % CALL THE PROGRAM
+
+           ... REST OF ASSEMBLER PROGRAM
+
+     As library functions, simply replace the #FFFFF for the desired function number.
+
+   IMPORTANT: If the ARM program or function requires RAM to run, it is the caller's responsibility
+              to allocate/deallocate the RAM as needed or provide addresses to unused RAM.
+
+
+7) Passing RAM to ARM programs (non-memory packer):
+   -----------------------------------------------
+
+* If the program/function requires RAM with specific data, the user should know in advance the structure
+  of the data. The launchers in ARM Toolbox won't modify any RAM passed by the user.
+
+* To pass RAM from SysRPL, create a String with enough space, and fill it with the data needed by the
+  ARM function. Notice that the data should be byte-aligned, so you may have to leave a padding nibble
+  at the beginning of the string. The ALIGN and DEALIGN commands in the ARM Toolbox can be helpful here.
+
+* User provided RAM example:
+
+    ::
+     "-RAMSPACE-RAMSPACE-RAMSPACE-"	(string with enough RAM for the program to run)
+     ' xARMcode				(put the ROMPOINTER on the stack)
+     xPrRUN				(launch it)
+					(the string should be on the stack with the result)
+    ;
+
+* To pass RAM from Saturn assembler, put the ARM address of the RAM in the high word of the 'C' register
+  when calling the code. Also, the low word of the B register must contain the amount of memory that can
+  be used at that address (in bytes).
+
+* Saturn Assembler example:
+
+    ...assembler code...
+
+    *CALLARMFUNC
+          % (assume D0 pointing to the memory and assume it's byte-aligned)
+          % (also assume R4 contains the ARM adress of the function to call)
+          % (see previous examples on how to obtain the address)
+          % (assume that we allocated 10 bytes)
+
+      C=0.W
+      CD0EX
+      D0=C				% (C=address)
+ 					% (conversion to ARM domain: ARM = 0X08000000 + SAT/2)
+      CSRB.A				% (C=C/2)
+      P=6				
+      LC(1) 8
+      P=0				% (add 0x08000000)
+      LA(2) 32
+      C=C<A.W                           % (C<<32, put address in high word of C)
+
+      LC(8) 10
+      B=C.W				% (10 BYTES AVAILABLE)
+      P=7
+      C=R4.WP				% (C.LO=ARM address of code)
+      P=0
+      ARMSYS  				% (call the program/function)
+
+    ...assembler code...
+
+    NOTE: The method used in this example is similar to the one used in the PrgRUN and StrRUN launchers.
+
+
+8) Publishing ARM programs using ARM ToolBox:
+   -----------------------------------------
+
+* If you use hpgcc or ASM, follow the instructions from the compiler/assembler and use the proper tools
+  to obtain the string containing the ARM code.
+* If you obtain an old format string (starting with "A>CP") then you need to use the program S->L3 provided
+  in this Toolbox to convert it to the new format.
+
+To publish programs as libraries:
+
+* Create an empty directory for your library
+* Store the ARM code string in a variable, for example "ARMCode".
+* Create a launcher command to make visible to the user. Here is a simple one that launches a program:
+
+  :: ID ARMCode  xPrRUN ;
+
+  It can also be made in UserRPL:
+
+  << 'ARMCode' PrRUN >>
+
+* Store the launcher command in a variable, for example 'RunIt'.
+
+* Create the following variables for CRLIB:
+
+    $ROMID    ->  Your library ID number. Don't forget checking Carsten Dominik listing in www.hpcalc.org
+                  before you choose your number to avoid conflicts.
+    $TITLE    ->  Library title
+    $CONFIG   ->  1
+    $VISIBLE  -> {RunIt}    (put here any other commands that will be visible to the user)
+    $HIDDEN   -> {ARMCode}  (add here other variables used on your library but not visible to the user)
+                              
+* Run the CRLIB command from the development lib.
+
+* Done, don't forget to include the following instructions in your docs (copy and paste from this document
+  is permitted) to tell the final user how to install the library in the calculator:
+
+>>> QUOTABLE TEXT
+
+  How to install
+  --------------
+
+  1) The ARM Toolbox must be installed in the calculator before you can attempt to install this library.
+  2) Download the library to the calculator and put it on the stack (RPN mode assumed)
+  3) Put the number of the port you want to store the library in. Up to here is exactly the same as
+     you would do for any library.
+  4) Run FixSto from the ARM Toolbox (instead of the regular STO)
+  5) Press On-C as usual to let the library attach itself.
+
+>>> END_OF_QUOTABLE TEXT
+
+
+To publish programs as standalone executables:
+
+
+
+
+
+
+8) Disclaimer:
+   -----------
+
+* The ARM ToolBox is provided as is, with no warranty of any kind. Use it at your own risk. I am not responsilbe
+  for any memory losses and/or data corruption that this library may cause.
+
+* 2004/2005 - Claudio Lapilli

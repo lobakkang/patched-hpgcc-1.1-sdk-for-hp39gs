@@ -1,0 +1,56 @@
+win_progress_get_value.o: win_progress_get_value.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hpg/hpgraphics.h ../win.h ../winevent.h ../winwidget.h \
+  ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h ../wincore.h progresspriv.h
+win_progress_new.o: win_progress_new.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hpg/hpgraphics.h ../win.h ../winevent.h ../winwidget.h \
+  ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h ../wincore.h progresspriv.h
+win_progress_set_delay.o: win_progress_set_delay.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hpg/hpgraphics.h ../win.h ../winevent.h ../winwidget.h \
+  ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h ../wincore.h progresspriv.h
+win_progress_set_event.o: win_progress_set_event.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hpg/hpgraphics.h ../win.h ../winevent.h ../winwidget.h \
+  ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h ../wincore.h progresspriv.h
+win_progress_set_inc.o: win_progress_set_inc.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hpg/hpgraphics.h ../win.h ../winevent.h ../winwidget.h \
+  ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h ../wincore.h progresspriv.h
+win_progress_set_orient.o: win_progress_set_orient.c \
+  ../../hplib/hpstdlib.h ../../hplib/hpsys.h ../../hplib/kos.h \
+  ../../hplib/hpstdio.h ../../hplib/hpstring.h ../../hplib/hpctype.h \
+  ../../hplib/hpkeyb49.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h ../wincore.h progresspriv.h
+win_progress_set_range.o: win_progress_set_range.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hpg/hpgraphics.h ../win.h ../winevent.h ../winwidget.h \
+  ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h ../wincore.h progresspriv.h
+win_progress_set_value.o: win_progress_set_value.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hplib/hpstdio.h \
+  ../../hplib/hpstring.h ../../hplib/hpctype.h ../../hplib/hpkeyb49.h \
+  ../../hpg/hpgraphics.h ../win.h ../winevent.h ../winwidget.h \
+  ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h ../wincore.h progresspriv.h

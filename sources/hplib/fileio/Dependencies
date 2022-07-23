@@ -1,0 +1,14 @@
+fclose.o: fclose.c ../hpstdio.h ../hpsys.h ../kos.h ../hpstdlib.h
+fdelete.o: fdelete.c ../kos.h
+fgetc.o: fgetc.c ../hpstdio.h ../hpsys.h ../kos.h
+fgets.o: fgets.c ../hpstdio.h ../hpsys.h ../kos.h
+fopen.o: fopen.c ../hpstdio.h ../hpsys.h ../kos.h ../hpstdlib.h
+fputc.o: fputc.c ../hpstdio.h ../hpsys.h ../kos.h
+fputs.o: fputs.c ../hpstdio.h ../hpsys.h ../kos.h
+fread.o: fread.c ../hpstdio.h ../hpsys.h ../kos.h
+fwrite.o: fwrite.c ../hpstdio.h ../hpsys.h ../kos.h
+kos_GetFuncEntry.o: kos_GetFuncEntry.c ../kos.h ../syscall.h
+kos_fclose.o: kos_fclose.c ../kos.h
+kos_fopen.o: kos_fopen.c ../kos.h
+kos_fread.o: kos_fread.c ../kos.h
+kos_fwrite.o: kos_fwrite.c ../kos.h

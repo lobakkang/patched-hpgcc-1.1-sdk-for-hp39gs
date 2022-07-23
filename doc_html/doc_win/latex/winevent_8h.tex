@@ -1,0 +1,256 @@
+\section{winevent.h File Reference}
+\label{winevent_8h}\index{winevent.h@{winevent.h}}
+Event queue for the HPGCC window system. 
+
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf WIN\_\-IDLE\_\-EVENT}~0
+\begin{CompactList}\small\item\em Event number for the system idle event. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Typedefs}
+\begin{CompactItemize}
+\item 
+typedef int($\ast$ {\bf win\_\-eventhandler} )(void $\ast$event\_\-data, void $\ast$app\_\-data)
+\begin{CompactList}\small\item\em An event handler function. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void {\bf win\_\-init} (void)
+\begin{CompactList}\small\item\em Initializes the window system. \item\end{CompactList}\item 
+int {\bf win\_\-register\_\-event} (void)
+\begin{CompactList}\small\item\em Registers a new event type. \item\end{CompactList}\item 
+int {\bf win\_\-post\_\-event} (int event, void $\ast$event\_\-data)
+\begin{CompactList}\small\item\em Dispatches a new event to any handlers. \item\end{CompactList}\item 
+void {\bf win\_\-add\_\-event\_\-handler} (int event, int priority, {\bf win\_\-eventhandler} handler, void $\ast$app\_\-data)
+\begin{CompactList}\small\item\em Adds a new event handler. \item\end{CompactList}\item 
+void {\bf win\_\-remove\_\-event\_\-handler} (int event, {\bf win\_\-eventhandler} handler, void $\ast$app\_\-data)
+\begin{CompactList}\small\item\em Removes an event handler. \item\end{CompactList}\item 
+void {\bf win\_\-event\_\-loop} (void)
+\begin{CompactList}\small\item\em Waits for events. \item\end{CompactList}\item 
+void {\bf win\_\-event\_\-quit} (void)\label{winevent_8h_a8}
+
+\begin{CompactList}\small\item\em Causes the event loop to exit. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Event queue for the HPGCC window system. 
+
+The foundation of the HPGCC window system is the event queue. The API here is the foundation of the event queue.\subsection{Overview}\label{winevent_8h_overview}
+The event queue is fairly simple in design. It solves several problems:
+
+\begin{itemize}
+\item Getting various sorts of information to an interested party. \item Allowing for busy polling of various resources. \item Implementing both event-based and procedural program models.\end{itemize}
+\begin{Desc}
+\item[Note:]Contrary to the implications of words like \char`\"{}queue\char`\"{} and \char`\"{}post\char`\"{}, event delivery in the HPGCC window system is never deferred to a later point in time.\end{Desc}
+\subsection{The Basics}\label{winevent_8h_basics}
+Use of the event queue follows these general steps:
+
+\begin{itemize}
+\item Initialize the window system. \item Register any custom events that are needed. \item Add any event handlers that are needed. \item Call {\bf win\_\-event\_\-loop}{\rm (p.\,\pageref{winevent_8h_a7})} to process events. \item Call {\bf win\_\-event\_\-quit}{\rm (p.\,\pageref{winevent_8h_a8})} to exit the event loop.\end{itemize}
+\subsubsection{Intializing the window system.}\label{winevent_8h_init}
+All window system code begins with a call to {\bf win\_\-init}{\rm (p.\,\pageref{winevent_8h_a2})}. This function must be called prior to any use of the HPGCC window system. It initializes fundamental data structures, including the system event queue. Any application that calls other window system functions without calling {\bf win\_\-init}{\rm (p.\,\pageref{winevent_8h_a2})} first is likely to crash the calculator.
+
+
+
+\footnotesize\begin{verbatim} win_init();
+\end{verbatim}
+\normalsize
+\subsubsection{Registering Events}\label{winevent_8h_regevent}
+The event queue is capable of delivering arbitrary events to handlers. However, each events requires an identifying event number. In software that consists of one or more third-party libraries, keeping event numbers unique can present a definite challenge. Because event numbers are likely to conflict with each other, {\bf win\_\-register\_\-event}{\rm (p.\,\pageref{winevent_8h_a3})} is provided to retrieve unique event numbers for custom events.
+
+\begin{Desc}
+\item[Note:]Although event registration is provided to help you avoid event number conflicts, you {\bf must} register all of your custom events even if you are not concerned about these conflicts.\end{Desc}
+Once an event has been registered, the event number should be stored and made available to any other modules that need it. You do not supply any information about your event when registering it, and there is no mechanism within the window system to learn about events that have already been registered. The module that registers the event is responsible for meeting that need.
+
+
+
+\footnotesize\begin{verbatim} int event = win_register_event();
+\end{verbatim}
+\normalsize
+
+
+A certain number of system events are provided by the window system, and are provided for free. Many simple applications may not need to register any events. However, application authors should not underestimate the utility of creating and sending custom events when interesting things occur within the application.
+
+Because there is a limited number of events, event numbers should be used to distinguish between kinds of events, rather than individual instances of the event or individual event sources. Any software module that uses events should typically register all events as it is initialized. Event handlers may later access instance-specific or source-specific information using the {\tt app\_\-data} and {\tt event\_\-data} parameters described below.\subsubsection{Creating Event Handlers}\label{winevent_8h_createhandler}
+Next, event handlers are added. In a typical application using the window system, all interesting work is performed by event handlers. The next step is to register those handlers. Event handlers receive two pieces of information: event data, and application data. Handlers return an integer.
+
+
+
+\footnotesize\begin{verbatim} int my_event_handler(void *event_data, void *app_data)
+ {
+     ...
+ }
+\end{verbatim}
+\normalsize
+
+
+The meaning of the {\tt event\_\-data} parameter depends on the event being handled. The meaning of the {\tt app\_\-data} parameter depends on the event handler itself. Both of these parameters should be cast to their appropiate types, if they are needed, and used accordingly. For example, the {\tt event\_\-data} parameter to a handler for {\bf WIN\_\-KEY\_\-PRESSED}{\rm (p.\,\pageref{winkeys_8h_a0})} is actually an integer, so it can be used like this:
+
+
+
+\footnotesize\begin{verbatim} int keycode = (int) event_data;
+ if (keycode == KB_ON) ...
+\end{verbatim}
+\normalsize
+
+
+More commonly, these parameters are set to {\tt NULL} if they are not used, or are used as pointers to some structure containing a variety of information.
+
+The {\tt app\_\-data} parameter belongs to the handler, not the event. It is specified when adding the handler, and is passed unchanged to the event handler each time it is called. This is generally used to provide context for the event handler. For example, the event handler can be given a specific data structure in which to store its results as it operates.
+
+All event handlers return an integer. If that result is zero, then the dispatch of the event continues. If it is non-zero, the event is  consumed and will not be forwarded to any more event handlers. Although the event queue itself does not distinguish between non-zero results, other application logic may use this return value in more sophisticated ways.\subsubsection{Adding Event Handlers}\label{winevent_8h_addhandler}
+Once an event handler has been written, it must be added to a specific event as follows:
+
+
+
+\footnotesize\begin{verbatim} win_add_event_handler(event_num, priority, my_event_handler, app_data);
+\end{verbatim}
+\normalsize
+
+
+The {\tt event\_\-num} is the number of the event to be handled. This is either a system event number, or the result of a previous call to {\bf win\_\-register\_\-event}{\rm (p.\,\pageref{winevent_8h_a3})}. The third and fourth parameters provide the function to call and the {\tt app\_\-data} parameter to pass to that function, respectively.
+
+The priority represents the order in which multiple event handlers will be called for the same event. Event handlers with a higher priority will be called first, and therefore get a chance to consume the event (by returning non-zero from the handler function) before low-priority events see it. Priorities can span the full range of an integer, from approximately negative to positive two billion. The following ranges are reserved for specific purposes:
+
+\begin{itemize}
+\item Absolute value greater than 2 billion. These priorities are reserved for the event queue system. \item Absolute value between 1 billion and 2 billion. These priorities are reserved for use by widgets that are integrated and distributed with the HPGCC libraries. \item Absolute value between zero and one thousand. These priorities are reserved for use directly by the end-user application.\end{itemize}
+All remaining priorities may be used by libraries or reusable code. These are rough guidelines, and may be revised as time reveals better practices.\subsubsection{The Event Loop}\label{winevent_8h_win_event}
+Once event handlers have been added, the {\bf win\_\-event\_\-loop}{\rm (p.\,\pageref{winevent_8h_a7})} function can be called. In most applications using the HPGCC window system, the {\bf win\_\-event\_\-loop}{\rm (p.\,\pageref{winevent_8h_a7})} function begins the main part of the application, in which all work is done in event handlers. Once this function has been called, the event queue will be used to manage the application's actions. The event queue continues to run until some event handler calls {\bf win\_\-event\_\-quit}{\rm (p.\,\pageref{winevent_8h_a8})}.\subsection{Sending Events}\label{winevent_8h_send}
+Although applications are often on the receiving end of events, events can also be sent through the event queue. This is accomplished using the function {\bf win\_\-post\_\-event}{\rm (p.\,\pageref{winevent_8h_a4})}. The application need only supply an event number (either a system event number or one returned from a prior call to {\bf win\_\-register\_\-event}{\rm (p.\,\pageref{winevent_8h_a3})}), and the {\tt event\_\-data} parameter to accompany the event.
+
+
+
+\footnotesize\begin{verbatim} int result = win_post_event(event_number, event_data);
+\end{verbatim}
+\normalsize
+
+
+The return value from win\_\-post\_\-event is zero if no handler consumed the event, or is the return value from the handler that did consume the event. Because this exact value is preserved, it is possible to use {\bf win\_\-post\_\-event}{\rm (p.\,\pageref{winevent_8h_a4})} to retrieve simple information from event handlers. However, this should be considered an advanced use of the function.
+
+Often, applications that use {\bf win\_\-post\_\-event}{\rm (p.\,\pageref{winevent_8h_a4})} are effectively creating a bridge from one event type to another. In that case, it is recommended that the return value from {\bf win\_\-post\_\-event}{\rm (p.\,\pageref{winevent_8h_a4})} is used as the return value for the original event as well. However, there are exceptions to this rule. For example, applications should avoid returning non-zero from {\bf WIN\_\-REPAINT\_\-EVENT}{\rm (p.\,\pageref{winwidget_8h_a0})} handlers, even if they generate other events from that handler.\subsection{Generating New Low-Level Events}\label{winevent_8h_polling}
+One common way to generate new events is to poll some hardware system and post an event when something interesting occurs. For example, an event- based driver for the Ir\-DA serial port could conceivably be written using the event queue. This is accomplished by polling the device in an event handler for {\bf WIN\_\-IDLE\_\-EVENT}{\rm (p.\,\pageref{winevent_8h_a0})}.
+
+{\bf WIN\_\-IDLE\_\-EVENT}{\rm (p.\,\pageref{winevent_8h_a0})} is a special system event that is generated constantly on a regular basis. It is the source of all other events in the system. For this reason, it is important not to interfere with its functioning. The following guidelines apply to event handlers for {\bf WIN\_\-IDLE\_\-EVENT}{\rm (p.\,\pageref{winevent_8h_a0})}.
+
+\begin{itemize}
+\item Handlers for {\bf WIN\_\-IDLE\_\-EVENT}{\rm (p.\,\pageref{winevent_8h_a0})} should not consume the event by returning a non-zero result. This would prevent any events from being generated by a lower-priority handler.\end{itemize}
+\begin{itemize}
+\item {\bf WIN\_\-IDLE\_\-EVENT}{\rm (p.\,\pageref{winevent_8h_a0})} handlers should not run for significant amounts of time. Other handlers may depend on being called on a very frequent basis in order to operate correctly. For example, a long running idle handler could cause the keyboard to miss keystrokes.\end{itemize}
+\subsection{The Pseudo-Procedural Model}\label{winevent_8h_proc}
+For the most part, applications using the system event queue are entirely event-driven. That means that the entirety of their work is done in event handlers. The application sets up these event handlers, calls {\bf win\_\-event\_\-loop}{\rm (p.\,\pageref{winevent_8h_a7})}, and then exists when the event loop is finished. In some cases, though, that may not be the best way for the application to function. Some applications may need to perform long computations or other tasks which are not easily broken into small pieces to be run in event handlers.
+
+This latter class of applications is suited to the window system's pseudo-procedural model. In this model, the application performs most of its own work, but occasionally steps aside to allow event handlers to run. Event handlers are run by sending a {\bf WIN\_\-IDLE\_\-EVENT}{\rm (p.\,\pageref{winevent_8h_a0})} to the system event queue to inform it that the application intends to wait for a moment and process events. 
+
+Definition in file {\bf winevent.h}.
+
+\subsection{Define Documentation}
+\index{winevent.h@{winevent.h}!WIN_IDLE_EVENT@{WIN\_\-IDLE\_\-EVENT}}
+\index{WIN_IDLE_EVENT@{WIN\_\-IDLE\_\-EVENT}!winevent.h@{winevent.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define WIN\_\-IDLE\_\-EVENT~0}\label{winevent_8h_a0}
+
+
+Event number for the system idle event. 
+
+The system idle event is the most important event in the HPGCC window system. It is the fundamental event that causes other events to occur. The idle event itself may be generated either by calling {\bf win\_\-event\_\-loop}{\rm (p.\,\pageref{winevent_8h_a7})} or by periodically calling {\bf win\_\-post\_\-event}{\rm (p.\,\pageref{winevent_8h_a4})} with the appropriate arguments. (The second option is known as the pseudo-procedural model for programming the event queue.)
+
+Handlers for {\bf WIN\_\-IDLE\_\-EVENT}{\rm (p.\,\pageref{winevent_8h_a0})} have two unique requirements beyond handlers for other events. First, the handler should run and return in the minimum possible amount of time. Second, the handler should always return zero, since the system depends on this event being dispatched to all of its handlers.
+
+The event data field for idle events is not defined, and is generally set to {\tt NULL}. 
+
+Definition at line 287 of file winevent.h.
+
+\subsection{Typedef Documentation}
+\index{winevent.h@{winevent.h}!win_eventhandler@{win\_\-eventhandler}}
+\index{win_eventhandler@{win\_\-eventhandler}!winevent.h@{winevent.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}typedef int($\ast$ {\bf win\_\-eventhandler})(void $\ast$event\_\-data, void $\ast$app\_\-data)}\label{winevent_8h_a1}
+
+
+An event handler function. 
+
+This is the required signature for event handler functions.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em event\_\-data}]A data object describing the event that occurred. \item[{\em app\_\-data}]A data object associated with this event handler.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Zero to continue dispatching the event to other handlers; or non-zero to stop the event from being further processed. \end{Desc}
+
+
+Definition at line 300 of file winevent.h.
+
+\subsection{Function Documentation}
+\index{winevent.h@{winevent.h}!win_add_event_handler@{win\_\-add\_\-event\_\-handler}}
+\index{win_add_event_handler@{win\_\-add\_\-event\_\-handler}!winevent.h@{winevent.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void win\_\-add\_\-event\_\-handler (int {\em event}, int {\em priority}, {\bf win\_\-eventhandler} {\em handler}, void $\ast$ {\em app\_\-data})}\label{winevent_8h_a5}
+
+
+Adds a new event handler. 
+
+A new handler will be added to the list of handlers for the event type indicated by the {\tt event} parameter.
+
+\begin{Desc}
+\item[Note:]Modifying the list of handlers has no effect on any event dispatch that is already in progress. The change will take effect for any future calls to {\bf win\_\-post\_\-event}{\rm (p.\,\pageref{winevent_8h_a4})}.\end{Desc}
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em event}]The event number for which the handler should be called. \item[{\em priority}]The priority; the higher this number, the sooner the handler is called for its event type. Priorities can be any valid number in the {\tt int} range, including negative numbers. \item[{\em handler}]The callback function to be notified about this event.\item[{\em app\_\-data}]An arbitrary piece of data to send along with any event notifications to this handler. The interpretation of this parameter is dependent on the event handler function. The handler function may cast it to the desired type. \end{description}
+\end{Desc}
+\index{winevent.h@{winevent.h}!win_event_loop@{win\_\-event\_\-loop}}
+\index{win_event_loop@{win\_\-event\_\-loop}!winevent.h@{winevent.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void win\_\-event\_\-loop (void)}\label{winevent_8h_a7}
+
+
+Waits for events. 
+
+This function forms the main section of most applications using the HPGCC window system. It causes events to be detected and dispatched. It does not return until some event handler calls {\bf win\_\-event\_\-quit}{\rm (p.\,\pageref{winevent_8h_a8})}. \index{winevent.h@{winevent.h}!win_init@{win\_\-init}}
+\index{win_init@{win\_\-init}!winevent.h@{winevent.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void win\_\-init (void)}\label{winevent_8h_a2}
+
+
+Initializes the window system. 
+
+This function {\bf must} be called before using any of the window system. It initializes internal data structures such as the event queue. \index{winevent.h@{winevent.h}!win_post_event@{win\_\-post\_\-event}}
+\index{win_post_event@{win\_\-post\_\-event}!winevent.h@{winevent.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int win\_\-post\_\-event (int {\em event}, void $\ast$ {\em event\_\-data})}\label{winevent_8h_a4}
+
+
+Dispatches a new event to any handlers. 
+
+The event information passed to this function will be sent along to any event handlers that have been added for the given message type. The message is sent to handlers in the opposite order that they were added, so the most recently added handler is the first to receive the message. More handlers will be called until one of them returns a non-zero value to indicate that it has completely handled the message.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em event}]The event number for the event to post.\item[{\em event\_\-data}]A data object. The meaning of this object is dependent on the event number, and it can be cast to the correct type by the event handler.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]Zero if no event handlers returned non-zero; otherwise, the return value of the first handler to return non-zero. \end{Desc}
+\index{winevent.h@{winevent.h}!win_register_event@{win\_\-register\_\-event}}
+\index{win_register_event@{win\_\-register\_\-event}!winevent.h@{winevent.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int win\_\-register\_\-event (void)}\label{winevent_8h_a3}
+
+
+Registers a new event type. 
+
+Any applications or widgets that send events of their own types should register those events using this function. The main purpose of event registration is to be sure that applications and libraries don't use the same event number for different purposes.
+
+\begin{Desc}
+\item[Returns:]The newly registered event number. This number should be saved and used later for calls to {\bf win\_\-add\_\-event\_\-handler}{\rm (p.\,\pageref{winevent_8h_a5})} and {\bf win\_\-post\_\-event}{\rm (p.\,\pageref{winevent_8h_a4})}. \end{Desc}
+\index{winevent.h@{winevent.h}!win_remove_event_handler@{win\_\-remove\_\-event\_\-handler}}
+\index{win_remove_event_handler@{win\_\-remove\_\-event\_\-handler}!winevent.h@{winevent.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void win\_\-remove\_\-event\_\-handler (int {\em event}, {\bf win\_\-eventhandler} {\em handler}, void $\ast$ {\em app\_\-data})}\label{winevent_8h_a6}
+
+
+Removes an event handler. 
+
+The most recently added event handler with the given function {\bf and} data object will be removed. If there is no such handler, then the function has no effect.
+
+\begin{Desc}
+\item[Note:]Modifying the list of handlers has no effect on any event dispatch that is already in progress. The change will take effect for any future calls to {\bf win\_\-post\_\-event}{\rm (p.\,\pageref{winevent_8h_a4})}. If the {\tt app\_\-data} parameter points to a dynamically allocated data structure, that memory should not be released until it can be guaranteed that all event dispatches that were begun at the time this event handler was called are completed.\end{Desc}
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em event}]The event number for which the handler should be removed. \item[{\em handler}]The handler callback function that was added. \item[{\em app\_\-data}]The data object specified when the handler was added. \end{description}
+\end{Desc}

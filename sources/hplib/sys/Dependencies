@@ -1,0 +1,39 @@
+atexit.o: atexit.c ../hpsys.h ../kos.h ../hpstdlib.h
+calloc.o: calloc.c ../hpstdlib.h ../hpsys.h ../kos.h
+divlu2.o: divlu2.c ../hpsys.h ../kos.h
+exit.o: exit.c ../hpsys.h ../kos.h ../hpstdlib.h ../hpstdio.h
+malloc.o: malloc.c ../hpstdlib.h ../hpsys.h ../kos.h
+memcmp.o: memcmp.c ../hpstdlib.h ../hpsys.h ../kos.h
+memcpy.o: memcpy.c ../hpstdlib.h ../hpsys.h ../kos.h
+memcpyw.o: memcpyw.c
+memmove.o: memmove.c ../hpstdlib.h ../hpsys.h ../kos.h
+memset.o: memset.c
+memsetw.o: memsetw.c
+realloc.o: realloc.c ../hpstdlib.h ../hpsys.h ../kos.h ../hpstring.h \
+  ../hpctype.h
+sbrk.o: sbrk.c ../hpstdlib.h ../hpsys.h ../kos.h
+sys_LCDSynch.o: sys_LCDSynch.c
+sys_RTC_seconds.o: sys_RTC_seconds.c ../hpsys.h ../kos.h
+sys_bcd2bin.o: sys_bcd2bin.c ../hpmath.h
+sys_bcd2str.o: sys_bcd2str.c ../hpsys.h ../kos.h
+sys_delta_seconds.o: sys_delta_seconds.c
+sys_error.o: sys_error.c ../hpsys.h ../kos.h ../hpstdlib.h ../hpstdio.h \
+  ../hpkeyb49.h
+sys_flush_cache.o: sys_flush_cache.c
+sys_getPWMCounter0.o: sys_getPWMCounter0.c
+sys_intOff.o: sys_intOff.c
+sys_intOn.o: sys_intOn.c
+sys_isRTCTick.o: sys_isRTCTick.c ../hpsys.h ../kos.h
+sys_map.o: sys_map.c
+sys_phys_malloc.o: sys_phys_malloc.c ../hpsys.h ../kos.h ../hpstdlib.h
+sys_playTone.o: sys_playTone.c ../hpsys.h ../kos.h
+sys_playTone2.o: sys_playTone2.c ../hpsys.h ../kos.h
+sys_restoreTimers.o: sys_restoreTimers.c
+sys_setRTCTickPeriod.o: sys_setRTCTickPeriod.c
+sys_setupTimers.o: sys_setupTimers.c
+sys_sleep.o: sys_sleep.c ../hpsys.h ../kos.h
+sys_slowOff.o: sys_slowOff.c ../hpsys.h ../kos.h
+sys_slowOn.o: sys_slowOn.c ../hpsys.h ../kos.h
+sys_updateTimer.o: sys_updateTimer.c ../hpsys.h ../kos.h ../hpstdio.h
+sys_waitRTCTicks.o: sys_waitRTCTicks.c ../hpsys.h ../kos.h
+sys_waitTicks.o: sys_waitTicks.c

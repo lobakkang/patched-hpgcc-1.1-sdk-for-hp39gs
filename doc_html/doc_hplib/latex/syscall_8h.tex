@@ -1,0 +1,321 @@
+\section{syscall.h File Reference}
+\label{syscall_8h}\index{syscall.h@{syscall.h}}
+{\tt \#include $<$kos.h$>$}\par
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf Reset\-Entry}\ 1
+\item 
+\#define {\bf LCDGet\-Contrast\-Entry}\ 13
+\item 
+\#define {\bf Get\-Display\-Buffer\-Entry}\ 17
+\item 
+\#define {\bf Get\-Sys\-Tick\-Time\-Entry}\ 24
+\item 
+\#define {\bf Clear\-Lcd\-Entry}\ 26
+\item 
+\#define {\bf Get\-Serial\-Entry}\ 27
+\item 
+\#define {\bf Check\-Beep\-End\-Entry}\ 28
+\item 
+\#define {\bf Stop\-Beep\-Entry}\ 29
+\item 
+\#define {\bf Get\-CPUSpeed}\ 30
+\item 
+\#define {\bf free\-Entry}\ 101
+\item 
+\#define {\bf close\-Entry}\ 124
+\item 
+\#define {\bf Get\-RTCTime\-Entry}\ 125
+\item 
+\#define {\bf Set\-RTCTime\-Entry}\ 126
+\item 
+\#define {\bf LCDSet\-Contrast\-Entry}\ 127
+\item 
+\#define {\bf Lcd\-Refresh\-Entry}\ 139
+\item 
+\#define {\bf Lcd\-Refresh\-Switch\-Entry}\ 140
+\item 
+\#define {\bf malloc\-Entry}\ 201
+\item 
+\#define {\bf Get\-Func\-Entry}\ 218
+\item 
+\#define {\bf Set\-CPUFreq\-Entry}\ 219
+\item 
+\#define {\bf beep\-Entry}\ 305
+\item 
+\#define {\bf Put\-String\-Entry}\ 306
+\item 
+\#define {\bf Put\-Hex\-Number\-Entry}\ 307
+\item 
+\#define {\bf Create\-Task\-Entry}\ 401
+\item 
+\#define {\bf read\-Entry}\ 402
+\item 
+\#define {\bf write\-Entry}\ 403
+\item 
+\#define {\bf Put\-Dec\-Number\-Entry}\ 404
+\item 
+\#define {\bf Num2String\-Entry}\ 405
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+{\bf U32} {\bf Sys\-Call} ({\bf U32} index)
+\item 
+{\bf U32} {\bf syscall\-Arg0} ({\bf U32} index)
+\item 
+{\bf U32} {\bf syscall\-Arg1} ({\bf U32} index, {\bf U32} arg1)
+\item 
+{\bf U32} {\bf syscall\-Arg2} ({\bf U32} index, {\bf U32} arg1, {\bf U32} arg2)
+\item 
+{\bf U32} {\bf syscall\-Arg3} ({\bf U32} index, {\bf U32} arg1, {\bf U32} arg2, {\bf U32} arg3)
+\item 
+{\bf U32} {\bf syscall\-Arg4} ({\bf U32} index, {\bf U32} arg1, {\bf U32} arg2, {\bf U32} arg3, {\bf U32} arg4)
+\item 
+{\bf U32} {\bf syscall\-Arg5} ({\bf U32} index, {\bf U32} arg1, {\bf U32} arg2, {\bf U32} arg3, {\bf U32} arg4, {\bf U32} arg5)
+\item 
+{\bf U32} {\bf syscall\-Arg6} ({\bf U32} index, {\bf U32} arg1, {\bf U32} arg2, {\bf U32} arg3, {\bf U32} arg4, {\bf U32} arg5, {\bf U32} arg6)
+\item 
+{\bf U32} {\bf syscall\-Arg7} ({\bf U32} index, {\bf U32} arg1, {\bf U32} arg2, {\bf U32} arg3, {\bf U32} arg4, {\bf U32} arg5, {\bf U32} arg6, {\bf U32} arg7)
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\index{syscall.h@{syscall.h}!beepEntry@{beepEntry}}
+\index{beepEntry@{beepEntry}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define beep\-Entry\ 305}\label{syscall_8h_a19}
+
+
+
+
+Definition at line 52 of file syscall.h.\index{syscall.h@{syscall.h}!CheckBeepEndEntry@{CheckBeepEndEntry}}
+\index{CheckBeepEndEntry@{CheckBeepEndEntry}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Check\-Beep\-End\-Entry\ 28}\label{syscall_8h_a6}
+
+
+
+
+Definition at line 24 of file syscall.h.\index{syscall.h@{syscall.h}!ClearLcdEntry@{ClearLcdEntry}}
+\index{ClearLcdEntry@{ClearLcdEntry}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Clear\-Lcd\-Entry\ 26}\label{syscall_8h_a4}
+
+
+
+
+Definition at line 21 of file syscall.h.\index{syscall.h@{syscall.h}!closeEntry@{closeEntry}}
+\index{closeEntry@{closeEntry}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define close\-Entry\ 124}\label{syscall_8h_a10}
+
+
+
+
+Definition at line 31 of file syscall.h.\index{syscall.h@{syscall.h}!CreateTaskEntry@{CreateTaskEntry}}
+\index{CreateTaskEntry@{CreateTaskEntry}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Create\-Task\-Entry\ 401}\label{syscall_8h_a22}
+
+
+
+
+Definition at line 58 of file syscall.h.\index{syscall.h@{syscall.h}!freeEntry@{freeEntry}}
+\index{freeEntry@{freeEntry}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define free\-Entry\ 101}\label{syscall_8h_a9}
+
+
+
+
+Definition at line 29 of file syscall.h.\index{syscall.h@{syscall.h}!GetCPUSpeed@{GetCPUSpeed}}
+\index{GetCPUSpeed@{GetCPUSpeed}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Get\-CPUSpeed\ 30}\label{syscall_8h_a8}
+
+
+
+
+Definition at line 26 of file syscall.h.\index{syscall.h@{syscall.h}!GetDisplayBufferEntry@{GetDisplayBufferEntry}}
+\index{GetDisplayBufferEntry@{GetDisplayBufferEntry}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Get\-Display\-Buffer\-Entry\ 17}\label{syscall_8h_a2}
+
+
+
+
+Definition at line 16 of file syscall.h.\index{syscall.h@{syscall.h}!GetFuncEntry@{GetFuncEntry}}
+\index{GetFuncEntry@{GetFuncEntry}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Get\-Func\-Entry\ 218}\label{syscall_8h_a17}
+
+
+
+
+Definition at line 47 of file syscall.h.\index{syscall.h@{syscall.h}!GetRTCTimeEntry@{GetRTCTimeEntry}}
+\index{GetRTCTimeEntry@{GetRTCTimeEntry}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Get\-RTCTime\-Entry\ 125}\label{syscall_8h_a11}
+
+
+
+
+Definition at line 32 of file syscall.h.\index{syscall.h@{syscall.h}!GetSerialEntry@{GetSerialEntry}}
+\index{GetSerialEntry@{GetSerialEntry}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Get\-Serial\-Entry\ 27}\label{syscall_8h_a5}
+
+
+
+
+Definition at line 22 of file syscall.h.\index{syscall.h@{syscall.h}!GetSysTickTimeEntry@{GetSysTickTimeEntry}}
+\index{GetSysTickTimeEntry@{GetSysTickTimeEntry}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Get\-Sys\-Tick\-Time\-Entry\ 24}\label{syscall_8h_a3}
+
+
+
+
+Definition at line 19 of file syscall.h.\index{syscall.h@{syscall.h}!LCDGetContrastEntry@{LCDGetContrastEntry}}
+\index{LCDGetContrastEntry@{LCDGetContrastEntry}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define LCDGet\-Contrast\-Entry\ 13}\label{syscall_8h_a1}
+
+
+
+
+Definition at line 14 of file syscall.h.\index{syscall.h@{syscall.h}!LcdRefreshEntry@{LcdRefreshEntry}}
+\index{LcdRefreshEntry@{LcdRefreshEntry}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Lcd\-Refresh\-Entry\ 139}\label{syscall_8h_a14}
+
+
+
+
+Definition at line 38 of file syscall.h.\index{syscall.h@{syscall.h}!LcdRefreshSwitchEntry@{LcdRefreshSwitchEntry}}
+\index{LcdRefreshSwitchEntry@{LcdRefreshSwitchEntry}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Lcd\-Refresh\-Switch\-Entry\ 140}\label{syscall_8h_a15}
+
+
+
+
+Definition at line 39 of file syscall.h.\index{syscall.h@{syscall.h}!LCDSetContrastEntry@{LCDSetContrastEntry}}
+\index{LCDSetContrastEntry@{LCDSetContrastEntry}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define LCDSet\-Contrast\-Entry\ 127}\label{syscall_8h_a13}
+
+
+
+
+Definition at line 34 of file syscall.h.\index{syscall.h@{syscall.h}!mallocEntry@{mallocEntry}}
+\index{mallocEntry@{mallocEntry}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define malloc\-Entry\ 201}\label{syscall_8h_a16}
+
+
+
+
+Definition at line 42 of file syscall.h.\index{syscall.h@{syscall.h}!Num2StringEntry@{Num2StringEntry}}
+\index{Num2StringEntry@{Num2StringEntry}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Num2String\-Entry\ 405}\label{syscall_8h_a26}
+
+
+
+
+Definition at line 63 of file syscall.h.\index{syscall.h@{syscall.h}!PutDecNumberEntry@{PutDecNumberEntry}}
+\index{PutDecNumberEntry@{PutDecNumberEntry}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Put\-Dec\-Number\-Entry\ 404}\label{syscall_8h_a25}
+
+
+
+
+Definition at line 62 of file syscall.h.\index{syscall.h@{syscall.h}!PutHexNumberEntry@{PutHexNumberEntry}}
+\index{PutHexNumberEntry@{PutHexNumberEntry}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Put\-Hex\-Number\-Entry\ 307}\label{syscall_8h_a21}
+
+
+
+
+Definition at line 55 of file syscall.h.\index{syscall.h@{syscall.h}!PutStringEntry@{PutStringEntry}}
+\index{PutStringEntry@{PutStringEntry}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Put\-String\-Entry\ 306}\label{syscall_8h_a20}
+
+
+
+
+Definition at line 54 of file syscall.h.\index{syscall.h@{syscall.h}!readEntry@{readEntry}}
+\index{readEntry@{readEntry}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define read\-Entry\ 402}\label{syscall_8h_a23}
+
+
+
+
+Definition at line 60 of file syscall.h.\index{syscall.h@{syscall.h}!ResetEntry@{ResetEntry}}
+\index{ResetEntry@{ResetEntry}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Reset\-Entry\ 1}\label{syscall_8h_a0}
+
+
+
+
+Definition at line 13 of file syscall.h.\index{syscall.h@{syscall.h}!SetCPUFreqEntry@{SetCPUFreqEntry}}
+\index{SetCPUFreqEntry@{SetCPUFreqEntry}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Set\-CPUFreq\-Entry\ 219}\label{syscall_8h_a18}
+
+
+
+
+Definition at line 48 of file syscall.h.\index{syscall.h@{syscall.h}!SetRTCTimeEntry@{SetRTCTimeEntry}}
+\index{SetRTCTimeEntry@{SetRTCTimeEntry}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Set\-RTCTime\-Entry\ 126}\label{syscall_8h_a12}
+
+
+
+
+Definition at line 33 of file syscall.h.\index{syscall.h@{syscall.h}!StopBeepEntry@{StopBeepEntry}}
+\index{StopBeepEntry@{StopBeepEntry}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define Stop\-Beep\-Entry\ 29}\label{syscall_8h_a7}
+
+
+
+
+Definition at line 25 of file syscall.h.\index{syscall.h@{syscall.h}!writeEntry@{writeEntry}}
+\index{writeEntry@{writeEntry}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define write\-Entry\ 403}\label{syscall_8h_a24}
+
+
+
+
+Definition at line 61 of file syscall.h.
+
+\subsection{Function Documentation}
+\index{syscall.h@{syscall.h}!SysCall@{SysCall}}
+\index{SysCall@{SysCall}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf U32} Sys\-Call ({\bf U32} {\em index})}\label{syscall_8h_a27}
+
+
+\index{syscall.h@{syscall.h}!syscallArg0@{syscallArg0}}
+\index{syscallArg0@{syscallArg0}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf U32} syscall\-Arg0 ({\bf U32} {\em index})}\label{syscall_8h_a28}
+
+
+\index{syscall.h@{syscall.h}!syscallArg1@{syscallArg1}}
+\index{syscallArg1@{syscallArg1}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf U32} syscall\-Arg1 ({\bf U32} {\em index}, {\bf U32} {\em arg1})}\label{syscall_8h_a29}
+
+
+\index{syscall.h@{syscall.h}!syscallArg2@{syscallArg2}}
+\index{syscallArg2@{syscallArg2}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf U32} syscall\-Arg2 ({\bf U32} {\em index}, {\bf U32} {\em arg1}, {\bf U32} {\em arg2})}\label{syscall_8h_a30}
+
+
+\index{syscall.h@{syscall.h}!syscallArg3@{syscallArg3}}
+\index{syscallArg3@{syscallArg3}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf U32} syscall\-Arg3 ({\bf U32} {\em index}, {\bf U32} {\em arg1}, {\bf U32} {\em arg2}, {\bf U32} {\em arg3})}\label{syscall_8h_a31}
+
+
+\index{syscall.h@{syscall.h}!syscallArg4@{syscallArg4}}
+\index{syscallArg4@{syscallArg4}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf U32} syscall\-Arg4 ({\bf U32} {\em index}, {\bf U32} {\em arg1}, {\bf U32} {\em arg2}, {\bf U32} {\em arg3}, {\bf U32} {\em arg4})}\label{syscall_8h_a32}
+
+
+\index{syscall.h@{syscall.h}!syscallArg5@{syscallArg5}}
+\index{syscallArg5@{syscallArg5}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf U32} syscall\-Arg5 ({\bf U32} {\em index}, {\bf U32} {\em arg1}, {\bf U32} {\em arg2}, {\bf U32} {\em arg3}, {\bf U32} {\em arg4}, {\bf U32} {\em arg5})}\label{syscall_8h_a33}
+
+
+\index{syscall.h@{syscall.h}!syscallArg6@{syscallArg6}}
+\index{syscallArg6@{syscallArg6}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf U32} syscall\-Arg6 ({\bf U32} {\em index}, {\bf U32} {\em arg1}, {\bf U32} {\em arg2}, {\bf U32} {\em arg3}, {\bf U32} {\em arg4}, {\bf U32} {\em arg5}, {\bf U32} {\em arg6})}\label{syscall_8h_a34}
+
+
+\index{syscall.h@{syscall.h}!syscallArg7@{syscallArg7}}
+\index{syscallArg7@{syscallArg7}!syscall.h@{syscall.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf U32} syscall\-Arg7 ({\bf U32} {\em index}, {\bf U32} {\em arg1}, {\bf U32} {\em arg2}, {\bf U32} {\em arg3}, {\bf U32} {\em arg4}, {\bf U32} {\em arg5}, {\bf U32} {\em arg6}, {\bf U32} {\em arg7})}\label{syscall_8h_a35}
+
+

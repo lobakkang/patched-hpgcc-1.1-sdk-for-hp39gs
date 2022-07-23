@@ -1,0 +1,37 @@
+_win_box_prefsize.o: _win_box_prefsize.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../win.h ../winevent.h \
+  ../winwidget.h ../../hpg/hpgraphics.h ../winkeys.h ../wintimer.h \
+  ../winsoftmenu.h ../wintext.h ../winprogress.h ../wincheckbox.h \
+  ../winbox.h ../winchoose.h ../winimg.h ../wincore.h boxpriv.h
+win_box_add.o: win_box_add.c ../../hplib/hpstdlib.h ../../hplib/hpsys.h \
+  ../../hplib/kos.h ../win.h ../winevent.h ../winwidget.h \
+  ../../hpg/hpgraphics.h ../winkeys.h ../wintimer.h ../winsoftmenu.h \
+  ../wintext.h ../winprogress.h ../wincheckbox.h ../winbox.h \
+  ../winchoose.h ../winimg.h ../wincore.h boxpriv.h
+win_box_add_at.o: win_box_add_at.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../win.h ../winevent.h \
+  ../winwidget.h ../../hpg/hpgraphics.h ../winkeys.h ../wintimer.h \
+  ../winsoftmenu.h ../wintext.h ../winprogress.h ../wincheckbox.h \
+  ../winbox.h ../winchoose.h ../winimg.h ../wincore.h boxpriv.h
+win_box_add_with.o: win_box_add_with.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../win.h ../winevent.h \
+  ../winwidget.h ../../hpg/hpgraphics.h ../winkeys.h ../wintimer.h \
+  ../winsoftmenu.h ../wintext.h ../winprogress.h ../wincheckbox.h \
+  ../winbox.h ../winchoose.h ../winimg.h ../wincore.h boxpriv.h
+win_box_layout.o: win_box_layout.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../../hplib/hpstring.h \
+  ../../hplib/hpctype.h ../win.h ../winevent.h ../winwidget.h \
+  ../../hpg/hpgraphics.h ../winkeys.h ../wintimer.h ../winsoftmenu.h \
+  ../wintext.h ../winprogress.h ../wincheckbox.h ../winbox.h \
+  ../winchoose.h ../winimg.h ../wincore.h boxpriv.h
+win_box_new.o: win_box_new.c ../../hplib/hpstdlib.h ../../hplib/hpsys.h \
+  ../../hplib/kos.h ../../hplib/hpstring.h ../../hplib/hpctype.h \
+  ../../hplib/hpkeyb49.h ../../hpg/hpgraphics.h ../win.h ../winevent.h \
+  ../winwidget.h ../winkeys.h ../wintimer.h ../winsoftmenu.h ../wintext.h \
+  ../winprogress.h ../wincheckbox.h ../winbox.h ../winchoose.h \
+  ../winimg.h ../wincore.h boxpriv.h
+win_box_remove.o: win_box_remove.c ../../hplib/hpstdlib.h \
+  ../../hplib/hpsys.h ../../hplib/kos.h ../win.h ../winevent.h \
+  ../winwidget.h ../../hpg/hpgraphics.h ../winkeys.h ../wintimer.h \
+  ../winsoftmenu.h ../wintext.h ../winprogress.h ../wincheckbox.h \
+  ../winbox.h ../winchoose.h ../winimg.h ../wincore.h boxpriv.h

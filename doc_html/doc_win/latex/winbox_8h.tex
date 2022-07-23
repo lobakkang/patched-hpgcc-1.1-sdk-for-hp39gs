@@ -1,0 +1,138 @@
+\section{winbox.h File Reference}
+\label{winbox_8h}\index{winbox.h@{winbox.h}}
+Include for box widget to group other widgets. 
+
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf WIN\_\-BOX\_\-LEADING}~-1\label{winbox_8h_a0}
+
+\begin{CompactList}\small\item\em Alignment to the leading edge (left or top). \item\end{CompactList}\item 
+\#define {\bf WIN\_\-BOX\_\-CENTER}~0\label{winbox_8h_a1}
+
+\begin{CompactList}\small\item\em Alignment to the center. \item\end{CompactList}\item 
+\#define {\bf WIN\_\-BOX\_\-TRAILING}~1\label{winbox_8h_a2}
+
+\begin{CompactList}\small\item\em Alignment to the trailing edge (right or bottom). \item\end{CompactList}\item 
+\#define {\bf WIN\_\-BOX\_\-FILL}~-2\label{winbox_8h_a3}
+
+\begin{CompactList}\small\item\em Alignment filling the space to both edges. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+{\bf win\_\-widget\_\-t} $\ast$ {\bf win\_\-box\_\-new} (void)
+\begin{CompactList}\small\item\em Creates a new box. \item\end{CompactList}\item 
+{\bf win\_\-widget\_\-t} $\ast$ {\bf win\_\-box\_\-new\_\-padding} (int xpad, int ypad)
+\begin{CompactList}\small\item\em Creates a new box with cell padding. \item\end{CompactList}\item 
+void {\bf win\_\-box\_\-add} ({\bf win\_\-widget\_\-t} $\ast$widget, {\bf win\_\-widget\_\-t} $\ast$child)
+\begin{CompactList}\small\item\em Adds a widget to a box. \item\end{CompactList}\item 
+void {\bf win\_\-box\_\-add\_\-at} ({\bf win\_\-widget\_\-t} $\ast$widget, {\bf win\_\-widget\_\-t} $\ast$child, int row, int col)
+\begin{CompactList}\small\item\em Adds a widget to a box at a specific location. \item\end{CompactList}\item 
+void {\bf win\_\-box\_\-add\_\-with} ({\bf win\_\-widget\_\-t} $\ast$widget, {\bf win\_\-widget\_\-t} $\ast$child, int row, int col, double xweight, double yweight, int pwidth, int pheight, int align\_\-x, int align\_\-y)
+\begin{CompactList}\small\item\em Adds a widget to a box with specific layout parameters. \item\end{CompactList}\item 
+void {\bf win\_\-box\_\-remove} ({\bf win\_\-widget\_\-t} $\ast$widget, {\bf win\_\-widget\_\-t} $\ast$child)
+\begin{CompactList}\small\item\em Removes a widgets from a box. \item\end{CompactList}\item 
+void {\bf win\_\-box\_\-layout} ({\bf win\_\-widget\_\-t} $\ast$widget)
+\begin{CompactList}\small\item\em Moves the widgets in this box into their proper position. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Include for box widget to group other widgets. 
+
+The box widget is an invisible widget, whose purpose is to group other widgets so that they can be added and removed from the window system as a group.
+
+Boxes are also capable of laying out their children according to a grid model. When each widget is added to the box, it can be given a position and a slew of other parameters controlling its layout. Calling {\bf win\_\-box\_\-layout}{\rm (p.\,\pageref{winbox_8h_a10})} will change the positions and sizes of the components in the box to fit the desired layout. 
+
+Definition in file {\bf winbox.h}.
+
+\subsection{Function Documentation}
+\index{winbox.h@{winbox.h}!win_box_add@{win\_\-box\_\-add}}
+\index{win_box_add@{win\_\-box\_\-add}!winbox.h@{winbox.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void win\_\-box\_\-add ({\bf win\_\-widget\_\-t} $\ast$ {\em widget}, {\bf win\_\-widget\_\-t} $\ast$ {\em child})}\label{winbox_8h_a6}
+
+
+Adds a widget to a box. 
+
+The child widget will be added at location (0, 0) and have defaults for all layout parameters. Typically, this function is used when there is no intent to call {\bf win\_\-box\_\-layout}{\rm (p.\,\pageref{winbox_8h_a10})}.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em widget}]The box widget. \item[{\em child}]The widget to be added. \end{description}
+\end{Desc}
+\index{winbox.h@{winbox.h}!win_box_add_at@{win\_\-box\_\-add\_\-at}}
+\index{win_box_add_at@{win\_\-box\_\-add\_\-at}!winbox.h@{winbox.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void win\_\-box\_\-add\_\-at ({\bf win\_\-widget\_\-t} $\ast$ {\em widget}, {\bf win\_\-widget\_\-t} $\ast$ {\em child}, int {\em row}, int {\em col})}\label{winbox_8h_a7}
+
+
+Adds a widget to a box at a specific location. 
+
+The child widget will be added at a specific location within the box, with defaults for all other layout parameters. The widget will not physically move, however, until {\bf win\_\-box\_\-layout}{\rm (p.\,\pageref{winbox_8h_a10})} is called.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em widget}]The box widget. \item[{\em child}]The widget to be added. \item[{\em row}]The zero-indexed row number to which to add the widget. \item[{\em col}]The zero-indexed column number to which to add the widget. \end{description}
+\end{Desc}
+\index{winbox.h@{winbox.h}!win_box_add_with@{win\_\-box\_\-add\_\-with}}
+\index{win_box_add_with@{win\_\-box\_\-add\_\-with}!winbox.h@{winbox.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void win\_\-box\_\-add\_\-with ({\bf win\_\-widget\_\-t} $\ast$ {\em widget}, {\bf win\_\-widget\_\-t} $\ast$ {\em child}, int {\em row}, int {\em col}, double {\em xweight}, double {\em yweight}, int {\em pwidth}, int {\em pheight}, int {\em align\_\-x}, int {\em align\_\-y})}\label{winbox_8h_a8}
+
+
+Adds a widget to a box with specific layout parameters. 
+
+The child widget will be added at a specific location within the box, with given values for all layout parameters. The widget will not physically move, however, until {\bf win\_\-box\_\-layout}{\rm (p.\,\pageref{winbox_8h_a10})} is called.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em widget}]The box widget. \item[{\em child}]The widget to be added. \item[{\em row}]The zero-indexed row number to which to add the widget. \item[{\em col}]The zero-indexed column number to which to add the widget. \item[{\em xweight}]The widget weight in the x dimension. \item[{\em yweight}]The widget weight in the y dimension. \item[{\em pwidth}]The effective preferred width (or -1 to ask the widget). \item[{\em pheight}]The effective preferred height (or -1 to ask the widget). \item[{\em align\_\-x}]The x dimension alignment to be used when there is extra space beyond the preferred size of the widget. Possible values are {\bf WIN\_\-BOX\_\-LEADING}{\rm (p.\,\pageref{winbox_8h_a0})}, {\bf WIN\_\-BOX\_\-CENTER}{\rm (p.\,\pageref{winbox_8h_a1})}, {\bf WIN\_\-BOX\_\-TRAILING}{\rm (p.\,\pageref{winbox_8h_a2})}, and {\bf WIN\_\-BOX\_\-FILL}{\rm (p.\,\pageref{winbox_8h_a3})}. \item[{\em align\_\-y}]The y dimension alignment to be used when there is extra space beyond the preferred size of the widget. Possible values are {\bf WIN\_\-BOX\_\-LEADING}{\rm (p.\,\pageref{winbox_8h_a0})}, {\bf WIN\_\-BOX\_\-CENTER}{\rm (p.\,\pageref{winbox_8h_a1})}, {\bf WIN\_\-BOX\_\-TRAILING}{\rm (p.\,\pageref{winbox_8h_a2})}, and {\bf WIN\_\-BOX\_\-FILL}{\rm (p.\,\pageref{winbox_8h_a3})}. \end{description}
+\end{Desc}
+\index{winbox.h@{winbox.h}!win_box_layout@{win\_\-box\_\-layout}}
+\index{win_box_layout@{win\_\-box\_\-layout}!winbox.h@{winbox.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void win\_\-box\_\-layout ({\bf win\_\-widget\_\-t} $\ast$ {\em widget})}\label{winbox_8h_a10}
+
+
+Moves the widgets in this box into their proper position. 
+
+The widgets will be moved into a grid formation, according to the layout parameters attached to each widget. \index{winbox.h@{winbox.h}!win_box_new@{win\_\-box\_\-new}}
+\index{win_box_new@{win\_\-box\_\-new}!winbox.h@{winbox.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf win\_\-widget\_\-t}$\ast$ win\_\-box\_\-new (void)}\label{winbox_8h_a4}
+
+
+Creates a new box. 
+
+The result of this call is a new box, which can be used to group items onto the page. The box has an initial padding of 0 pixels between cells.
+
+\begin{Desc}
+\item[Returns:]A pointer to the new box widget. \end{Desc}
+\index{winbox.h@{winbox.h}!win_box_new_padding@{win\_\-box\_\-new\_\-padding}}
+\index{win_box_new_padding@{win\_\-box\_\-new\_\-padding}!winbox.h@{winbox.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf win\_\-widget\_\-t}$\ast$ win\_\-box\_\-new\_\-padding (int {\em xpad}, int {\em ypad})}\label{winbox_8h_a5}
+
+
+Creates a new box with cell padding. 
+
+The result of this call is a new box, which can be used to group items onto the page. The box will lay out its contents with the given padding between cells in the x and y dimensions.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em xpad}]The padding between cells in the horizontal direction. \item[{\em ypad}]The padding between cells in the vertical direction.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]A pointer to the new box widget. \end{Desc}
+\index{winbox.h@{winbox.h}!win_box_remove@{win\_\-box\_\-remove}}
+\index{win_box_remove@{win\_\-box\_\-remove}!winbox.h@{winbox.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void win\_\-box\_\-remove ({\bf win\_\-widget\_\-t} $\ast$ {\em widget}, {\bf win\_\-widget\_\-t} $\ast$ {\em child})}\label{winbox_8h_a9}
+
+
+Removes a widgets from a box. 
+
+The widget will be removed from the box. If the box does not contain this widget, then the function has no effect.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em widget}]The box widget. \item[{\em child}]The widget to be removed from the box. \end{description}
+\end{Desc}

@@ -1,0 +1,124 @@
+\section{winsoftmenu.h File Reference}
+\label{winsoftmenu_8h}\index{winsoftmenu.h@{winsoftmenu.h}}
+Fuctions to display a soft menu in the window system. 
+
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf WIN\_\-SOFTMENU\_\-MAX\_\-ITEMS}~30
+\begin{CompactList}\small\item\em Maximum number of items that can be added to a menu. \item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+{\bf win\_\-widget\_\-t} $\ast$ {\bf win\_\-softmenu\_\-new} (void)
+\begin{CompactList}\small\item\em Creates a new soft menu widget. \item\end{CompactList}\item 
+void {\bf win\_\-softmenu\_\-set\_\-item} ({\bf win\_\-widget\_\-t} $\ast$menu, int pos, char $\ast$label, int event\_\-num, void $\ast$extra\_\-data)
+\begin{CompactList}\small\item\em Sets the menu item at the given position. \item\end{CompactList}\item 
+int {\bf win\_\-softmenu\_\-add\_\-item} ({\bf win\_\-widget\_\-t} $\ast$menu, char $\ast$label, int event\_\-num, void $\ast$extra\_\-data)
+\begin{CompactList}\small\item\em Adds the menu item in the first unused position. \item\end{CompactList}\item 
+void {\bf win\_\-softmenu\_\-insert\_\-item} ({\bf win\_\-widget\_\-t} $\ast$menu, int pos, char $\ast$label, int event\_\-num, void $\ast$extra\_\-data)
+\begin{CompactList}\small\item\em Inserts the menu item into the given position. \item\end{CompactList}\item 
+void {\bf win\_\-softmenu\_\-delete\_\-item} ({\bf win\_\-widget\_\-t} $\ast$menu, int pos, int pack)
+\begin{CompactList}\small\item\em Deletes an item from a menu. \item\end{CompactList}\item 
+void {\bf win\_\-softmenu\_\-set\_\-colors} ({\bf win\_\-widget\_\-t} $\ast$menu, int pos, unsigned char fg\_\-color, unsigned char bg\_\-color)\label{winsoftmenu_8h_a6}
+
+\begin{CompactList}\small\item\em Sets the active colors for a menu item. \item\end{CompactList}\item 
+void {\bf win\_\-softmenu\_\-set\_\-disable\_\-colors} ({\bf win\_\-widget\_\-t} $\ast$menu, int pos, unsigned char fg\_\-color, unsigned char bg\_\-color)\label{winsoftmenu_8h_a7}
+
+\begin{CompactList}\small\item\em Sets the disabled colors for a menu item. \item\end{CompactList}\item 
+void {\bf win\_\-softmenu\_\-set\_\-enabled} ({\bf win\_\-widget\_\-t} $\ast$menu, int pos, int val)\label{winsoftmenu_8h_a8}
+
+\begin{CompactList}\small\item\em Enables or disables a menu item. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Fuctions to display a soft menu in the window system. 
+
+Soft menus are the six buttons along the bottom edge of the calculator screen. They are generally associated with graphical boxes along the bottom of the screen. The user can choose the menu with the F1 through F6 keys, and can scroll through menu options with the NXT and PREV buttons.
+
+A soft menu widget ignores its location and size, and always takes up the bottom of the screen. 
+
+Definition in file {\bf winsoftmenu.h}.
+
+\subsection{Define Documentation}
+\index{winsoftmenu.h@{winsoftmenu.h}!WIN_SOFTMENU_MAX_ITEMS@{WIN\_\-SOFTMENU\_\-MAX\_\-ITEMS}}
+\index{WIN_SOFTMENU_MAX_ITEMS@{WIN\_\-SOFTMENU\_\-MAX\_\-ITEMS}!winsoftmenu.h@{winsoftmenu.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define WIN\_\-SOFTMENU\_\-MAX\_\-ITEMS~30}\label{winsoftmenu_8h_a0}
+
+
+Maximum number of items that can be added to a menu. 
+
+Constant representing the maximum number of items that can exist on a menu. This can be greater than the number of visible menu items, which is always 6, and the NXT and PREV keys will navigate the menu. 
+
+Definition at line 57 of file winsoftmenu.h.
+
+\subsection{Function Documentation}
+\index{winsoftmenu.h@{winsoftmenu.h}!win_softmenu_add_item@{win\_\-softmenu\_\-add\_\-item}}
+\index{win_softmenu_add_item@{win\_\-softmenu\_\-add\_\-item}!winsoftmenu.h@{winsoftmenu.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int win\_\-softmenu\_\-add\_\-item ({\bf win\_\-widget\_\-t} $\ast$ {\em menu}, char $\ast$ {\em label}, int {\em event\_\-num}, void $\ast$ {\em extra\_\-data})}\label{winsoftmenu_8h_a3}
+
+
+Adds the menu item in the first unused position. 
+
+This function is used for indirect control menu items when the precise location of each item is not important. The menu item will be added at the first available location on the menu.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em menu}]The menu on which to put the item. \item[{\em label}]The text that will appear on the new item. \item[{\em event\_\-num}]The number of the event to fire when the item is selected. \item[{\em extra\_\-data}]Arbitrary data to send to the event handler.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]The position where the menu was added, or -1 if the menu is full. \end{Desc}
+\index{winsoftmenu.h@{winsoftmenu.h}!win_softmenu_delete_item@{win\_\-softmenu\_\-delete\_\-item}}
+\index{win_softmenu_delete_item@{win\_\-softmenu\_\-delete\_\-item}!winsoftmenu.h@{winsoftmenu.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void win\_\-softmenu\_\-delete\_\-item ({\bf win\_\-widget\_\-t} $\ast$ {\em menu}, int {\em pos}, int {\em pack})}\label{winsoftmenu_8h_a5}
+
+
+Deletes an item from a menu. 
+
+Optionally, the items after the deleted item can be shifted backward to fill the empty space.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em menu}]The menu from which to delete the item. \item[{\em pos}]The position of the menu item, beginning at zero. \item[{\em pack}]The last index to be shifted to the left to fill empty space. To disable this behavior, pass 0 for the pack parameter. To pack all items, it is sufficient to pass a very large value such as 1000. \end{description}
+\end{Desc}
+\index{winsoftmenu.h@{winsoftmenu.h}!win_softmenu_insert_item@{win\_\-softmenu\_\-insert\_\-item}}
+\index{win_softmenu_insert_item@{win\_\-softmenu\_\-insert\_\-item}!winsoftmenu.h@{winsoftmenu.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void win\_\-softmenu\_\-insert\_\-item ({\bf win\_\-widget\_\-t} $\ast$ {\em menu}, int {\em pos}, char $\ast$ {\em label}, int {\em event\_\-num}, void $\ast$ {\em extra\_\-data})}\label{winsoftmenu_8h_a4}
+
+
+Inserts the menu item into the given position. 
+
+This function is used for general control of the positions of menu items. Any menu items at or after the inserted position will be pushed to the right, filling any unused spaces. If the menu is full, then the last item will be dropped from the menu.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em menu}]The menu on which to put the item. \item[{\em pos}]The position of the menu item, beginning at zero. \item[{\em label}]The text that will appear on the new item. \item[{\em event\_\-num}]The number of the event to fire when the item is selected. \item[{\em extra\_\-data}]Arbitrary data to send to the event handler. \end{description}
+\end{Desc}
+\index{winsoftmenu.h@{winsoftmenu.h}!win_softmenu_new@{win\_\-softmenu\_\-new}}
+\index{win_softmenu_new@{win\_\-softmenu\_\-new}!winsoftmenu.h@{winsoftmenu.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf win\_\-widget\_\-t}$\ast$ win\_\-softmenu\_\-new (void)}\label{winsoftmenu_8h_a1}
+
+
+Creates a new soft menu widget. 
+
+Allocates and returns a new soft menu widget. Initially, the menu has no items.
+
+\begin{Desc}
+\item[Returns:]A pointer to the newly allocated soft menu widget. \end{Desc}
+\index{winsoftmenu.h@{winsoftmenu.h}!win_softmenu_set_item@{win\_\-softmenu\_\-set\_\-item}}
+\index{win_softmenu_set_item@{win\_\-softmenu\_\-set\_\-item}!winsoftmenu.h@{winsoftmenu.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void win\_\-softmenu\_\-set\_\-item ({\bf win\_\-widget\_\-t} $\ast$ {\em menu}, int {\em pos}, char $\ast$ {\em label}, int {\em event\_\-num}, void $\ast$ {\em extra\_\-data})}\label{winsoftmenu_8h_a2}
+
+
+Sets the menu item at the given position. 
+
+This function is used for direct control of the positions of menu items. If there is already a menu item at the given position, it is overwritten by the new item.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em menu}]The menu on which to put the item. \item[{\em pos}]The position of the menu item, beginning at zero. \item[{\em label}]The text that will appear on the new item. \item[{\em event\_\-num}]The number of the event to fire when the item is selected. \item[{\em extra\_\-data}]Arbitrary data to send to the event handler. \end{description}
+\end{Desc}

@@ -1,0 +1,18 @@
+keyb_getkey.o: keyb_getkey.c ../hpkeyb49.h
+keyb_getkeyM.o: keyb_getkeyM.c ../hpkeyb49.h
+keyb_getmatrix.o: keyb_getmatrix.c ../hpkeyb49.h
+keyb_getnextkey.o: keyb_getnextkey.c ../hpkeyb49.h
+keyb_isAlpha.o: keyb_isAlpha.c
+keyb_isAnyKeyPressed.o: keyb_isAnyKeyPressed.c ../hpkeyb49.h
+keyb_isDown.o: keyb_isDown.c ../hpkeyb49.h
+keyb_isKeyPrM.o: keyb_isKeyPrM.c ../hpkeyb49.h
+keyb_isKeyPressed.o: keyb_isKeyPressed.c ../hpkeyb49.h
+keyb_isLS.o: keyb_isLS.c ../hpkeyb49.h
+keyb_isLeft.o: keyb_isLeft.c ../hpkeyb49.h
+keyb_isON.o: keyb_isON.c
+keyb_isRS.o: keyb_isRS.c
+keyb_isRight.o: keyb_isRight.c ../hpkeyb49.h
+keyb_isShiftKeyPrM.o: keyb_isShiftKeyPrM.c ../hpkeyb49.h
+keyb_isUp.o: keyb_isUp.c ../hpkeyb49.h
+keyb_read_keymap.o: keyb_read_keymap.c ../hpkeyb49.h
+keyb_waitKeyPressed.o: keyb_waitKeyPressed.c ../hpkeyb49.h

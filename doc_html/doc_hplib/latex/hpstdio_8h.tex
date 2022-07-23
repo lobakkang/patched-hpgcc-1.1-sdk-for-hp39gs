@@ -1,0 +1,261 @@
+\section{hpstdio.h File Reference}
+\label{hpstdio_8h}\index{hpstdio.h@{hpstdio.h}}
+{\tt \#include $<$hpsys.h$>$}\par
+{\tt \#include $<$kos.h$>$}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct {\bf FILE}
+\end{CompactItemize}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf printf}\ myprintf
+\begin{CompactList}\small\item\em Remapping for stripped down printf surrogate.\item\end{CompactList}\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+{\bf FILE} $\ast$ {\bf fopen} (const char $\ast$fn, const char $\ast$mode)
+\item 
+int {\bf fclose} ({\bf FILE} $\ast$f)
+\item 
+int {\bf fgetc} ({\bf FILE} $\ast$f)
+\item 
+char $\ast$ {\bf fgets} (char $\ast$buf, int n, {\bf FILE} $\ast$f)
+\item 
+int {\bf fputc} (int c, {\bf FILE} $\ast$f)
+\item 
+int {\bf fputs} (const char $\ast$s, {\bf FILE} $\ast$f)
+\item 
+SIZE\_\-T {\bf fread} (void $\ast$buf, SIZE\_\-T size, SIZE\_\-T cnt, {\bf FILE} $\ast$f)
+\item 
+SIZE\_\-T {\bf fwrite} (const void $\ast$buf, SIZE\_\-T size, SIZE\_\-T cnt, {\bf FILE} $\ast$f)
+\item 
+void $\ast$ {\bf get\_\-minifont} ()
+\begin{CompactList}\small\item\em RETURN THE CURRENT CALCULATOR MINIFONT.\item\end{CompactList}\item 
+char $\ast$ {\bf get\_\-bigfont} ()
+\item 
+int {\bf get\_\-bigfontheight} ()
+\item 
+int {\bf readint} ()
+\begin{CompactList}\small\item\em Read numbers from keyboard.\item\end{CompactList}\item 
+unsigned {\bf readuint} ()
+\begin{CompactList}\small\item\em Read numbers from keyboard.\item\end{CompactList}\item 
+unsigned {\bf readhex} ()
+\begin{CompactList}\small\item\em Read numbers from keyboard.\item\end{CompactList}\item 
+long long {\bf readlonglong} ()
+\begin{CompactList}\small\item\em Read numbers from keyboard.\item\end{CompactList}\item 
+unsigned long long {\bf readulonglong} ()
+\begin{CompactList}\small\item\em Read numbers from keyboard.\item\end{CompactList}\item 
+double {\bf readdouble} ()
+\begin{CompactList}\small\item\em Read numbers from keyboard.\item\end{CompactList}\item 
+EXTERN int {\bf puts} (const char $\ast$)
+\item 
+EXTERN int {\bf putchar} (int)
+\item 
+EXTERN char $\ast$ {\bf gets} (char $\ast$buf)
+\item 
+void {\bf myprintf} (const char $\ast$fmt,...)
+\begin{CompactList}\small\item\em Stripped down printf surrogate Refer to the source for format restrictions.\item\end{CompactList}\item 
+int {\bf get\_\-decimal\_\-digits} ()
+\item 
+void {\bf set\_\-decimal\_\-digits} (int v)
+\item 
+char {\bf get\_\-decimal\_\-separator} ()
+\item 
+void {\bf set\_\-decimal\_\-separator} (char a)
+\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\index{hpstdio.h@{hpstdio.h}!printf@{printf}}
+\index{printf@{printf}!hpstdio.h@{hpstdio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define printf\ myprintf}\label{hpstdio_8h_a0}
+
+
+Remapping for stripped down printf surrogate.
+
+myprintf 
+
+Definition at line 158 of file hpstdio.h.
+
+\subsection{Function Documentation}
+\index{hpstdio.h@{hpstdio.h}!fclose@{fclose}}
+\index{fclose@{fclose}!hpstdio.h@{hpstdio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int fclose ({\bf FILE} $\ast$ {\em f})}\label{hpstdio_8h_a2}
+
+
+\index{hpstdio.h@{hpstdio.h}!fgetc@{fgetc}}
+\index{fgetc@{fgetc}!hpstdio.h@{hpstdio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int fgetc ({\bf FILE} $\ast$ {\em f})}\label{hpstdio_8h_a3}
+
+
+\index{hpstdio.h@{hpstdio.h}!fgets@{fgets}}
+\index{fgets@{fgets}!hpstdio.h@{hpstdio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ fgets (char $\ast$ {\em buf}, int {\em n}, {\bf FILE} $\ast$ {\em f})}\label{hpstdio_8h_a4}
+
+
+\index{hpstdio.h@{hpstdio.h}!fopen@{fopen}}
+\index{fopen@{fopen}!hpstdio.h@{hpstdio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}{\bf FILE}$\ast$ fopen (const char $\ast$ {\em fn}, const char $\ast$ {\em mode})}\label{hpstdio_8h_a1}
+
+
+\index{hpstdio.h@{hpstdio.h}!fputc@{fputc}}
+\index{fputc@{fputc}!hpstdio.h@{hpstdio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int fputc (int {\em c}, {\bf FILE} $\ast$ {\em f})}\label{hpstdio_8h_a5}
+
+
+\index{hpstdio.h@{hpstdio.h}!fputs@{fputs}}
+\index{fputs@{fputs}!hpstdio.h@{hpstdio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int fputs (const char $\ast$ {\em s}, {\bf FILE} $\ast$ {\em f})}\label{hpstdio_8h_a6}
+
+
+\index{hpstdio.h@{hpstdio.h}!fread@{fread}}
+\index{fread@{fread}!hpstdio.h@{hpstdio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SIZE\_\-T fread (void $\ast$ {\em buf}, SIZE\_\-T {\em size}, SIZE\_\-T {\em cnt}, {\bf FILE} $\ast$ {\em f})}\label{hpstdio_8h_a7}
+
+
+\index{hpstdio.h@{hpstdio.h}!fwrite@{fwrite}}
+\index{fwrite@{fwrite}!hpstdio.h@{hpstdio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}SIZE\_\-T fwrite (const void $\ast$ {\em buf}, SIZE\_\-T {\em size}, SIZE\_\-T {\em cnt}, {\bf FILE} $\ast$ {\em f})}\label{hpstdio_8h_a8}
+
+
+\index{hpstdio.h@{hpstdio.h}!get_bigfont@{get\_\-bigfont}}
+\index{get_bigfont@{get\_\-bigfont}!hpstdio.h@{hpstdio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ get\_\-bigfont ()}\label{hpstdio_8h_a10}
+
+
+\index{hpstdio.h@{hpstdio.h}!get_bigfontheight@{get\_\-bigfontheight}}
+\index{get_bigfontheight@{get\_\-bigfontheight}!hpstdio.h@{hpstdio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int get\_\-bigfontheight ()}\label{hpstdio_8h_a11}
+
+
+\index{hpstdio.h@{hpstdio.h}!get_decimal_digits@{get\_\-decimal\_\-digits}}
+\index{get_decimal_digits@{get\_\-decimal\_\-digits}!hpstdio.h@{hpstdio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int get\_\-decimal\_\-digits ()}\label{hpstdio_8h_a22}
+
+
+\index{hpstdio.h@{hpstdio.h}!get_decimal_separator@{get\_\-decimal\_\-separator}}
+\index{get_decimal_separator@{get\_\-decimal\_\-separator}!hpstdio.h@{hpstdio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char get\_\-decimal\_\-separator ()}\label{hpstdio_8h_a24}
+
+
+\index{hpstdio.h@{hpstdio.h}!get_minifont@{get\_\-minifont}}
+\index{get_minifont@{get\_\-minifont}!hpstdio.h@{hpstdio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ get\_\-minifont ()}\label{hpstdio_8h_a9}
+
+
+RETURN THE CURRENT CALCULATOR MINIFONT.
+
+USES THE (STABLE) MINI\_\-FONT ENTRY IN RAM (NOT ROM, SO THIS WON'T MOVE)
+
+THIS IS 0x812CF IN SATURN DOMAIN. NOTICE THAT THE FONT IS NOT BYTE-ALIGNED THE ACTUAL FONT STARTS 7 NIBBLES AFTER THIS ADDRESS \index{hpstdio.h@{hpstdio.h}!gets@{gets}}
+\index{gets@{gets}!hpstdio.h@{hpstdio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXTERN char$\ast$ gets (char $\ast$ {\em buf})}\label{hpstdio_8h_a20}
+
+
+\index{hpstdio.h@{hpstdio.h}!myprintf@{myprintf}}
+\index{myprintf@{myprintf}!hpstdio.h@{hpstdio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void myprintf (const char $\ast$ {\em fmt}, ...)}\label{hpstdio_8h_a21}
+
+
+Stripped down printf surrogate Refer to the source for format restrictions.
+
+\index{hpstdio.h@{hpstdio.h}!putchar@{putchar}}
+\index{putchar@{putchar}!hpstdio.h@{hpstdio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXTERN int putchar (int)}\label{hpstdio_8h_a19}
+
+
+\index{hpstdio.h@{hpstdio.h}!puts@{puts}}
+\index{puts@{puts}!hpstdio.h@{hpstdio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}EXTERN int puts (const char $\ast$)}\label{hpstdio_8h_a18}
+
+
+\index{hpstdio.h@{hpstdio.h}!readdouble@{readdouble}}
+\index{readdouble@{readdouble}!hpstdio.h@{hpstdio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double readdouble ()}\label{hpstdio_8h_a17}
+
+
+Read numbers from keyboard.
+
+\begin{Desc}
+\item[Return values: ]\par
+\begin{description}
+\item[{\em 
+The}]appropriate number, read until end of input ,i.e. $\backslash$r, or syntax error position. \end{description}
+\end{Desc}
+\index{hpstdio.h@{hpstdio.h}!readhex@{readhex}}
+\index{readhex@{readhex}!hpstdio.h@{hpstdio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned readhex ()}\label{hpstdio_8h_a14}
+
+
+Read numbers from keyboard.
+
+\begin{Desc}
+\item[Return values: ]\par
+\begin{description}
+\item[{\em 
+The}]appropriate number, read until end of input ,i.e. $\backslash$r, or syntax error position. \end{description}
+\end{Desc}
+\index{hpstdio.h@{hpstdio.h}!readint@{readint}}
+\index{readint@{readint}!hpstdio.h@{hpstdio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int readint ()}\label{hpstdio_8h_a12}
+
+
+Read numbers from keyboard.
+
+\begin{Desc}
+\item[Return values: ]\par
+\begin{description}
+\item[{\em 
+The}]appropriate number, read until end of input ,i.e. $\backslash$r, or syntax error position. \end{description}
+\end{Desc}
+\index{hpstdio.h@{hpstdio.h}!readlonglong@{readlonglong}}
+\index{readlonglong@{readlonglong}!hpstdio.h@{hpstdio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}long long readlonglong ()}\label{hpstdio_8h_a15}
+
+
+Read numbers from keyboard.
+
+\begin{Desc}
+\item[Return values: ]\par
+\begin{description}
+\item[{\em 
+The}]appropriate number, read until end of input ,i.e. $\backslash$r, or syntax error position. \end{description}
+\end{Desc}
+\index{hpstdio.h@{hpstdio.h}!readuint@{readuint}}
+\index{readuint@{readuint}!hpstdio.h@{hpstdio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned readuint ()}\label{hpstdio_8h_a13}
+
+
+Read numbers from keyboard.
+
+\begin{Desc}
+\item[Return values: ]\par
+\begin{description}
+\item[{\em 
+The}]appropriate number, read until end of input ,i.e. $\backslash$r, or syntax error position. \end{description}
+\end{Desc}
+\index{hpstdio.h@{hpstdio.h}!readulonglong@{readulonglong}}
+\index{readulonglong@{readulonglong}!hpstdio.h@{hpstdio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned long long readulonglong ()}\label{hpstdio_8h_a16}
+
+
+Read numbers from keyboard.
+
+\begin{Desc}
+\item[Return values: ]\par
+\begin{description}
+\item[{\em 
+The}]appropriate number, read until end of input ,i.e. $\backslash$r, or syntax error position. \end{description}
+\end{Desc}
+\index{hpstdio.h@{hpstdio.h}!set_decimal_digits@{set\_\-decimal\_\-digits}}
+\index{set_decimal_digits@{set\_\-decimal\_\-digits}!hpstdio.h@{hpstdio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void set\_\-decimal\_\-digits (int {\em v})}\label{hpstdio_8h_a23}
+
+
+\index{hpstdio.h@{hpstdio.h}!set_decimal_separator@{set\_\-decimal\_\-separator}}
+\index{set_decimal_separator@{set\_\-decimal\_\-separator}!hpstdio.h@{hpstdio.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void set\_\-decimal\_\-separator (char {\em a})}\label{hpstdio_8h_a25}
+
+

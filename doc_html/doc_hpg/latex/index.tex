@@ -1,0 +1,195 @@
+
+
+\subsection{Overview}\label{overview}
+
+
+HPG implements basic graphics functionality on the calculator display. Its features include:
+
+\begin{CompactItemize}
+\item 
+ Monochrome, 4-color grayscale, and 16-color grayscale modes \item 
+ Double buffering with vsync and hardware page flipping \item 
+ Drawing to and blitting to and from off-screen images \item 
+ Loading the Xpm (X-Windows pixmap) file format \item 
+ Drawing of pixels, lines, circles, rectangles, and polygons \item 
+ Filling of circles, rectangles, and polygons with arbitrary patterns \item 
+ Text drawing in multiple selectable fonts, or in user-defined fonts \item 
+ Rectangular clipping regions for each surface \item 
+ Control of LCD indicators on the calculator screen\end{CompactItemize}
+\subsection{Quick Start}\label{quickstart}
+
+
+A simple graphics program written with HPG should perform several tasks:
+
+\begin{CompactItemize}
+\item 
+ Initialize the HPG library \item 
+ Set a display mode (optional) \item 
+ Configure the graphics context (optional) \item 
+ Draw to the graphics context \item 
+ Display the new graphics image (double-buffered modes only) \item 
+ Clean up the display\end{CompactItemize}
+\subsubsection{Quick Start Sample}\label{qssample}
+
+
+On the theory that it is best to learn by immersion, here are two quick samples of using the HPG library. The first sample is a simple \char`\"{}Hello, world!\char`\"{} application.
+
+
+
+\footnotesize\begin{verbatim} int main(void)
+ {
+     hpg_init();
+     hpg_clear();
+     hpg_draw_text("Hello, world!", 0, 0);
+     hpg_cleanup();
+     return 0;
+ }
+\end{verbatim}\normalsize 
+
+
+Next is a more involved sample, demonstrating each of the steps from the list above. You may find it helpful to refer to this example as each step is explained below. This sample uses 16-color grayscale, a non-default font, and double-buffering.
+
+
+
+\footnotesize\begin{verbatim} int main(void)
+ {
+     hpg_init();
+     hpg_set_mode_gray16(1);
+ 
+     hpg_set_font(hpg_stdscreen, hpg_get_bigfont());
+     hpg_set_color(hpg_stdscreen, HPG_COLOR_GRAY10);
+ 
+     hpg_clear();
+     hpg_draw_text("Hello, world!", 0, 0);
+ 
+     hpg_flip();
+     getchar();
+ 
+     hpg_cleanup();
+     return 0;
+ }
+\end{verbatim}\normalsize 
+
+
+\subsubsection{Initializing the HPG Library}\label{init}
+
+
+The HPG library is initialized with a call to {\bf hpg\_\-init()} {\rm (p.\,\pageref{hpgraphics_8h_a28})}. This function must be called prior to any other use of the HPG library.
+
+\begin{Desc}
+\item[Note: ]\par
+{\bf hpg\_\-init()} {\rm (p.\,\pageref{hpgraphics_8h_a28})} may be removed in a future version of the library. At that time, it will no longer be necessary to initialize the library.\end{Desc}
+\subsubsection{Setting a Display Mode}\label{mode}
+
+
+The HPG library implements provides three different display modes for the calculator display. They are:
+
+\begin{CompactItemize}
+\item 
+ 1-bit-per-pixel monochrome, single or double buffered \item 
+ 2-bit-per-pixel (4-color) grayscale, single or double buffered \item 
+ 4-bit-per-pixel (16-color) grayscale, single or double buffered\end{CompactItemize}
+HPG defaults to using a single-buffered monochrome screen. If this is the screen you want, then you may skip this step.
+
+After choosing a display mode, you should call one of {\bf hpg\_\-set\_\-mode\_\-mono} {\rm (p.\,\pageref{hpgraphics_8h_a30})}, {\bf hpg\_\-set\_\-mode\_\-gray4} {\rm (p.\,\pageref{hpgraphics_8h_a31})}, or {\bf hpg\_\-set\_\-mode\_\-gray16} {\rm (p.\,\pageref{hpgraphics_8h_a32})}. Each of these functions accepts one additional parameter, which will enable double-buffering if it is set.
+
+When double buffering is enabled, your images are drawn to an off-screen buffer, and diplayed as a single action when the {\bf hpg\_\-flip} {\rm (p.\,\pageref{hpgraphics_8h_a34})} function is called. Until that time, the display will show the previous completed screen in its entirety. This prevents your users from viewing partially drawn screens, and can prevent an appearance of \char`\"{}flicker\char`\"{}. HPG's implementation of double-buffering uses a combination of vsync and hardware page flipping to ensure that only complete frames are drawn.
+
+Regardless of the current display mode, the HPG library provides a choice of 256 virtual colors. However, these colors are mapped in a mode-specific manner to the colors of the physical screen. In 1-bpp monochrome mode, for example, colors 0-127 appear as white, while colors 128-255 appear as black. By contrast, 16-color grayscale mode displays only colors 0-15 as white, and 240-255 as black, while the intermediate colors appear as shades of gray.
+
+\subsubsection{Configuring the Graphics Context}\label{config}
+
+
+HPG defines a global variable, {\bf hpg\_\-stdscreen} {\rm (p.\,\pageref{hpgraphics_8h_a27})}, to refer to the screen's graphics context. This graphics context defines several properties that affect how drawing operations modify the screen. These include:
+
+\begin{CompactItemize}
+\item 
+ The color for all drawing operations \item 
+ The drawing mode, either {\bf HPG\_\-MODE\_\-PAINT} {\rm (p.\,\pageref{hpgraphics_8h_a0})} or {\bf HPG\_\-MODE\_\-XOR} {\rm (p.\,\pageref{hpgraphics_8h_a1})} \item 
+ The font for drawing text \item 
+ The fill patterns for filling shapes\end{CompactItemize}
+Before drawing, you may modify any of these attributes. The library defaults to drawing in paint mode, black, the minifont, and a solid fill. These defaults may be modified by using the following functions:
+
+\begin{CompactItemize}
+\item 
+ {\bf hpg\_\-set\_\-color} {\rm (p.\,\pageref{hpgraphics_8h_a63})} \item 
+ {\bf hpg\_\-set\_\-mode} {\rm (p.\,\pageref{hpgraphics_8h_a65})} \item 
+ {\bf hpg\_\-set\_\-font} {\rm (p.\,\pageref{hpgraphics_8h_a69})} \item 
+ {\bf hpg\_\-set\_\-pattern} {\rm (p.\,\pageref{hpgraphics_8h_a67})}\end{CompactItemize}
+More information about these options may be found in the reference documentation.
+
+\subsubsection{Drawing to the Graphics Context}\label{drawing}
+
+
+HPG provides a number of functions to draw to a graphics context. These include any functions that begin with {\tt hpg\_\-draw\_\-} or {\tt hpg\_\-fill\_\-} prefixes. You may browse the reference documentation for more information on each of these functions.
+
+The {\bf hpg\_\-clear} {\rm (p.\,\pageref{hpgraphics_8h_a39})} function is used to clear the screen. The initial contents of the screen are undefined, and it is recommended that you clear the screen prior to beginning your drawing.
+
+\subsubsection{Displaying a New Graphics Image}\label{display}
+
+
+If you chose a single-buffered display mode, your drawing operations are already visible on the screen. If you chose a double-buffered mode, however, then your changes to the screen are not yet visible. You need to inform the library that you are done drawing, so it can display the completed image to the screen. This is done by calling {\bf hpg\_\-flip} {\rm (p.\,\pageref{hpgraphics_8h_a34})}.
+
+\subsubsection{Cleaning Up the Display}\label{cleaning}
+
+
+The display needs to be restored to a very specific state prior to exiting your application. HPG provides a method called {\bf hpg\_\-cleanup} {\rm (p.\,\pageref{hpgraphics_8h_a29})} to do this.
+
+\begin{Desc}
+\item[Attention: ]\par
+All applications which use HPG should call {\bf hpg\_\-cleanup} {\rm (p.\,\pageref{hpgraphics_8h_a29})} just prior to exiting, after the last call to any other HPG function.\end{Desc}
+And that's all there is to it!
+
+\subsection{General Information}\label{general}
+
+
+\subsubsection{Screen Coordinates}\label{coordinates}
+
+
+The HP49G+ screen is 131 by 80 pixels in size. The coordinate system of HPG is a standard screen coordinate plane (which is inverted in the Y dimension from a standard mathematical 2D coordinate plane). The pixel at coordinate (0, 0) is in the upper-left of the screen. X coordinates increase to the right, and Y coordinates increase toward the bottom. The lower-right pixel of the screen is (130, 79).
+
+\subsubsection{Clipping Regions}\label{clipping}
+
+
+Drawing operations in HPG may be clipped to subregions of the screen. The three functions used for this purpose are {\bf hpg\_\-clip} {\rm (p.\,\pageref{hpgraphics_8h_a37})}, {\bf hpg\_\-clip\_\-set} {\rm (p.\,\pageref{hpgraphics_8h_a36})}, and {\bf hpg\_\-clip\_\-reset} {\rm (p.\,\pageref{hpgraphics_8h_a35})}. All clipping regions in HPG are axis-aligned rectangles. By default, drawing operations are clipped to the size of the screen.
+
+\subsubsection{Off-screen Images}\label{images}
+
+
+Occasionally, it is useful to draw temporarily to an off-screen area, which can be copied to the screen on demand. HPG uses images to provide this functionality.
+
+An image is created by calling any of {\bf hpg\_\-alloc\_\-mono\_\-image} {\rm (p.\,\pageref{hpgraphics_8h_a75})}, {\bf hpg\_\-alloc\_\-gray4\_\-image} {\rm (p.\,\pageref{hpgraphics_8h_a76})}, or {\bf hpg\_\-alloc\_\-gray16\_\-image} {\rm (p.\,\pageref{hpgraphics_8h_a77})}. The size of the image is passed as parameters to the function. Images can be arbitrary size, limited by available memory. The result of the allocation function is a pointer to an {\bf hpg\_\-t} {\rm (p.\,\pageref{hpgraphics_8h_a24})}, which can be used with drawing function in the normal manner. You will need to use functions with the {\tt \_\-on} suffix, as opposed to those that draw directly to the screen.
+
+\begin{Desc}
+\item[Note: ]\par
+Newly allocated images have undefined contents. You should ensure that you either use {\bf hpg\_\-clear\_\-on} {\rm (p.\,\pageref{hpgraphics_8h_a38})} to clear any old contents prior to drawing, or guarantee that your drawing code overwrites every pixel of the screen. Failure to do so can result in garbage data within the image, which may be later copied to the screen.\end{Desc}
+When you wish to copy a portion of the image to the screen, the {\bf hpg\_\-blit} {\rm (p.\,\pageref{hpgraphics_8h_a79})} function can accomplish this task.
+
+\subsubsection{Xpm Image Loading}\label{xpm}
+
+
+Preliminary code exists to load Xpm image files from a file on disk. The steps required to do so may be unusual to programmers who have not worked with C-compilable file formats before. Here is a sample of loading and drawing an Xpm file to the screen:
+
+
+
+\footnotesize\begin{verbatim} #include "monalisa.xpm"
+
+ int main(void)
+ {
+     hpg_init();
+     hpg_set_mode_gray16(0);
+     hpg_t *img = hpg_load_xpm_gray16(monalisa_xpm);
+
+     hpg_blit(img, 0, 0, 80, 80, hpg_stdscreen, 0, 0);
+
+     getchar();
+     hpg_free_image(img);
+     hpg_cleanup();
+
+     return 0;
+ }
+\end{verbatim}\normalsize 
+
+
+The first line of the example above includes the image file into the application code. Unlike most image formats, Xpm files consist of C code that can be compiled. This C code declares a data structure called {\tt $<$name$>$\_\-xpm}, which contains the image data. The data is then loaded into an off-screen image, and drawn to the screen.
+

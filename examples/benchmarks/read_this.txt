@@ -1,0 +1,28 @@
+HP 49g+ C Benchmarks
+====================
+
+flops	-	Determines the machine's MFLOPS factor(s).
+		Be patient, takes some time.
+		It prints out 8 numbers, representing MegaFLOPS.
+		See source for details.
+		
+sieve1	-	Modified sieve with larger stack
+		Now generates up to pix(1e6)=78498 primes
+		
+knightr	-	6x6 Knight's Tour, starting at random position
+		Times out after 5 minutes, to save your batteries.
+		If this happens, simply restart it for a new try.
+		
+mcpf	-	Another MFLOPS estimate, using Monte Carlo PI
+		approximation.
+		
+mcpi	-	Monte Carlo PI approximation loop with progress
+		display.
+		
+hpdry	-	Classical Dhrystone 1.1
+		See source for details.
+		
+	
+
+
+

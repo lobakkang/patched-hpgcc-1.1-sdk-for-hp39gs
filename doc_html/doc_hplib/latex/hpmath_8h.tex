@@ -1,0 +1,470 @@
+\section{hpmath.h File Reference}
+\label{hpmath_8h}\index{hpmath.h@{hpmath.h}}
+\subsection*{Defines}
+\begin{CompactItemize}
+\item 
+\#define {\bf min}(a, b)\ ((a) $<$ (b) ? (a) : (b))
+\item 
+\#define {\bf max}(a, b)\ ((a) $>$ (b) ? (a) : (b))
+\item 
+\#define {\bf abs}(a)\ ((a) $<$ 0 ? (-a) : (a))
+\item 
+\#define {\bf log}\ \_\-\_\-ieee754\_\-log
+\item 
+\#define {\bf log10}\ \_\-\_\-ieee754\_\-log10
+\item 
+\#define {\bf exp}\ \_\-\_\-ieee754\_\-exp
+\item 
+\#define {\bf pow}\ \_\-\_\-ieee754\_\-pow
+\item 
+\#define {\bf sqrt}\ \_\-\_\-ieee754\_\-sqrt
+\item 
+\#define {\bf log2}(x)\ (log(x) / M\_\-LOG2\_\-E)
+\item 
+\#define {\bf fabs}(x)\ ( (x) $<$ 0.0 ? (-x) : (x) )
+\item 
+\#define {\bf M\_\-E}\ 2.7182818284590452354
+\item 
+\#define {\bf M\_\-LOG2E}\ 1.4426950408889634074
+\item 
+\#define {\bf M\_\-LOG10E}\ 0.43429448190325182765
+\item 
+\#define {\bf M\_\-LN2}\ 0.69314718055994530942
+\item 
+\#define {\bf M\_\-LN10}\ 2.30258509299404568402
+\item 
+\#define {\bf M\_\-PI}\ 3.14159265358979323846
+\item 
+\#define {\bf M\_\-TWOPI}\ (M\_\-PI $\ast$ 2.0)
+\item 
+\#define {\bf M\_\-PI\_\-2}\ 1.57079632679489661923
+\item 
+\#define {\bf M\_\-PI\_\-4}\ 0.78539816339744830962
+\item 
+\#define {\bf M\_\-3PI\_\-4}\ 2.3561944901923448370E0
+\item 
+\#define {\bf M\_\-SQRTPI}\ 1.77245385090551602792981
+\item 
+\#define {\bf M\_\-1\_\-PI}\ 0.31830988618379067154
+\item 
+\#define {\bf M\_\-2\_\-PI}\ 0.63661977236758134308
+\item 
+\#define {\bf M\_\-2\_\-SQRTPI}\ 1.12837916709551257390
+\item 
+\#define {\bf M\_\-SQRT2}\ 1.41421356237309504880
+\item 
+\#define {\bf M\_\-SQRT1\_\-2}\ 0.70710678118654752440
+\item 
+\#define {\bf M\_\-LN2LO}\ 1.9082149292705877000E-10
+\item 
+\#define {\bf M\_\-LN2HI}\ 6.9314718036912381649E-1
+\item 
+\#define {\bf M\_\-SQRT3}\ 1.73205080756887719000
+\item 
+\#define {\bf M\_\-IVLN10}\ 0.43429448190325182765
+\item 
+\#define {\bf M\_\-LOG2\_\-E}\ 0.693147180559945309417
+\item 
+\#define {\bf M\_\-INVLN2}\ 1.4426950408889633870E0
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+double {\bf ipow} (double x, unsigned int n)
+\item 
+double {\bf square} (double x)
+\item 
+double {\bf round} (double a)
+\item 
+double {\bf modf} (double x, double $\ast$iptr)
+\item 
+double {\bf scalbn} (double x, int n)
+\item 
+double {\bf copysign} (double x, double y)
+\item 
+double {\bf \_\-\_\-ieee754\_\-log} (double x)
+\item 
+double {\bf \_\-\_\-ieee754\_\-log10} (double x)
+\item 
+double {\bf \_\-\_\-ieee754\_\-exp} (double x)
+\item 
+double {\bf \_\-\_\-ieee754\_\-pow} (double x, double y)
+\item 
+double {\bf \_\-\_\-ieee754\_\-sqrt} (double x)
+\item 
+double {\bf sin} (double x)
+\item 
+double {\bf cos} (double x)
+\item 
+double {\bf tan} (double x)
+\item 
+double {\bf floor} (double x)
+\item 
+unsigned {\bf mwc} ()
+\begin{CompactList}\small\item\em 32 bit multiply with carry pseudo RNG\item\end{CompactList}\item 
+double {\bf random} ()
+\begin{CompactList}\small\item\em 53 bit pseudo RNG on [0,1)\item\end{CompactList}\item 
+double {\bf gauss} ()
+\begin{CompactList}\small\item\em Returns a normal distributed random number.\item\end{CompactList}\item 
+double {\bf normal} (double mu, double sigma)
+\begin{CompactList}\small\item\em Returns a normal distributed random number with selected parameters.\item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Define Documentation}
+\index{hpmath.h@{hpmath.h}!abs@{abs}}
+\index{abs@{abs}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define abs(a)\ ((a) $<$ 0 ? (-a) : (a))}\label{hpmath_8h_a2}
+
+
+((a) $<$ 0 ? -(a) : (a)) 
+
+Definition at line 59 of file hpmath.h.\index{hpmath.h@{hpmath.h}!exp@{exp}}
+\index{exp@{exp}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define exp\ \_\-\_\-ieee754\_\-exp}\label{hpmath_8h_a5}
+
+
+
+
+Definition at line 91 of file hpmath.h.\index{hpmath.h@{hpmath.h}!fabs@{fabs}}
+\index{fabs@{fabs}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define fabs(x)\ ( (x) $<$ 0.0 ? (-x) : (x) )}\label{hpmath_8h_a9}
+
+
+
+
+Definition at line 96 of file hpmath.h.\index{hpmath.h@{hpmath.h}!log@{log}}
+\index{log@{log}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define log\ \_\-\_\-ieee754\_\-log}\label{hpmath_8h_a3}
+
+
+
+
+Definition at line 89 of file hpmath.h.\index{hpmath.h@{hpmath.h}!log10@{log10}}
+\index{log10@{log10}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define log10\ \_\-\_\-ieee754\_\-log10}\label{hpmath_8h_a4}
+
+
+
+
+Definition at line 90 of file hpmath.h.\index{hpmath.h@{hpmath.h}!log2@{log2}}
+\index{log2@{log2}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define log2(x)\ (log(x) / M\_\-LOG2\_\-E)}\label{hpmath_8h_a8}
+
+
+
+
+Definition at line 95 of file hpmath.h.\index{hpmath.h@{hpmath.h}!M_1_PI@{M\_\-1\_\-PI}}
+\index{M_1_PI@{M\_\-1\_\-PI}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define M\_\-1\_\-PI\ 0.31830988618379067154}\label{hpmath_8h_a21}
+
+
+
+
+Definition at line 111 of file hpmath.h.\index{hpmath.h@{hpmath.h}!M_2_PI@{M\_\-2\_\-PI}}
+\index{M_2_PI@{M\_\-2\_\-PI}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define M\_\-2\_\-PI\ 0.63661977236758134308}\label{hpmath_8h_a22}
+
+
+
+
+Definition at line 112 of file hpmath.h.\index{hpmath.h@{hpmath.h}!M_2_SQRTPI@{M\_\-2\_\-SQRTPI}}
+\index{M_2_SQRTPI@{M\_\-2\_\-SQRTPI}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define M\_\-2\_\-SQRTPI\ 1.12837916709551257390}\label{hpmath_8h_a23}
+
+
+
+
+Definition at line 113 of file hpmath.h.\index{hpmath.h@{hpmath.h}!M_3PI_4@{M\_\-3PI\_\-4}}
+\index{M_3PI_4@{M\_\-3PI\_\-4}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define M\_\-3PI\_\-4\ 2.3561944901923448370E0}\label{hpmath_8h_a19}
+
+
+
+
+Definition at line 109 of file hpmath.h.\index{hpmath.h@{hpmath.h}!M_E@{M\_\-E}}
+\index{M_E@{M\_\-E}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define M\_\-E\ 2.7182818284590452354}\label{hpmath_8h_a10}
+
+
+
+
+Definition at line 100 of file hpmath.h.\index{hpmath.h@{hpmath.h}!M_INVLN2@{M\_\-INVLN2}}
+\index{M_INVLN2@{M\_\-INVLN2}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define M\_\-INVLN2\ 1.4426950408889633870E0}\label{hpmath_8h_a31}
+
+
+
+
+Definition at line 121 of file hpmath.h.\index{hpmath.h@{hpmath.h}!M_IVLN10@{M\_\-IVLN10}}
+\index{M_IVLN10@{M\_\-IVLN10}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define M\_\-IVLN10\ 0.43429448190325182765}\label{hpmath_8h_a29}
+
+
+
+
+Definition at line 119 of file hpmath.h.\index{hpmath.h@{hpmath.h}!M_LN10@{M\_\-LN10}}
+\index{M_LN10@{M\_\-LN10}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define M\_\-LN10\ 2.30258509299404568402}\label{hpmath_8h_a14}
+
+
+
+
+Definition at line 104 of file hpmath.h.\index{hpmath.h@{hpmath.h}!M_LN2@{M\_\-LN2}}
+\index{M_LN2@{M\_\-LN2}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define M\_\-LN2\ 0.69314718055994530942}\label{hpmath_8h_a13}
+
+
+
+
+Definition at line 103 of file hpmath.h.\index{hpmath.h@{hpmath.h}!M_LN2HI@{M\_\-LN2HI}}
+\index{M_LN2HI@{M\_\-LN2HI}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define M\_\-LN2HI\ 6.9314718036912381649E-1}\label{hpmath_8h_a27}
+
+
+
+
+Definition at line 117 of file hpmath.h.\index{hpmath.h@{hpmath.h}!M_LN2LO@{M\_\-LN2LO}}
+\index{M_LN2LO@{M\_\-LN2LO}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define M\_\-LN2LO\ 1.9082149292705877000E-10}\label{hpmath_8h_a26}
+
+
+
+
+Definition at line 116 of file hpmath.h.\index{hpmath.h@{hpmath.h}!M_LOG10E@{M\_\-LOG10E}}
+\index{M_LOG10E@{M\_\-LOG10E}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define M\_\-LOG10E\ 0.43429448190325182765}\label{hpmath_8h_a12}
+
+
+
+
+Definition at line 102 of file hpmath.h.\index{hpmath.h@{hpmath.h}!M_LOG2_E@{M\_\-LOG2\_\-E}}
+\index{M_LOG2_E@{M\_\-LOG2\_\-E}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define M\_\-LOG2\_\-E\ 0.693147180559945309417}\label{hpmath_8h_a30}
+
+
+
+
+Definition at line 120 of file hpmath.h.\index{hpmath.h@{hpmath.h}!M_LOG2E@{M\_\-LOG2E}}
+\index{M_LOG2E@{M\_\-LOG2E}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define M\_\-LOG2E\ 1.4426950408889634074}\label{hpmath_8h_a11}
+
+
+
+
+Definition at line 101 of file hpmath.h.\index{hpmath.h@{hpmath.h}!M_PI@{M\_\-PI}}
+\index{M_PI@{M\_\-PI}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define M\_\-PI\ 3.14159265358979323846}\label{hpmath_8h_a15}
+
+
+
+
+Definition at line 105 of file hpmath.h.\index{hpmath.h@{hpmath.h}!M_PI_2@{M\_\-PI\_\-2}}
+\index{M_PI_2@{M\_\-PI\_\-2}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define M\_\-PI\_\-2\ 1.57079632679489661923}\label{hpmath_8h_a17}
+
+
+
+
+Definition at line 107 of file hpmath.h.\index{hpmath.h@{hpmath.h}!M_PI_4@{M\_\-PI\_\-4}}
+\index{M_PI_4@{M\_\-PI\_\-4}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define M\_\-PI\_\-4\ 0.78539816339744830962}\label{hpmath_8h_a18}
+
+
+
+
+Definition at line 108 of file hpmath.h.\index{hpmath.h@{hpmath.h}!M_SQRT1_2@{M\_\-SQRT1\_\-2}}
+\index{M_SQRT1_2@{M\_\-SQRT1\_\-2}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define M\_\-SQRT1\_\-2\ 0.70710678118654752440}\label{hpmath_8h_a25}
+
+
+
+
+Definition at line 115 of file hpmath.h.\index{hpmath.h@{hpmath.h}!M_SQRT2@{M\_\-SQRT2}}
+\index{M_SQRT2@{M\_\-SQRT2}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define M\_\-SQRT2\ 1.41421356237309504880}\label{hpmath_8h_a24}
+
+
+
+
+Definition at line 114 of file hpmath.h.\index{hpmath.h@{hpmath.h}!M_SQRT3@{M\_\-SQRT3}}
+\index{M_SQRT3@{M\_\-SQRT3}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define M\_\-SQRT3\ 1.73205080756887719000}\label{hpmath_8h_a28}
+
+
+
+
+Definition at line 118 of file hpmath.h.\index{hpmath.h@{hpmath.h}!M_SQRTPI@{M\_\-SQRTPI}}
+\index{M_SQRTPI@{M\_\-SQRTPI}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define M\_\-SQRTPI\ 1.77245385090551602792981}\label{hpmath_8h_a20}
+
+
+
+
+Definition at line 110 of file hpmath.h.\index{hpmath.h@{hpmath.h}!M_TWOPI@{M\_\-TWOPI}}
+\index{M_TWOPI@{M\_\-TWOPI}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define M\_\-TWOPI\ (M\_\-PI $\ast$ 2.0)}\label{hpmath_8h_a16}
+
+
+
+
+Definition at line 106 of file hpmath.h.\index{hpmath.h@{hpmath.h}!max@{max}}
+\index{max@{max}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define max(a, b)\ ((a) $>$ (b) ? (a) : (b))}\label{hpmath_8h_a1}
+
+
+((a) $>$ (b) ? (a) : (b)) 
+
+Definition at line 55 of file hpmath.h.\index{hpmath.h@{hpmath.h}!min@{min}}
+\index{min@{min}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define min(a, b)\ ((a) $<$ (b) ? (a) : (b))}\label{hpmath_8h_a0}
+
+
+((a) $<$ (b) ? (a) : (b)) 
+
+Definition at line 51 of file hpmath.h.\index{hpmath.h@{hpmath.h}!pow@{pow}}
+\index{pow@{pow}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define pow\ \_\-\_\-ieee754\_\-pow}\label{hpmath_8h_a6}
+
+
+
+
+Definition at line 92 of file hpmath.h.\index{hpmath.h@{hpmath.h}!sqrt@{sqrt}}
+\index{sqrt@{sqrt}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}\#define sqrt\ \_\-\_\-ieee754\_\-sqrt}\label{hpmath_8h_a7}
+
+
+
+
+Definition at line 93 of file hpmath.h.
+
+\subsection{Function Documentation}
+\index{hpmath.h@{hpmath.h}!__ieee754_exp@{\_\-\_\-ieee754\_\-exp}}
+\index{__ieee754_exp@{\_\-\_\-ieee754\_\-exp}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double \_\-\_\-ieee754\_\-exp (double {\em x})}\label{hpmath_8h_a40}
+
+
+\index{hpmath.h@{hpmath.h}!__ieee754_log@{\_\-\_\-ieee754\_\-log}}
+\index{__ieee754_log@{\_\-\_\-ieee754\_\-log}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double \_\-\_\-ieee754\_\-log (double {\em x})}\label{hpmath_8h_a38}
+
+
+\index{hpmath.h@{hpmath.h}!__ieee754_log10@{\_\-\_\-ieee754\_\-log10}}
+\index{__ieee754_log10@{\_\-\_\-ieee754\_\-log10}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double \_\-\_\-ieee754\_\-log10 (double {\em x})}\label{hpmath_8h_a39}
+
+
+\index{hpmath.h@{hpmath.h}!__ieee754_pow@{\_\-\_\-ieee754\_\-pow}}
+\index{__ieee754_pow@{\_\-\_\-ieee754\_\-pow}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double \_\-\_\-ieee754\_\-pow (double {\em x}, double {\em y})}\label{hpmath_8h_a41}
+
+
+\index{hpmath.h@{hpmath.h}!__ieee754_sqrt@{\_\-\_\-ieee754\_\-sqrt}}
+\index{__ieee754_sqrt@{\_\-\_\-ieee754\_\-sqrt}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double \_\-\_\-ieee754\_\-sqrt (double {\em x})}\label{hpmath_8h_a42}
+
+
+\index{hpmath.h@{hpmath.h}!copysign@{copysign}}
+\index{copysign@{copysign}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double copysign (double {\em x}, double {\em y})}\label{hpmath_8h_a37}
+
+
+\index{hpmath.h@{hpmath.h}!cos@{cos}}
+\index{cos@{cos}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double cos (double {\em x})}\label{hpmath_8h_a44}
+
+
+\index{hpmath.h@{hpmath.h}!floor@{floor}}
+\index{floor@{floor}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double floor (double {\em x})}\label{hpmath_8h_a46}
+
+
+\index{hpmath.h@{hpmath.h}!gauss@{gauss}}
+\index{gauss@{gauss}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double gauss ()}\label{hpmath_8h_a49}
+
+
+Returns a normal distributed random number.
+
+\begin{Desc}
+\item[Return values: ]\par
+\begin{description}
+\item[{\em 
+A}]normalized,normal-distributed random number with mu=0.0 and sigma = 1.0 \end{description}
+\end{Desc}
+\index{hpmath.h@{hpmath.h}!ipow@{ipow}}
+\index{ipow@{ipow}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double ipow (double {\em x}, unsigned int {\em n})}\label{hpmath_8h_a32}
+
+
+\index{hpmath.h@{hpmath.h}!modf@{modf}}
+\index{modf@{modf}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double modf (double {\em x}, double $\ast$ {\em iptr})}\label{hpmath_8h_a35}
+
+
+\index{hpmath.h@{hpmath.h}!mwc@{mwc}}
+\index{mwc@{mwc}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned mwc (void)}\label{hpmath_8h_a47}
+
+
+32 bit multiply with carry pseudo RNG
+
+\begin{Desc}
+\item[Return values: ]\par
+\begin{description}
+\item[{\em 
+32}]bit pseudo random number.\end{description}
+\end{Desc}
+Very fast PRNG with extreme cycle length. \begin{Desc}
+\item[Warning: ]\par
+Don't use for cryptography. \end{Desc}
+\index{hpmath.h@{hpmath.h}!normal@{normal}}
+\index{normal@{normal}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double normal (double {\em mu}, double {\em sigma})}\label{hpmath_8h_a50}
+
+
+Returns a normal distributed random number with selected parameters.
+
+\begin{Desc}
+\item[Return values: ]\par
+\begin{description}
+\item[{\em 
+A}]normal-distributed random number with parameters ({\em mu}, {\em sigma)} \end{description}
+\end{Desc}
+\index{hpmath.h@{hpmath.h}!random@{random}}
+\index{random@{random}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double random ()}\label{hpmath_8h_a48}
+
+
+53 bit pseudo RNG on [0,1)
+
+\begin{Desc}
+\item[Return values: ]\par
+\begin{description}
+\item[{\em 
+A}]double pseudo random number, based on {\bf mwc()} {\rm (p.\,\pageref{hpmath_8h_a47})} generator \end{description}
+\end{Desc}
+\index{hpmath.h@{hpmath.h}!round@{round}}
+\index{round@{round}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double round (double {\em a})}\label{hpmath_8h_a34}
+
+
+\index{hpmath.h@{hpmath.h}!scalbn@{scalbn}}
+\index{scalbn@{scalbn}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double scalbn (double {\em x}, int {\em n})}\label{hpmath_8h_a36}
+
+
+\index{hpmath.h@{hpmath.h}!sin@{sin}}
+\index{sin@{sin}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double sin (double {\em x})}\label{hpmath_8h_a43}
+
+
+\index{hpmath.h@{hpmath.h}!square@{square}}
+\index{square@{square}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double square (double {\em x})}\label{hpmath_8h_a33}
+
+
+\index{hpmath.h@{hpmath.h}!tan@{tan}}
+\index{tan@{tan}!hpmath.h@{hpmath.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}double tan (double {\em x})}\label{hpmath_8h_a45}
+
+

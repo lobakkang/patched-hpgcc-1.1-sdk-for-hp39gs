@@ -1,0 +1,33 @@
+dround.o: dround.c ../hpmath.h
+e_acos.o: e_acos.c fpdefs.h ../hpmath.h
+e_asin.o: e_asin.c fpdefs.h ../hpmath.h
+e_atan2.o: e_atan2.c fpdefs.h ../hpmath.h
+e_exp.o: e_exp.c fpdefs.h ../hpmath.h
+e_log.o: e_log.c fpdefs.h ../hpmath.h
+e_log10.o: e_log10.c fpdefs.h ../hpmath.h
+e_pow.o: e_pow.c fpdefs.h ../hpmath.h
+e_rem_pio2.o: e_rem_pio2.c fpdefs.h ../hpmath.h
+e_sqrt.o: e_sqrt.c fpdefs.h ../hpmath.h
+gauss.o: gauss.c ../hpstdlib.h ../hpsys.h ../kos.h ../hpmath.h
+ipow.o: ipow.c ../hpmath.h
+k_cos.o: k_cos.c fpdefs.h ../hpmath.h
+k_rem_pio2.o: k_rem_pio2.c fpdefs.h ../hpmath.h
+k_sin.o: k_sin.c fpdefs.h ../hpmath.h
+k_tan.o: k_tan.c fpdefs.h ../hpmath.h
+mwc.o: mwc.c ../hpstdlib.h ../hpsys.h ../kos.h
+qlog10.o: qlog10.c ../hpsys.h ../kos.h ../hpmath.h
+rand.o: rand.c ../hpstdlib.h ../hpsys.h ../kos.h
+random.o: random.c ../hpstdlib.h ../hpsys.h ../kos.h
+s_atan.o: s_atan.c fpdefs.h ../hpmath.h
+s_ceil.o: s_ceil.c fpdefs.h ../hpmath.h
+s_copysign.o: s_copysign.c fpdefs.h ../hpmath.h
+s_cos.o: s_cos.c fpdefs.h ../hpmath.h
+s_floor.o: s_floor.c fpdefs.h ../hpmath.h
+s_frexp.o: s_frexp.c fpdefs.h ../hpmath.h
+s_modf.o: s_modf.c fpdefs.h ../hpmath.h
+s_round.o: s_round.c fpdefs.h ../hpmath.h
+s_scalbn.o: s_scalbn.c fpdefs.h ../hpmath.h
+s_sin.o: s_sin.c fpdefs.h ../hpmath.h
+s_tan.o: s_tan.c fpdefs.h ../hpmath.h
+square.o: square.c fpdefs.h ../hpmath.h
+srand.o: srand.c ../hpstdlib.h ../hpsys.h ../kos.h

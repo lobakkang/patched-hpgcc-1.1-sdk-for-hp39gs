@@ -1,0 +1,62 @@
+\section{win\_\-softmenu\_\-event\_\-t Struct Reference}
+\label{structwin__softmenu__event__t}\index{win_softmenu_event_t@{win\_\-softmenu\_\-event\_\-t}}
+Data structure to hold information about menu button presses.  
+
+
+{\tt \#include $<$winsoftmenu.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+unsigned {\bf lshift}: 2
+\begin{CompactList}\small\item\em State of the left shift key. \item\end{CompactList}\item 
+unsigned {\bf rshift}: 2
+\begin{CompactList}\small\item\em State of the right shift key. \item\end{CompactList}\item 
+void $\ast$ {\bf extra\_\-data}
+\begin{CompactList}\small\item\em Extra data associated with the key. \item\end{CompactList}\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Data structure to hold information about menu button presses. 
+
+Instances of this data structure are allocated temporarily and dispatched to event handlers when soft menu buttons are pressed. 
+
+
+
+Definition at line 65 of file winsoftmenu.h.
+
+\subsection{Field Documentation}
+\index{win_softmenu_event_t@{win\_\-softmenu\_\-event\_\-t}!extra_data@{extra\_\-data}}
+\index{extra_data@{extra\_\-data}!win_softmenu_event_t@{win\_\-softmenu\_\-event\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf win\_\-softmenu\_\-event\_\-t::extra\_\-data}}\label{structwin__softmenu__event__t_o2}
+
+
+Extra data associated with the key. 
+
+This is a data field that is associated with the key using any of {\bf win\_\-softmenu\_\-set\_\-item}{\rm (p.\,\pageref{winsoftmenu_8h_a2})}, {\bf win\_\-softmenu\_\-add\_\-item}{\rm (p.\,\pageref{winsoftmenu_8h_a3})}, or {\bf win\_\-softmenu\_\-insert\_\-item}{\rm (p.\,\pageref{winsoftmenu_8h_a4})}. It is passed verbatim to any event handlers that are called as a result of selecting that menu item.
+
+The meaning and interpretation of this field is left to the application. It should be cast to the appropriate data type before use. 
+
+Definition at line 96 of file winsoftmenu.h.\index{win_softmenu_event_t@{win\_\-softmenu\_\-event\_\-t}!lshift@{lshift}}
+\index{lshift@{lshift}!win_softmenu_event_t@{win\_\-softmenu\_\-event\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf win\_\-softmenu\_\-event\_\-t::lshift}}\label{structwin__softmenu__event__t_o0}
+
+
+State of the left shift key. 
+
+This field represents the state of left shift when the menu item was selected. It is set to one of {\bf WIN\_\-KEYSTATE\_\-ON}{\rm (p.\,\pageref{winkeys_8h_a7})}, {\bf WIN\_\-KEYSTATE\_\-OFF}{\rm (p.\,\pageref{winkeys_8h_a6})}, or {\bf WIN\_\-KEYSTATE\_\-PRESSED}{\rm (p.\,\pageref{winkeys_8h_a9})}. 
+
+Definition at line 74 of file winsoftmenu.h.\index{win_softmenu_event_t@{win\_\-softmenu\_\-event\_\-t}!rshift@{rshift}}
+\index{rshift@{rshift}!win_softmenu_event_t@{win\_\-softmenu\_\-event\_\-t}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf win\_\-softmenu\_\-event\_\-t::rshift}}\label{structwin__softmenu__event__t_o1}
+
+
+State of the right shift key. 
+
+This field represents the state of right shift when the menu item was selected. It is set to one of {\bf WIN\_\-KEYSTATE\_\-ON}{\rm (p.\,\pageref{winkeys_8h_a7})}, {\bf WIN\_\-KEYSTATE\_\-OFF}{\rm (p.\,\pageref{winkeys_8h_a6})}, or {\bf WIN\_\-KEYSTATE\_\-PRESSED}{\rm (p.\,\pageref{winkeys_8h_a9})}. 
+
+Definition at line 83 of file winsoftmenu.h.
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf winsoftmenu.h}\end{CompactItemize}
